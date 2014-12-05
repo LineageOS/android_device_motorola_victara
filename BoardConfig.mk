@@ -14,16 +14,16 @@
 # limitations under the License.
 
 # inherit from the proprietary version
--include vendor/motorola/ghost/BoardConfigVendor.mk
+-include vendor/motorola/victara/BoardConfigVendor.mk
 
-LOCAL_PATH := device/motorola/ghost
+LOCAL_PATH := device/motorola/victara
 
 BOARD_VENDOR := motorola-qcom
 
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := xt1052,ghost,xt1053,ghost_retail,xt1055,ghost_usc,xt1056,ghost_sprint,xt1058,ghost_att,ghost_rcica,xt1060,ghost_verizon
+TARGET_OTA_ASSERT_DEVICE := victara
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
@@ -46,7 +46,7 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02200000 --dt $(LOCAL_PATH)/dt.img
-TARGET_KERNEL_SOURCE := kernel/motorola/ghost
+TARGET_KERNEL_SOURCE := kernel/motorola/victara
 TARGET_KERNEL_CONFIG := msm8960dt_mmi_defconfig
 TARGET_KERNEL_SELINUX_CONFIG := msm8960_mmi_selinux_defconfig
 
@@ -93,10 +93,7 @@ BOARD_USES_LEGACY_MMAP := true
 EXTENDED_FONT_FOOTPRINT := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_ghost.c
 TARGET_NR_SVC_SUPP_GIDS := 28
-TARGET_UNIFIED_DEVICE := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true

@@ -4,7 +4,7 @@
     "target_path": "device/qcom/common"
   },
   {
-    "repository": "android_kernel_motorola_ghost",
-    "target_path": "kernel/motorola/ghost"
+    "repository": "android_kernel_motorola_victara",
+    "target_path": "kernel/motorola/victara"
   }
 ]

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVICE=ghost
+DEVICE=victara
 VENDOR=motorola
 
 OUTDIR=vendor/$VENDOR/$DEVICE
@@ -114,7 +114,7 @@ EOF
 
 LOCAL_PATH := \$(call my-dir)
 
-ifeq (\$(TARGET_DEVICE),ghost)
+ifeq (\$(TARGET_DEVICE),victara)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := com.qualcomm.location
