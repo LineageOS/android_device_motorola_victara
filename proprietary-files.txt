@@ -2,20 +2,20 @@
 bin/adspd
 
 # Audio
-lib/libacdbloader.so
-lib/libaudcal.so
+vendor/lib/libacdbloader.so
+vendor/lib/libaudcal.so
 
 # Audio firmware
 etc/firmware/aonvr1.bin
 etc/firmware/aonvr2.bin
-etc/firmware/tfa9890.config
-etc/firmware/tfa9890.eq
-etc/firmware/tfa9890.speaker
-etc/firmware/tfa9890_music_table.preset
-etc/firmware/tfa9890_n1b12.patch
-etc/firmware/tfa9890_n1c2.patch
-etc/firmware/tfa9890_ringtone_table.preset
-etc/firmware/tfa9890_voice_table.preset
+etc/firmware/left.tfa9890.config
+etc/firmware/left.tfa9890.eq
+etc/firmware/left.tfa9890.speaker
+etc/firmware/left.tfa9890_music_table.preset
+etc/firmware/left.tfa9890_n1b12.patch
+etc/firmware/left.tfa9890_ringtone_table.preset
+etc/firmware/left.tfa9890.speaker
+etc/firmware/left.tfa9890_voice_table.preset
 etc/firmware/VRGain.bin
 
 # Bluetooth
@@ -24,113 +24,94 @@ bin/hci_qcomm_init
 
 # Camera
 bin/mm-qcamera-daemon
-lib/hw/camera.msm8960.so:lib/hw/camera.vendor.msm8960.so
-lib/libadsprpc.so
+lib/hw/camera.msm8974.so:lib/hw/camera.vendor.msm8974.so
+vendor/lib/libadsprpc.so
 lib/libAisAdapter.so
 lib/libAlAisLib.so
 lib/libAlAisTune.so
 lib/libAlAisWrap.so
-lib/libgemini.so
-lib/libimage-jpeg-dec-omx-comp.so
-lib/libimage-jpeg-enc-omx-comp.so
-lib/libimage-omx-common.so
-lib/libl6lencgain.so
-lib/libmercury.so
-lib/libmmcamera_3a_bayer.so
-lib/libmmcamera_3a_legacy.so
-lib/libmmcamera_frameproc.so
-lib/libmmcamera_hdr_lib.so
-lib/libmmcamera_image_stab.so
-lib/libmmcamera_imx091.so
+vendor/lib/libmmcamera_faceproc.so
+vendor/lib/libmmcamera_imx179.so
+vendor/lib/libmmcamera_tuning.so
+vendor/lib/libmmcamera2_c2d_module.so
+vendor/lib/libmmcamera2_imglib_modules.so
+vendor/lib/libmmcamera_imglib.so
+vendor/lib/libmmcamera2_sensor_modules.so
+vendor/lib/libmmcamera2_pproc_modules.so
+vendor/lib/libmmcamera_imx135.so
+vendor/lib/libmmcamera2_cpp_module.so
+vendor/lib/libmmcamera2_iface_modules.so
+vendor/lib/libmmcamera_tintless_bg_pca_algo.so
+vendor/lib/libmmcamera2_stats_modules.so
+vendor/lib/libmmcamera_mt9v113.so
+vendor/lib/libmmcamera_ov10820.so
+vendor/lib/libmmcamera_hdr_gb_lib.so
+vendor/lib/libmmcamera2_isp_modules.so
+vendor/lib/libmmcamera2_wnr_module.so
+vendor/lib/libmmcamera_s5k5e2.so
+vendor/lib/libmmcamera_ar0261.so
+vendor/lib/libmmcamera_hdr_lib.so
+vendor/lib/libmmcamera2_vpe_module.so
+vendor/lib/libmmcamera_mt9m114.so
+vendor/lib/libmmcamera2_stats_algorithm.so
+vendor/lib/libmmcamera_imx132.so
+vendor/lib/libmmcamera_wavelet_lib.so
+vendor/lib/libmmcamera_imx132_eeprom.so
+vendor/lib/libmmcamera_tintless_algo.so
 lib/libmmcamera_interface.so
-lib/libmmcamera_plugin.so
-lib/libmmcamera_statsproc31.so
-lib/libmmcamera_tintless_algo.so
-lib/libmmcamera_tintless_wrapper.so
-lib/libmmcamera_wavelet_lib.so
-lib/libmmipl.so
-lib/libmmjpeg.so
+lib/libmmcamera_ar0543.so
+vendor/lib/libmmipl.so
+vendor/lib/libmmqjpeg_codec.so
+vendor/lib/libmmjpeg.so
 lib/libmmjpeg_interface.so
-lib/libmmjps.so
-lib/libmmmpo.so
-lib/libmmmpod.so
-lib/libmmstillomx.so
-lib/libmotcameracalibration.so
-lib/libmot_drscene_detect.so
-lib/libmot_hdr.so
-lib/libmot_sensorlistener.so
-lib/libmot_sis.so
-lib/liboemcamera.so
-lib/libVdlFaceDetection.so
-lib/VdlData.dat
+vendor/lib/liboemcamera.so
 
 # Chromatix
-lib/libchromatix_ais_ov10820_default_video.so
-lib/libchromatix_ais_ov10820_hfr_60fps.so
-lib/libchromatix_ais_ov10820_preview.so
-lib/libchromatix_ais_ov10820_zsl.so
-lib/libchromatix_ais_s5k5b3g_default_video.so
-lib/libchromatix_ais_s5k5b3g_preview.so
-lib/libchromatix_ais_s5k5b3g_zsl.so
-lib/libchromatix_imx074_default_video.so
-lib/libchromatix_imx074_preview.so
-lib/libchromatix_imx074_video_hd.so
-lib/libchromatix_imx074_zsl.so
-lib/libchromatix_imx091_default_video.so
-lib/libchromatix_imx091_preview.so
-lib/libchromatix_imx091_video_hd.so
-lib/libchromatix_imx135_default_video.so
-lib/libchromatix_imx135_preview.so
-lib/libchromatix_imx135_video_hdr.so
-lib/libchromatix_imx135_video_hd.so
-lib/libchromatix_imx135_zsl.so
-lib/libchromatix_mt9e013_default_video.so
-lib/libchromatix_mt9e013_preview.so
-lib/libchromatix_mt9e013_video_hfr.so
-lib/libchromatix_ov2720_default_video.so
-lib/libchromatix_ov2720_hfr.so
-lib/libchromatix_ov2720_preview.so
-lib/libchromatix_ov2720_zsl.so
-lib/libchromatix_ov5647_default_video.so
-lib/libchromatix_ov5647_preview.so
-lib/libchromatix_ov8820_default_video.so
-lib/libchromatix_ov8820_hfr_60fps.so
-lib/libchromatix_ov8820_preview.so
-lib/libchromatix_ov8820_video_hd.so
-lib/libchromatix_ov8820_zsl.so
-lib/libchromatix_ov8825_default_video.so
-lib/libchromatix_ov8825_preview.so
-lib/libchromatix_ov9726_default_video.so
-lib/libchromatix_ov9726_preview.so
-lib/libchromatix_qc3a_ov10820_default_video.so
-lib/libchromatix_qc3a_ov10820_hfr_60fps.so
-lib/libchromatix_qc3a_ov10820_preview.so
-lib/libchromatix_qc3a_ov10820_zsl.so
-lib/libchromatix_qc3a_s5k5b3g_default_video.so
-lib/libchromatix_qc3a_s5k5b3g_preview.so
-lib/libchromatix_qc3a_s5k5b3g_zsl.so
-lib/libchromatix_s5k3l1yx_default_video.so
-lib/libchromatix_s5k3l1yx_hfr_120fps.so
-lib/libchromatix_s5k3l1yx_hfr_60fps.so
-lib/libchromatix_s5k3l1yx_hfr_90fps.so
-lib/libchromatix_s5k3l1yx_preview.so
-lib/libchromatix_s5k3l1yx_video_hd.so
-lib/libchromatix_s5k3l1yx_zsl.so
-lib/libchromatix_s5k4e1_default_video.so
-lib/libchromatix_s5k4e1_preview.so
+vendor/lib/libchromatix_ov10820_snapshot.so
+vendor/lib/libchromatix_s5k5e2_snapshot.so
+vendor/lib/libchromatix_imx132_preview.so
+vendor/lib/libchromatix_imx179_common.so
+vendor/lib/libchromatix_imx132_snapshot.so
+vendor/lib/libchromatix_s5k5e2_liveshot.so
+vendor/lib/libchromatix_ov10820_common.so
+vendor/lib/libchromatix_ov10820_zsl.so
+vendor/lib/libchromatix_imx135_default_video.so
+vendor/lib/libchromatix_imx135_hfr_60.so
+vendor/lib/libchromatix_imx179_default_video.so
+vendor/lib/libchromatix_ar0261_snapshot.so
+vendor/lib/libchromatix_imx135_snapshot.so
+vendor/lib/libchromatix_imx179_hfr_60.so
+vendor/lib/libchromatix_s5k5e2_hfr_60fps.so
+vendor/lib/libchromatix_imx132_common.so
+vendor/lib/libchromatix_imx132_video.so
+vendor/lib/libchromatix_ar0261_default_video.so
+vendor/lib/libchromatix_imx135_common.so
+vendor/lib/libchromatix_s5k5e2_common.so
+vendor/lib/libchromatix_imx179_preview.so
+vendor/lib/libchromatix_imx179_snapshot.so
+vendor/lib/libchromatix_ov10820_preview.so
+vendor/lib/libchromatix_s5k5e2_preview.so
+vendor/lib/libchromatix_ar0261_common.so
+vendor/lib/libchromatix_s5k5e2_default_video.so
+lib/libchromatix_ar0543_default_video.so
+lib/libchromatix_ar0543_hfr_60.so
+lib/libchromatix_ar0543_preview.so
+lib/libchromatix_imx135_liveshot.so
+lib/libchromatix_ar0543_common.so
+lib/libchromatix_ar0543_snapshot.so
 
 # CPU
 bin/mpdecision
 bin/thermald
-lib/libqc-opt.so
+vendor/lib/libqc-opt.so
 
 # DRM
 bin/qseecomd
 lib/libdrmdecrypt.so
-lib/libdrmdiag.so
-lib/libdrmfs.so
-lib/libdrmtime.so
-lib/libQSEEComAPI.so
+vendor/lib/libdrmdiag.so
+vendor/lib/libdrmfs.so
+vendor/lib/libdrmtime.so
+vendor/lib/libQSEEComAPI.so
 vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/libwvdrm_L1.so
@@ -165,28 +146,27 @@ vendor/lib/egl/eglsubAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
-vendor/lib/egl/libGLESv2S3D_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/libadreno_utils.so
-vendor/lib/libc2d2_a3xx.so
+vendor/lib/libc2d30-a3xx.so
 vendor/lib/libc2d2_z180.so
-vendor/lib/libC2D2.so
+vendor/lib/libc2d30.so
 vendor/lib/libCB.so
 vendor/lib/libgsl.so
-vendor/lib/libllvm-a3xx.so
+vendor/lib/libllvm-qcom.so
 vendor/lib/libOpenCL.so
 vendor/lib/libOpenVG.so
 vendor/lib/libsc-a3xx.so
 
 # Graphics firmware
-etc/firmware/a300_pfp.fw
-etc/firmware/a300_pm4.fw
+etc/firmware/a330_pfp.fw
+etc/firmware/a330_pm4.fw
 
 # IMS - currently unused but have dependencies to qmi
 bin/imsdatadaemon
 bin/imsqmidaemon
 bin/ims_rtp_daemon
-lib/libmmrtpencoder.so
+vendor/lib/libmmrtpencoder.so
 vendor/lib/lib-dplmedia.so
 vendor/lib/lib-imsdpl.so
 vendor/lib/lib-imsqimf.so
@@ -202,61 +182,50 @@ vendor/lib/lib-rtpdaemoninterface.so
 vendor/lib/lib-rtpsl.so
 
 # Media
-lib/libDivxDrm.so
-lib/libExtendedExtractor.so
-lib/libI420colorconvert.so
-lib/libmm-color-convertor.so
-lib/libmmosal.so
-lib/libmmparser.so
-lib/libOmxAacDec.so
-lib/libOmxAmrwbplusDec.so
-lib/libOmxEvrcDec.so
-lib/libOmxQcelp13Dec.so
-lib/libOmxWmaDec.so
+vendor/lib/libDivxDrm.so
+vendor/lib/libExtendedExtractor.so
+vendor/lib/libI420colorconvert.so
+vendor/lib/libmm-color-convertor.so
+vendor/lib/libmmosal.so
+vendor/lib/libmmparser.so
+vendor/lib/libOmxAacDec.so
+vendor/lib/libOmxAmrwbplusDec.so
+vendor/lib/libOmxEvrcDec.so
+vendor/lib/libOmxQcelp13Dec.so
+vendor/lib/libOmxWmaDec.so
 
 # Media firmware
-etc/firmware/vidc.b00
-etc/firmware/vidc.b01
-etc/firmware/vidc.b02
-etc/firmware/vidc.b03
-etc/firmware/vidc.mdt
-etc/firmware/vidc_1080p.fw
+etc/firmware/venus.b00
+etc/firmware/venus.b01
+etc/firmware/venus.b02
+etc/firmware/venus.b03
+etc/firmware/venus.b04
+etc/firmware/venus.mbn
+etc/firmware/venus.mdt
 
 # Motorola
 bin/batt_health
 bin/dbvc_atvc_property_set
 bin/hardware_revisions.sh
 bin/mount_ext4.sh
-bin/refuse
-
-# MSP firmware
-bin/msp430
-etc/firmware/mspfirmware.bin
-etc/firmware/mspfirmware_p0.bin
-etc/firmware/mspfirmware_p1.bin
-etc/firmware/mspfirmware_p2.bin
-etc/firmware/mspversion.txt
-etc/firmware/mspversion_p0.txt
-etc/firmware/mspversion_p1.txt
-etc/firmware/mspversion_p2.txt
 
 # Postprocessing
 bin/mm-pp-daemon
-lib/libmm-abl.so
-lib/libmm-abl-oem.so
+vendor/lib/libmm-abl.so
+vendor/lib/libmm-abl-oem.so
 
 # Qualcomm framework
 bin/irsc_util
-lib/libdsutils.so
-lib/libdsi_netctrl.so
-lib/libidl.so
-lib/libqcci_legacy.so
-lib/libqdi.so
-lib/libqdp.so
-lib/libqmi.so
-lib/libqmi_client_qmux.so
-lib/libqmi_csvt_srvc.so
-lib/libqmiservices.so
+vendor/lib/libdsutils.so
+vendor/lib/libdsi_netctrl.so
+vendor/lib/libidl.so
+vendor/lib/libqcci_legacy.so
+vendor/lib/libqdi.so
+vendor/lib/libqdp.so
+vendor/lib/libqmi.so
+vendor/lib/libqmi_client_qmux.so
+vendor/lib/libqmi_csvt_srvc.so
+vendor/lib/libqmiservices.so
 vendor/lib/libdiag.so
 vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_csi.so
@@ -264,12 +233,10 @@ vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_encdec.so
 
 # Radio
-bin/bootmodem
 bin/efsks
 bin/ks
 bin/netmgrd
 bin/qcks
-bin/qdumpd
 bin/qmi_motext_hook
 bin/qmuxd
 bin/rild
@@ -277,22 +244,15 @@ bin/rmt_storage
 lib/libadropbox.so
 lib/libmdmcutback.so
 lib/libmotext_inf.so
-lib/libnetmgr.so
+vendor/lib/libnetmgr.so
 lib/libril.so
-lib/libril-qc-qmi-1.so
-lib/libril-qcril-hook-oem.so
+vendor/lib/libril-qc-qmi-1.so
+vendor/lib/libril-qcril-hook-oem.so
 
 # Sensors
-lib/hw/sensorhub.msm8960.so
-lib/hw/sensors.msm8960.so
+lib/hw/sensorhub.msm8974.so
+lib/hw/sensors.msm8974.so
 
 # Touch frimware
-etc/firmware/synaptics-s3402-13040101-164656-ghost.tdat
-etc/firmware/synaptics-s3402-13040101-164656-ghost-p1a.tdat
-etc/firmware/synaptics-s3402b-13050201-167746-ghost.tdat
-
-# Time services
--app/TimeService/TimeService.apk
-bin/time_daemon
--lib/libtime_genoff.so
-lib/libTimeService.so
+etc/firmware/atmel-a432-14060302-0102aa-victara-p1.tdat
+etc/firmware/atmel-a432-14102902-0103aa-victara.tdat

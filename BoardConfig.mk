@@ -26,11 +26,11 @@ TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 TARGET_OTA_ASSERT_DEVICE := victara
 
 # Platform
-TARGET_BOARD_PLATFORM := msm8960
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno320
+TARGET_BOARD_PLATFORM := msm8974
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno330
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := MSM8960
+TARGET_BOOTLOADER_BOARD_NAME := MSM8974
 TARGET_NO_BOOTLOADER := true
 
 # Architecture
@@ -42,26 +42,19 @@ TARGET_CPU_VARIANT := krait
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 maxcpus=2 androidboot.write_protect=0 androidboot.selinux=permissive
+BOARD_CUSTOM_BOOTIMG_MK := device/motorola/victara/mkbootimg.mk
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom msm_rtb.filter=0x37 ehci-hcd.park=3 vmalloc=400M utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02200000 --dt $(LOCAL_PATH)/dt.img
-TARGET_KERNEL_SOURCE := kernel/motorola/victara
-TARGET_KERNEL_CONFIG := msm8960dt_mmi_defconfig
-TARGET_KERNEL_SELINUX_CONFIG := msm8960_mmi_selinux_defconfig
-
-WLAN_MODULES:
-	mkdir -p $(KERNEL_MODULES_OUT)/prima
-	mv $(KERNEL_MODULES_OUT)/wlan.ko $(KERNEL_MODULES_OUT)/prima/prima_wlan.ko
-	ln -sf /system/lib/modules/prima/prima_wlan.ko $(TARGET_OUT)/lib/modules/wlan.ko
-
-TARGET_KERNEL_MODULES += WLAN_MODULES
+BOARD_KERNEL_SEPARATED_DT := true
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
+TARGET_KERNEL_SOURCE := kernel/motorola/msm8974
+TARGET_KERNEL_CONFIG := cyanogenmod_victara_defconfig
 
 # Audio
 AUDIO_FEATURE_DISABLED_FM := true
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_FLUENCE_INCALL := true
-BOARD_USES_LEGACY_ALSA_AUDIO := true
 BOARD_USES_SEPERATED_AUDIO_INPUT := true
 BOARD_USES_SEPERATED_VOICE_SPEAKER := true
 TARGET_USES_QCOM_COMPRESSED_AUDIO := true

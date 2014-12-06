@@ -1,0 +1,499 @@
+# Moto USB configuration
+import init.mmi.usb.rc
+import init.mmi.diag.rc
+
+on early-init
+    # Set boot up stage I/O scheduler
+    write /sys/block/mmcblk0/queue/scheduler deadline
+
+    # Create PDS mount point
+    mkdir /pds 0755 root root
+
+    # Create modem FSG mount point
+    mkdir /fsg 755 root root
+
+    chown system system /sys/kernel/debug
+    chmod 0770 /sys/kernel/debug
+
+    # Mount point for Digital Personalization partition
+    mkdir /customize 0500 root root
+
+on charger
+    trigger early-fs
+    trigger fs
+    trigger post-fs
+    trigger post-fs-data
+    trigger moto-charger
+    class_stop main
+
+on moto-charger
+    setprop ro.board.platform msm8974
+    start qcom-post-boot
+    start thermal-com
+    start charge_only_mode
+
+on init
+    copy /module_hashes /sys/kernel/module_whitelist
+
+    # Configure coredump
+    write /proc/sys/kernel/core_pattern "|/system/bin/coredump %e %p %t"
+    write /proc/self/coredump_filter "0x7f"
+
+    # Setup kernel dropbox permissions so that dropboxd can utilize it
+    chown root diag /sys/kernel/dropbox/event
+    chown root diag /sys/kernel/dropbox/data
+
+    # Enable more binder logs for debugging purpose
+    write /sys/module/binder/parameters/debug_mask 0x10005
+
+    # ESDFS
+    chown mot_esdfs root /proc/fs/esdfs/packages
+
+on fs
+    # Mount PDS
+    wait /dev/block/platform/msm_sdcc.1/by-name/pds
+    exec /system/bin/e2fsck -y /dev/block/platform/msm_sdcc.1/by-name/pds
+    exec /system/bin/logwrapper /system/bin/mount_ext4.sh pds /dev/block/platform/msm_sdcc.1/by-name/pds /pds 2048 500 defcontext=u:object_r:pds_file:s0
+    restorecon_recursive /pds
+
+    mkdir /pds/camera 0755 mot_tcmd mot_tcmd
+    mkdir /pds/factory 0755 mot_tcmd mot_tcmd
+    mkdir /pds/public 0755 mot_tcmd mot_tcmd
+    mkdir /pds/public/atvc 0770 mot_atvc shell
+    mkdir /pds/public/battd 0755 mot_accy mot_tcmd
+    mkdir /pds/public/hiddenmenu 0755 radio radio
+    mkdir /pds/public/hiddenmenu/data 0775 system mot_tcmd
+    mkdir /pds/public/locale 0700 system system
+    mkdir /pds/public/omadm 0700 radio radio
+    mkdir /pds/public/svcs 0770 system system
+    mkdir /pds/wifi 0755 mot_tcmd mot_tcmd
+    mkdir /pds/bt 0755 mot_tcmd bluetooth
+    mkdir /pds/wmdrm 0775 mot_drm mot_drm
+    mkdir /pds/security 02770 mot_tpapi mot_tpapi
+    mkdir /pds/batt_health 0755 mot_pwric mot_pwric
+
+    chown mot_tcmd mot_tcmd /pds/factory/fti
+    chmod 0660 /pds/factory/fti
+    chown mot_tcmd mot_tcmd /pds/factory/byte
+    chmod 0660 /pds/factory/byte
+    chmod 0660 /pds/wifi/wlan_mac.bin
+    chown mot_tcmd mot_tcmd /pds/bt/bt_bdaddr
+    chmod 0664 /pds/bt/bt_bdaddr
+    chmod 0600 /pds/whisper/whisper_only/vector0.bin
+
+    # Mount modem FSG partition
+    wait /dev/block/platform/msm_sdcc.1/by-name/fsg
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/fsg /fsg ro nosuid nodev barrier=0 context=u:object_r:fsg_file:s0
+
+    # Set correct permissions for HOB, DHOB
+    exec /system/bin/chmod -L 660 /dev/block/platform/msm_sdcc.1/by-name/hob
+    exec /system/bin/chmod -L 660 /dev/block/platform/msm_sdcc.1/by-name/dhob
+    exec /system/bin/chmod -L 660 /dev/block/platform/msm_sdcc.1/by-name/clogo
+    exec /system/bin/chown -L root:radio /dev/block/platform/msm_sdcc.1/by-name/hob
+    exec /system/bin/chown -L root:radio /dev/block/platform/msm_sdcc.1/by-name/dhob
+    exec /system/bin/chown -L root:mot_tcmd /dev/block/platform/msm_sdcc.1/by-name/clogo
+
+    # Set correct permissions for CID
+    exec /system/bin/chmod -L 660 /dev/block/platform/msm_sdcc.1/by-name/cid
+    exec /system/bin/chown -L root:mot_dbvc /dev/block/platform/msm_sdcc.1/by-name/cid
+
+    # Set permissions for BL logs
+    exec /system/bin/chmod -L 640 /dev/block/platform/msm_sdcc.1/by-name/logs
+    exec /system/bin/chown -L root:system /dev/block/platform/msm_sdcc.1/by-name/logs
+
+    #Mount customize partion
+    wait /dev/block/platform/msm_sdcc.1/by-name/customize
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/customize /customize ro discard nosuid nodev noatime nodiratime noexec defcontext=u:object_r:user_config_file:s0
+
+on post-fs-data
+    # Trigger the defuse tool
+    setprop installd.post_fs_data_ready 1
+
+    # Permissions for Factory Test of Charging Paths
+    chown mot_pwric mot_pwric /sys/class/power_supply/battery/device/force_chg_auto_enable
+    chown mot_pwric mot_pwric /sys/class/power_supply/battery/device/force_chg_ibatt
+    chown mot_pwric mot_pwric /sys/class/power_supply/battery/device/force_chg_itrick
+    chown mot_pwric mot_pwric /sys/class/power_supply/battery/device/force_chg_iusb
+    chown mot_pwric mot_pwric /sys/class/power_supply/battery/device/force_chg_usb_suspend
+    chown mot_pwric mot_pwric /sys/class/power_supply/battery/device/force_chg_fail_clear
+    chown mot_pwric mot_pwric /sys/class/power_supply/battery/device/force_chg_usb_otg_ctl
+
+   # Setup correct permissions for dbvc and atvc
+    mkdir /data/local/dbvc 0750 mot_tcmd shell
+    mkdir /data/local/atvc 0775 mot_tcmd shell
+
+   # Create moodle directory that MOODLE APP can write to
+    mkdir /data/local/moodle 0770 graphics mot_tcmd
+
+    # Setup folders for diag_mdlog
+    mkdir /data/diag_mdlog 0750 system log
+    mkdir /data/diag_mdlog/logs 0750 log log
+
+    # Setup folder for native to transfer data to NativeDropBoxAgent
+    mkdir /data/system/dropbox-add 0730 system diag
+
+    # Set correct permissions for UTAGS
+    exec /system/bin/chown -L mot_tcmd:system /dev/block/platform/msm_sdcc.1/by-name/utags
+    exec /system/bin/chown -L mot_tcmd:system /dev/block/platform/msm_sdcc.1/by-name/utagsBackup
+    exec /system/bin/chmod -L 0660 /dev/block/platform/msm_sdcc.1/by-name/utags
+    exec /system/bin/chmod -L 0660 /dev/block/platform/msm_sdcc.1/by-name/utagsBackup
+
+    #Subsystem RAM-dumps
+    mkdir /data/ss-ram-dumps 0750 radio log
+    mkdir /data/ss-ram-dumps/bp-dumps 0750 radio log
+    mkdir /data/ss-ram-dumps/riva-dumps 0750 radio log
+
+    # Create directory for cutback
+    mkdir /data/misc/cutback 0770 radio wifi
+
+    # Create directory used by power_supply_logger
+    mkdir /data/power_supply_logger 0750 mot_pwric log
+
+    # Permissions for battery health daemon
+    chown mot_pwric mot_pwric /sys/module/qpnp_bms/parameters/last_ocv_uv
+    chown mot_pwric mot_pwric /sys/module/qpnp_charger/parameters/bms_chrg_capacity
+    chown mot_pwric mot_pwric /sys/module/qpnp_charger/parameters/bms_chrg_capacity_temp
+    chown mot_pwric mot_pwric /sys/module/qpnp_charger/parameters/chrg_timestamp
+
+    start batt_health
+    start hvdcp
+
+
+# To report kernel panic
+service apanic_annotate  /system/bin/sh /system/bin/apanic_annotate.sh build
+    class late_start
+    group log
+    oneshot
+
+service charge_only_mode /system/bin/charge_only_mode
+    user root
+    group graphics system input
+    disabled
+
+service batt_health /system/bin/batt_health
+    class main
+    user mot_pwric
+    group mot_pwric net_admin log
+
+service hvdcp /system/bin/hvdcp
+    class main
+    user root
+
+service thermal-com /system/bin/thermal-engine --minimode
+    class main
+    user root
+    disabled
+
+#start Sensor daemon
+service stm401 /system/bin/stm401 boot
+    disabled
+    user compass
+    group compass misc input
+    oneshot
+
+on property:hw.touch.ready=1
+    start stm401
+
+on boot
+    # Change ownership and permission for vibrator
+    chown system system /sys/class/timed_output/vibrator/enable
+    chmod 0660 /sys/class/timed_output/vibrator/enable
+
+    # initialize kernel dynamic debugging settings
+    copy /system/etc/debug_control.conf /sys/kernel/debug/dynamic_debug/control
+
+    # Setup folder for aplogd
+    mkdir /data/aplogd 0750 log log
+
+    # Change the ownership of display TE files for tcmds
+    chown root mot_tcmd /sys/class/graphics/fb0/te_enable
+    chown root mot_tcmd /sys/class/graphics/fb0/frame_counter
+
+    # Change ownership for HBM control
+    chown system system /sys/class/graphics/fb0/hbm
+
+    # STM401 driver parameter permissions
+    chown root mot_tcmd /sys/module/stm401/parameters/irq_disable
+    chmod 0660 /sys/module/stm401/parameters/irq_disable
+
+    # Change ownership and permission for led
+    chown system system /sys/class/leds/led:flash_0/brightness
+    chown system system /sys/class/leds/charging/brightness
+    chmod 0664 /sys/class/leds/led:flash_0/brightness
+    chmod 0664 /sys/class/leds/charging/brightness
+    chmod 0664 /sys/class/leds/lcd-backlight/brightness
+
+    # Optimize TCP parameters for QCOM-8974 products with LTE support
+    # This init file will override the values defined in init.rc file.
+    # Carrier specific init.<carrier>.rc file will override this file.
+    # ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
+    setprop net.tcp.buffersize.default 131072,262144,1048576,4096,16384,262144
+    setprop net.tcp.buffersize.wifi 131072,262144,3145728,4096,221184,3145728
+    setprop net.tcp.buffersize.umts 131072,262144,1452032,4096,16384,399360
+    setprop net.tcp.buffersize.edge 16384,32768,131072,4096,16384,65536
+    setprop net.tcp.buffersize.gprs 4096,8192,24576,4096,8192,24576
+    setprop net.tcp.buffersize.hspa 131072,262144,2441216,4096,16384,399360
+    setprop net.tcp.buffersize.hsdpa 131072,262144,2441216,4096,16384,399360
+    setprop net.tcp.buffersize.hsupa 131072,262144,2441216,4096,16384,399360
+    setprop net.tcp.buffersize.hspap 131072,262144,2441216,4096,16384,399360
+    setprop net.tcp.buffersize.lte  524288,1048576,8388608,262144,524288,4194304
+    setprop net.tcp.buffersize.cdma   4096,12288,49152,4096,12288,49152
+    setprop net.tcp.buffersize.1xrtt  16384,32768,131072,4096,16384,102400
+    setprop net.tcp.buffersize.evdo   16384,32768,131072,4096,16384,102400
+    setprop net.tcp.buffersize.ehrpd  131072,262144,1048576,4096,16384,524288
+    setprop net.tcp.buffersize.evdo_b 131072,262144,1048576,4096,16384,524288
+    setprop net.tcp.buffersize.2ghotspot     4096,16384,65536,16384,32768,131072
+    setprop net.tcp.buffersize.2ghotspot2    4096,16384,102400,16384,32768,131072
+    setprop net.tcp.buffersize.3ghotspot     4096,16384,399360,131072,262144,2441216
+    setprop net.tcp.buffersize.3ghotspot2    4096,16384,524288,131072,262144,1048576
+    setprop net.tcp.buffersize.4ghotspot     262144,524288,4194304,524288,1048576,8388608
+
+    # Assign TCP buffer thresholds to be ceiling value of technology maximums
+    # Increased technology maximums should be reflected here.
+    write /proc/sys/net/core/rmem_max  8388608
+    write /proc/sys/net/core/wmem_max  8388608
+
+    # create the necessary data dirs for tpapi with proper permission
+    mkdir /dev/tpapi 02770 mot_tpapi mot_tpapi
+    mkdir /data/tpapi 02770 mot_tpapi mot_tpapi
+    mkdir /data/tpapi/etc 02770 mot_tpapi mot_tpapi
+    mkdir /data/tpapi/etc/tpa 02770 mot_tpapi mot_tpapi
+    mkdir /data/tpapi/etc/tpa/persistent 02770 mot_tpapi mot_tpapi
+
+    # Force all SSR systems to 'related' so they attempt self-recovery without
+    # rebooting the device
+    write /sys/bus/msm_subsys/devices/subsys0/restart_level related
+    write /sys/bus/msm_subsys/devices/subsys1/restart_level related
+    write /sys/bus/msm_subsys/devices/subsys2/restart_level related
+    write /sys/bus/msm_subsys/devices/subsys3/restart_level related
+
+    # Audio DSP permissions
+    chown audio audio /dev/ttyHS3
+    chown audio audio /sys/devices/c55_ctrl/gpio_ap_int/edge
+    chown audio audio /sys/devices/c55_ctrl/gpio_ap_int/value
+    chown audio audio /sys/devices/c55_ctrl/gpio_c55_int/value
+    chown audio audio /sys/devices/c55_ctrl/gpio_core/value
+    chown audio audio /sys/devices/c55_ctrl/gpio_reset/value
+    mkdir /data/adspd/ 0770 audio diag
+
+    # ACDB file path
+    setprop persist.audio.calfile0 /etc/acdbdata/${ro.hw.device}/${ro.hw.device}_Bluetooth_cal.acdb
+    setprop persist.audio.calfile1 /etc/acdbdata/${ro.hw.device}/${ro.hw.device}_General_cal.acdb
+    setprop persist.audio.calfile2 /etc/acdbdata/${ro.hw.device}/${ro.hw.device}_Global_cal.acdb
+    setprop persist.audio.calfile3 /etc/acdbdata/${ro.hw.device}/${ro.hw.device}_Handset_cal.acdb
+    setprop persist.audio.calfile4 /etc/acdbdata/${ro.hw.device}/${ro.hw.device}_Hdmi_cal.acdb
+    setprop persist.audio.calfile5 /etc/acdbdata/${ro.hw.device}/${ro.hw.device}_Headset_cal.acdb
+    setprop persist.audio.calfile6 /etc/acdbdata/${ro.hw.device}/${ro.hw.device}_Speaker_cal.acdb
+
+service adspd /system/bin/adspd /dev/ttyHS3
+    class late_start
+    socket adspdsock stream 0660 system audio
+    user audio
+    group audio input diag
+
+service ftmipcd /system/bin/ftmipcd
+    user radio
+    group radio inet qcom_diag
+    disabled
+    oneshot
+
+on property:ro.bootmode=mot-factory
+    start ftmipcd
+
+# Power up to suspend
+on property:tcmd.suspend=1
+    stop surfaceflinger
+    stop zygote
+    setprop debug.sf.nobootanimation 1
+
+# Normal to suspend
+on property:tcmd.suspend=2
+    stop surfaceflinger
+    stop zygote
+    setprop debug.sf.nobootanimation 1
+
+service tcmd /system/bin/tcmd
+    class core
+    group mot_tcmd radio mot_pwric input system log camera graphics mot_accy sdcard_r sdcard_rw audio inet bluetooth wifi compass net_bt_admin mot_tombstone mot_tpapi mount net_raw net_admin media shell mot_usb nfc fm_radio qcom_diag mot_dbvc cache media_rw
+    socket local_tcmd stream 0660 mot_tcmd mot_tcmd
+    socket batch_socket stream 0600 mot_tcmd mot_tcmd
+    oneshot
+    disabled
+
+service tcmdhelp /system/bin/tcmdhelp
+    class main
+    socket tcmdhelp stream 0600 mot_tcmd mot_tcmd
+    oneshot
+    disabled
+
+on property:tcmd.start_tcmdhelp=1
+    start tcmdhelp
+
+on property:persist.mot.demo_mode_charging=1
+    write /sys/class/power_supply/battery/device/force_demo_mode 1
+
+on property:persist.log.aplogd.enable=1
+    start aplogd
+
+on property:persist.log.aplogd.enable=0
+    stop aplogd
+
+service aplogd /system/bin/aplogd
+    class main
+    #user log
+    #group log system sdcard_rw sdcard_r media_rw mount
+    # The user and group definitions above are intentionally disabled and left
+    # only as documentation. It actually starts as root and immediately drops
+    # to log plus those groups after preserving CAP_SYS_ADMIN, which is required
+    # for kernel logging.
+    disabled
+
+service mmi-radio-sh /system/bin/sh /init.mmi.radio.sh
+    class core
+    user radio
+    group radio
+    oneshot
+
+on property:persist.sys.diag_mdlog.on=1
+    start diag_mdlog
+
+on property:persist.sys.diag_mdlog.on=0
+    stop diag_mdlog
+
+service diag_mdlog /system/bin/diag_mdlog-wrap
+    class main
+    socket mdlog_cmd stream 0660 system diag
+    user log
+    group log sdcard_rw sdcard_r media_rw qcom_diag
+    disabled
+
+service dropboxd /system/bin/dropboxd
+    class late_start
+    user diag
+    group diag
+
+# Let init manage the bug2go-native wakelock, so that we guarantee its
+# lifecycle exactly matches that of bug2go-bugreport.  Since init sends
+# SIGKILL when stopping a service, we could not guarantee the wakelock would
+# get cleaned up if it were managed by bug2go-bugreport itself.
+on property:init.svc.bugreport=running
+    write /sys/power/wake_lock bug2go-native
+
+on property:init.svc.bugreport=stopping
+    write /sys/power/wake_unlock bug2go-native
+
+on property:init.svc.bugreport=stopped
+    write /sys/power/wake_unlock bug2go-native
+
+service bugreport /system/bin/bug2go-bugreport
+    class main
+    disabled
+    oneshot
+    keycodes 115 116 # VOLUME_UP + PWR
+
+on property:sys.boot_completed=1
+    start qe
+    # restore the default I/O scheduler for mobile device
+    write /sys/block/mmcblk0/queue/scheduler cfq
+
+service mmi-boot-sh /system/bin/sh /init.mmi.boot.sh
+    class core
+    user root
+    oneshot
+
+service mmi-touch-sh /system/bin/sh /init.mmi.touch.sh atmel
+    disabled
+    user root
+    oneshot
+
+on property:hw.aov.c55_ready=1
+    start mmi-touch-sh
+
+on property:ro.secure=0
+    # disable dmesg restrict for insecure builds
+    write /proc/sys/kernel/dmesg_restrict 0
+
+on property:ro.debuggable=1
+    # disable dmesg restrict in eng/userdebug build
+    write /proc/sys/kernel/dmesg_restrict 0
+    # enable group read/write to /dev/log/kernel
+    chmod 0660 /dev/log/kernel
+    # debugfs
+    chmod 0775 /sys/kernel/debug
+
+
+service hw_revs /system/bin/sh /system/bin/hardware_revisions.sh
+    class main
+    user system
+    group system
+    oneshot
+
+service mbm_spy /system/bin/mbm_spy
+    class late_start
+    user system
+    group system
+    oneshot
+
+# DHCP service for Ethernet
+service dhcpcd_eth0 /system/bin/dhcpcd -G
+   class late_start
+   disabled
+   oneshot
+
+service iprenew_eth0 /system/bin/dhcpcd -nBK
+   class late_start
+   disabled
+   oneshot
+
+service atvc_core /system/bin/dbvc_atvc_property_set
+   class core
+   user mot_atvc
+   group mot_tpapi
+   oneshot
+
+service atvc /system/bin/dbvc_atvc_property_set
+   class late_start
+   user mot_atvc
+   group mot_tpapi
+   oneshot
+
+service qe /xbin/qe /system
+   class main
+   seclabel u:r:qe:s0
+   oneshot
+   disabled
+
+service qe_broadcast /xbin/qe /system -b
+   class main
+   seclabel u:r:qe:s0
+   oneshot
+   disabled
+
+on property:persist.qe.trigger=1
+   start qe_broadcast
+
+service ss_rdump /system/bin/subsystem_ramdump 1 0
+   class late_start
+   user radio
+   group log sdcard_rw sdcard_r diag
+
+on property:persist.sys.qc.sub.rdump.on=*
+   write /sys/module/subsystem_restart/parameters/enable_ramdumps ${persist.sys.qc.sub.rdump.on}
+
+service esdpll /system/bin/esdpll -w
+    user mot_esdfs
+    group mot_esdfs package_info
+    disabled
+
+on property:ro.esdfs_sdcard=true
+    wait /data/media/0 600
+    mount esdfs /data/media /mnt/shell/emulated derive=legacy
+    mount none /mnt/shell/emulated/0 /storage/emulated/legacy bind
+    start esdpll
+
+# This will make sure that sdcard is bound as late_start.
+on nonencrypted
+    setprop ro.esdfs_sdcard ${persist.esdfs_sdcard}
+
+on property:vold.decrypt=trigger_restart_framework
+    setprop ro.esdfs_sdcard ${persist.esdfs_sdcard}

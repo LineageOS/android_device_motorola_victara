@@ -1,0 +1,3 @@
+on property:ro.bootmode=normal
+    rm /dev/diag
+
