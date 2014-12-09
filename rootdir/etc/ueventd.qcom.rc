@@ -217,8 +217,8 @@
 /dev/i2c-5                0660   root       system
 
 # SECURITY
-/dev/qseecom              0660   system     mot_tpapi
-/dev/sec                  0660   system     mot_tpapi
+/dev/qseecom              0660   system     drmrpc
+/dev/sec                  0660   system     drmrpc
 
 # AK8963 Magnetometer
 /dev/akm8963              0660   compass    compass
