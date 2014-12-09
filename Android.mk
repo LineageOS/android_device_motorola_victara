@@ -20,17 +20,20 @@ include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
 
-FIRMWARE_DSPS_IMAGES := \
-    dsps.b00 dsps.b01 dsps.b02 dsps.b03 dsps.b04 dsps.mdt
+FIRMWARE_ADSP_IMAGES := \
+    adsp.b00 adsp.b01 adsp.b02 adsp.b03 adsp.b04 adsp.b05 \
+    adsp.b06 adsp.b07 adsp.b08 adsp.b09 adsp.b10 adsp.b11 \
+    adsp.b12 adsp.mdt
 
-FIRMWARE_DSPS_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FIRMWARE_DSPS_IMAGES)))
-$(FIRMWARE_DSPS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "DSPS Firmware link: $@"
+
+FIRMWARE_ADSP_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FIRMWARE_ADSP_IMAGES)))
+$(FIRMWARE_ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "ADSP Firmware link: $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
 	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
-ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_DSPS_SYMLINKS)
+ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_ADSP_SYMLINKS)
 
 FIRMWARE_KEYMASTER_IMAGES := \
     keymaster.b00 keymaster.b01 keymaster.b02 keymaster.b03 keymaster.mdt
@@ -46,7 +49,10 @@ ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_KEYMASTER_SYMLINKS)
 
 FIRMWARE_MODEM_IMAGES := \
     modem.b00 modem.b01 modem.b02 modem.b03 modem.b04 modem.b05 \
-    modem.b06 modem.b07 modem.b08 modem.b09 modem.b10 modem.mdt
+    modem.b08 modem.b10 modem.b11 modem.b13 modem.b14 modem.b15 \
+    modem.b16 modem.b17 modem.b18 modem.b19 modem.b20 modem.b21 \
+    modem.b22 modem.b25 modem.b25 modem.b26 modem.b27 \
+    modem.mdt
 
 FIRMWARE_MODEM_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FIRMWARE_MODEM_IMAGES)))
 $(FIRMWARE_MODEM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
@@ -57,43 +63,29 @@ $(FIRMWARE_MODEM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_MODEM_SYMLINKS)
 
-FIRMWARE_MODEM_FW_IMAGES := \
-    modem_fw.b00 modem_fw.b01 modem_fw.b02 modem_fw.b03 modem_fw.b04 modem_fw.b05 \
-    modem_fw.b09 modem_fw.b10 modem_fw.b11 modem_fw.b12 modem_fw.b13 modem_fw.b15 \
-    modem_fw.b16 modem_fw.b23 modem_fw.b24 modem_fw.b25 modem_fw.b27 modem_fw.b28 \
-    modem_fw.b31 modem_fw.flist modem_fw.mdt
+FIRMWARE_WCNSS_IMAGES := \
+    wcnss.b00 wcnss.b01 wcnss.b02 wcnss.b04 wcnss.b06 wcnss.b07 \
+    wcnss.b08 wcnss.b09 wcnss.mdt
 
-FIRMWARE_MODEM_FW_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FIRMWARE_MODEM_FW_IMAGES)))
-$(FIRMWARE_MODEM_FW_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "Modem FW Firmware link: $@"
+FIRMWARE_WCNSS_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FIRMWARE_WCNSS_IMAGES)))
+$(FIRMWARE_WCNSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "WCNSS Firmware link: $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
 	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
-ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_MODEM_FW_SYMLINKS)
+ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_WCNSS_SYMLINKS)
 
-FIRMWARE_Q6_IMAGES := \
-    q6.b00 q6.b01 q6.b03 q6.b04 q6.b05 q6.b06 q6.mdt
+FIRMWARE_WIDEVINE_IMAGES := \
+    widevine.b00 widevine.b01 widevine.b02 widevine.b03 widevine.mdt
 
-FIRMWARE_Q6_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FIRMWARE_Q6_IMAGES)))
-$(FIRMWARE_Q6_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "Q6 Firmware link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /firmware/image/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_Q6_SYMLINKS)
-
-FIRMWARE_TZAPPS_IMAGES := \
-    tzapps.b00 tzapps.b01 tzapps.b02 tzapps.b03 tzapps.mdt
-
-FIRMWARE_TZAPPS_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FIRMWARE_TZAPPS_IMAGES)))
-$(FIRMWARE_TZAPPS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+FIRMWARE_WIDEVINE_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FIRMWARE_WIDEVINE_IMAGES)))
+$(FIRMWARE_WIDEVINE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "TZ Apps Firmware link: $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
 	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
-ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_TZAPPS_SYMLINKS)
+ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_WIDEVINE_SYMLINKS)
 
 endif
