@@ -182,5 +182,25 @@ qcom.bt.le_dev_pwr_class=1
 # Gps Smart Battery Savings (depends on sensor hub)
 persist.mot.gps.smart_battery=1
 
-# Define our product id for mtp,adb access
+# USB product ids
+ro.usb.mtp=0x2e82
 ro.usb.mtp_adb=0x2e76
+ro.usb.ptp=0x2e83
+ro.usb.ptp_adb=0x2e84
+ro.usb.bpt=0x2e28
+ro.usb.bpt_adb=0x2e29
+ro.usb.bpteth=0x2e2a
+ro.usb.bpteth_adb=0x2e2b
+
+# Screen density
+ro.sf.lcd_density=480
+
+# Motorola's init sets this, let's just do it ourselves
+ro.hw.device=victara
+
+# QCOM
+ro.vendor.extension_library=/vendor/lib/libqc-opt.so
+
+# Radio
+persist.radio.apn_delay=5000
+ro.telephony.default_network=9
