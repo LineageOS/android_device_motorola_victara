@@ -108,9 +108,6 @@ persist.sys.wfd.virtual=0
 # Motorola, ams087, 09/24/2013, IKJBMR2-6432 : disable tunnel audio encode
 #tunnel.audio.encode = true
 
-#use VERY_HIGH_QUALITY for audio resampler
-af.resampler.quality=4
-
 #Buffer size in kbytes for compress offload playback
 audio.offload.buffer.size.kb=32
 
