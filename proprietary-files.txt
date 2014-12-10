@@ -291,6 +291,7 @@ vendor/lib/libtime_genoff.so
 vendor/lib/libxml.so
 
 # Sensors
+bin/stm401
 lib/hw/sensorhub.msm8974.so
 lib/hw/sensors.msm8974.so
 
