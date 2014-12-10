@@ -74,13 +74,15 @@ $(FIRMWARE_WCNSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@rm -rf $@
 	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
-$(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_qcom_wlan_factory_nv.bin: $(LOCAL_INSTALLED_MODULE)
+PERSIST_WCNSS := $(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_qcom_wlan_factory_nv.bin
+
+$(PERSIST_WCNSS): $(LOCAL_INSTALLED_MODULE)
 	@echo "WCNSS_qcom_wlan_factory_nv.bin Firmware link: $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
 	$(hide) ln -sf /persist/$(notdir $@) $@
 
-ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_WCNSS_SYMLINKS)
+ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_WCNSS_SYMLINKS) $(PERSIST_WCNSS)
 
 FIRMWARE_WIDEVINE_IMAGES := \
     widevine.b00 widevine.b01 widevine.b02 widevine.b03 widevine.mdt

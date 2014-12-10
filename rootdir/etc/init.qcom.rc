@@ -36,14 +36,18 @@ on early-init
 on init
     # Set permissions for persist partition
     mkdir /persist 0771 system system
-    # See storage config details at http://source.android.com/tech/storage/
     mkdir /mnt/shell/emulated 0700 shell shell
-    mkdir /storage 0555 system sdcard_r
+    mkdir /mnt/shell/container 0700 system system
+    mkdir /storage 0550 system sdcard_r
     mkdir /storage/emulated 0555 root root
-    mkdir /storage/emulated/legacy 0555 root root
-    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
+
+    # USB storage directories
+    mkdir /storage/usbdisk 0000 system system
+    mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
+    mkdir /storage/usbdisk 0700 root root
 
     export EXTERNAL_STORAGE /storage/emulated/legacy
+    export SECONDARY_STORAGE /storage/usbdisk
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
     export EMULATED_STORAGE_TARGET /storage/emulated
 
@@ -51,6 +55,10 @@ on init
     symlink /storage/emulated/legacy /sdcard
     symlink /storage/emulated/legacy /mnt/sdcard
     symlink /storage/emulated/legacy /storage/sdcard0
+    symlink /mnt/shell/emulated/0 /storage/emulated/legacy
+    symlink /mnt/shell/container /storage/container
+    symlink /storage/usbdisk /usbdisk
+    symlink /storage/usbdisk /mnt/usbdisk
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -779,17 +787,18 @@ service ril-daemon2 /system/bin/rild -c 3
 #    disabled
 #    oneshot
 
+# virtual sdcard daemon running as system (1000)
+service container /system/bin/sdcard /data/container /mnt/shell/container 1000 1000
+    class late_start
+    oneshot
+
+# virtual sdcard daemon running as media_rw (1023)
 service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
     class late_start
-    disabled
+    oneshot
 
 on property:ro.fuse_sdcard=true
     start sdcard
-
-# Binding fuse mount point to /storage/emulated/legacy
-on property:init.svc.sdcard=running
-    wait /mnt/shell/emulated/0 600
-    mount none /mnt/shell/emulated/0 /storage/emulated/legacy bind
 
 # This will make sure that sdcard service starts as late_start.
 on nonencrypted
