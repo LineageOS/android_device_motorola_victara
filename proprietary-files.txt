@@ -239,13 +239,11 @@ bin/netmgrd
 bin/qcks
 bin/qmi_motext_hook
 bin/qmuxd
-bin/rild
 bin/rmt_storage
 lib/libadropbox.so
 lib/libmdmcutback.so
 lib/libmotext_inf.so
 vendor/lib/libnetmgr.so
-lib/libril.so
 vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libril-qcril-hook-oem.so
 
