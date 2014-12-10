@@ -1,3 +1,17 @@
+# These have services defined but I haven't included them
+#bin/tcmd
+#bin/tcmdhelp
+#bin/aplogd
+#bin/mbm_spy
+#bin/esdpll
+#bin/adsprpcd
+#bin/ATFWD-daemon
+#bin/debuggerd
+#bin/dropboxd
+#bin/ptt_socket_app
+#bin/rfs_access
+#bin/subsystem_ramdump
+
 # ADSP
 bin/adspd
 
