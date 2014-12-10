@@ -182,3 +182,5 @@ qcom.bt.le_dev_pwr_class=1
 # Gps Smart Battery Savings (depends on sensor hub)
 persist.mot.gps.smart_battery=1
 
+# Define our product id for mtp,adb access
+ro.usb.mtp_adb=0x2e76
