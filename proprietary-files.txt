@@ -137,8 +137,9 @@ lib/libchromatix_ar0543_snapshot.so
 
 # CPU
 bin/mpdecision
-bin/thermald
+bin/thermal-engine
 vendor/lib/libqc-opt.so
+vendor/lib/libthermalioctl.so
 
 # DRM
 bin/qseecomd
