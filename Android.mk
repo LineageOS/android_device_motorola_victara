@@ -25,7 +25,6 @@ FIRMWARE_ADSP_IMAGES := \
     adsp.b06 adsp.b07 adsp.b08 adsp.b09 adsp.b10 adsp.b11 \
     adsp.b12 adsp.mdt
 
-
 FIRMWARE_ADSP_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FIRMWARE_ADSP_IMAGES)))
 $(FIRMWARE_ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "ADSP Firmware link: $@"
@@ -48,6 +47,7 @@ $(FIRMWARE_KEYMASTER_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_KEYMASTER_SYMLINKS)
 
 FIRMWARE_MODEM_IMAGES := \
+    mba.b00 mba.mdt \
     modem.b00 modem.b01 modem.b02 modem.b03 modem.b04 modem.b05 \
     modem.b08 modem.b10 modem.b11 modem.b13 modem.b14 modem.b15 \
     modem.b16 modem.b17 modem.b18 modem.b19 modem.b20 modem.b21 \
@@ -62,6 +62,18 @@ $(FIRMWARE_MODEM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_MODEM_SYMLINKS)
+
+PROV_MODEM_IMAGES := \
+    prov.b00 prov.b01 prov.b02 prov.b03 prov.mdt
+
+PROV_MODEM_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(PROV_MODEM_IMAGES)))
+$(PROV_MODEM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "Prov Firmware link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /firmware/image/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(PROV_MODEM_SYMLINKS)
 
 FIRMWARE_WCNSS_IMAGES := \
     wcnss.b00 wcnss.b01 wcnss.b02 wcnss.b04 wcnss.b06 wcnss.b07 \
@@ -85,6 +97,7 @@ $(PERSIST_WCNSS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_WCNSS_SYMLINKS) $(PERSIST_WCNSS)
 
 FIRMWARE_WIDEVINE_IMAGES := \
+    cmnlib.b00 cmnlib.b01 cmnlib.b02 cmnlib.b03 cmnlib.mdt \
     widevine.b00 widevine.b01 widevine.b02 widevine.b03 widevine.mdt
 
 FIRMWARE_WIDEVINE_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FIRMWARE_WIDEVINE_IMAGES)))
