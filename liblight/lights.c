@@ -39,29 +39,11 @@ static pthread_mutex_t g_lock = PTHREAD_MUTEX_INITIALIZER;
 static struct light_state_t g_notification;
 static struct light_state_t g_battery;
 static int g_attention = 0;
-static int g_lcd_brightness;
-static int g_button_on;
+static int g_lcd_brightness = -1;
+static int g_button_on = -1;
 
-char const*const CHARGING_LED_FILE
-        = "/sys/class/leds/charging/brightness";
-
-char const*const LCD_FILE
-        = "/sys/class/leds/lcd-backlight/brightness";
-
-char const*const BUTTON_FILE
-        = "/sys/class/leds/button-backlight/brightness";
-
-/**
- * device methods
- */
-
-void init_globals(void)
-{
-    // init the mutex
-    pthread_mutex_init(&g_lock, NULL);
-    g_lcd_brightness = -1;
-    g_button_on = -1;
-}
+char const*const LED_FILE = "/sys/class/leds/charging/brightness";
+char const*const LCD_FILE = "/sys/class/leds/lcd-backlight/brightness";
 
 static int
 write_int(char const* path, int value)
@@ -105,18 +87,15 @@ set_light_backlight(struct light_device_t* dev,
 {
     int err = 0;
     int brightness = rgb_to_brightness(state);
-    pthread_mutex_lock(&g_lock);
-        if (g_lcd_brightness < 0 ||
-            (g_lcd_brightness != brightness))
-        {
-                // Hack - maximum is only 127
-                err = write_int(LCD_FILE, brightness >> 1);
-                if (!err && g_button_on > 0)
-                        err = write_int(BUTTON_FILE, brightness);
-        }
 
-        g_lcd_brightness = brightness;
+    pthread_mutex_lock(&g_lock);
+    if (g_lcd_brightness < 0 || (g_lcd_brightness != brightness)) {
+        // Hack - maximum is only 127
+        err = write_int(LCD_FILE, brightness >> 1);
+    }
+    g_lcd_brightness = brightness;
     pthread_mutex_unlock(&g_lock);
+
     return err;
 }
 
@@ -124,25 +103,8 @@ static int
 set_speaker_light_locked(struct light_device_t* dev,
         struct light_state_t const* state)
 {
-    int len;
-    unsigned int colorRGB;
-
-    switch (state->flashMode) {
-        case LIGHT_FLASH_TIMED:
-            break;
-        case LIGHT_FLASH_NONE:
-        default:
-            break;
-    }
-
-    colorRGB = state->color;
-
-    // See hardware/libhardware/include/hardware/lights.h
-    int brightness = ((77 * ((colorRGB >> 16) & 0xFF)) +
-                      (150 * ((colorRGB >> 8) & 0xFF)) +
-                      (29 * (colorRGB & 0xFF))) >> 8;
-    write_int(CHARGING_LED_FILE, (int) brightness);
-
+    int brightness = rgb_to_brightness(state);
+    write_int(LED_FILE, brightness);
     return 0;
 }
 
@@ -186,27 +148,9 @@ static int
 set_light_buttons(struct light_device_t* dev,
         struct light_state_t const* state)
 {
-    int err = 0;
-    int on = rgb_to_brightness(state) > 0;
-
-    pthread_mutex_lock(&g_lock);
-
-    if (g_button_on < 0 ||
-        (!g_button_on && on > 0) ||
-        (g_button_on > 0 && !on))
-    {
-        err = write_int(BUTTON_FILE, on ? g_lcd_brightness : 0);
-    }
-
-    g_button_on = on;
-
-    pthread_mutex_unlock(&g_lock);
-
-    return err;
-
+    return 0;
 }
 
-/** Close the lights device */
 static int
 close_lights(struct light_device_t *dev)
 {
@@ -218,10 +162,6 @@ close_lights(struct light_device_t *dev)
 
 
 /******************************************************************************/
-
-/**
- * module methods
- */
 
 /** Open a new instance of a lights device using name */
 static int open_lights(const struct hw_module_t* module, char const* name,
@@ -240,8 +180,6 @@ static int open_lights(const struct hw_module_t* module, char const* name,
         set_light = set_light_attention;
     else
         return -EINVAL;
-
-    pthread_once(&g_init, init_globals);
 
     struct light_device_t *dev = malloc(sizeof(struct light_device_t));
     memset(dev, 0, sizeof(*dev));
