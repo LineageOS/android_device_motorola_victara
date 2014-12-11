@@ -90,8 +90,7 @@ set_light_backlight(struct light_device_t* dev,
 
     pthread_mutex_lock(&g_lock);
     if (g_lcd_brightness < 0 || (g_lcd_brightness != brightness)) {
-        // Hack - maximum is only 127
-        err = write_int(LCD_FILE, brightness >> 1);
+        err = write_int(LCD_FILE, brightness);
     }
     g_lcd_brightness = brightness;
     pthread_mutex_unlock(&g_lock);
