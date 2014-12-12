@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Copyright (c) 2014, The Linux Foundation. All rights reserved.         -->
+<!--                                                                        -->
+<!-- Redistribution and use in source and binary forms, with or without     -->
+<!-- modification, are permitted provided that the following conditions are -->
+<!-- met:                                                                   -->
+<!--     * Redistributions of source code must retain the above copyright   -->
+<!--       notice, this list of conditions and the following disclaimer.    -->
+<!--     * Redistributions in binary form must reproduce the above          -->
+<!--       copyright notice, this list of conditions and the following      -->
+<!--       disclaimer in the documentation and/or other materials provided  -->
+<!--       with the distribution.                                           -->
+<!--     * Neither the name of The Linux Foundation nor the names of its    -->
+<!--       contributors may be used to endorse or promote products derived  -->
+<!--       from this software without specific prior written permission.    -->
+<!--                                                                        -->
+<!-- THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED           -->
+<!-- WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF   -->
+<!-- MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT -->
+<!-- ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS -->
+<!-- BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR -->
+<!-- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF   -->
+<!-- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR        -->
+<!-- BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,  -->
+<!-- OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN -->
+<!-- IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                          -->
+<audio_platform_info>
+    <acdb_ids>
+        <device name="SND_DEVICE_OUT_SPEAKER" acdb_id="14" />
+        <device name="SND_DEVICE_OUT_SPEAKER_REVERSE" acdb_id="14" />
+        <device name="SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES" acdb_id="14" />
+        <device name="SND_DEVICE_OUT_VOICE_SPEAKER" acdb_id="14" />
+
+        <!-- Input devices
+        <device name="SND_DEVICE_IN_HANDSET_DMIC" acdb_id="4" />
+        <device name="SND_DEVICE_IN_SPEAKER_DMIC" acdb_id="11" />
+        <device name="SND_DEVICE_IN_BT_SCO_MIC" acdb_id="51" />
+        <device name="SND_DEVICE_IN_BT_SCO_MIC_WB" acdb_id="51" />
+        <device name="SND_DEVICE_IN_CAMCORDER_MIC" acdb_id="56" />
+        <device name="SND_DEVICE_IN_VOICE_DMIC" acdb_id="4" />
+        <device name="SND_DEVICE_IN_VOICE_SPEAKER_DMIC" acdb_id="11" />
+ -->
+        <device name="SND_DEVICE_IN_VOICE_REC_MIC" acdb_id="61" />
+<!-- bluetooth, not sure what:
+snd_device(62) acdb_id(61)
+snd_device(14) acdb_id(22)
+snd_device(52) acdb_id(21)
+speakerphone:
+snd_device(10) acdb_id(14)
+snd_device(49) acdb_id(11)
+earpiece:
+snd_device(9) acdb_id(7)
+snd_device(56) acdb_id(6)
+video recording (bluetooth was still attached):
+snd_device(62) acdb_id(61)
+snd_device(55) acdb_id(50)
+speaker:
+snd_device(2) acdb_id(14)
+-->
+    </acdb_ids>
+
+    <backend_names>
+        <!-- empty -->
+    </backend_names>
+
+    <pcm_ids>
+        <!-- empty -->
+    </pcm_ids>
+
+    <device_names>
+        <!-- Output devices
+        <device name="SND_DEVICE_OUT_HANDSET" alias="voice-call-handset" />
+        <device name="SND_DEVICE_OUT_HEADPHONES" alias="headset" />
+        <device name="SND_DEVICE_OUT_VOICE_HANDSET" alias="voice-call-handset" />
+        <device name="SND_DEVICE_OUT_VOICE_SPEAKER" alias="voice-call-speaker" />
+        <device name="SND_DEVICE_OUT_VOICE_HEADPHONES" alias="voice-call-headset" />
+        <device name="SND_DEVICE_OUT_VOICE_TTY_FULL_HEADPHONES" alias="TTY-full" />
+        <device name="SND_DEVICE_OUT_VOICE_TTY_VCO_HEADPHONES" alias="TTY-headset" />
+        <device name="SND_DEVICE_OUT_VOICE_TTY_HCO_HANDSET" alias="TTY-handset" />
+ -->
+
+        <!-- Input devices
+        <device name="SND_DEVICE_IN_HANDSET_MIC" alias="voice-call-main-mic" />
+        <device name="SND_DEVICE_IN_HANDSET_DMIC" alias="voice-call-main-mic" />
+        <device name="SND_DEVICE_IN_HANDSET_DMIC_NS" alias="voice-call-NS-mic-handset" />
+        <device name="SND_DEVICE_IN_HANDSET_DMIC_AEC" alias="voice-call-main-mic" />
+        <device name="SND_DEVICE_IN_HANDSET_DMIC_AEC_NS" alias="voice-call-main-mic" />
+        <device name="SND_DEVICE_IN_SPEAKER_MIC" alias="voice-call-sub-mic" />
+        <device name="SND_DEVICE_IN_SPEAKER_DMIC" alias="voice-call-sub-mic" />
+        <device name="SND_DEVICE_IN_SPEAKER_DMIC_NS" alias="voice-call-NS-mic-speaker" />
+        <device name="SND_DEVICE_IN_SPEAKER_DMIC_AEC" alias="voice-call-sub-mic" />
+        <device name="SND_DEVICE_IN_SPEAKER_DMIC_AEC_NS" alias="voice-call-sub-mic" />
+        <device name="SND_DEVICE_IN_HEADSET_MIC" alias="rec-headset-mic" />
+        <device name="SND_DEVICE_IN_HEADSET_MIC_FLUENCE" alias="rec-main-mic" />
+        <device name="SND_DEVICE_IN_VOICE_SPEAKER_MIC" alias="voice-call-sub-mic" />
+        <device name="SND_DEVICE_IN_VOICE_HEADSET_MIC" alias="voice-call-headset-mic" />
+        <device name="SND_DEVICE_IN_CAMCORDER_MIC" alias="rec-high-gain-stereo-mic" />
+        <device name="SND_DEVICE_IN_VOICE_DMIC" alias="voice-call-sub-mic" />
+        <device name="SND_DEVICE_IN_VOICE_SPEAKER_DMIC" alias="voice-call-main-mic" />
+        <device name="SND_DEVICE_IN_VOICE_TTY_FULL_HEADSET_MIC" alias="TTY-full-mic" />
+        <device name="SND_DEVICE_IN_VOICE_TTY_VCO_HANDSET_MIC" alias="TTY-vco-mic" />
+        <device name="SND_DEVICE_IN_VOICE_TTY_HCO_HEADSET_MIC" alias="TTY-headset-mic" />
+        <device name="SND_DEVICE_IN_VOICE_REC_MIC" alias="vr-main-mic" />
+        <device name="SND_DEVICE_IN_VOICE_REC_HEADSET_MIC" alias="vr-headset-mic" />
+        <device name="SND_DEVICE_IN_VOICE_REC_MIC_NS" alias="svoice-NS-mic" />
+        <device name="SND_DEVICE_IN_VOICE_REC_DMIC_STEREO" alias="vr-sub-mic" />
+        <device name="SND_DEVICE_IN_HANDSET_STEREO_DMIC" alias="rec-stereo-mic" />
+        <device name="SND_DEVICE_IN_SPEAKER_STEREO_DMIC" alias="rec-stereo-mic" />
+ -->
+    </device_names>
+</audio_platform_info>
