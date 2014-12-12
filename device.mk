@@ -64,11 +64,16 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
+    audiod \
+    audio_policy.msm8974 \
     audio.primary.msm8974 \
     audio.r_submix.default \
     audio.usb.default \
-    audio_policy.msm8974 \
-    libaudio-resampler
+    libaudio-resampler \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    tinymix
 
 PRODUCT_PACKAGES += \
     mbhc.bin \
@@ -76,6 +81,7 @@ PRODUCT_PACKAGES += \
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/configs/mixer_paths.xml:system/etc/mixer_paths.xml
 
