@@ -65,7 +65,15 @@ lib/libAisAdapter.so
 lib/libAlAisLib.so
 lib/libAlAisTune.so
 lib/libAlAisWrap.so
+lib/libcamerabgproc-jni.so
+lib/libcamerabgprocservice.so
+vendor/lib/libfastcvopt.so
+vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libmmcamera_faceproc.so
+lib/libjustshoot.so
+lib/libjscore.so
+lib/libqomx_core.so
+lib/libmotocalibration.so
 vendor/lib/libmmcamera_imx179.so
 vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera2_c2d_module.so
