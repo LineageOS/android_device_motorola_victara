@@ -4,18 +4,18 @@
 #bin/aplogd
 #bin/mbm_spy
 #bin/esdpll
-#bin/adsprpcd
 #bin/ATFWD-daemon
 #bin/debuggerd
 #bin/dropboxd
 #bin/ptt_socket_app
-#bin/rfs_access
 #bin/subsystem_ramdump
 
 # ADSP
 bin/adspd
 
 # Audio
+bin/adsprpcd
+lib/libspeakerbundle.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbmapper.so
 vendor/lib/libacdbrtac.so
@@ -278,6 +278,7 @@ bin/netmgrd
 bin/qcks
 bin/qmi_motext_hook
 bin/qmuxd
+bin/rfs_access
 bin/rmt_storage
 lib/libadropbox.so
 lib/libmdmcutback.so
