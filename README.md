@@ -1,5 +1,5 @@
 Unified Device Tree For Motorola X[2014]
-==================================
+========================================
 
 The Motorola (codenamed _"Victara"_) is a high-end smartphone from Motorola mobility.
 It was announced on September 2014.
@@ -17,3 +17,5 @@ Display | 1080 x 1920 pixels, 5.2 inches (~424 ppi pixel density)
 Camera  | 13 MP, 4128 x 3096 pixels, autofocus, dual-LED flash
 
 This branch is for building CyanogenMod 12.0 Firmware.
+
+Copyright 2014 CyanogenMod Project.
