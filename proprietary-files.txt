@@ -45,8 +45,8 @@ etc/firmware/left.tfa9890.eq
 etc/firmware/left.tfa9890.speaker
 etc/firmware/left.tfa9890_music_table.preset
 etc/firmware/left.tfa9890_n1b12.patch
+etc/firmware/left.tfa9890_n1c2.patch
 etc/firmware/left.tfa9890_ringtone_table.preset
-etc/firmware/left.tfa9890.speaker
 etc/firmware/left.tfa9890_voice_table.preset
 etc/firmware/VRGain.bin
 
