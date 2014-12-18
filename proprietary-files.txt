@@ -72,9 +72,11 @@ lib/libjustshoot.so
 lib/libmmcamera_ar0543.so
 lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
+lib/libmot_sensorlistener.so
 lib/libmotocalibration.so
 lib/libqomx_core.so
 vendor/lib/libadsprpc.so
+vendor/lib/libC2D2.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libmmcamera2_c2d_module.so
@@ -109,6 +111,9 @@ vendor/lib/libmmipl.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/liboemcamera.so
+vendor/lib/libqomx_jpegdec.so
+vendor/lib/libqomx_jpegenc.so
+vendor/lib/libthermalclient.so
 
 # Chromatix
 lib/libchromatix_ar0543_common.so
