@@ -16,8 +16,6 @@
      limitations under the License.
 -->
 <MediaCodecs>
-    <Include href="media_codecs_google_audio.xml" />
-    <Include href="media_codecs_google_telephony.xml" />
     <Encoders>
         <!-- Audio Hardware  -->
         <!-- txwv64, IKXLUPGRD-1627, Disable QCELP, EVRC
@@ -122,5 +120,7 @@
         </MediaCodec>
         -->
     </Decoders>
+    <Include href="media_codecs_google_audio.xml" />
+    <Include href="media_codecs_google_telephony.xml" />
     <Include href="media_codecs_google_video.xml" />
 </MediaCodecs>
