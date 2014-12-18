@@ -184,8 +184,7 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.qcom.bt.sh \
-    moto_com.sh \
-    mount_pds.sh
+    moto_com.sh
 
 PRODUCT_PACKAGES += \
     fstab.qcom \

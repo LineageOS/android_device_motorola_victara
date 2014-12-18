@@ -16,13 +16,6 @@ LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := etc/moto_com.sh
 include $(BUILD_PREBUILT)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE       := mount_pds.sh
-LOCAL_MODULE_TAGS  := optional eng
-LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := etc/mount_pds.sh
-include $(BUILD_PREBUILT)
-
 # Init scripts
 
 include $(CLEAR_VARS)
