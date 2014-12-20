@@ -60,7 +60,10 @@ snd_device(2) acdb_id(14)
     </acdb_ids>
 
     <backend_names>
-        <!-- empty -->
+        <device name="SND_DEVICE_OUT_SPEAKER" backend="mi2s" />
+        <device name="SND_DEVICE_OUT_SPEAKER_REVERSE" backend="mi2s" />
+        <device name="SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES" backend="mi2s-and-slim" />
+        <device name="SND_DEVICE_OUT_VOICE_SPEAKER" backend="mi2s" />
     </backend_names>
 
     <pcm_ids>
