@@ -152,10 +152,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libnfc \
     libnfc_jni \
-    nfc.msm8974 \
-    Nfc \
+    nfc_nci.bcm2079x.default \
+    NfcNci \
     Tag \
     com.android.nfc_extras
+
+PRODUCT_COPY_FILES += \
+    device/motorola/victara/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    device/motorola/victara/nfc/libnfc-brcm-20795a10.conf:system/etc/libnfc-brcm-20795a10.conf
 
 # OMX
 PRODUCT_PACKAGES += \
