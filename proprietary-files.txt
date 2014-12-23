@@ -267,6 +267,10 @@ bin/dbvc_atvc_property_set
 bin/hardware_revisions.sh
 bin/mount_ext4.sh
 
+# NFC
+etc/firmware/BCM20795A0_001.001.023.0003.0022_Generic_I2C_NCD_Unsigned_configdata.ncd
+etc/firmware/BCM20795A1_001.002.012.0003.0078_Generic_I2C_NCD_Signed_configdata.ncd
+
 # Postprocessing
 bin/mm-pp-daemon
 vendor/lib/libmm-abl.so
