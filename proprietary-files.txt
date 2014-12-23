@@ -179,6 +179,11 @@ vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L1.so
 
 # GPS
+-app/com.qualcomm.location/com.qualcomm.location.apk
+-app/com.qualcomm.services.location/com.qualcomm.services.location.apk
+-app/MotGeoFenceSvc/MotGeoFenceSvc.apk
+bin/gpsone_daemon
+etc/permissions/com.qualcomm.location.xml
 etc/gps.conf
 etc/izat.conf
 etc/quipc.conf
@@ -191,6 +196,8 @@ lib/libloc_ds_api.so
 lib/libloc_eng.so
 vendor/lib/libalarmservice_jni.so
 vendor/lib/libgeofence.so
+vendor/lib/libizat_core.so
+vendor/lib/liblbs_core.so
 vendor/lib/libloc_ext.so
 vendor/lib/liblocationservice.so
 vendor/lib/libquipc_os_api.so
