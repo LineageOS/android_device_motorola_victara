@@ -94,7 +94,15 @@ $(PERSIST_WCNSS): $(LOCAL_INSTALLED_MODULE)
 	@rm -rf $@
 	$(hide) ln -sf /persist/$(notdir $@) $@
 
-ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_WCNSS_SYMLINKS) $(PERSIST_WCNSS)
+WCNSS_CFG_INI := $(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_qcom_cfg.ini
+
+$(WCNSS_CFG_INI): $(LOCAL_INSTALLED_MODULE)
+	@echo "WCNSS_qcom_cfg.ini Firmware link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /data/misc/wifi/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_WCNSS_SYMLINKS) $(PERSIST_WCNSS) $(WCNSS_CFG_INI)
 
 FIRMWARE_WIDEVINE_IMAGES := \
     cmnlib.b00 cmnlib.b01 cmnlib.b02 cmnlib.b03 cmnlib.mdt \
