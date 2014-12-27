@@ -1,0 +1,3 @@
+allow thermal-engine sysfs_battery_supply:dir search;
+allow thermal-engine sysfs_battery_supply:file { read getattr open };
+allow thermal-engine sysfs_battery_supply:lnk_file read;

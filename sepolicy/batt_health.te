@@ -1,0 +1,16 @@
+type batt_health, domain;
+type batt_health_exec, exec_type, file_type;
+init_daemon_domain(batt_health)
+
+allow batt_health sysfs_battery_supply:dir { read search };
+allow batt_health sysfs_battery_supply:file { read open };
+allow batt_health sysfs_usb_supply:dir { read search };
+allow batt_health sysfs_usb_supply:file { read open };
+allow batt_health sysfs_thermal:dir { read search };
+allow batt_health sysfs_thermal:file { read open };
+
+allow batt_health battery_data_file:file { read getattr open setattr };
+allow batt_health battery_data_file:dir search;
+
+allow batt_health self:capability net_admin;
+allow batt_health self:netlink_kobject_uevent_socket { read bind create setopt };

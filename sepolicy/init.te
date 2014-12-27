@@ -1,0 +1,4 @@
+allow init atvc:file { execute execute_no_trans };
+allow init block_device:blk_file setattr;
+allow init hob_block_device:blk_file setattr;
+allow init utags_block_device:blk_file setattr;

@@ -123,6 +123,30 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+# SELinux
+include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += device/motorola/victara/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    adspd.te \
+    atvc.te \
+    batt_health.te \
+    device.te \
+    file_contexts \
+    file.te \
+    healthd.te \
+    init_shell.te \
+    init.te \
+    keystore.te \
+    mediaserver.te \
+    mm-qcamerad.te \
+    mpdecision.te \
+    rild.te \
+    rmt_storage.te \
+    stm401.te \
+    thermal-engine.te \
+    ueventd.te
+
 # Vold
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
