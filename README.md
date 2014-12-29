@@ -1,7 +1,7 @@
 Unified Device Tree For Motorola X[2014]
 ========================================
 
-The Motorola (codenamed _"Victara"_) is a high-end smartphone from Motorola mobility.
+The Motorola X (codenamed _"Victara"_) is a high-end smartphone from Motorola mobility.
 It was announced on September 2014.
 
 Basic   | Spec Sheet
