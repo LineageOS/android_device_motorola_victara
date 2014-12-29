@@ -17,7 +17,6 @@ ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
 
 ro.hdmi.enable=true
-persist.speaker.prot.enable=false
 
 ro.use_data_netmgrd=true
 persist.data.netmgrd.qos.enable=true
