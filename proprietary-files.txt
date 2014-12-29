@@ -15,7 +15,7 @@ bin/adspd
 
 # Audio
 bin/adsprpcd
-lib/libspeakerbundle.so
+lib/libspeakerbundle.so:lib/soundfx/libspeakerbundle.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbmapper.so
 vendor/lib/libacdbrtac.so
