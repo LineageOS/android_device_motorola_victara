@@ -119,6 +119,7 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/motorola/victara/sepolicy
 
 BOARD_SEPOLICY_UNION += \
+    adbd.te \
     adspd.te \
     atvc.te \
     batt_health.te \
@@ -128,6 +129,7 @@ BOARD_SEPOLICY_UNION += \
     healthd.te \
     init_shell.te \
     init.te \
+    installd.te \
     keystore.te \
     mediaserver.te \
     mm-qcamerad.te \
