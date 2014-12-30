@@ -138,6 +138,7 @@ BOARD_SEPOLICY_UNION += \
     healthd.te \
     init_shell.te \
     init.te \
+    installd.te \
     keystore.te \
     mediaserver.te \
     mm-qcamerad.te \

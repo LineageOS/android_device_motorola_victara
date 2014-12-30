@@ -1,2 +1,2 @@
 allow rmt_storage ssd_device:blk_file { read write open };
-allow rmt_storage hob_block_device:blk_file { read write };
+allow rmt_storage hob_block_device:blk_file { read write open };
