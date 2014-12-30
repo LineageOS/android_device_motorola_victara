@@ -20,5 +20,4 @@
 /system/bin/adspd                       u:object_r:adspd_exec:s0
 /system/bin/dbvc_atvc_property_set      u:object_r:atvc:s0
 /system/bin/batt_health                 u:object_r:batt_health_exec:s0
-/system/bin/rfs_access                  u:object_r:rfs_access_exec:s0
 /system/bin/stm401                      u:object_r:stm401_exec:s0
