@@ -17,6 +17,11 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME   "Moto X"
+#define BTM_DEF_LOCAL_NAME              "Moto X 2014"
+
+#define BTA_BLE_SKIP_CONN_UPD           TRUE
+#define BTA_HOST_INTERLEAVE_SEARCH      TRUE
+#define BTA_SKIP_BLE_READ_REMOTE_FEAT   TRUE
+#define MAX_L2CAP_CHANNELS              14
 
 #endif
