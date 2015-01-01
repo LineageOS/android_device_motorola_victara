@@ -17,6 +17,11 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME   "Moto X"
+#define BTM_DEF_LOCAL_NAME       "Moto X 2014"
+
+#define BLE_PERIPHERAL_ADV_NAME  TRUE
+#define BLE_VND_INCLUDED         TRUE
+#define BTM_AUTOMATIC_HCI_RESET  TRUE
+#define BLUETOOTH_QTI_SW         TRUE
 
 #endif
