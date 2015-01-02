@@ -1,2 +1,2 @@
 allow healthd sysfs_thermal:dir search;
-allow healthd sysfs_thermal:file { read open };
+allow healthd sysfs_thermal:file r_file_perms;
