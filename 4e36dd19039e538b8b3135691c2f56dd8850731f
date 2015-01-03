@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_6321b6fb",
+        "filename": "sepolicy/batt_health.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 12118
+      },
+      "writtenOn": "2015-01-03T10:58:08Z",
+      "side": 1,
+      "message": "This brings back a denied { create } for me",
+      "revId": "4e36dd19039e538b8b3135691c2f56dd8850731f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
