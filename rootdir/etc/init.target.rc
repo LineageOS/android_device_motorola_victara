@@ -96,7 +96,7 @@ service qseecomd /system/bin/qseecomd
    user system
    group system
 
-service mpdecision /system/bin/mpdecision --avg_comp --min_cores=4
+service mpdecision /system/bin/mpdecision --avg_comp
    user root
    disabled
 
