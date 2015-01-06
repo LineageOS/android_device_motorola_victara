@@ -12,44 +12,49 @@
     <item name="radio.active">350</item>
     <item name="radio.scanning">10</item>
     <array name="radio.on">
-        <value>3</value>
-        <value>3</value>
+        <value>30</value>
+        <value>30</value>
+        <value>25</value>
+        <value>15</value>
+        <value>10</value>
+        <value>5</value>
+        <value>5</value>
     </array>
     <array name="cpu.speeds">
-        <value>384000</value>
-        <value>486000</value>
-        <value>594000</value>
-        <value>702000</value>
-        <value>810000</value>
-        <value>918000</value>
-        <value>1026000</value>
-        <value>1134000</value>
-        <value>1242000</value>
-        <value>1350000</value>
-        <value>1458000</value>
-        <value>1512000</value>
-        <value>1566000</value>
-        <value>1674000</value>
+        <value>300000</value>
+        <value>422400</value>
+        <value>652800</value>
+        <value>729600 </value>
+        <value>883200</value>
+        <value>960000</value>
+        <value>1036800</value>
+        <value>1190400</value>
+        <value>1267200</value>
+        <value>1497600</value>
+        <value>1574400</value>
         <value>1728000</value>
+        <value>1958400</value>
+        <value>2265600</value>
+        <value>2457600</value>
     </array>
     <item name="cpu.idle">6</item>
     <item name="cpu.awake">30</item>
     <array name="cpu.active">
-        <value>90</value>
-        <value>112</value>
-        <value>119</value>
-        <value>130</value>
-        <value>143</value>
-        <value>157</value>
-        <value>171</value>
-        <value>200</value>
-        <value>236</value>
-        <value>258</value>
-        <value>283</value>
-        <value>285</value>
-        <value>313</value>
-        <value>334</value>
-        <value>344</value>
+        <value>71</value>
+        <value>83</value>
+        <value>97</value>
+        <value>106</value>
+        <value>115</value>
+        <value>146</value>
+        <value>153</value>
+        <value>167</value>
+        <value>213</value>
+        <value>249</value>
+        <value>263</value>
+        <value>288</value>
+        <value>324</value>
+        <value>377</value>
+        <value>405</value>
     </array>
-    <item name="battery.capacity">2200</item>
+    <item name="battery.capacity">2300</item>
 </device>
