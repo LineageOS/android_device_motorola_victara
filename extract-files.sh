@@ -44,10 +44,8 @@ for FILE in `egrep -v '(^#|^$)' proprietary-files.txt`; do
     fi
   else
     if [ -r $SRC/system/$DEST ]; then
-        echo ":: $DEST"
         cp $SRC/system/$DEST $BASE/$DEST
     else
-        echo ":: $FILE -> $DEST"
         cp $SRC/system/$FILE $BASE/$DEST
     fi
   fi
