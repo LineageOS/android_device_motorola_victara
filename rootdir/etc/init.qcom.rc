@@ -199,6 +199,9 @@ on boot
     # When GPU woken by touch events, keep it on until first app render
     write /sys/class/kgsl/kgsl-3d0/wake_timeout 250
 
+    # Quick charge 2.0 daemon
+    setprop persist.usb.hvdcp.detect "true"
+
 # msm specific files that need to be created on /data
 on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
@@ -725,6 +728,19 @@ service hostapd /system/bin/hostapd -dddd /data/hostapd/hostapd.conf
     group root
     oneshot
     disabled
+
+# Quick Charge 2.0
+service hvdcp /system/bin/hvdcp
+   class core
+   user root
+   group root
+   disabled
+
+on property:persist.usb.hvdcp.detect=true
+   start hvdcp
+
+on property:persist.usb.hvdcp.detect=false
+   stop hvdcp
 
 #service ds_fmc_appd /system/bin/ds_fmc_appd -p "rmnet0" -D
 #    class late_start
