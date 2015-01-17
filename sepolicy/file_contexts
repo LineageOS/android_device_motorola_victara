@@ -21,3 +21,6 @@
 /system/bin/dbvc_atvc_property_set      u:object_r:atvc:s0
 /system/bin/batt_health                 u:object_r:batt_health_exec:s0
 /system/bin/stm401                      u:object_r:stm401_exec:s0
+
+/sys/class/power_supply/battery(/.*)? u:object_r:sysfs_battery_supply:s0
+/sys/class/power_supply/usb(/.*)? u:object_r:sysfs_battery_supply:s0
