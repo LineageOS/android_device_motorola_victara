@@ -19,6 +19,7 @@
 
 #define BTM_DEF_LOCAL_NAME              "Moto X 2014"
 
+#define BLUETOOTH_QTI_SW                TRUE
 #define BTA_BLE_SKIP_CONN_UPD           TRUE
 #define BTA_HOST_INTERLEAVE_SEARCH      TRUE
 #define BTA_SKIP_BLE_READ_REMOTE_FEAT   TRUE
