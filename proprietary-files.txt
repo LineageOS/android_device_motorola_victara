@@ -326,6 +326,10 @@ vendor/lib/libxml.so
 
 # Sensors
 bin/stm401
+etc/firmware/sensorhubfw.bin
+etc/firmware/sensorhubfw_p0.bin
+etc/firmware/sensorhubver_p0.txt
+etc/firmware/sensorhubver.txt
 lib/hw/sensorhub.msm8974.so
 lib/hw/sensors.msm8974.so
 
