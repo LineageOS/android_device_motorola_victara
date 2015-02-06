@@ -19,5 +19,6 @@
 
 #define BTM_DEF_LOCAL_NAME              "Moto X 2014"
 #define BLUETOOTH_QTI_SW                TRUE
+#define BTIF_MAX_PCM_ITER_NUM_PER_TICK  10
 
 #endif
