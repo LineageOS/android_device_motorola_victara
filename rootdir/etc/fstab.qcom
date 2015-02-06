@@ -4,8 +4,8 @@
 
 #<src>                                                <mnt_point>  <type>  <mnt_flags and options>                     <fs_mgr_flags>
 /dev/block/platform/msm_sdcc.1/by-name/system         /system      ext4    ro,barrier=1                                wait
-/dev/block/platform/msm_sdcc.1/by-name/userdata       /data        ext4    rw,nosuid,nodev,noatime,nodiratime,noauto_da_alloc,nobarrier,journal_async_commit    wait,check,encryptable=footer
 /dev/block/platform/msm_sdcc.1/by-name/userdata       /data        f2fs    rw,discard,nosuid,nodev,noatime,nodiratime,nobarrier,inline_data,inline_xattr  wait,check,encryptable=footer
+/dev/block/platform/msm_sdcc.1/by-name/userdata       /data        ext4    rw,nosuid,nodev,noatime,nodiratime,noauto_da_alloc,nobarrier,journal_async_commit    wait,check,encryptable=footer
 /dev/block/platform/msm_sdcc.1/by-name/boot           /boot        emmc    defaults                                    recoveryonly
 /dev/block/platform/msm_sdcc.1/by-name/recovery       /recovery        emmc    defaults                                    recoveryonly
 
