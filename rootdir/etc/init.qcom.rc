@@ -693,23 +693,31 @@ on property:sys.boot_completed=1
     chmod 0660 /sys/module/cpu_boost/parameters/boost_ms
     chown system system /sys/module/cpu_boost/parameters/sync_threshold
     chmod 0660 /sys/module/cpu_boost/parameters/sync_threshold
+
+    # Interative governor
+
     write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay 20000
+    write /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration 60000
     write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 50
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1190400
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
-    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "80 1190400:90 1728000:99"
     write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 60000
-    # The parameters from power hal module
-    write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 20000
-    write /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration 60000
+    write /sys/devices/system/cpu/cpufreq/interactive/sampling_down_factor 100000
     write /sys/devices/system/cpu/cpufreq/interactive/sync_freq 1190400
+    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "80 1190400:90 1728000:99"
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 20000
     write /sys/devices/system/cpu/cpufreq/interactive/up_threshold_any_cpu_freq 1190400
     write /sys/devices/system/cpu/cpufreq/interactive/up_threshold_any_cpu_load 80
+
+    # CPU Boost driver
+
     write /sys/module/cpu_boost/parameters/boost_ms 20
     write /sys/module/cpu_boost/parameters/sync_threshold 1728000
-    write /sys/devices/system/cpu/cpufreq/interactive/sampling_down_factor 100000
     write /sys/module/cpu_boost/parameters/input_boost_freq 1497600
     write /sys/module/cpu_boost/parameters/input_boost_ms 40
+
+    # mpdecision
+
     setprop ro.qualcomm.perf.cores_online 2
     rm /data/system/default_values
     start mpdecision
