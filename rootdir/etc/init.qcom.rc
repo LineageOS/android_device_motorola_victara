@@ -698,6 +698,8 @@ on property:sys.boot_completed=1
 
     write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay 20000
     write /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration 60000
+    write /sys/devices/system/cpu/cpufreq/interactive/check_fast_load 99
+    write /sys/devices/system/cpu/cpufreq/interactive/check_fast_target_loads "50 1190400:90 1728000:99"
     write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 50
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1190400
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
