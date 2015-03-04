@@ -91,6 +91,9 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
 
+# Hardware
+BOARD_HARDWARE_CLASS := device/motorola/victara/cmhw
+
 # Init
 TARGET_NR_SVC_SUPP_GIDS := 32
 
