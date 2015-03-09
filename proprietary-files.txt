@@ -282,6 +282,8 @@ etc/firmware/BCM20795A1_001.002.012.0003.0078_Generic_I2C_NCD_Signed_configdata.
 bin/mm-pp-daemon
 vendor/lib/libmm-abl.so
 vendor/lib/libmm-abl-oem.so
+vendor/lib/libdisp-aba.so
+vendor/lib/libsensor1.so
 
 # Qualcomm framework
 bin/irsc_util
