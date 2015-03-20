@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ac665da_84e5fba9",
+        "filename": "camera/CameraWrapper.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2015-03-20T09:37:58Z",
+      "side": 1,
+      "message": "Just an FYI that 4K is usually NV12 VENUS for performance reasons.",
+      "revId": "1648e461876a857cecb6791df619a4ea6ecaa6da",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
