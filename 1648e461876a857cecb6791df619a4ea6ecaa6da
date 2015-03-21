@@ -34,6 +34,24 @@
       "revId": "1648e461876a857cecb6791df619a4ea6ecaa6da",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac665da_075aad83",
+        "filename": "camera/CameraWrapper.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2015-03-21T05:02:58Z",
+      "side": 1,
+      "message": "I think there are several patchsets that add the QC 4K support to the camera in CM11. Those were likely never carried forward to CM12. Lollipop versions can probably be found on CAF. Your blobs are correct to use NV12 VENUS though, using YUV420SP results in a low framerate when recording 4K.",
+      "parentUuid": "5ac665da_04e8eb7b",
+      "revId": "1648e461876a857cecb6791df619a4ea6ecaa6da",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
