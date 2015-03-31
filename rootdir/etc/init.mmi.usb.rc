@@ -50,10 +50,6 @@ on charger
     write /sys/class/android_usb/android0/functions mass_storage
     write /sys/class/android_usb/android0/enable 1
 
-service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/usbdisk /storage/usbdisk
-    class late_start
-    disabled
-
 service mmi-usb-sh /system/bin/sh /init.mmi.usb.sh
     class core
     user root

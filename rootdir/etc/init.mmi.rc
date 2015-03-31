@@ -494,16 +494,3 @@ service esdpll /system/bin/esdpll -w
     user mot_esdfs
     group mot_esdfs package_info
     disabled
-
-on property:ro.esdfs_sdcard=true
-    wait /data/media/0 600
-    mount esdfs /data/media /mnt/shell/emulated derive=legacy
-    mount none /mnt/shell/emulated/0 /storage/emulated/legacy bind
-    start esdpll
-
-# This will make sure that sdcard is bound as late_start.
-on nonencrypted
-    setprop ro.esdfs_sdcard ${persist.esdfs_sdcard}
-
-on property:vold.decrypt=trigger_restart_framework
-    setprop ro.esdfs_sdcard ${persist.esdfs_sdcard}
