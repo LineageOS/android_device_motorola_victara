@@ -55,7 +55,7 @@ public class CMActionsService extends IntentService implements ScreenStateNotifi
 
         mActionableSensors.add(new CameraActivationSensor(mSensorHelper, mCameraActivationAction));
         mActionableSensors.add(new FlatUpSensor(mSensorHelper, mState, mDozePulseAction));
-        //mActionableSensors.add(mIrGestureSensor = new IrGestureSensor(mSensorHelper, mDozePulseAction));
+        mActionableSensors.add(new IrGestureSensor(mSensorHelper, mDozePulseAction));
         mActionableSensors.add(new StowSensor(mSensorHelper, mState, mDozePulseAction));
 
         PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
