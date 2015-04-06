@@ -38,7 +38,9 @@
 #define STM401_DEVICE                  "/dev/stm401"
 #define STM401_IR_WAKE_CONFIG_MASK      0x000007FE
 #define STM401_IR_CONTROL_DISABLE       0x00000001
-#define STM401_IR_CONFIG_TUNING_NUMBER 7
+
+#define STM401_IR_CONFIG_TUNING_NUMBER_MIN 6
+#define STM401_IR_CONFIG_TUNING_NUMBER_MAX 7
 
 struct PACKED stm401_ir_led_config
 {
@@ -135,8 +137,11 @@ int read_ir_config(struct stm401_ir_config* config, int check_version)
         return 1;
     }
 
-    if (check_version && config->tuning_number != STM401_IR_CONFIG_TUNING_NUMBER) {
-        ALOGE("%s: Found tuning number %d, but expected %d!\n", __func__, config->tuning_number, STM401_IR_CONFIG_TUNING_NUMBER);
+    if (check_version && (config->tuning_number < STM401_IR_CONFIG_TUNING_NUMBER_MIN ||
+        config->tuning_number > STM401_IR_CONFIG_TUNING_NUMBER_MAX)) {
+        ALOGE("%s: Found tuning number %d, but expected %d..%d!\n", __func__,
+                config->tuning_number, STM401_IR_CONFIG_TUNING_NUMBER_MIN,
+                STM401_IR_CONFIG_TUNING_NUMBER_MAX);
         return 1;
     }
 
