@@ -22,6 +22,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.telecom.TelecomManager;
 
 public class ScreenReceiver extends BroadcastReceiver {
     private ScreenStateNotifier mNotifier;
@@ -36,10 +37,14 @@ public class ScreenReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        TelecomManager telecomManager = (TelecomManager) context.getSystemService(Context.TELECOM_SERVICE);
         if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
             mNotifier.screenTurnedOff();
         } else if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
             mNotifier.screenTurnedOn();
+            if (telecomManager.isRinging()) {
+                mNotifier.IncomingCall();
+            }
         }
     }
 }

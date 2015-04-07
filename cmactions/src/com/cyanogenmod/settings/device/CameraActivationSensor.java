@@ -66,6 +66,10 @@ public class CameraActivationSensor implements ActionableSensor, SensorEventList
     }
 
     @Override
+    public void setIncomingCall() {
+    }
+
+    @Override
     public void onSensorChanged(SensorEvent event) {
         Log.d(TAG, "activate camera");
         mSensorAction.action();

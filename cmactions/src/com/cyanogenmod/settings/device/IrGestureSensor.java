@@ -41,6 +41,7 @@ public class IrGestureSensor implements ActionableSensor, SensorEventListener {
     public static final int IR_GESTURE_HOVER_FIST                  = 10;
 
     public static final int IR_GESTURES_FOR_SCREEN_OFF = (1 << IR_GESTURE_SWIPE) | (1 << IR_GESTURE_APPROACH);
+    public static final int IR_GESTURES_FOR_INCALL = (2 << IR_GESTURE_SWIPE);
 
     private SensorHelper mSensorHelper;
     private SensorAction mSensorAction;
@@ -80,6 +81,18 @@ public class IrGestureSensor implements ActionableSensor, SensorEventListener {
         }
         if (!nativeSetIrDisabled(false)) {
             Log.e(TAG, "Failed enabling IR sensor!");
+        }
+    }
+
+    @Override
+    public void setIncomingCall() {
+        Log.d(TAG, "Enabling");
+        mSensorHelper.registerListener(mSensor, this);
+        if (! nativeSetIrWakeConfig(IR_GESTURES_FOR_INCALL)) {
+           Log.e(TAG, "Failed setting IR wake config");
+        }
+        if (!nativeSetIrDisabled(false)) {
+            Log.e(TAG, "Failed disabling IR sensor!");
         }
     }
 

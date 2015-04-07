@@ -51,6 +51,10 @@ public class FlatUpSensor implements ActionableSensor, SensorEventListener {
     }
 
     @Override
+    public void setIncomingCall() {
+    }
+
+    @Override
     public void onSensorChanged(SensorEvent event) {
         boolean thisFlatUp = (event.values[0] != 0);
         boolean lastFlatUp = mState.setIsFlatUp(thisFlatUp);
