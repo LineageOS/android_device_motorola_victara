@@ -21,79 +21,54 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.util.Log;
 
+import static com.cyanogenmod.settings.device.IrGestureManager.*;
+
 public class IrGestureSensor implements ActionableSensor, SensorEventListener {
     private static final String TAG = "CMActions-IRGestureSensor";
-
-    // Something occludes the sensor
-    public static final int IR_GESTURE_OBJECT_DETECTED             = 1;
-    // No occlusion
-    public static final int IR_GESTURE_GESTURE_OBJECT_NOT_DETECTED = 2;
-    // Swiping above the phone (send doze)
-    public static final int IR_GESTURE_SWIPE                       = 3;
-    // Hand wave in front of the phone (send doze)
-    public static final int IR_GESTURE_APPROACH                    = 4;
-    // Gestures not tracked
-    public static final int IR_GESTURE_COVER                       = 5;
-    public static final int IR_GESTURE_DEPART                      = 6;
-    public static final int IR_GESTURE_HOVER                       = 7;
-    public static final int IR_GESTURE_HOVER_PULSE                 = 8;
-    public static final int IR_GESTURE_PROXIMITY_NONE              = 9;
-    public static final int IR_GESTURE_HOVER_FIST                  = 10;
 
     public static final int IR_GESTURES_FOR_SCREEN_OFF = (1 << IR_GESTURE_SWIPE) | (1 << IR_GESTURE_APPROACH);
 
     private SensorHelper mSensorHelper;
     private SensorAction mSensorAction;
+    private IrGestureVote mIrGestureVote;
     private Sensor mSensor;
 
-    static
-    {
-       System.load("/system/lib/libjni_CMActions.so");
-    }
-
-    public IrGestureSensor(SensorHelper sensorHelper, SensorAction action) {
+    public IrGestureSensor(SensorHelper sensorHelper, SensorAction action,
+                                IrGestureManager irGestureManager) {
         mSensorHelper = sensorHelper;
         mSensorAction = action;
+        mIrGestureVote = new IrGestureVote(irGestureManager);
 
         mSensor = sensorHelper.getIrGestureSensor();
-        nativeSetIrDisabled(true);
+        mIrGestureVote.voteForState(false, 0);
     }
 
     @Override
     public void setScreenOn() {
         Log.d(TAG, "Disabling");
         mSensorHelper.unregisterListener(this);
-        if (! nativeSetIrWakeConfig(0)) {
-           Log.e(TAG, "Failed setting IR wake config");
-        }
-        if (!nativeSetIrDisabled(true)) {
-            Log.e(TAG, "Failed disabling IR sensor!");
-        }
+        mIrGestureVote.voteForState(false, 0);
     }
 
     @Override
     public void setScreenOff() {
         Log.d(TAG, "Enabling");
         mSensorHelper.registerListener(mSensor, this);
-        if (! nativeSetIrWakeConfig(IR_GESTURES_FOR_SCREEN_OFF)) {
-           Log.e(TAG, "Failed setting IR wake config");
-        }
-        if (!nativeSetIrDisabled(false)) {
-            Log.e(TAG, "Failed enabling IR sensor!");
-        }
+        mIrGestureVote.voteForState(true, IR_GESTURES_FOR_SCREEN_OFF);
     }
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        Log.d(TAG, "event: [" + event.values.length + "]: " + event.values[0] + ", " +
-            event.values[1] + ", " + event.values[2]);
-        mSensorAction.action();
+        int gesture = (int) event.values[1];
+
+        if (gesture == IR_GESTURE_SWIPE || gesture == IR_GESTURE_APPROACH) {
+            Log.d(TAG, "event: [" + event.values.length + "]: " + event.values[0] + ", " +
+                event.values[1] + ", " + event.values[2]);
+            mSensorAction.action();
+        }
     }
 
     @Override
     public void onAccuracyChanged(Sensor mSensor, int accuracy) {
     }
-
-    private final native boolean nativeSetIrDisabled(boolean disabled);
-    private final native boolean nativeSetIrWakeConfig(int wakeConfig);
 }

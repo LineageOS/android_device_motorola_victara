@@ -207,13 +207,13 @@ err:
     return 1;
 }
 
-JNIEXPORT jboolean JNICALL Java_com_cyanogenmod_settings_device_IrGestureSensor_nativeSetIrDisabled(
+JNIEXPORT jboolean JNICALL Java_com_cyanogenmod_settings_device_IrGestureManager_nativeSetIrDisabled(
      UNUSED JNIEnv *env, UNUSED jclass thiz, jboolean disabled)
 {
     return set_ir_disabled(disabled == JNI_TRUE) ? JNI_FALSE : JNI_TRUE;
 }
 
-JNIEXPORT jboolean JNICALL Java_com_cyanogenmod_settings_device_IrGestureSensor_nativeSetIrWakeConfig(
+JNIEXPORT jboolean JNICALL Java_com_cyanogenmod_settings_device_IrGestureManager_nativeSetIrWakeConfig(
      UNUSED JNIEnv *env, UNUSED jclass thiz, jint wakeConfig)
 {
     return set_ir_wake_config((int)wakeConfig) ? JNI_FALSE : JNI_TRUE;
