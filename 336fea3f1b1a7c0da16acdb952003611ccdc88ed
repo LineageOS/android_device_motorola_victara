@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_c7b8a0e8",
+        "filename": "cmactions/jni/jni_CMActions.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6186
+      },
+      "writtenOn": "2015-04-07T00:53:23Z",
+      "side": 1,
+      "message": "Make sure that it is actually 7 for you as well, in the dump you gave me it was 6 (tied to the actual sensorhubfw.bin).",
+      "revId": "336fea3f1b1a7c0da16acdb952003611ccdc88ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
