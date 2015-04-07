@@ -74,7 +74,7 @@ public class IrGestureManager {
                 mVotes[i] += delta;
             }
             if (mVotes[i] > 0) {
-                mGestures |= (1 << i);
+                gestures |= (1 << i);
             }
         }
 
