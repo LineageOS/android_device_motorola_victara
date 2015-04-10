@@ -28,13 +28,16 @@ public class IrGestureSensor implements ActionableSensor, SensorEventListener {
 
     private static final int IR_GESTURES_FOR_SCREEN_OFF = (1 << IR_GESTURE_SWIPE) | (1 << IR_GESTURE_APPROACH);
 
+    private CMActionsSettings mCMActionsSettings;
     private SensorHelper mSensorHelper;
     private SensorAction mSensorAction;
     private IrGestureVote mIrGestureVote;
     private Sensor mSensor;
+    private boolean mEnabled;
 
-    public IrGestureSensor(SensorHelper sensorHelper, SensorAction action,
-                                IrGestureManager irGestureManager) {
+    public IrGestureSensor(CMActionsSettings cmActionsSettings, SensorHelper sensorHelper,
+                SensorAction action, IrGestureManager irGestureManager) {
+        mCMActionsSettings = cmActionsSettings;
         mSensorHelper = sensorHelper;
         mSensorAction = action;
         mIrGestureVote = new IrGestureVote(irGestureManager);
@@ -45,16 +48,22 @@ public class IrGestureSensor implements ActionableSensor, SensorEventListener {
 
     @Override
     public void setScreenOn() {
-        Log.d(TAG, "Disabling");
-        mSensorHelper.unregisterListener(this);
-        mIrGestureVote.voteForState(false, 0);
+        if (mEnabled) {
+            Log.d(TAG, "Disabling");
+            mSensorHelper.unregisterListener(this);
+            mIrGestureVote.voteForState(false, 0);
+            mEnabled = false;
+        }
     }
 
     @Override
     public void setScreenOff() {
-        Log.d(TAG, "Enabling");
-        mSensorHelper.registerListener(mSensor, this);
-        mIrGestureVote.voteForState(true, IR_GESTURES_FOR_SCREEN_OFF);
+        if (mCMActionsSettings.isIrWakeupEnabled() && !mEnabled) {
+            Log.d(TAG, "Enabling");
+            mSensorHelper.registerListener(mSensor, this);
+            mIrGestureVote.voteForState(true, IR_GESTURES_FOR_SCREEN_OFF);
+            mEnabled = true;
+        }
     }
 
     @Override
