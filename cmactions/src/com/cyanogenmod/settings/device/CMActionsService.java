@@ -32,17 +32,16 @@ public class CMActionsService extends IntentService implements ScreenStateNotifi
 
     private final Context mContext;
 
-    private final CameraActivationAction mCameraActivationAction;
     private final DozePulseAction mDozePulseAction;
     private final IrGestureManager mIrGestureManager;
-    private final IrSilencer mIrSilencer;
     private final PowerManager mPowerManager;
     private final ScreenReceiver mScreenReceiver;
     private final SensorHelper mSensorHelper;
     private final State mState;
 
     private final List<ActionableSensor> mActionableSensors = new LinkedList<ActionableSensor>();
-
+    private final List<UpdatedStateNotifier> mUpdatedStateNotifiers =
+                        new LinkedList<UpdatedStateNotifier>();
 
     public CMActionsService(Context context) {
         super("CMActionService");
@@ -56,15 +55,17 @@ public class CMActionsService extends IntentService implements ScreenStateNotifi
         mScreenReceiver = new ScreenReceiver(context, this);
         mIrGestureManager = new IrGestureManager();
 
-        mCameraActivationAction = new CameraActivationAction(context);
         mDozePulseAction = new DozePulseAction(context, mState);
 
-        mActionableSensors.add(new CameraActivationSensor(cmActionsSettings, mSensorHelper, mCameraActivationAction));
+        // Actionable sensors get screen on/off notifications
         mActionableSensors.add(new FlatUpSensor(cmActionsSettings, mSensorHelper, mState, mDozePulseAction));
         mActionableSensors.add(new IrGestureSensor(cmActionsSettings, mSensorHelper, mDozePulseAction, mIrGestureManager));
         mActionableSensors.add(new StowSensor(cmActionsSettings, mSensorHelper, mState, mDozePulseAction));
 
-        mIrSilencer = new IrSilencer(cmActionsSettings, context, mSensorHelper, mIrGestureManager);
+        // Other actions that are always enabled
+        mUpdatedStateNotifiers.add(new CameraActivationSensor(cmActionsSettings, mSensorHelper));
+        mUpdatedStateNotifiers.add(new ChopChopSensor(cmActionsSettings, mSensorHelper));
+        mUpdatedStateNotifiers.add(new IrSilencer(cmActionsSettings, context, mSensorHelper, mIrGestureManager));
 
         mPowerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         updateState();
@@ -95,6 +96,9 @@ public class CMActionsService extends IntentService implements ScreenStateNotifi
             screenTurnedOn();
         } else {
             screenTurnedOff();
+        }
+        for (UpdatedStateNotifier notifier : mUpdatedStateNotifiers) {
+            notifier.updateState();
         }
     }
 }
