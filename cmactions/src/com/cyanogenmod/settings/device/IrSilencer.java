@@ -34,11 +34,12 @@ public class IrSilencer extends PhoneStateListener implements SensorEventListene
     private static final int IR_GESTURES_FOR_RINGING = (1 << IR_GESTURE_SWIPE);
     private static final int SILENCE_DELAY_MS = 500;
 
-    private TelecomManager mTelecomManager;
-    private CMActionsSettings mCMActionsSettings;
-    private SensorHelper mSensorHelper;
-    private Sensor mSensor;
-    private IrGestureVote mIrGestureVote;
+    private final TelecomManager mTelecomManager;
+    private final CMActionsSettings mCMActionsSettings;
+    private final SensorHelper mSensorHelper;
+    private final Sensor mSensor;
+    private final IrGestureVote mIrGestureVote;
+
     private boolean mIsRinging;
     private long mRingStartedMs;
 

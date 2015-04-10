@@ -17,7 +17,8 @@
 package com.cyanogenmod.settings.device;
 
 public class IrGestureVote {
-    private IrGestureManager mIrGestureManager;
+    private final IrGestureManager mIrGestureManager;
+
     private boolean mLastWake;
     private int mLastFlags;
 
