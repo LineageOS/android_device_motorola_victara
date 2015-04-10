@@ -39,10 +39,9 @@ public class CameraActivationAction implements SensorAction {
 
     private static final int TURN_SCREEN_ON_WAKE_LOCK_MS = 500;
 
-    private PowerManager mPowerManager;
-    private PackageManager mPackageManager;
-
-    private Context mContext;
+    private final Context mContext;
+    private final PackageManager mPackageManager;
+    private final PowerManager mPowerManager;
 
     public CameraActivationAction(Context context) {
         mContext = context;

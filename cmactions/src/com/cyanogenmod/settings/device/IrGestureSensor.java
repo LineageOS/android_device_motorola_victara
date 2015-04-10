@@ -28,11 +28,12 @@ public class IrGestureSensor implements ActionableSensor, SensorEventListener {
 
     private static final int IR_GESTURES_FOR_SCREEN_OFF = (1 << IR_GESTURE_SWIPE) | (1 << IR_GESTURE_APPROACH);
 
-    private CMActionsSettings mCMActionsSettings;
-    private SensorHelper mSensorHelper;
-    private SensorAction mSensorAction;
-    private IrGestureVote mIrGestureVote;
-    private Sensor mSensor;
+    private final CMActionsSettings mCMActionsSettings;
+    private final SensorHelper mSensorHelper;
+    private final SensorAction mSensorAction;
+    private final IrGestureVote mIrGestureVote;
+    private final Sensor mSensor;
+
     private boolean mEnabled;
 
     public IrGestureSensor(CMActionsSettings cmActionsSettings, SensorHelper sensorHelper,
