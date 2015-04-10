@@ -35,16 +35,18 @@ public class IrSilencer extends PhoneStateListener implements SensorEventListene
     private static final int SILENCE_DELAY_MS = 500;
 
     private TelecomManager mTelecomManager;
+    private CMActionsSettings mCMActionsSettings;
     private SensorHelper mSensorHelper;
     private Sensor mSensor;
     private IrGestureVote mIrGestureVote;
     private boolean mIsRinging;
     private long mRingStartedMs;
 
-    public IrSilencer(Context context, SensorHelper sensorHelper, IrGestureManager irGestureManager) {
+    public IrSilencer(CMActionsSettings cmActionsSettings, Context context, SensorHelper sensorHelper, IrGestureManager irGestureManager) {
         mTelecomManager = (TelecomManager) context.getSystemService(Context.TELECOM_SERVICE);
         TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
 
+        mCMActionsSettings = cmActionsSettings;
         mSensorHelper = sensorHelper;
         mSensor = sensorHelper.getIrGestureSensor();
         mIrGestureVote = new IrGestureVote(irGestureManager);
@@ -73,7 +75,7 @@ public class IrSilencer extends PhoneStateListener implements SensorEventListene
 
     @Override
     public synchronized void onCallStateChanged(int state, String incomingNumber) {
-        if (state == CALL_STATE_RINGING && ! mIsRinging) {
+        if (state == CALL_STATE_RINGING && ! mIsRinging && mCMActionsSettings.isSilenceNotificationsEnabled()) {
             Log.d(TAG, "Ringing started");
             mSensorHelper.registerListener(mSensor, this);
             mIrGestureVote.voteForState(true, IR_GESTURES_FOR_RINGING);
