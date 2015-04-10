@@ -175,7 +175,6 @@ int set_ir_disabled(int disabled)
 
     pthread_mutex_unlock(&ioctl_mutex);
 
-    ALOGD("%s: set ir disabled to %d\n", __func__, (disabled != 0));
     return 0;
 err:
     pthread_mutex_unlock(&ioctl_mutex);
@@ -200,7 +199,6 @@ int set_ir_wake_config(int wake_config)
 
      pthread_mutex_unlock(&ioctl_mutex);
 
-    ALOGD("%s: set ir wake config to 0x%x\n", __func__, config.cmd_config);
     return 0;
 err:
     pthread_mutex_unlock(&ioctl_mutex);
