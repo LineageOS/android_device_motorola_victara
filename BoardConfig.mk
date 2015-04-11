@@ -153,7 +153,8 @@ BOARD_SEPOLICY_UNION += \
     system_server.te \
     thermal-engine.te \
     ueventd.te \
-    vold.te
+    vold.te \
+    wpa.te
 
 # Vold
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
