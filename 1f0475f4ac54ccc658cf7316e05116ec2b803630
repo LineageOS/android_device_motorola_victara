@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_b5301fa0",
+        "filename": "cmactions/res/values/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 9534
+      },
+      "writtenOn": "2015-04-11T23:12:25Z",
+      "side": 1,
+      "message": "I think the name should be changed to something else, like \"Double-twist\" since you can configure the double-twist gesture to launch the camera or torch",
+      "revId": "1f0475f4ac54ccc658cf7316e05116ec2b803630",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
