@@ -70,21 +70,6 @@ on early-boot
     write /sys/kernel/boot_adsp/boot 1
     setprop qcom.audio.init complete
 
-    # Boot wcnss
-    write /sys/bus/platform/drivers/msm_hsic_host/unbind msm_hsic_host
-    chown system system /sys/bus/platform/drivers/msm_hsic_host/bind
-    chown system system /sys/bus/platform/drivers/msm_hsic_host/unbind
-    chmod 0200 /sys/bus/platform/drivers/msm_hsic_host/bind
-    chmod 0200 /sys/bus/platform/drivers/msm_hsic_host/unbind
-
-    setprop wlan.driver.ath 0
-    setprop wlan.driver.config /data/misc/wifi/WCNSS_qcom_cfg.ini
-
-    write /dev/wcnss_ctrl 1
-    write /sys/devices/fb000000.qcom,wcnss-wlan/serial_number ${ro.serialno}
-
-    start wcnss-service
-
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
@@ -339,6 +324,7 @@ on property:vold.decrypt=trigger_restart_framework
     setprop ro.fuse_sdcard ${persist.fuse_sdcard}
     start qcom-c_main-sh
     start config_bluetooth
+    start wcnss-service
 
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
