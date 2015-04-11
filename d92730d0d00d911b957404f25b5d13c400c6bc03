@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_951a4316",
+        "filename": "cmactions/res/values/strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 9534
+      },
+      "writtenOn": "2015-04-11T23:52:38Z",
+      "side": 1,
+      "message": "I may be nitpicking here, but the summary could be changed to \"Action when using the double-twist gesture\" to be consistent with the chop-chop gesture summary. Or should the chop-chop gesture summary be changed instead? What do you think?",
+      "revId": "d92730d0d00d911b957404f25b5d13c400c6bc03",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
