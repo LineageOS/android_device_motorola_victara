@@ -311,6 +311,7 @@ bin/netmgrd
 bin/qcks
 bin/qmi_motext_hook
 bin/qmuxd
+bin/rild:bin/rild.mmi
 bin/rfs_access
 bin/rmt_storage
 lib/libadropbox.so
