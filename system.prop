@@ -34,6 +34,7 @@ dalvik.vm.heaptargetutilization=0.75
 persist.mot.gps.smart_battery=1
 
 ## Graphics
+debug.cpurend.vsync=false
 debug.hwui.use_buffer_age=false
 debug.sf.enable_gl_backpressure=1
 debug.sf.latch_unsignaled=1
