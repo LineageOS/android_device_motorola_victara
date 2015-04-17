@@ -16,6 +16,12 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <SwitchPreference
+        android:key="gesture_attentive_display"
+        android:defaultValue="false"
+        android:title="@string/attentive_display_title"
+        android:summary="@string/attentive_display_summary" />
+
     <PreferenceCategory
         android:key="ambient_display_key"
         android:title="@string/ambient_display_title" >
