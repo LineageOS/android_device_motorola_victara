@@ -17,6 +17,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Gesture shortcuts -->
+    <string name="attentive_display_title">Attentive display</string>
+    <string name="attentive_display_summary">Keep the screen on while something is looking at the screen</string>
+
     <string name="screen_gestures_panel_title">Gesture shortcuts</string>
     <string name="screen_gestures_panel_summary">Use gestures to perform actions</string>
 
