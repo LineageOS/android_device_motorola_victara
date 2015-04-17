@@ -28,5 +28,19 @@
         <item>2</item>
     </string-array>
 
+    <string-array name="feedback_intensity_entries" translatable="false">
+        <item>@string/feedback_intensity_none</item>
+        <item>@string/feedback_intensity_low</item>
+        <item>@string/feedback_intensity_medium</item>
+        <item>@string/feedback_intensity_high</item>
+    </string-array>
+
+    <string-array name="feedback_intensity_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
 </resources>
 
