@@ -28,15 +28,17 @@ public class TorchAction implements SensorAction {
 
     private final TorchManager mTorchManager;
     private final Vibrator mVibrator;
+    private final int mVibratorPeriod;
 
-    public TorchAction(Context context) {
+    public TorchAction(Context context, int vibratorPeriod) {
         mTorchManager = (TorchManager) context.getSystemService(Context.TORCH_SERVICE);
         mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+        mVibratorPeriod = vibratorPeriod;
     }
 
     @Override
     public void action() {
-        mVibrator.vibrate(250);
+        mVibrator.vibrate(mVibratorPeriod);
         mTorchManager.toggleTorch();
     }
 }

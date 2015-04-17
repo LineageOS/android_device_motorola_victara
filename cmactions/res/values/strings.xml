@@ -46,5 +46,14 @@
     <string name="action_none">Disable</string>
     <string name="action_launch_camera">Launch camera</string>
     <string name="action_torch">Toggle torch</string>
+
+    <string name="feedback_intensity_title">Haptic feedback intensity</string>
+    <string name="feedback_intensity_summary">Strength of the haptic feedback for the
+        double-twist and chop-chop actions
+    </string>
+    <string name="feedback_intensity_none">Disabled</string>
+    <string name="feedback_intensity_low">Low</string>
+    <string name="feedback_intensity_medium">Medium</string>
+    <string name="feedback_intensity_high">High</string>
 </resources>
 
