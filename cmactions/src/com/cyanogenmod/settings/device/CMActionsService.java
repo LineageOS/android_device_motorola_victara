@@ -61,6 +61,7 @@ public class CMActionsService extends IntentService implements ScreenStateNotifi
         mActionableSensors.add(new FlatUpSensor(cmActionsSettings, mSensorHelper, mState, mDozePulseAction));
         mActionableSensors.add(new IrGestureSensor(cmActionsSettings, mSensorHelper, mDozePulseAction, mIrGestureManager));
         mActionableSensors.add(new StowSensor(cmActionsSettings, mSensorHelper, mState, mDozePulseAction));
+        mActionableSensors.add(new UserAwareDisplay(cmActionsSettings, mSensorHelper, mIrGestureManager, context));
 
         // Other actions that are always enabled
         mUpdatedStateNotifiers.add(new CameraActivationSensor(cmActionsSettings, mSensorHelper));
