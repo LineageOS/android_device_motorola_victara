@@ -58,6 +58,7 @@ public class CMActionsService extends IntentService implements ScreenStateNotifi
         mDozePulseAction = new DozePulseAction(context, mState);
 
         // Actionable sensors get screen on/off notifications
+        mActionableSensors.add(new AttentiveDisplay(cmActionsSettings, mSensorHelper, mIrGestureManager, context));
         mActionableSensors.add(new FlatUpSensor(cmActionsSettings, mSensorHelper, mState, mDozePulseAction));
         mActionableSensors.add(new IrGestureSensor(cmActionsSettings, mSensorHelper, mDozePulseAction, mIrGestureManager));
         mActionableSensors.add(new StowSensor(cmActionsSettings, mSensorHelper, mState, mDozePulseAction));

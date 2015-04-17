@@ -30,6 +30,7 @@ public class CMActionsSettings {
     private static final int ACTION_LAUNCH_CAMERA = 1;
     private static final int ACTION_TORCH = 2;
 
+    private static final String GESTURE_ATTENTIVE_DISPLAY_KEY = "gesture_attentive_display";
     private static final String GESTURE_CAMERA_ACTION_KEY = "gesture_camera_action";
     private static final String GESTURE_CHOP_CHOP_KEY = "gesture_chop_chop";
     private static final String GESTURE_FEEDBACK_INTENSITY_KEY = "gesture_feedback_intensity";
@@ -40,6 +41,7 @@ public class CMActionsSettings {
     private final Context mContext;
     private final UpdatedStateNotifier mUpdatedStateNotifier;
 
+    private boolean mAttentiveDisplayEnabled;
     private int mCameraGestureAction;
     private int mChopChopAction;
     private int mFeedbackIntensity;
@@ -53,6 +55,10 @@ public class CMActionsSettings {
         sharedPrefs.registerOnSharedPreferenceChangeListener(mPrefListener);
         mContext = context;
         mUpdatedStateNotifier = updatedStateNotifier;
+    }
+
+    public boolean isAttentiveDisplayEnabled() {
+        return mAttentiveDisplayEnabled;
     }
 
     public boolean isCameraGestureEnabled() {
@@ -98,6 +104,7 @@ public class CMActionsSettings {
     }
 
     private void loadPreferences(SharedPreferences sharedPreferences) {
+        mAttentiveDisplayEnabled = sharedPreferences.getBoolean(GESTURE_ATTENTIVE_DISPLAY_KEY, false);
         mCameraGestureAction = getIntPreference(sharedPreferences, GESTURE_CAMERA_ACTION_KEY);
         mChopChopAction = getIntPreference(sharedPreferences, GESTURE_CHOP_CHOP_KEY);
         mFeedbackIntensity = getIntPreference(sharedPreferences, GESTURE_FEEDBACK_INTENSITY_KEY);
@@ -117,7 +124,9 @@ public class CMActionsSettings {
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
             boolean updated = true;
 
-            if (GESTURE_CAMERA_ACTION_KEY.equals(key)) {
+            if (GESTURE_ATTENTIVE_DISPLAY_KEY.equals(key)) {
+                mAttentiveDisplayEnabled = sharedPreferences.getBoolean(GESTURE_ATTENTIVE_DISPLAY_KEY, false);
+            } else if (GESTURE_CAMERA_ACTION_KEY.equals(key)) {
                 mCameraGestureAction = getIntPreference(sharedPreferences, GESTURE_CAMERA_ACTION_KEY);
             } else if (GESTURE_CHOP_CHOP_KEY.equals(key)) {
                 mChopChopAction = getIntPreference(sharedPreferences, GESTURE_CHOP_CHOP_KEY);
