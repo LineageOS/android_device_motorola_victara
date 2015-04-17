@@ -17,6 +17,17 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
+        android:key="user_aware_display_key"
+        android:title="@string/user_aware_display_title" >
+
+        <SwitchPreference
+            android:key="gesture_user_aware_display"
+            android:defaultValue="false"
+            android:title="@string/user_aware_display_title"
+            android:summary="@string/user_aware_display_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="ambient_display_key"
         android:title="@string/ambient_display_title" >
 
