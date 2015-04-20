@@ -57,6 +57,14 @@ public class CMActionsSettings {
         mUpdatedStateNotifier = updatedStateNotifier;
     }
 
+    public SensorAction newCameraActivationAction() {
+        return new ConfigurableAction(true);
+    }
+
+    public SensorAction newChopChopAction() {
+        return new ConfigurableAction(false);
+    }
+
     public boolean isUserAwareDisplayEnabled() {
         return mUserAwareDisplayEnabled;
     }
@@ -84,23 +92,6 @@ public class CMActionsSettings {
 
     public boolean isIrSilencerEnabled() {
         return mIrSilencerEnabled;
-    }
-
-    public void cameraAction() {
-        action(mCameraGestureAction);
-    }
-
-    public void chopChopAction() {
-        action(mChopChopAction);
-    }
-
-    private void action(int action) {
-        int vibratorPeriod = mFeedbackIntensity * 80;
-        if (action == ACTION_LAUNCH_CAMERA) {
-            new CameraActivationAction(mContext, vibratorPeriod).action();
-        } else if (action == ACTION_TORCH) {
-            new TorchAction(mContext, vibratorPeriod).action();
-        }
     }
 
     private void loadPreferences(SharedPreferences sharedPreferences) {
@@ -144,6 +135,32 @@ public class CMActionsSettings {
 
             if (updated) {
                 mUpdatedStateNotifier.updateState();
+            }
+        }
+    };
+
+    private class ConfigurableAction implements SensorAction {
+        private final boolean mIsCamera;
+
+        public ConfigurableAction(boolean isCamera) {
+             mIsCamera = isCamera;
+        }
+
+        @Override
+        public void action() {
+            if (mIsCamera) {
+                action(mCameraGestureAction);
+            } else {
+                action(mChopChopAction);
+            }
+        }
+
+        private void action(int action) {
+            int vibratorPeriod = mFeedbackIntensity * 80;
+            if (action == ACTION_LAUNCH_CAMERA) {
+                new CameraActivationAction(mContext, vibratorPeriod).action();
+            } else if (action == ACTION_TORCH) {
+                new TorchAction(mContext, vibratorPeriod).action();
             }
         }
     };
