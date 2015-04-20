@@ -53,7 +53,7 @@ public class IrSilencer extends PhoneStateListener implements SensorEventListene
         mSensorHelper = sensorHelper;
         mSensor = sensorHelper.getIrGestureSensor();
         mIrGestureVote = new IrGestureVote(irGestureManager);
-        mIrGestureVote.voteForState(false, 0);
+        mIrGestureVote.voteForSensors(0);
     }
 
     @Override
@@ -88,13 +88,13 @@ public class IrSilencer extends PhoneStateListener implements SensorEventListene
         if (state == CALL_STATE_RINGING && !mIsRinging) {
             Log.d(TAG, "Ringing started");
             mSensorHelper.registerListener(mSensor, this);
-            mIrGestureVote.voteForState(true, IR_GESTURES_FOR_RINGING);
+            mIrGestureVote.voteForSensors(IR_GESTURES_FOR_RINGING);
             mIsRinging = true;
             mRingStartedMs = System.currentTimeMillis();
         } else if (state != CALL_STATE_RINGING && mIsRinging) {
             Log.d(TAG, "Ringing stopped");
             mSensorHelper.unregisterListener(this);
-            mIrGestureVote.voteForState(false, 0);
+            mIrGestureVote.voteForSensors(0);
             mIsRinging = false;
         }
     }

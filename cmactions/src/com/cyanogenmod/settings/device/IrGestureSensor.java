@@ -44,7 +44,7 @@ public class IrGestureSensor implements ActionableSensor, SensorEventListener {
         mIrGestureVote = new IrGestureVote(irGestureManager);
 
         mSensor = sensorHelper.getIrGestureSensor();
-        mIrGestureVote.voteForState(false, 0);
+        mIrGestureVote.voteForSensors(0);
     }
 
     @Override
@@ -52,7 +52,7 @@ public class IrGestureSensor implements ActionableSensor, SensorEventListener {
         if (mEnabled) {
             Log.d(TAG, "Disabling");
             mSensorHelper.unregisterListener(this);
-            mIrGestureVote.voteForState(false, 0);
+            mIrGestureVote.voteForSensors(0);
             mEnabled = false;
         }
     }
@@ -62,7 +62,7 @@ public class IrGestureSensor implements ActionableSensor, SensorEventListener {
         if (mCMActionsSettings.isIrWakeupEnabled() && !mEnabled) {
             Log.d(TAG, "Enabling");
             mSensorHelper.registerListener(mSensor, this);
-            mIrGestureVote.voteForState(true, IR_GESTURES_FOR_SCREEN_OFF);
+            mIrGestureVote.voteForSensors(IR_GESTURES_FOR_SCREEN_OFF);
             mEnabled = true;
         }
     }

@@ -19,20 +19,18 @@ package com.cyanogenmod.settings.device;
 public class IrGestureVote {
     private final IrGestureManager mIrGestureManager;
 
-    private boolean mLastWake;
     private int mLastFlags;
 
     public IrGestureVote(IrGestureManager irGestureManager) {
         mIrGestureManager = irGestureManager;
     }
 
-    public void voteForState(boolean wake, int flags) {
-        mIrGestureManager.updateState(mLastWake, mLastFlags, wake, flags);
-        mLastWake = wake;
+    public void voteForSensors(int flags) {
+        mIrGestureManager.updateState(mLastFlags, flags);
         mLastFlags = flags;
     }
 
     protected void finalize() {
-        voteForState(false, 0);
+        voteForSensors(0);
     }
 }

@@ -41,10 +41,7 @@ public class IrGestureManager {
     public static final int IR_GESTURE_HOVER_FIST                  = 10;
     public static final int IR_GESTURE_LAST                        = IR_GESTURE_HOVER_FIST;
 
-    private int mWakeVotes;
     private int mVotes[] = new int[IR_GESTURE_LAST+1];
-
-    private boolean mWake;
     private int mGestures;
 
     static
@@ -56,18 +53,14 @@ public class IrGestureManager {
         nativeSetIrDisabled(true);
     }
 
-    public synchronized void updateState(boolean oldWake, int oldFlags, boolean newWake, int newFlags) {
-        voteDelta(oldWake, oldFlags, -1);
-        int gestures = voteDelta(newWake, newFlags, +1);
+    public synchronized void updateState(int oldFlags, int newFlags) {
+        voteDelta(oldFlags, -1);
+        int gestures = voteDelta(newFlags, +1);
 
-        updateSensorConfig(mWakeVotes > 0, gestures);
+        updateSensorConfig(gestures);
     }
 
-    private synchronized int voteDelta(boolean wake, int flags, int delta) {
-        if (wake) {
-            mWakeVotes += delta;
-        }
-
+    private synchronized int voteDelta(int flags, int delta) {
         int gestures = 0;
         for (int i = 0; i <= IR_GESTURE_LAST; i++) {
             if ((flags & (1<<i)) != 0) {
@@ -81,16 +74,14 @@ public class IrGestureManager {
         return gestures;
     }
 
-    private synchronized void updateSensorConfig(boolean wake, int gestures) {
-        if (mWake != wake) {
-            mWake = wake;
-            if (!nativeSetIrDisabled(!mWake)) {
-                Log.e(TAG, "Failed setting wake mode " + mWake + " on sensor");
-            }
-        }
-
+    private synchronized void updateSensorConfig(int gestures) {
         if (mGestures != gestures) {
+            boolean irDisabled = (gestures == 0);
             mGestures = gestures;
+
+            if (!nativeSetIrDisabled(irDisabled)) {
+                Log.e(TAG, "Failed setting IR disabled " + irDisabled);
+            }
             if (! nativeSetIrWakeConfig(mGestures)) {
                 Log.e(TAG, "Failed setting IR gestures " + mGestures);
             }
