@@ -30,13 +30,16 @@ public class ChopChopSensor implements SensorEventListener, UpdatedStateNotifier
     private static final int TURN_SCREEN_ON_WAKE_LOCK_MS = 500;
 
     private final CMActionsSettings mCMActionsSettings;
+    private final SensorAction mAction;
     private final SensorHelper mSensorHelper;
     private final Sensor mSensor;
 
     private boolean mIsEnabled;
 
-    public ChopChopSensor(CMActionsSettings cmActionsSettings, SensorHelper sensorHelper) {
+    public ChopChopSensor(CMActionsSettings cmActionsSettings, SensorAction action,
+        SensorHelper sensorHelper) {
         mCMActionsSettings = cmActionsSettings;
+        mAction = action;
         mSensorHelper = sensorHelper;
         mSensor = sensorHelper.getChopChopSensor();
     }
@@ -57,7 +60,7 @@ public class ChopChopSensor implements SensorEventListener, UpdatedStateNotifier
     @Override
     public void onSensorChanged(SensorEvent event) {
         Log.d(TAG, "chop chop triggered");
-        mCMActionsSettings.chopChopAction();
+        mAction.action();
     }
 
     @Override
