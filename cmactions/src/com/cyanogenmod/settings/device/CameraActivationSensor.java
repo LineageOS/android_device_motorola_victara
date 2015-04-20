@@ -30,15 +30,19 @@ public class CameraActivationSensor implements SensorEventListener, UpdatedState
     private static final int TURN_SCREEN_ON_WAKE_LOCK_MS = 500;
 
     private final CMActionsSettings mCMActionsSettings;
+    private final SensorAction mAction;
     private final SensorHelper mSensorHelper;
 
     private final Sensor mSensor;
 
     private boolean mIsEnabled;
 
-    public CameraActivationSensor(CMActionsSettings cmActionsSettings, SensorHelper sensorHelper) {
+    public CameraActivationSensor(CMActionsSettings cmActionsSettings, SensorAction action,
+        SensorHelper sensorHelper) {
         mCMActionsSettings = cmActionsSettings;
+        mAction = action;
         mSensorHelper = sensorHelper;
+
         mSensor = sensorHelper.getCameraActivationSensor();
     }
 
@@ -58,7 +62,7 @@ public class CameraActivationSensor implements SensorEventListener, UpdatedState
     @Override
     public void onSensorChanged(SensorEvent event) {
         Log.d(TAG, "activate camera");
-        mCMActionsSettings.cameraAction();
+        mAction.action();
     }
 
     @Override
