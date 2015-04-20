@@ -25,6 +25,10 @@ public class DozePulseAction implements SensorAction, ScreenStateNotifier {
 
     private static final int DELAY_BETWEEN_DOZES_IN_MS = 1500;
 
+    private static final String ACTION_BASE = "com.android.systemui.doze";
+    private static final String PULSE_ACTION = ACTION_BASE + ".pulse";
+    private static final String EXTRA_SKIP_PROX_CHECK = "skip_prox_check";
+
     private final Context mContext;
 
     private long mLastDoze;
@@ -45,7 +49,9 @@ public class DozePulseAction implements SensorAction, ScreenStateNotifier {
     public void action() {
          if (mayDoze()) {
             Log.d(TAG, "Sending doze.pulse intent");
-            mContext.sendBroadcast(new Intent("com.android.systemui.doze.pulse"));
+            Intent intent = new Intent(PULSE_ACTION);
+            intent.putExtra(EXTRA_SKIP_PROX_CHECK, true);
+            mContext.sendBroadcast(intent);
         }
     }
 
