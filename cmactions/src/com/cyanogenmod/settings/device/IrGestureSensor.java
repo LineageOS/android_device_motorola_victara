@@ -23,7 +23,7 @@ import android.util.Log;
 
 import static com.cyanogenmod.settings.device.IrGestureManager.*;
 
-public class IrGestureSensor implements ActionableSensor, SensorEventListener {
+public class IrGestureSensor implements ScreenStateNotifier, SensorEventListener {
     private static final String TAG = "CMActions-IRGestureSensor";
 
     private static final int IR_GESTURES_FOR_SCREEN_OFF = (1 << IR_GESTURE_SWIPE) | (1 << IR_GESTURE_APPROACH);
@@ -48,7 +48,7 @@ public class IrGestureSensor implements ActionableSensor, SensorEventListener {
     }
 
     @Override
-    public void setScreenOn() {
+    public void screenTurnedOn() {
         if (mEnabled) {
             Log.d(TAG, "Disabling");
             mSensorHelper.unregisterListener(this);
@@ -58,7 +58,7 @@ public class IrGestureSensor implements ActionableSensor, SensorEventListener {
     }
 
     @Override
-    public void setScreenOff() {
+    public void screenTurnedOff() {
         if (mCMActionsSettings.isIrWakeupEnabled() && !mEnabled) {
             Log.d(TAG, "Enabling");
             mSensorHelper.registerListener(mSensor, this);

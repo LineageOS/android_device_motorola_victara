@@ -26,7 +26,7 @@ import android.util.Log;
 
 import static com.cyanogenmod.settings.device.IrGestureManager.*;
 
-public class UserAwareDisplay implements ActionableSensor {
+public class UserAwareDisplay implements ScreenStateNotifier {
     private static final String TAG = "CMActions-UAD";
 
     private static final int DELAYED_OFF_MS = 3000;
@@ -65,7 +65,7 @@ public class UserAwareDisplay implements ActionableSensor {
     }
 
     @Override
-    public void setScreenOn() {
+    public void screenTurnedOn() {
         if (mCMActionsSettings.isUserAwareDisplayEnabled()) {
             enableSensors();
         } else {
@@ -77,7 +77,7 @@ public class UserAwareDisplay implements ActionableSensor {
     }
 
     @Override
-    public void setScreenOff() {
+    public void screenTurnedOff() {
         disableSensors();
         disableScreenLock();
     }
