@@ -37,7 +37,6 @@ public class CMActionsService extends IntentService implements ScreenStateNotifi
     private final PowerManager mPowerManager;
     private final ScreenReceiver mScreenReceiver;
     private final SensorHelper mSensorHelper;
-    private final State mState;
 
     private final List<ScreenStateNotifier> mScreenStateNotifiers = new LinkedList<ScreenStateNotifier>();
     private final List<UpdatedStateNotifier> mUpdatedStateNotifiers =
@@ -49,18 +48,18 @@ public class CMActionsService extends IntentService implements ScreenStateNotifi
 
         Log.d(TAG, "Starting");
 
-        mState = new State(context);
         CMActionsSettings cmActionsSettings = new CMActionsSettings(context, this);
         mSensorHelper = new SensorHelper(context);
         mScreenReceiver = new ScreenReceiver(context, this);
         mIrGestureManager = new IrGestureManager();
 
-        mDozePulseAction = new DozePulseAction(context, mState);
+        mDozePulseAction = new DozePulseAction(context);
+        mScreenStateNotifiers.add(mDozePulseAction);
 
         // Actionable sensors get screen on/off notifications
-        mScreenStateNotifiers.add(new FlatUpSensor(cmActionsSettings, mSensorHelper, mState, mDozePulseAction));
+        mScreenStateNotifiers.add(new FlatUpSensor(cmActionsSettings, mSensorHelper, mDozePulseAction));
         mScreenStateNotifiers.add(new IrGestureSensor(cmActionsSettings, mSensorHelper, mDozePulseAction, mIrGestureManager));
-        mScreenStateNotifiers.add(new StowSensor(cmActionsSettings, mSensorHelper, mState, mDozePulseAction));
+        mScreenStateNotifiers.add(new StowSensor(cmActionsSettings, mSensorHelper, mDozePulseAction));
         mScreenStateNotifiers.add(new UserAwareDisplay(cmActionsSettings, mSensorHelper, mIrGestureManager, context));
 
         // Other actions that are always enabled
@@ -79,7 +78,6 @@ public class CMActionsService extends IntentService implements ScreenStateNotifi
 
     @Override
     public void screenTurnedOn() {
-        mState.setScreenIsOn(true);
         for (ScreenStateNotifier screenStateNotifier : mScreenStateNotifiers) {
             screenStateNotifier.screenTurnedOn();
         }
@@ -87,7 +85,6 @@ public class CMActionsService extends IntentService implements ScreenStateNotifi
 
     @Override
     public void screenTurnedOff() {
-        mState.setScreenIsOn(false);
         for (ScreenStateNotifier screenStateNotifier : mScreenStateNotifiers) {
             screenStateNotifier.screenTurnedOff();
         }
