@@ -1,3 +1,4 @@
 allow wpa system_data_file:sock_file write;
 allow wpa init:unix_dgram_socket sendto;
 allow wpa system_data_file:sock_file write;
+allow wpa rild:unix_dgram_socket sendto;
