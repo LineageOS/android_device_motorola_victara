@@ -37,6 +37,7 @@ public class UserAwareDisplay implements ScreenStateNotifier {
 
     private final CMActionsSettings mCMActionsSettings;
     private final SensorHelper mSensorHelper;
+    private final Context mContext;
     private final IrGestureVote mIrGestureVote;
     private final PowerManager mPowerManager;
     private final Sensor mIrGestureSensor;
@@ -53,6 +54,7 @@ public class UserAwareDisplay implements ScreenStateNotifier {
                 IrGestureManager irGestureManager, Context context) {
         mCMActionsSettings = cmActionsSettings;
         mSensorHelper = sensorHelper;
+        mContext = context;
         mIrGestureVote = new IrGestureVote(irGestureManager);
         mPowerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
 
@@ -116,6 +118,7 @@ public class UserAwareDisplay implements ScreenStateNotifier {
         Log.d(TAG, "IR object is detected: " + objectIsDetected);
         mObjectIsDetected = objectIsDetected;
         updateScreenLock();
+        //new FaceDetector(mContext);
     }
 
     private synchronized void updateScreenLock() {
