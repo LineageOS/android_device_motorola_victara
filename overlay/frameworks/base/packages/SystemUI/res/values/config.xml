@@ -21,10 +21,12 @@
     <!-- Doze: does this device support STATE_DOZE and STATE_DOZE_SUSPEND?  -->
     <!-- <bool name="doze_display_state_supported">true</bool> -->
 
-    <!-- Doze: pulse parameter - how long does it take to fade in? -->
-    <integer name="doze_pulse_duration_in">100</integer>
-
     <!-- Doze: pulse parameter - delay to wait for the screen to wake up -->
     <integer name="doze_pulse_delay_in">0</integer>
 
+    <!-- Doze: pulse parameter - how long does it take to fade in after an intent? -->
+    <integer name="doze_pulse_duration_in_intent">0</integer>
+
+    <!-- Doze: pulse parameter - delay to wait for the screen to wake up after an intent -->
+    <integer name="doze_pulse_delay_in_intent">0</integer>
 </resources>
