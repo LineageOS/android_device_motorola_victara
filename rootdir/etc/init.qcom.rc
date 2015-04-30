@@ -252,7 +252,7 @@ on post-fs-data
     chown system system /data/fota
 
     #Create directory for hostapd
-    mkdir /data/hostapd 0770 system wifi
+    mkdir /data/misc/wifi/hostapd 0770 system wifi
 
     # Create /data/time folder for time-services
     mkdir /data/time/ 0700 system system
@@ -716,7 +716,7 @@ service atfwd /system/bin/ATFWD-daemon
     user system
     group system radio
 
-service hostapd /system/bin/hostapd -dddd /data/hostapd/hostapd.conf
+service hostapd /system/bin/hostapd -dddd /data/misc/wifi/hostapd.conf
     class late_start
     user root
     group root
