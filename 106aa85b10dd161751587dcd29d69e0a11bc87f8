@@ -34,6 +34,23 @@
       "revId": "106aa85b10dd161751587dcd29d69e0a11bc87f8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7fb54a_de87ab10",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 6186
+      },
+      "writtenOn": "2015-05-02T07:32:24Z",
+      "side": 1,
+      "message": "The service argument is:\n\nservice hostapd /system/bin/hostapd -dddd /data/misc/wifi/hostapd.conf\n\nso it goes just to \"/data/misc/wifi/\".",
+      "revId": "106aa85b10dd161751587dcd29d69e0a11bc87f8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
