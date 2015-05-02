@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "da7fb54a_3eedf78b",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 6186
+      },
+      "writtenOn": "2015-05-02T10:36:03Z",
+      "side": 1,
+      "message": "Ahh, I see. I somewhat assumed that it\u0027s for the placement of the hostapd.conf file, that\u0027s why I got cofused. Time2fix on quark then.",
+      "parentUuid": "da7fb54a_fecb8f1c",
+      "revId": "106aa85b10dd161751587dcd29d69e0a11bc87f8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7fb54a_9e4e03c0",
         "filename": "wifi/hostapd.conf",
         "patchSetId": 2
