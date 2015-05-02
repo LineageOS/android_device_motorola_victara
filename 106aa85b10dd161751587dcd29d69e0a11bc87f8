@@ -16,6 +16,24 @@
       "revId": "106aa85b10dd161751587dcd29d69e0a11bc87f8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7fb54a_9e9fe35e",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 2
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 6351
+      },
+      "writtenOn": "2015-05-02T07:30:48Z",
+      "side": 1,
+      "message": "Why?\n\nI thought this looked right to me.  That is going to be the location that hostapd stores its data files for ongoing connections so it does seem nice to have it as a named subdir to keep the files separate.",
+      "parentUuid": "da7fb54a_5e955b3e",
+      "revId": "106aa85b10dd161751587dcd29d69e0a11bc87f8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
