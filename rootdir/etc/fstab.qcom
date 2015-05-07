@@ -9,4 +9,4 @@
 /dev/block/platform/msm_sdcc.1/by-name/boot           /boot        emmc    defaults                                    recoveryonly
 /dev/block/platform/msm_sdcc.1/by-name/recovery       /recovery        emmc    defaults                                    recoveryonly
 
-/devices/platform/xhci-hcd/usb1/1-1/1-1:1.0     auto         vfat    defaults                                    voldmanaged=usbdisk:auto
+/devices/platform/xhci-hcd/usb1/1-1/1-1:1.0     auto         auto    defaults                                    voldmanaged=usbdisk:auto,noemulatedsd
