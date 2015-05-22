@@ -20,8 +20,12 @@ import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
+import android.os.Handler;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
+
+import android.app.KeyguardManager;
+
 import android.util.Log;
 
 import static com.cyanogenmod.settings.device.IrGestureManager.*;
@@ -30,6 +34,7 @@ public class UserAwareDisplay implements ScreenStateNotifier {
     private static final String TAG = "CMActions-UAD";
 
     private static final int DELAYED_OFF_MS = 3000;
+    private static final int KEYGUARD_POLL_MS = 1000;
 
     private static final int IR_GESTURES_FOR_SCREEN_ON = (1 << IR_GESTURE_OBJECT_DETECTED) |
             (1 << IR_GESTURE_GESTURE_OBJECT_NOT_DETECTED);
@@ -39,10 +44,12 @@ public class UserAwareDisplay implements ScreenStateNotifier {
     private final SensorHelper mSensorHelper;
     private final IrGestureVote mIrGestureVote;
     private final PowerManager mPowerManager;
+    private final KeyguardManager mKeyguardManager;
     private final Sensor mIrGestureSensor;
     private final Sensor mStowSensor;
     private final WakeLock mWakeLock;
     private final WakeLock mDelayedOffWakeLock;
+    private Handler mHandler;
 
     private boolean mEnabled;
     private boolean mScreenIsLocked;
@@ -56,8 +63,11 @@ public class UserAwareDisplay implements ScreenStateNotifier {
         mIrGestureVote = new IrGestureVote(irGestureManager);
         mPowerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
 
+        mKeyguardManager = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
+
         mWakeLock = mPowerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, TAG);
         mDelayedOffWakeLock = mPowerManager.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, TAG);
+        mHandler = new Handler();
 
         mIrGestureSensor = sensorHelper.getIrGestureSensor();
         mStowSensor = sensorHelper.getStowSensor();
@@ -67,19 +77,31 @@ public class UserAwareDisplay implements ScreenStateNotifier {
     @Override
     public void screenTurnedOn() {
         if (mCMActionsSettings.isUserAwareDisplayEnabled()) {
-            enableSensors();
+            if (mKeyguardManager.inKeyguardRestrictedInputMode()) {
+                scheduleKeyguardPoll();
+            } else {
+                enableSensors();
+            }
         } else {
             // Option was potentially disabled while the screen is on, make
             // sure everything is turned off if it was enabled.
-            disableSensors();
-            disableScreenLock();
+            screenTurnedOff();
         }
     }
 
     @Override
     public void screenTurnedOff() {
+        disableKeyguardPolling();
         disableSensors();
         disableScreenLock();
+    }
+
+    private void scheduleKeyguardPoll() {
+        mHandler.postDelayed(mCheckKeyguard, KEYGUARD_POLL_MS);
+    }
+
+    private void disableKeyguardPolling() {
+        mHandler.removeCallbacks(mCheckKeyguard);
     }
 
     private void enableSensors() {
@@ -170,6 +192,17 @@ public class UserAwareDisplay implements ScreenStateNotifier {
 
         @Override
         public void onAccuracyChanged(Sensor mSensor, int accuracy) {
+        }
+    };
+
+    private Runnable mCheckKeyguard = new Runnable() {
+        @Override
+        public void run() {
+            if (! mKeyguardManager.inKeyguardRestrictedInputMode()) {
+                enableSensors();
+            } else {
+                scheduleKeyguardPoll();
+            }
         }
     };
 }
