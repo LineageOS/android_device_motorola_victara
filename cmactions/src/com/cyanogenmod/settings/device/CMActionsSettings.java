@@ -16,6 +16,7 @@
 
 package com.cyanogenmod.settings.device;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -77,13 +78,12 @@ public class CMActionsSettings {
         return mChopChopAction != ACTION_NONE;
     }
 
-    public static boolean isDozeEnabled(Context context) {
-        return (Settings.Secure.getInt(context.getContentResolver(),
-                                    Settings.Secure.DOZE_ENABLED, 1) != 0);
+    public static boolean isDozeEnabled(ContentResolver contentResolver) {
+        return (Settings.Secure.getInt(contentResolver, Settings.Secure.DOZE_ENABLED, 1) != 0);
     }
 
     public boolean isDozeEnabled() {
-        return isDozeEnabled(mContext);
+        return isDozeEnabled(mContext.getContentResolver());
     }
 
     public boolean isIrWakeupEnabled() {
