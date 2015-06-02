@@ -74,10 +74,6 @@ PRODUCT_COPY_FILES += \
     device/motorola/victara/permissions/com.motorola.software.x_line.xml:system/etc/permissions/com.motorola.software.x_line.xml \
     device/motorola/victara/permissions/com.motorola.targetnotif.xml:system/etc/permissions/com.motorola.targetnotif.xml
 
-# System Properties
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
-
 PRODUCT_CHARACTERISTICS := nosdcard
 
 # Screen density
