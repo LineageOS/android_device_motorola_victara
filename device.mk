@@ -124,6 +124,10 @@ PRODUCT_PACKAGES += \
     resize2fs \
     setup_fs
 
+# GPS
+PRODUCT_PACKAGES += \
+    gps.msm8974
+
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config

@@ -189,12 +189,8 @@ etc/gps.conf
 etc/izat.conf
 etc/quipc.conf
 etc/sap.conf
-lib/hw/gps.default.so
-lib/libgps.utils.so
 lib/libloc_api_v02.so
-lib/libloc_core.so
 lib/libloc_ds_api.so
-lib/libloc_eng.so
 vendor/lib/libalarmservice_jni.so
 vendor/lib/libgeofence.so
 vendor/lib/libizat_core.so
