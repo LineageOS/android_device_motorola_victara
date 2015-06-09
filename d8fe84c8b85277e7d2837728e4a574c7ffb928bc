@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da4df55a_319390a5",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2015-06-09T09:03:09Z",
+      "side": 1,
+      "message": "This should only be done for user builds.",
+      "revId": "d8fe84c8b85277e7d2837728e4a574c7ffb928bc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
