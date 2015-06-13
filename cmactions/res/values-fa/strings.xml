@@ -16,11 +16,10 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="screen_gestures_panel_summary">Gesten verwenden, um Aktionen auszuführen</string>
-  <string name="ambient_display_title">Inaktivitätsdisplay</string>
-  <string name="actions_title">Aktionen</string>
-  <string name="action_none">Deaktivieren</string>
-  <string name="action_launch_camera">Kamera starten</string>
-  <string name="action_torch">Taschenlampe</string>
-  <string name="feedback_intensity_none">Deaktiviert</string>
+  <string name="action_none">غیرفعال کردن</string>
+  <string name="action_launch_camera">راه‌اندازی دوربین</string>
+  <string name="feedback_intensity_none">غیرفعال</string>
+  <string name="feedback_intensity_low">کم</string>
+  <string name="feedback_intensity_medium">متوسط</string>
+  <string name="feedback_intensity_high">زیاد</string>
 </resources>

@@ -22,4 +22,12 @@
   <string name="ambient_display_title">Aktywny wyświetlacz</string>
   <string name="pick_up_gesture_title">Odbierz</string>
   <string name="actions_title">Akcje</string>
+  <string name="action_none">Wyłączone</string>
+  <string name="action_launch_camera">Uruchom aparat</string>
+  <string name="action_torch">Przełącznik latarki</string>
+  <string name="feedback_intensity_title">Intensywność wibracji</string>
+  <string name="feedback_intensity_none">Wyłączona</string>
+  <string name="feedback_intensity_low">Niska</string>
+  <string name="feedback_intensity_medium">Średnia</string>
+  <string name="feedback_intensity_high">Wysoka</string>
 </resources>
