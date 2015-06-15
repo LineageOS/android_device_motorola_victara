@@ -25,10 +25,9 @@ $(RAW_DTIMAGE_TARGET): $(DTBTOOL) $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr $(I
 	$(hide) $(DTBTOOL) -2 -o $(RAW_DTIMAGE_TARGET) -s $(BOARD_KERNEL_PAGESIZE) -p $(KERNEL_OUT)/scripts/dtc/ $(KERNEL_OUT)/arch/arm/boot/
 	@echo -e ${CL_CYN}"Made DT image: $@"${CL_RST}
 
-$(INSTALLED_DTIMAGE_TARGET): $(RAW_DTIMAGE_TARGET)
+$(INSTALLED_DTIMAGE_TARGET): $(RAW_DTIMAGE_TARGET) lz4
 	$(call pretty,"Target dt image: $(INSTALLED_DTIMAGE_TARGET)")
-	lz4 -9 < $(RAW_DTIMAGE_TARGET) > $@ || \
-		lz4c -c1 -y $(RAW_DTIMAGE_TARGET) $@
+	lz4 -9 < $(RAW_DTIMAGE_TARGET) > $@
 
 ## Overload bootimg generation: Same as the original, + --dt arg
 $(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_FILES) $(INSTALLED_DTIMAGE_TARGET)
