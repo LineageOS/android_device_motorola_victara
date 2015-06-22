@@ -28,6 +28,8 @@
   <string name="actions_title">Agoj</string>
   <string name="camera_gesture_title">Duoble turni</string>
   <string name="camera_gesture_summary">Ago kiam vi uzas la duoblan turnadon</string>
+  <string name="chop_chop_gesture_title">Duobla skuado</string>
+  <string name="chop_chop_gesture_summary">Ago kiam vi uzas la duoblan skuadon</string>
   <string name="ir_silencer_title">Svingi por silentigi</string>
   <string name="ir_silencer_summary">Silentigi alvenantajn alvokojn kiam vi mansvingas tra la ekrano</string>
   <string name="action_none">Malŝalti</string>
