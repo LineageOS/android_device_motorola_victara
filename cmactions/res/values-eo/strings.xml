@@ -38,7 +38,7 @@
   <string name="feedback_intensity_title">Intenseco de la tuŝa signilo</string>
   <string name="feedback_intensity_summary">Forteco de la tuŝa signilo por la duobla turnado kaj chop-chop agojn</string>
   <string name="feedback_intensity_none">Malŝaltita</string>
-  <string name="feedback_intensity_low">Malalta</string>
+  <string name="feedback_intensity_low">Preskaŭ malplena</string>
   <string name="feedback_intensity_medium">Meza</string>
   <string name="feedback_intensity_high">Alta</string>
 </resources>
