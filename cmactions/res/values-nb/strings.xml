@@ -16,9 +16,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="screen_gestures_panel_title">Scurtături gesturi</string>
-  <string name="screen_gestures_panel_summary">Utilizați gesturi pentru a efectua acțiuni</string>
-  <string name="actions_title">Acțiuni</string>
-  <string name="action_torch">Comutare lanternă</string>
-  <string name="feedback_intensity_none">Dezactivat</string>
+  <string name="action_none">Deaktiver</string>
+  <string name="action_launch_camera">Start kamera</string>
+  <string name="action_torch">Skru av/på lommelykt</string>
+  <string name="feedback_intensity_title">Haptisk intensitet</string>
+  <string name="feedback_intensity_none">Deaktivert</string>
+  <string name="feedback_intensity_low">Lav</string>
+  <string name="feedback_intensity_medium">Middels</string>
+  <string name="feedback_intensity_high">Høy</string>
 </resources>
