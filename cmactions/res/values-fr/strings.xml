@@ -22,6 +22,9 @@
   <string name="screen_gestures_panel_summary">Utiliser des gestes pour effectuer des actions</string>
   <string name="ambient_display_title">Affichage ambiant</string>
   <string name="actions_title">Actions</string>
+  <string name="camera_gesture_title">Double torsion</string>
+  <string name="chop_chop_gesture_title">Double tranchage</string>
+  <string name="chop_chop_gesture_summary">Action lorsque vous utilisez le geste \"Double tranchage\"</string>
   <string name="action_none">Désactiver</string>
   <string name="action_launch_camera">Lancer l\'appareil photo</string>
   <string name="feedback_intensity_none">Désactivé</string>
