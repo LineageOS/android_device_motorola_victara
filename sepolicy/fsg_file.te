@@ -1,0 +1,1 @@
+allow fsg_file self:filesystem associate;
