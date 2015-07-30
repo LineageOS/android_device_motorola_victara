@@ -44,9 +44,6 @@ on init
     chown root diag /sys/kernel/dropbox/event
     chown root diag /sys/kernel/dropbox/data
 
-    # Enable more binder logs for debugging purpose
-    write /sys/module/binder/parameters/debug_mask 0x10005
-
     # ESDFS
     chown mot_esdfs root /proc/fs/esdfs/packages
 
@@ -133,6 +130,9 @@ on post-fs-data
     # Setup folder for native to transfer data to NativeDropBoxAgent
     mkdir /data/system/dropbox-add 0730 system diag
 
+    # Setup folder for camera HAL subsystem
+    mkdir /data/camera_dump 0750 media media
+
     # Set correct permissions for UTAGS
     exec /system/bin/chown -L mot_tcmd:system /dev/block/platform/msm_sdcc.1/by-name/utags
     exec /system/bin/chown -L mot_tcmd:system /dev/block/platform/msm_sdcc.1/by-name/utagsBackup
@@ -147,6 +147,10 @@ on post-fs-data
     # Create directory for cutback
     mkdir /data/misc/cutback 0770 radio wifi
 
+    #setup folder for WLAN WAPI
+    mkdir /data/wapi_certificate 0750 system wifi
+    chown system wifi /data/wapi_certificate
+
     # Create directory used by power_supply_logger
     mkdir /data/power_supply_logger 0750 mot_pwric log
 
@@ -159,6 +163,10 @@ on post-fs-data
     start batt_health
     start hvdcp
 
+on post-fs
+    swapon_all fstab.qcom
+    write /proc/sys/vm/page-cluster 0
+    write /proc/sys/vm/swappiness 100
 
 # To report kernel panic
 service apanic_annotate  /system/bin/sh /system/bin/apanic_annotate.sh build
@@ -287,7 +295,7 @@ on boot
     setprop persist.audio.calfile6 /etc/acdbdata/${ro.hw.device}/${ro.hw.device}_Speaker_cal.acdb
 
 service adspd /system/bin/adspd /dev/ttyHS3
-    class late_start
+    class main
     socket adspdsock stream 0660 system audio
     user audio
     group audio input diag
@@ -359,6 +367,9 @@ on property:persist.sys.diag_mdlog.on=1
     start diag_mdlog
 
 on property:persist.sys.diag_mdlog.on=0
+    stop diag_mdlog
+
+on property:log.diag_mdlog.invld_mode_stop=1
     stop diag_mdlog
 
 service diag_mdlog /system/bin/diag_mdlog-wrap
