@@ -318,6 +318,7 @@ lib/libmdmdetect.so
 lib/libmotext_inf.so
 lib/libqmimotext.so
 vendor/lib/libconfigdb.so
+vendor/lib/libsystem_health_mon.so
 vendor/lib/libnetmgr.so
 vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libril-qcril-hook-oem.so
