@@ -36,10 +36,10 @@
     </acdb_ids>
 
     <backend_names>
-        <device name="SND_DEVICE_OUT_SPEAKER" backend="mi2s" />
-        <device name="SND_DEVICE_OUT_SPEAKER_REVERSE" backend="mi2s" />
-        <device name="SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES" backend="mi2s-and-slim" />
-        <device name="SND_DEVICE_OUT_VOICE_SPEAKER" backend="mi2s" />
+        <device name="SND_DEVICE_OUT_SPEAKER" backend="speaker" />
+        <device name="SND_DEVICE_OUT_SPEAKER_REVERSE" backend="speaker" />
+        <device name="SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES" backend="speaker-and-headphones" />
+        <device name="SND_DEVICE_OUT_VOICE_SPEAKER" backend="speaker" />
     </backend_names>
 
     <pcm_ids>
