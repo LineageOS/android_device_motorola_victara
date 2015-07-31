@@ -318,6 +318,7 @@ lib/libmdmcutback.so
 lib/libmdmdetect.so
 lib/libmotext_inf.so
 lib/libqmimotext.so
+lib/libril.so
 vendor/lib/libconfigdb.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libsystem_health_mon.so
