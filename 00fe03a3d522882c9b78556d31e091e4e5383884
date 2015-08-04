@@ -22,6 +22,30 @@
       "revId": "00fe03a3d522882c9b78556d31e091e4e5383884",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f0e0f27_3a98dd68",
+        "filename": "rootdir/etc/init.mmi.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 6351
+      },
+      "writtenOn": "2015-08-04T06:18:08Z",
+      "side": 1,
+      "message": "I don\u0027t think that this causes any problems and it makes future updates easier to leave inert things like this in place.  That causes fewer diffs I have to look at later.",
+      "parentUuid": "9f0e0f27_9a73694e",
+      "range": {
+        "startLine": 167,
+        "startChar": 0,
+        "endLine": 167,
+        "endChar": 4
+      },
+      "revId": "00fe03a3d522882c9b78556d31e091e4e5383884",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
