@@ -88,6 +88,7 @@ ro.vendor.extension_library=/vendor/lib/libqc-opt.so
 persist.radio.apn_delay=5000
 ro.telephony.default_network=9
 telephony.lteOnGsmDevice=1
+telephony.lteOnCdmaDevice=1
 
 # Camera
 camera2.portability.force_api=1
