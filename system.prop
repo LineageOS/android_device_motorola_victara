@@ -86,7 +86,7 @@ ro.vendor.extension_library=/vendor/lib/libqc-opt.so
 
 # Radio
 persist.radio.apn_delay=5000
-ro.telephony.default_network=9
+ro.telephony.default_network=10
 telephony.lteOnGsmDevice=1
 telephony.lteOnCdmaDevice=1
 
