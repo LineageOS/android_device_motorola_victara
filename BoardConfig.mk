@@ -163,6 +163,11 @@ BOARD_SEPOLICY_UNION += \
     vold.te \
     wpa.te
 
+# Vendor Init
+TARGET_UNIFIED_DEVICE := true
+TARGET_INIT_VENDOR_LIB := libinit_victara
+TARGET_LIBINIT_DEFINES_FILE := device/motorola/victara/init/init_victara.c
+
 # Vold
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
