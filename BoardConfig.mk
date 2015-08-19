@@ -164,7 +164,6 @@ BOARD_SEPOLICY_UNION += \
     wpa.te
 
 # Vendor Init
-TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_victara
 TARGET_LIBINIT_DEFINES_FILE := device/motorola/victara/init/init_victara.c
 
