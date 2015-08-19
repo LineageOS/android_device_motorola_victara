@@ -46,8 +46,14 @@ void vendor_load_properties()
 
     property_get("ro.boot.carrier", carrier);
 
+    property_set("ro.build.product", "victara");
+    property_set("ro.product.device", "victara");
+
     if (strstr(carrier, "vzw")) {
         /* xt1096 */
+        property_set("ro.product.model", "XT1096");
+        property_set("ro.build.description", "victara_verizon-user 5.1 LPE23.32-25-3 10 release-keys");
+        property_set("ro.build.fingerprint", "motorola/victara_verizon/victara:5.1/LPE23.32-25-3/10:user/release-keys");
         property_set("ro.telephony.default_network", "10");
         property_set("telephony.lteOnCdmaDevice", "1");
         property_set("ro.com.google.clientidbase.am", "android-verizon");
@@ -55,6 +61,9 @@ void vendor_load_properties()
         property_set("ro.com.google.clientidbase.yt", "android-verizon");
     } else {
         /* all others */
+        property_set("ro.product.model", "XT1095");
+        property_set("ro.build.description", "victara_tmo-user 5.0 LXE22.46-11 10 release-keys");
+        property_set("ro.build.fingerprint", "motorola/victara_tmo/victara:5.0/LXE22.46-11/10:user/release-keys");
         property_set("ro.telephony.default_network", "9");
         property_set("telephony.lteOnGsmDevice", "1");
     }
