@@ -49,7 +49,14 @@ void vendor_load_properties()
     property_set("ro.build.product", "victara");
     property_set("ro.product.device", "victara");
 
-    if (strstr(carrier, "vzw")) {
+    if (strstr(carrier, "retca")) {
+        /* xt1097 others */
+        property_set("ro.product.model", "XT1097");
+        property_set("ro.build.description", "victara_retca-user 5.1 LPE23.32-48.1 1 release-keys");
+        property_set("ro.build.fingerprint", " motorola/victara_retca/victara:5.1/LPE23.32-48.1/1:user/release-keys");
+        property_set("ro.telephony.default_network", "9");
+        property_set("telephony.lteOnGsmDevice", "1");
+    } else if (strstr(carrier, "vzw")) {
         /* xt1096 */
         property_set("ro.product.model", "XT1096");
         property_set("ro.build.description", "victara_verizon-user 5.1 LPE23.32-25-3 10 release-keys");
