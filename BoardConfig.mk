@@ -71,6 +71,9 @@ QCOM_BT_USE_SMD_TTY := true
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 
+# Crypto
+TARGET_HW_DISK_ENCRYPTION := true
+
 # Display
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
