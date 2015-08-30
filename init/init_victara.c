@@ -63,6 +63,7 @@ void vendor_load_properties()
         property_set("ro.build.fingerprint", "motorola/victara_verizon/victara:5.1/LPE23.32-25-3/10:user/release-keys");
         property_set("ro.telephony.default_network", "10");
         property_set("telephony.lteOnCdmaDevice", "1");
+        property_set("ro.telephony.default_cdma_sub", "0");
         property_set("ro.ril.force_eri_from_xml", "true");
         property_set("ro.telephony.get_imsi_from_sim", "true");
         property_set("ro.com.google.clientidbase.am", "android-verizon");
