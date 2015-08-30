@@ -16,6 +16,24 @@
       "revId": "15ed279228dc88bf9a044e089fbe1bbad8bb5c2d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_6027b766",
+        "filename": "system.prop",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2015-08-30T16:15:44Z",
+      "side": 1,
+      "message": "PRODUCT_GMS_CLIENTID_BASE :\u003d android-motorola  in cm.mk sets ro.com.google.clientidbase.gms (see build/)",
+      "parentUuid": "3f1d235d_a0d14f5a",
+      "revId": "15ed279228dc88bf9a044e089fbe1bbad8bb5c2d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
