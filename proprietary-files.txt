@@ -336,6 +336,7 @@ vendor/lib/libxml.so
 
 # Sensors
 bin/stm401
+etc/firmware/cy8c20247_24lkxi.hex
 etc/firmware/sensorhubfw.bin
 etc/firmware/sensorhubfw_p0.bin
 etc/firmware/sensorhubver_p0.txt
