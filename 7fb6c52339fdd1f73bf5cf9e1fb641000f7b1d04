@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_551234b3",
+        "filename": "system.prop",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 10151
+      },
+      "writtenOn": "2015-09-02T07:16:47Z",
+      "side": 0,
+      "message": "Why don\u0027t set this property to false?",
+      "range": {
+        "startLine": 93,
+        "startChar": 2,
+        "endLine": 93,
+        "endChar": 7
+      },
+      "revId": "7fb6c52339fdd1f73bf5cf9e1fb641000f7b1d04",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
