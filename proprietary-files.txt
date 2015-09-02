@@ -314,6 +314,7 @@ bin/netmgrd
 bin/qcks
 bin/qmi_motext_hook
 bin/qmuxd
+bin/radish
 bin/rild:bin/rild.mmi
 bin/rfs_access
 bin/rmt_storage
