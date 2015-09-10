@@ -153,6 +153,8 @@ BOARD_SEPOLICY_UNION += \
     mediaserver.te \
     mm-qcamerad.te \
     mpdecision.te \
+    property_contexts \
+    property.te \
     rild.te \
     rmt_storage.te \
     stm401.te \
