@@ -26,12 +26,26 @@
 <!-- IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                          -->
 <audio_platform_info>
     <acdb_ids>
+        <!-- Changes Motorola made to the table in the source code -->
         <device name="SND_DEVICE_OUT_SPEAKER" acdb_id="15" />
         <device name="SND_DEVICE_OUT_SPEAKER_REVERSE" acdb_id="15" />
         <device name="SND_DEVICE_OUT_VOICE_SPEAKER" acdb_id="15" />
 
         <device name="SND_DEVICE_IN_HANDSET_MIC" acdb_id="6" />
-        <device name="SND_DEVICE_IN_VOICE_REC_MIC" acdb_id="61" />
+
+        <!-- Changes from Motorola's audio_platform_info.xml -->
+        <device name="SND_DEVICE_OUT_VOICE_HANDSET" acdb_id="7"/>
+        <device name="SND_DEVICE_OUT_VOICE_HANDSET_TMUS" acdb_id="7"/>
+        <device name="SND_DEVICE_OUT_VOICE_ANC_HANDSET" acdb_id="7"/>
+        <device name="SND_DEVICE_OUT_HEADPHONES" acdb_id="9"/>
+        <device name="SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES" acdb_id="9"/>
+        <device name="SND_DEVICE_OUT_VOICE_SPEAKER" acdb_id="14"/>
+        <device name="SND_DEVICE_IN_VOICE_DMIC" acdb_id="6"/>
+        <device name="SND_DEVICE_IN_VOICE_DMIC_TMUS" acdb_id="6"/>
+        <device name="SND_DEVICE_IN_VOICE_REC_MIC" acdb_id="61"/>
+        <device name="SND_DEVICE_IN_VOICE_REC_MIC_NS" acdb_id="107"/>
+        <device name="SND_DEVICE_IN_VOICE_REC_DMIC_STEREO" acdb_id="34"/>
+        <device name="SND_DEVICE_IN_VOICE_REC_DMIC_FLUENCE" acdb_id="41"/>
     </acdb_ids>
 
     <backend_names>
@@ -49,3 +63,4 @@
         <!-- empty -->
     </device_names>
 </audio_platform_info>
+
