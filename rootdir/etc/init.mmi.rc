@@ -405,6 +405,7 @@ service bugreport /system/bin/bug2go-bugreport
 
 on property:sys.boot_completed=1
     setprop sys.io.scheduler bfq
+    write /sys/block/mmcblk0/queue/iosched/slice_idle 0
 
 service mmi-boot-sh /system/bin/sh /init.mmi.boot.sh
     class core
