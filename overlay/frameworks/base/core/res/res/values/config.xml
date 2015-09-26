@@ -363,5 +363,9 @@
          Used to decide if we show pulse settings -->
     <bool name="config_ledCanPulse">false</bool>
 
+     <!-- Performance profiles -->
+     <string name="config_perf_profile_prop">powerhal</string>
+     <string name="config_perf_profile_default_entry">1</string>
+
 </resources>
 
