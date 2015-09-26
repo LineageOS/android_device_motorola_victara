@@ -94,7 +94,10 @@ EXTENDED_FONT_FOOTPRINT := true
 TARGET_GPS_HAL_PATH := device/motorola/victara/gps
 
 # Hardware
-BOARD_HARDWARE_CLASS := device/motorola/victara/cmhw
+BOARD_USES_CYANOGEN_HARDWARE := true
+BOARD_HARDWARE_CLASS := \
+    device/motorola/victara/cmhw \
+    hardware/cyanogen/cmhw
 
 # Init
 TARGET_NR_SVC_SUPP_GIDS := 32
