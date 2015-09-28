@@ -96,6 +96,9 @@ TARGET_GPS_HAL_PATH := device/motorola/victara/gps
 # Hardware
 BOARD_HARDWARE_CLASS := device/motorola/victara/cmhw
 
+# Healthd
+BOARD_HAL_STATIC_LIBRARIES += libhealthd.msm8974
+
 # Init
 TARGET_NR_SVC_SUPP_GIDS := 32
 
