@@ -137,32 +137,6 @@ BOARD_PROVIDES_LIBRIL := true
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/motorola/victara/sepolicy
 
-BOARD_SEPOLICY_UNION += \
-    adspd.te \
-    atvc.te \
-    batt_health.te \
-    device.te \
-    file_contexts \
-    file.te \
-    fsg_file.te \
-    healthd.te \
-    init_shell.te \
-    init.te \
-    installd.te \
-    keystore.te \
-    mediaserver.te \
-    mm-qcamerad.te \
-    mpdecision.te \
-    rild.te \
-    rmt_storage.te \
-    stm401.te \
-    system_app.te \
-    system_server.te \
-    thermal-engine.te \
-    ueventd.te \
-    vold.te \
-    wpa.te
-
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_victara
