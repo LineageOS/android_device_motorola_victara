@@ -164,7 +164,7 @@ public class CMActionsSettings {
             if (action == ACTION_LAUNCH_CAMERA) {
                 new CameraActivationAction(mContext, vibratorPeriod).action();
             } else if (action == ACTION_TORCH) {
-                new TorchAction(mContext, vibratorPeriod).action();
+//                new TorchAction(mContext, vibratorPeriod).action();
             }
         }
     };

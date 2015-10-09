@@ -17,7 +17,7 @@
 package com.cyanogenmod.settings.device;
 
 import android.content.Context;
-import android.hardware.TorchManager;
+//import android.hardware.TorchManager;
 import android.os.Vibrator;
 import android.util.Log;
 
@@ -26,19 +26,19 @@ public class TorchAction implements SensorAction {
 
     private static final int TURN_SCREEN_ON_WAKE_LOCK_MS = 500;
 
-    private final TorchManager mTorchManager;
-    private final Vibrator mVibrator;
-    private final int mVibratorPeriod;
+//    private final TorchManager mTorchManager;
+//    private final Vibrator mVibrator;
+//    private final int mVibratorPeriod;
 
-    public TorchAction(Context context, int vibratorPeriod) {
-        mTorchManager = (TorchManager) context.getSystemService(Context.TORCH_SERVICE);
-        mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
-        mVibratorPeriod = vibratorPeriod;
-    }
+//    public TorchAction(Context context, int vibratorPeriod) {
+//        mTorchManager = (TorchManager) context.getSystemService(Context.TORCH_SERVICE);
+//        mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+//        mVibratorPeriod = vibratorPeriod;
+//    }
 
     @Override
     public void action() {
-        mVibrator.vibrate(mVibratorPeriod);
-        mTorchManager.toggleTorch();
+//        mVibrator.vibrate(mVibratorPeriod);
+//        mTorchManager.toggleTorch();
     }
 }
