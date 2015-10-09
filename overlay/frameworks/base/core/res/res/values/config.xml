@@ -44,7 +44,7 @@
     </string-array>
 
     <!-- Is the notification LED brightness adjustable ? Used to decide if the user can set LED brightness -->
-    <bool name="config_adjustableNotificationLedBrightness">true</bool>
+    <!--bool name="config_adjustableNotificationLedBrightness">true</bool-->
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
@@ -190,7 +190,7 @@
     <bool name="config_wifiDisplaySupportsProtectedBuffers">false</bool>
 
     <!-- We dont have different firmware for wifi modes, prevent reloading it -->
-    <bool name="config_wifiApFirmwareReload">false</bool>
+    <!--bool name="config_wifiApFirmwareReload">false</bool-->
 
     <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
                   autodetected from the Configuration. -->
@@ -208,7 +208,7 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <integer name="config_deviceHardwareKeys">64</integer>
+    <!--integer name="config_deviceHardwareKeys">64</integer-->
 
     <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
@@ -222,7 +222,7 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <integer name="config_deviceHardwareWakeKeys">64</integer>
+    <!--integer name="config_deviceHardwareWakeKeys">64</integer-->
 
     <!-- An Array of "[ConnectivityManager connectionType],
          [# simultaneous connection types]"  -->
@@ -351,21 +351,21 @@
     <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
 
     <!-- Component name of the geofence services provider. -->
-    <string name="config_geofenceServicesProvider" translatable="false">com.motorola.motgeofencesvc</string>
+    <!--string name="config_geofenceServicesProvider" translatable="false">com.motorola.motgeofencesvc</string-->
 
     <!-- Component name of the combo network location provider. -->
-    <string name="config_comboNetworkLocationProvider" translatable="false">com.qualcomm.location</string>
+    <!--string name="config_comboNetworkLocationProvider" translatable="false">com.qualcomm.location</string-->
 
     <!-- Flag indicating if the speed up audio on mt call code should be executed -->
     <bool name="config_speed_up_audio_on_mt_calls">false</bool>
 
     <!-- Do the battery/notification LEDs support pulsing?
          Used to decide if we show pulse settings -->
-    <bool name="config_ledCanPulse">false</bool>
+    <!--bool name="config_ledCanPulse">false</bool-->
 
      <!-- Performance profiles -->
-     <string name="config_perf_profile_prop">powerhal</string>
-     <string name="config_perf_profile_default_entry">1</string>
+     <!--string name="config_perf_profile_prop">powerhal</string-->
+     <!--string name="config_perf_profile_default_entry">1</string-->
 
 </resources>
 
