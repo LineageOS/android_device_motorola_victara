@@ -51,7 +51,7 @@ on fs
     # Mount PDS
     wait /dev/block/platform/msm_sdcc.1/by-name/pds
     exec /system/bin/e2fsck -y /dev/block/platform/msm_sdcc.1/by-name/pds
-    exec /system/bin/logwrapper /system/bin/mount_ext4.sh pds /dev/block/platform/msm_sdcc.1/by-name/pds /pds 2048 500 defcontext=u:object_r:pds_file:s0
+    exec /system/bin/logwrapper /system/bin/mount_ext4.sh pds /dev/block/platform/msm_sdcc.1/by-name/pds /pds 2048 500
     restorecon_recursive /pds
 
     mkdir /pds/camera 0755 mot_tcmd mot_tcmd
@@ -81,7 +81,7 @@ on fs
 
     # Mount modem FSG partition
     wait /dev/block/platform/msm_sdcc.1/by-name/fsg
-    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/fsg /fsg ro nosuid nodev barrier=0 context=u:object_r:fsg_file:s0
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/fsg /fsg ro nosuid nodev barrier=0
 
     # Set correct permissions for HOB, DHOB
     exec /system/bin/chmod -L 660 /dev/block/platform/msm_sdcc.1/by-name/hob
@@ -101,7 +101,7 @@ on fs
 
     #Mount customize partion
     wait /dev/block/platform/msm_sdcc.1/by-name/customize
-    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/customize /customize ro discard nosuid nodev noatime nodiratime noexec defcontext=u:object_r:user_config_file:s0
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/customize /customize ro discard nosuid nodev noatime nodiratime noexec
 
 on post-fs-data
     # Trigger the defuse tool
