@@ -183,8 +183,8 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
 # Motorola
-PRODUCT_PACKAGES += \
-    charge_only_mode
+#PRODUCT_PACKAGES += \
+#    charge_only_mode
 
 # NFC
 PRODUCT_PACKAGES += \
