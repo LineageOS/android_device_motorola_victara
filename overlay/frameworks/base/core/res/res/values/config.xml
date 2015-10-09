@@ -348,7 +348,7 @@
     <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
 
     <!-- Component name of the geofence services provider. -->
-    <string name="config_geofenceServicesProvider" translatable="false">com.motorola.motgeofencesvc</string>
+    <!--string name="config_geofenceServicesProvider" translatable="false">com.motorola.motgeofencesvc</string-->
 
     <!-- Component name of the combo network location provider. -->
     <string name="config_comboNetworkLocationProvider" translatable="false">com.qualcomm.location</string>
@@ -360,9 +360,9 @@
          Used to decide if we show pulse settings -->
     <bool name="config_ledCanPulse">false</bool>
 
-     <!-- Performance profiles -->
-     <string name="config_perf_profile_prop">powerhal</string>
-     <string name="config_perf_profile_default_entry">1</string>
+    <!-- Performance profiles -->
+    <!--string name="config_perf_profile_prop">powerhal</string-->
+    <!--string name="config_perf_profile_default_entry">1</string-->
 
     <!-- enable doze powersaving mode -->
     <bool name="config_enableAutoPowerModes">true</bool>
