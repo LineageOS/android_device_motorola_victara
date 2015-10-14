@@ -46,6 +46,9 @@ on init
     mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
     mkdir /storage/usbdisk 0700 root root
 
+    # Symbols required for motorola blobs
+    export LD_PRELOAD /system/lib/libmoto.so
+
     export EXTERNAL_STORAGE /storage/emulated/legacy
     export SECONDARY_STORAGE /storage/usbdisk
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
