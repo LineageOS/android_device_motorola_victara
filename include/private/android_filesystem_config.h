@@ -29,7 +29,7 @@
 #ifdef HAVE_ANDROID_OS
 #include <linux/capability.h>
 #else
-#include "android_filesystem_capability.h"
+#include <private/android_filesystem_capability.h>
 #endif
 
 /* This is the master Users and Groups config for the platform.
