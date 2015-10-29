@@ -6,7 +6,6 @@
 /data/wapi_certificate(/.*)?            u:object_r:wapi_supplicant_data_file:s0
 
 /dev/bcm2079x-i2c                       u:object_r:nfc_device:s0
-/dev/block/platform/msm_sdcc.1/by-name/utags     u:object_r:utags_block_device:s0
 /dev/block/platform/msm_sdcc.1/by-name/hob       u:object_r:hob_block_device:s0
 /dev/block/platform/msm_sdcc.1/by-name/dhob      u:object_r:hob_block_device:s0
 /dev/block/platform/msm_sdcc.1/by-name/frp       u:object_r:frp_block_device:s0
