@@ -3,3 +3,6 @@ allow init fsg_file:filesystem { relabelfrom relabelto mount };
 allow init hob_block_device:blk_file setattr;
 allow init fuse:dir { relabelfrom read };
 allow init fuse:file getattr;
+allow init sysfs_battery_supply:lnk_file read;
+
+allow init self:socket read;
