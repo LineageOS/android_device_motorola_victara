@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f2577a7_9d71eae3",
+        "filename": "cmactions/src/com/cyanogenmod/settings/device/TorchAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 13956
+      },
+      "writtenOn": "2015-10-30T21:45:44Z",
+      "side": 1,
+      "message": "Check whether mRearCameraId is null ? in case no rear camera supported in that device.",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 71
+      },
+      "revId": "adb35efe77060fb7276a24232961e4d1749b59d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
