@@ -92,8 +92,8 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
 
 service qseecomd /system/bin/qseecomd
    class core
-   user system
-   group system
+   user root
+   group root
 
 service mpdecision /system/bin/mpdecision --avg_comp
    user root
