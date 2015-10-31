@@ -690,8 +690,8 @@ on property:sys.boot_completed=1
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/up_threshold_any_cpu_load
     chown system system /sys/devices/system/cpu/cpufreq/interactive/sampling_down_factor
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/sampling_down_factor
-    chown system system /dev/cpuctl/apps/cpu.notify_on_migrate
-    chmod 0660 /dev/cpuctl/apps/cpu.notify_on_migrate
+    chown system system /dev/cpuctl/cpu.notify_on_migrate
+    chmod 0660 /dev/cpuctl/cpu.notify_on_migrate
     chown system system /sys/module/cpu_boost/parameters/boost_ms
     chmod 0660 /sys/module/cpu_boost/parameters/boost_ms
     chown system system /sys/module/cpu_boost/parameters/sync_threshold
@@ -709,7 +709,7 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 30000
     write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 100000
     write /sys/devices/system/cpu/cpufreq/interactive/timer_slack 30000
-    write /dev/cpuctl/apps/cpu.notify_on_migrate 1
+    write /dev/cpuctl/cpu.notify_on_migrate 1
 
     # CPU Boost driver
 
