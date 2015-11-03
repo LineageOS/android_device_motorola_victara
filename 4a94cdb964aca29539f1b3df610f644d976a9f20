@@ -22,6 +22,30 @@
       "revId": "4a94cdb964aca29539f1b3df610f644d976a9f20",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f2f7f8d_f102803e",
+        "filename": "mkbootimg.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2015-11-03T04:43:33Z",
+      "side": 0,
+      "message": "hmm, it does add a significant size to my dt, but i still have well under a meg of space in the boot.img",
+      "parentUuid": "1f2f7f8d_51f4b45b",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 38
+      },
+      "revId": "4a94cdb964aca29539f1b3df610f644d976a9f20",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
