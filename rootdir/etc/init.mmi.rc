@@ -288,6 +288,10 @@ on boot
     setprop persist.audio.calfile5 /etc/acdbdata/${ro.hw.device}/${ro.hw.device}_Headset_cal.acdb
     setprop persist.audio.calfile6 /etc/acdbdata/${ro.hw.device}/${ro.hw.device}_Speaker_cal.acdb
 
+    # Adaptive LMK
+    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
+    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 53059
+
 service adspd /system/bin/adspd /dev/ttyHS3
     class main
     socket adspdsock stream 0660 system audio
