@@ -146,7 +146,6 @@ BOARD_SEPOLICY_UNION += \
     file.te \
     fsg_file.te \
     healthd.te \
-    init_shell.te \
     init.te \
     installd.te \
     keystore.te \
