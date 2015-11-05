@@ -12,5 +12,8 @@ allow batt_health sysfs_thermal:file r_file_perms;
 allow batt_health battery_data_file:file create_file_perms;
 allow batt_health battery_data_file:dir w_dir_perms;
 
+allow batt_health pds_file:dir search;
+allow batt_health pds_file:file { open read };
+
 allow batt_health self:capability net_admin;
 allow batt_health self:netlink_kobject_uevent_socket { read bind create setopt };
