@@ -431,12 +431,14 @@ service iprenew_eth0 /system/bin/dhcpcd -nBK
 
 service atvc_core /system/bin/dbvc_atvc_property_set
    class core
+   seclabel u:r:atvc:s0
    user mot_atvc
    group mot_tpapi
    oneshot
 
 service atvc /system/bin/dbvc_atvc_property_set
    class late_start
+   seclabel u:r:atvc:s0
    user mot_atvc
    group mot_tpapi
    oneshot
