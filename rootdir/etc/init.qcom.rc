@@ -271,11 +271,11 @@ on post-fs-data
 #service qcomsysd /system/bin/qcom-system-daemon
 #    class main
 
-on property:persist.radio.atfwd.start=false
-    stop atfwd
+# on property:persist.radio.atfwd.start=false
+#     stop atfwd
 
-on property:persist.radio.atfwd.start=true
-    start atfwd
+# on property:persist.radio.atfwd.start=true
+#     start atfwd
 
 # corefile limit and ETB enabling
 on property:persist.debug.trace=1
@@ -724,10 +724,10 @@ on property:sys.boot_completed=1
     rm /data/system/default_values
     start mpdecision
 
-service atfwd /system/bin/ATFWD-daemon
-    class late_start
-    user system
-    group system radio
+# service atfwd /system/bin/ATFWD-daemon
+#     class late_start
+#     user system
+#     group system radio
 
 service hostapd /system/bin/hostapd -dddd /data/misc/wifi/hostapd.conf
     class late_start
