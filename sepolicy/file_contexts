@@ -13,6 +13,8 @@
 /dev/stm401                             u:object_r:sensors_device:s0
 /dev/stm401_as                          u:object_r:sensors_device:s0
 
+/pds(/.*)?                              u:object_r:pds_file:s0
+
 /sys/devices/fd510000.gpio/gpio/gpio79(/.*)?    u:object_r:sysfs_adspd:s0
 /sys/devices/fd510000.gpio/gpio/gpio124(/.*)?   u:object_r:sysfs_adspd:s0
 /sys/devices/fd510000.gpio/gpio/gpio125(/.*)?   u:object_r:sysfs_adspd:s0
@@ -23,7 +25,7 @@
 /sys/vibrator/pwmvalue                          u:object_r:vibeamp_sysfs:s0
 
 /system/bin/adspd                       u:object_r:adspd_exec:s0
-/system/bin/dbvc_atvc_property_set      u:object_r:atvc:s0
+/system/bin/dbvc_atvc_property_set      u:object_r:atvc_exec:s0
 /system/bin/batt_health                 u:object_r:batt_health_exec:s0
 /system/bin/stm401                      u:object_r:stm401_exec:s0
 /system/bin/rild.mmi                    u:object_r:rild_exec:s0
