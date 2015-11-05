@@ -224,13 +224,11 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    init.qcom.bt.sh \
-    moto_com.sh
+    init.qcom.bt.sh
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.mmi.boot.sh \
-    init.mmi.diag.rc \
     init.mmi.radio.sh \
     init.mmi.rc \
     init.mmi.touch.sh \

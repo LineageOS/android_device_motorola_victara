@@ -1,6 +1,5 @@
 # Moto USB configuration
 import init.mmi.usb.rc
-import init.mmi.diag.rc
 
 on early-init
     # Set boot up stage I/O scheduler
