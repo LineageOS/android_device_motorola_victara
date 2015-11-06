@@ -271,11 +271,11 @@ on post-fs-data
 #service qcomsysd /system/bin/qcom-system-daemon
 #    class main
 
-on property:persist.radio.atfwd.start=false
-    stop atfwd
+#on property:persist.radio.atfwd.start=false
+#    stop atfwd
 
-on property:persist.radio.atfwd.start=true
-    start atfwd
+#on property:persist.radio.atfwd.start=true
+#    start atfwd
 
 # corefile limit and ETB enabling
 on property:persist.debug.trace=1
@@ -724,10 +724,10 @@ on property:sys.boot_completed=1
     rm /data/system/default_values
     start mpdecision
 
-service atfwd /system/bin/ATFWD-daemon
-    class late_start
-    user system
-    group system radio
+#service atfwd /system/bin/ATFWD-daemon
+#    class late_start
+#    user system
+#    group system radio
 
 service hostapd /system/bin/hostapd -dddd /data/misc/wifi/hostapd.conf
     class late_start
@@ -757,11 +757,6 @@ on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
     write /proc/sys/net/ipv4/tcp_adv_win_scale  1
 
-# Service not used
-#service battery_monitor /system/bin/battery_monitor
-#    user system
-#    group system
-#    disabled
 
 service_redefine ril-daemon /system/bin/rild.mmi
     class main
@@ -836,56 +831,3 @@ on property:persist.sys.ssr.restart_level=*
 on property:persist.sys.qc.sub.ssr.max=*
     write /sys/module/subsystem_restart/parameters/max_restarts ${persist.sys.qc.sub.ssr.max}
     write /sys/module/subsystem_restart/parameters/max_history_time 900
-
-# Service not used
-# Define fastmmi
-#service fastmmi /system/bin/mmi
-#    user root
-#    group root
-#    disabled
-
-# Service not used
-#service fastmmisrv /system/bin/sh /init.qcom.factory.sh
-#    user root
-#    disabled
-#    oneshot
-#
-#on ffbm
-#    start fastmmisrv
-
-# moto: charger_monitor does not exist
-#service charger_monitor /system/bin/charger_monitor
-#    user system
-#    group system
-#    disabled
-
-# MOT Security Asset CR IKJBMR2-6392
-#service diag_mdlog_start /system/bin/diag_mdlog
-#    class late_start
-#    user sdcard_rw
-#    group system qcom_diag sdcard_rw sdcard_r media_rw
-#    disabled
-#    oneshot
-
-#service diag_mdlog_stop /system/bin/diag_mdlog -k
-#    class late_start
-#    user sdcard_rw
-#    group system qcom_diag sdcard_rw sdcard_r media_rw
-#    disabled
-#    oneshot
-
-#service qlogd /system/xbin/qlogd
-#    class main
-#    disabled
-#on property:persist.sys.qlogd=1
-#    start qlogd
-#on property:persist.sys.qlogd=0
-#    stop qlogd
-
-#service rootagent /system/bin/sh /system/etc/init.qcom.rootagent.sh
-#    disabled
-#    oneshot
-#on property:persist.sys.rootagent=1
-#    start rootagent
-#on property:persist.sys.rootagent=0
-#    stop rootagent

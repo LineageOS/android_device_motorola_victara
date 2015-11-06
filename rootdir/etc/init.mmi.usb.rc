@@ -59,26 +59,6 @@ service mmi-usb-sh /system/bin/sh /init.mmi.usb.sh
     user root
     oneshot
 
-on property:tcmd.ctrl_adb=1
-    stop mmi-usb-sh
-    setprop usb.mmi-usb-sh.action tcmd.ctrl_adb
-    start mmi-usb-sh
-
-on property:tcmd.ctrl_adb=0
-    stop mmi-usb-sh
-    setprop usb.mmi-usb-sh.action tcmd.ctrl_adb
-    start mmi-usb-sh
-
-on property:tcmd.ctrl_diag=1
-    stop mmi-usb-sh
-    setprop usb.mmi-usb-sh.action tcmd.ctrl_diag
-    start mmi-usb-sh
-
-on property:tcmd.ctrl_diag=0
-    stop mmi-usb-sh
-    setprop usb.mmi-usb-sh.action tcmd.ctrl_diag
-    start mmi-usb-sh
-
 # USB compositions
 on property:sys.usb.config=charging
     stop adbd
@@ -90,7 +70,6 @@ on property:sys.usb.config=charging
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=diag,serial_smd,serial_tty,rmnet_bam,mass_storage,adb
-    start tcmd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 05C6
     write /sys/class/android_usb/android0/idProduct 9025
@@ -122,7 +101,6 @@ on property:sys.usb.config=rndis
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=rndis,adb
-    start tcmd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 0x22b8
     write /sys/class/android_usb/android0/idProduct 0x2e25
@@ -143,7 +121,6 @@ on property:sys.usb.config=mtp
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=mtp,adb
-    start tcmd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/bDeviceClass 0
     write /sys/class/android_usb/android0/bDeviceSubClass 0
@@ -156,7 +133,6 @@ on property:sys.usb.config=mtp,adb
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=diag,serial_smd,serial_tty,rmnet,usbnet,adb
-    start tcmd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idProduct ${ro.usb.bpt_adb}
     write /sys/class/android_usb/android0/idVendor 0x22b8
@@ -170,7 +146,6 @@ on property:sys.usb.config=diag,serial_smd,serial_tty,rmnet,usbnet,adb
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=diag,serial_smd,serial_tty,rmnet,usbnet
-    start tcmd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idProduct ${ro.usb.bpt}
     write /sys/class/android_usb/android0/idVendor 0x22b8
@@ -183,7 +158,6 @@ on property:sys.usb.config=diag,serial_smd,serial_tty,rmnet,usbnet
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=rndis,diag,serial_smd,serial_tty,rmnet,usbnet,adb
-    start tcmd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idProduct ${ro.usb.bpteth_adb}
     write /sys/class/android_usb/android0/idVendor 0x22b8
@@ -197,7 +171,6 @@ on property:sys.usb.config=rndis,diag,serial_smd,serial_tty,rmnet,usbnet,adb
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=rndis,diag,serial_smd,serial_tty,rmnet,usbnet
-    start tcmd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idProduct ${ro.usb.bpteth}
     write /sys/class/android_usb/android0/idVendor 0x22b8
@@ -210,7 +183,6 @@ on property:sys.usb.config=rndis,diag,serial_smd,serial_tty,rmnet,usbnet
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=usbnet,adb
-    start tcmd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idProduct 0x2e2d
     write /sys/class/android_usb/android0/idVendor 0x22b8
@@ -221,7 +193,6 @@ on property:sys.usb.config=usbnet,adb
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=usbnet
-    start tcmd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idProduct 0x2e2c
     write /sys/class/android_usb/android0/idVendor 0x22b8
@@ -231,7 +202,6 @@ on property:sys.usb.config=usbnet
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=diag,usbnet
-    start tcmd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idProduct 0x2e34
     write /sys/class/android_usb/android0/idVendor 0x22b8
@@ -242,7 +212,6 @@ on property:sys.usb.config=diag,usbnet
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=diag,usbnet,adb
-    start tcmd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idProduct 0x2e35
     write /sys/class/android_usb/android0/idVendor 0x22b8
@@ -265,7 +234,6 @@ on property:sys.usb.config=ptp
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=ptp,adb
-    start tcmd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/bDeviceClass 0
     write /sys/class/android_usb/android0/bDeviceSubClass 0
