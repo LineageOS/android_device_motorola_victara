@@ -49,10 +49,6 @@ on fs
     # these partition flashed on the device. Failure to mount any partition in fstab file
     # results in failure to launch late-start class.
 
-    wait /dev/block/platform/msm_sdcc.1/by-name/cache
-    exec /system/bin/e2fsck -y /dev/block/platform/msm_sdcc.1/by-name/cache
-    exec /system/bin/mount_ext4.sh cache /dev/block/platform/msm_sdcc.1/by-name/cache /cache
-
     # arrange access to an available overlay
     mkdir /overlay 0755 root root
     mkdir /cache/overlay 0775 system cache
