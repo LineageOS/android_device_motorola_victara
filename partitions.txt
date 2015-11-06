@@ -1,0 +1,46 @@
+Vzw variant: motorola/victara_verizon/victara:5.1/LPE23.32-25-5/13:user/release-keys
+
+shell@victara:/ $ cat /proc/partitions (with by-name also)
+major   minor    #blocks name      by-name
+
+ 179        0   15388672 mmcblk0
+ 179        1     102400 mmcblk0p1  modem
+ 179        2        384 mmcblk0p2  sbl1
+ 179        3         32 mmcblk0p3  DDR
+ 179        4       1024 mmcblk0p4  aboot
+ 179        5        256 mmcblk0p5  rpm
+ 179        6        400 mmcblk0p6  tz
+ 179        7         32 mmcblk0p7  sdi
+ 179        8        512 mmcblk0p8  utags
+ 179        9       2048 mmcblk0p9  logs
+ 179       10       3072 mmcblk0p10 factorytune1
+ 179       11       3356 mmcblk0p11 padA
+ 179       12       1024 mmcblk0p12 abootBackup
+ 179       13        256 mmcblk0p13 rpmBackup
+ 179       14        400 mmcblk0p14 tzBackup
+ 179       15        512 mmcblk0p15 utagsBackup
+ 179       16        512 mmcblk0p16 frp
+ 179       17       4608 mmcblk0p17 padB
+ 179       18       1536 mmcblk0p18 modemst1
+ 179       19       1536 mmcblk0p19 modemst2
+ 179       20        488 mmcblk0p20 hob
+ 179       21         32 mmcblk0p21 dhob
+ 179       22       1536 mmcblk0p22 fsg
+ 179       23          1 mmcblk0p23 fsc
+ 179       24          8 mmcblk0p24 ssd
+ 179       25       1024 mmcblk0p25 sp
+ 179       26        128 mmcblk0p26 cid
+ 179       27       3072 mmcblk0p27 pds
+ 179       28        512 mmcblk0p28 misc
+ 179       29       4096 mmcblk0p29 logo
+ 179       30       6144 mmcblk0p30 clogo
+ 179       31       8192 mmcblk0p31 persist
+ 259        0       8192 mmcblk0p32 kpan
+ 259        1      10200 mmcblk0p33 boot
+ 259        2      10280 mmcblk0p34 recovery
+ 259        3      10296 mmcblk0p35 factorytune2
+ 259        4     102400 mmcblk0p36 customize
+ 259        5    1394760 mmcblk0p37 cache
+ 259        6    2834432 mmcblk0p38 system
+ 259        7   10833792 mmcblk0p39 userdata
+ 179       32       4096 mmcblk0rpmb
