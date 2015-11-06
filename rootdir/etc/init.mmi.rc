@@ -15,9 +15,6 @@ on early-init
     chown system system /sys/kernel/debug
     chmod 0770 /sys/kernel/debug
 
-    # Mount point for Digital Personalization partition
-    mkdir /customize 0500 root root
-
 on charger
     trigger early-fs
     trigger fs
@@ -77,30 +74,6 @@ on fs
     chown mot_tcmd mot_tcmd /pds/bt/bt_bdaddr
     chmod 0664 /pds/bt/bt_bdaddr
     chmod 0600 /pds/whisper/whisper_only/vector0.bin
-
-    # Mount modem FSG partition
-    wait /dev/block/platform/msm_sdcc.1/by-name/fsg
-    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/fsg /fsg ro nosuid nodev barrier=0 context=u:object_r:fsg_file:s0
-
-    # Set correct permissions for HOB, DHOB
-    exec /system/bin/chmod -L 660 /dev/block/platform/msm_sdcc.1/by-name/hob
-    exec /system/bin/chmod -L 660 /dev/block/platform/msm_sdcc.1/by-name/dhob
-    exec /system/bin/chmod -L 660 /dev/block/platform/msm_sdcc.1/by-name/clogo
-    exec /system/bin/chown -L root:radio /dev/block/platform/msm_sdcc.1/by-name/hob
-    exec /system/bin/chown -L root:radio /dev/block/platform/msm_sdcc.1/by-name/dhob
-    exec /system/bin/chown -L root:mot_tcmd /dev/block/platform/msm_sdcc.1/by-name/clogo
-
-    # Set correct permissions for CID
-    exec /system/bin/chmod -L 660 /dev/block/platform/msm_sdcc.1/by-name/cid
-    exec /system/bin/chown -L root:mot_dbvc /dev/block/platform/msm_sdcc.1/by-name/cid
-
-    # Set permissions for BL logs
-    exec /system/bin/chmod -L 640 /dev/block/platform/msm_sdcc.1/by-name/logs
-    exec /system/bin/chown -L root:system /dev/block/platform/msm_sdcc.1/by-name/logs
-
-    #Mount customize partion
-    wait /dev/block/platform/msm_sdcc.1/by-name/customize
-    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/customize /customize ro discard nosuid nodev noatime nodiratime noexec defcontext=u:object_r:user_config_file:s0
 
 on post-fs-data
     # Trigger the defuse tool
