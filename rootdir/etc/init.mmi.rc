@@ -382,25 +382,6 @@ service dropboxd /system/bin/dropboxd
     user diag
     group diag
 
-# Let init manage the bug2go-native wakelock, so that we guarantee its
-# lifecycle exactly matches that of bug2go-bugreport.  Since init sends
-# SIGKILL when stopping a service, we could not guarantee the wakelock would
-# get cleaned up if it were managed by bug2go-bugreport itself.
-on property:init.svc.bugreport=running
-    write /sys/power/wake_lock bug2go-native
-
-on property:init.svc.bugreport=stopping
-    write /sys/power/wake_unlock bug2go-native
-
-on property:init.svc.bugreport=stopped
-    write /sys/power/wake_unlock bug2go-native
-
-service bugreport /system/bin/bug2go-bugreport
-    class main
-    disabled
-    oneshot
-    keycodes 115 116 # VOLUME_UP + PWR
-
 on property:sys.boot_completed=1
     setprop sys.io.scheduler bfq
 
