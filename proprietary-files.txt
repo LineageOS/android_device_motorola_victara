@@ -277,7 +277,6 @@ etc/firmware/venus.mdt
 bin/batt_health
 bin/dbvc_atvc_property_set
 bin/hardware_revisions.sh
-bin/mount_ext4.sh
 
 # NFC
 etc/firmware/BCM20795A1_001.002.012.0003.0078_Generic_I2C_NCD_Signed_configdata.ncd
