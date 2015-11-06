@@ -624,6 +624,10 @@ service qcom-sh /system/bin/sh /init.qcom.sh
     oneshot
 
 on property:sys.boot_completed=1
+    setprop cpuparams.load 1
+    setprop mpdecision.load 1
+
+on property:cpuparams.load=1
     write /sys/module/lpm_levels/enable_low_power/l2 4
     write /sys/module/msm_pm/modes/cpu0/power_collapse/suspend_enabled 1
     write /sys/module/msm_pm/modes/cpu1/power_collapse/suspend_enabled 1
@@ -718,8 +722,7 @@ on property:sys.boot_completed=1
     write /sys/module/cpu_boost/parameters/input_boost_freq 1497600
     write /sys/module/cpu_boost/parameters/input_boost_ms 500
 
-    # mpdecision
-
+on property:mpdecision.load=1
     setprop ro.qualcomm.perf.cores_online 2
     rm /data/system/default_values
     start mpdecision
@@ -814,10 +817,10 @@ on property:ro.fuse_sdcard=true
 on nonencrypted
     setprop ro.fuse_sdcard ${persist.fuse_sdcard}
 
-#comment this and start  MOTO specific charge_only_mode.
-#(See /device/moto/mot8226/init.target.rc for details).
-#service charger /charger
-#    class charger
+service charger /sbin/healthd -c
+    class charger
+    critical
+    seclabel u:r:healthd:s0
 
 #service ssr_diag /system/bin/ssr_diag
 #    class late_start
