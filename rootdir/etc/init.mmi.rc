@@ -19,18 +19,12 @@ on early-init
     mkdir /customize 0500 root root
 
 on charger
-    trigger early-fs
-    trigger fs
-    trigger post-fs
-    trigger post-fs-data
-    trigger moto-charger
-    class_stop main
-
-on moto-charger
-    setprop ro.board.platform msm8974
-    start qcom-post-boot
-    start thermal-com
-    start charge_only_mode
+    setprop cpuparams.load 1
+    write /sys/devices/system/cpu/cpu1/online 0
+    write /sys/devices/system/cpu/cpu2/online 0
+    write /sys/devices/system/cpu/cpu3/online 0
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/system /system ro
+    start hvdcp
 
 on init
     copy /module_hashes /sys/kernel/module_whitelist
@@ -158,11 +152,6 @@ on post-fs
     write /proc/sys/vm/swappiness 100
 
 
-service charge_only_mode /system/bin/charge_only_mode
-    user root
-    group graphics system input
-    disabled
-
 service batt_health /system/bin/batt_health
     class main
     user mot_pwric
@@ -171,11 +160,6 @@ service batt_health /system/bin/batt_health
 service hvdcp /system/bin/hvdcp
     class main
     user root
-
-service thermal-com /system/bin/thermal-engine --minimode
-    class main
-    user root
-    disabled
 
 #start Sensor daemon
 service stm401 /system/bin/stm401 boot
