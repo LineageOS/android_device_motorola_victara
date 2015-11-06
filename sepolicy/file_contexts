@@ -13,6 +13,9 @@
 /dev/stm401                             u:object_r:sensors_device:s0
 /dev/stm401_as                          u:object_r:sensors_device:s0
 
+/customize(/.*)?                        u:object_r:user_config_file:s0
+/firmware(/.*)?                         u:object_r:firmware_file:s0
+/fsg(/.*)?                              u:object_r:fsg_file:s0
 /pds(/.*)?                              u:object_r:pds_file:s0
 
 /sys/devices/fd510000.gpio/gpio/gpio79(/.*)?    u:object_r:sysfs_adspd:s0
