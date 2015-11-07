@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f2f7f8d_46ae252f",
+        "filename": "rootdir/etc/fstab.qcom",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5531
+      },
+      "writtenOn": "2015-11-07T12:29:15Z",
+      "side": 1,
+      "message": "I think I\u0027d like to can usage of this pds partition in favor of setting up a dummy directory in cache. We can then leave whatever stock stored here untouched.",
+      "revId": "9a5f57d40ea696eb90dba18c3bad6a112fa82f21",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
