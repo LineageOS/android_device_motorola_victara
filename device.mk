@@ -244,14 +244,18 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
-# Support
+# SSL Compat
 PRODUCT_PACKAGES += \
-    libcurl \
-    libxml2
+    libboringssl-compat
 
 # Stlport
 PRODUCT_PACKAGES += \
     libstlport
+
+# Support
+PRODUCT_PACKAGES += \
+    libcurl \
+    libxml2
 
 # Thermal
 PRODUCT_COPY_FILES += \
