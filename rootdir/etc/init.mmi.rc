@@ -6,9 +6,6 @@ on early-init
     write /sys/block/mmcblk0/queue/scheduler noop
     write /sys/block/mmcblk0/queue/read_ahead_kb 512
 
-    # Create PDS mount point
-    mkdir /pds 0755 root root
-
     # Create modem FSG mount point
     mkdir /fsg 755 root root
 
@@ -42,38 +39,6 @@ on init
 
     # ESDFS
     chown mot_esdfs root /proc/fs/esdfs/packages
-
-on fs
-    # Mount PDS
-    wait /dev/block/platform/msm_sdcc.1/by-name/pds
-    exec /system/bin/e2fsck -y /dev/block/platform/msm_sdcc.1/by-name/pds
-    exec /system/bin/logwrapper /system/bin/mount_ext4.sh pds /dev/block/platform/msm_sdcc.1/by-name/pds /pds 2048 500 defcontext=u:object_r:pds_file:s0
-    restorecon_recursive /pds
-
-    mkdir /pds/camera 0755 mot_tcmd mot_tcmd
-    mkdir /pds/factory 0755 mot_tcmd mot_tcmd
-    mkdir /pds/public 0755 mot_tcmd mot_tcmd
-    mkdir /pds/public/atvc 0770 mot_atvc shell
-    mkdir /pds/public/battd 0755 mot_accy mot_tcmd
-    mkdir /pds/public/hiddenmenu 0755 radio radio
-    mkdir /pds/public/hiddenmenu/data 0775 system mot_tcmd
-    mkdir /pds/public/locale 0700 system system
-    mkdir /pds/public/omadm 0700 radio radio
-    mkdir /pds/public/svcs 0770 system system
-    mkdir /pds/wifi 0755 mot_tcmd mot_tcmd
-    mkdir /pds/bt 0755 mot_tcmd bluetooth
-    mkdir /pds/wmdrm 0775 mot_drm mot_drm
-    mkdir /pds/security 02770 mot_tpapi mot_tpapi
-    mkdir /pds/batt_health 0755 mot_pwric mot_pwric
-
-    chown mot_tcmd mot_tcmd /pds/factory/fti
-    chmod 0660 /pds/factory/fti
-    chown mot_tcmd mot_tcmd /pds/factory/byte
-    chmod 0660 /pds/factory/byte
-    chmod 0660 /pds/wifi/wlan_mac.bin
-    chown mot_tcmd mot_tcmd /pds/bt/bt_bdaddr
-    chmod 0664 /pds/bt/bt_bdaddr
-    chmod 0600 /pds/whisper/whisper_only/vector0.bin
 
 on post-fs-data
     # Trigger the defuse tool

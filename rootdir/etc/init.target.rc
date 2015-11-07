@@ -45,6 +45,14 @@ on fs
     mount_all fstab.qcom
     setprop ro.crypto.fuse_sdcard true
 
+    # Create PDS mount point
+    mkdir /cache/pds 0755 root root
+    symlink /cache/pds /pds
+    restorecon_recursive /pds/
+
+    mkdir /pds/public/atvc 0770 mot_atvc shell
+    mkdir /pds/batt_health 0755 mot_pwric mot_pwric
+
     # arrange access to an available overlay
     mkdir /overlay 0755 root root
     mkdir /cache/overlay 0775 system cache
