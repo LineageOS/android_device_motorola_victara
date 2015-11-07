@@ -16,10 +16,11 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
+    moto_camera.c \
     moto_log.c \
-    moto_camera.c
+    moto_ril.cpp
 
-LOCAL_SHARED_LIBRARIES := libutils libgui liblog
+LOCAL_SHARED_LIBRARIES := libutils libgui liblog libbinder
 LOCAL_MODULE := libmoto
 LOCAL_MODULE_TAGS := optional
 
