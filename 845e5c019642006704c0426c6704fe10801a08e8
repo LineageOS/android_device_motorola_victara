@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f2f7f8d_e65f51e3",
+        "filename": "rootdir/etc/init.target.rc",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5531
+      },
+      "writtenOn": "2015-11-07T07:08:42Z",
+      "side": 0,
+      "message": "Not sure if I should be moving this one since we can\u0027t handle resizing the filesystem to all available partition space in fstab. By a similar token, I\u0027m not sure if this is necessary either. Was there an OTA to any victara variant that changed this partition size?",
+      "revId": "845e5c019642006704c0426c6704fe10801a08e8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
