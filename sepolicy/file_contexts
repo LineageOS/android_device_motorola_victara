@@ -13,6 +13,7 @@
 /dev/stm401                             u:object_r:sensors_device:s0
 /dev/stm401_as                          u:object_r:sensors_device:s0
 
+/cache/pds                              u:object_r:pds_file:s0
 /pds(/.*)?                              u:object_r:pds_file:s0
 
 /sys/devices/fd510000.gpio/gpio/gpio79(/.*)?    u:object_r:sysfs_adspd:s0
