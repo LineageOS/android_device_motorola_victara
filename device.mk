@@ -250,6 +250,7 @@ PRODUCT_PACKAGES += \
 
 # Support
 PRODUCT_PACKAGES += \
+    libcnefeatureconfig \
     libcurl \
     libxml2
 

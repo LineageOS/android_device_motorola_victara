@@ -323,7 +323,6 @@ bin/rild:bin/rild.mmi
 bin/rfs_access
 bin/rmt_storage
 lib/libadropbox.so
-lib/libcnefeatureconfig.so
 lib/libmdmcutback.so
 lib/libmdmdetect.so
 lib/libmotext_inf.so
