@@ -77,6 +77,7 @@ void vendor_load_properties()
         property_set("ro.com.google.clientidbase.am", "android-verizon");
         property_set("ro.com.google.clientidbase.ms", "android-verizon");
         property_set("ro.com.google.clientidbase.yt", "android-verizon");
+        property_set("ro.cdma.data_retry_config", "max_retries=infinite,0,0,10000,10000,100000,10000,10000,10000,10000,140000,540000,960000");
     } else {
         /* all others */
         property_set("ro.product.model", "XT1095");
