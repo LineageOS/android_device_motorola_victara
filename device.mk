@@ -240,6 +240,11 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
+# Sony timekeep
+PRODUCT_PACKAGES += \
+    timekeep \
+    TimeKeep
+
 # SSL Compat
 PRODUCT_PACKAGES += \
     libboringssl-compat

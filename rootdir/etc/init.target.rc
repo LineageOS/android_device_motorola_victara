@@ -100,10 +100,11 @@ service thermal-engine /system/bin/thermal-engine
    user root
    group root
 
-service time_daemon /system/bin/time_daemon
+service timekeep /system/bin/timekeep restore
    class late_start
    user root
    group root
+   oneshot
 
 service adsprpcd /system/bin/adsprpcd
    class main
