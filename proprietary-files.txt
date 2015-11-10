@@ -124,7 +124,6 @@ vendor/lib/libmmqjpeg_codec.so
 vendor/lib/liboemcamera.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
-vendor/lib/libthermalclient.so
 
 # Chromatix
 lib/libchromatix_ar0543_common.so
@@ -162,9 +161,7 @@ vendor/lib/libchromatix_s5k5e2_snapshot.so
 
 # CPU
 bin/mpdecision
-bin/thermal-engine
 vendor/lib/libqc-opt.so
-vendor/lib/libthermalioctl.so
 
 # DRM
 bin/qseecomd
