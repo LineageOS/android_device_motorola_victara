@@ -95,11 +95,6 @@ service mpdecision /system/bin/mpdecision --avg_comp
    user root
    disabled
 
-service thermal-engine /system/bin/thermal-engine
-   class main
-   user root
-   group root
-
 service time_daemon /system/bin/time_daemon
    class late_start
    user root
