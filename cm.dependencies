@@ -18,5 +18,9 @@
   {
     "repository": "android_external_connectivity",
     "target_path": "external/connectivity"
+  },
+  {
+    "repository": "android_hardware_sony_thermanager",
+    "target_path": "hardware/sony/thermanager"
   }
 ]

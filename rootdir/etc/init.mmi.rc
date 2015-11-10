@@ -119,10 +119,11 @@ service hvdcp /system/bin/hvdcp
     class main
     user root
 
-service thermal-com /system/bin/thermal-engine --minimode
-    class main
+# OSS thermal management
+service thermanager /system/bin/thermanager /system/etc/thermanager.xml
+    class late_start
     user root
-    disabled
+    group root
 
 #start Sensor daemon
 service stm401 /system/bin/stm401 boot
