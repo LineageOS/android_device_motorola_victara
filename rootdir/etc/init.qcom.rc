@@ -122,6 +122,8 @@ on boot
     setprop net.tcp.buffersize.gprs    4092,8760,11680,4096,8760,11680
     setprop net.tcp.buffersize.evdo    4094,87380,262144,4096,16384,262144
 
+    trigger enable-low-power
+
 # Define TCP delayed ack settings for WiFi & LTE
     setprop net.tcp.delack.default     1
     setprop net.tcp.delack.wifi        20
@@ -602,7 +604,7 @@ service qcom-sh /system/bin/sh /init.qcom.sh
     user root
     oneshot
 
-on property:sys.boot_completed=1
+on enable-low-power
     write /sys/module/lpm_levels/enable_low_power/l2 4
     write /sys/module/msm_pm/modes/cpu0/power_collapse/suspend_enabled 1
     write /sys/module/msm_pm/modes/cpu1/power_collapse/suspend_enabled 1
@@ -701,7 +703,6 @@ on property:sys.boot_completed=1
 
     setprop ro.qualcomm.perf.cores_online 2
     rm /data/system/default_values
-    start mpdecision
 
 service atfwd /system/bin/ATFWD-daemon
     class late_start
