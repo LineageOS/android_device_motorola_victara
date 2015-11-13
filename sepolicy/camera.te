@@ -1,0 +1,1 @@
+type_transition camera system_data_file:sock_file camera_socket "cam_socket1";
