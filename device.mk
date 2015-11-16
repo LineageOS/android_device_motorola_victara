@@ -243,10 +243,6 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
-# Stlport
-PRODUCT_PACKAGES += \
-    libstlport
-
 # Support
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
