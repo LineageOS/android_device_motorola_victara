@@ -81,7 +81,7 @@ ro.sf.lcd_density=480
 ro.hw.device=victara
 
 # QCOM
-ro.vendor.extension_library=/vendor/lib/libqc-opt.so
+ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
 # Radio
 persist.radio.apn_delay=5000
