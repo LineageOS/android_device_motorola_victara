@@ -1,3 +1,4 @@
+allow init adspd_data_file:sock_file create;
 allow init block_device:blk_file setattr;
 allow init fsg_file:filesystem { relabelfrom relabelto mount };
 allow init hob_block_device:blk_file setattr;

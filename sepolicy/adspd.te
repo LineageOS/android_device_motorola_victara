@@ -6,7 +6,7 @@ unix_socket_connect(adspd, property, init)
 allow adspd property_socket:sock_file write;
 
 allow adspd adspd_data_file:dir w_dir_perms;
-allow adspd adspd_data_file:file w_file_perms;;
+allow adspd adspd_data_file:file create_file_perms;;
 allow adspd adsp_serial_device:chr_file rw_file_perms;
 allow adspd input_device:chr_file r_file_perms;
 allow adspd input_device:dir search;
