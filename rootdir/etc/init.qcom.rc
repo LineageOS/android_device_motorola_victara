@@ -122,8 +122,6 @@ on boot
     setprop net.tcp.buffersize.gprs    4092,8760,11680,4096,8760,11680
     setprop net.tcp.buffersize.evdo    4094,87380,262144,4096,16384,262144
 
-    trigger enable-low-power
-
 # Define TCP delayed ack settings for WiFi & LTE
     setprop net.tcp.delack.default     1
     setprop net.tcp.delack.wifi        20
@@ -700,9 +698,9 @@ on enable-low-power
     write /sys/module/cpu_boost/parameters/input_boost_ms 500
 
     # mpdecision
-
     setprop ro.qualcomm.perf.cores_online 2
     rm /data/system/default_values
+    start mpdecision
 
 service atfwd /system/bin/ATFWD-daemon
     class late_start
