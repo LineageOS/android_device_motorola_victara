@@ -5,6 +5,7 @@ VENDOR=motorola
 
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
+DEVICE_DIR=device/$VENDOR/$DEVICE
 
 (cat << EOF) > $MAKEFILE
 # Copyright (C) 2014 The CyanogenMod Project
@@ -138,6 +139,8 @@ LOCAL_SRC_FILES := proprietary/lib/libril.so
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_COPY_HEADERS_TO := libril
+LOCAL_COPY_HEADERS := $DEVICE_DIR/include/libril/ril_ex.h
 include \$(BUILD_PREBUILT)
 
 endif
