@@ -1,2 +1,2 @@
-allow qti_init_shell hwrev_data_file:dir search;
+allow qti_init_shell hwrev_data_file:dir r_dir_perms;
 allow qti_init_shell hwrev_data_file:file create_file_perms;
