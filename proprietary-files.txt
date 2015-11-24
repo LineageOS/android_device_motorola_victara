@@ -87,7 +87,6 @@ lib/libmot-qc-fd-offline.so
 lib/libmotocalibration.so
 lib/libqomx_core.so
 vendor/lib/libadsprpc.so
-vendor/lib/libC2D2.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libmmcamera2_c2d_module.so
