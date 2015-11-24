@@ -38,7 +38,8 @@ on init
     mkdir /persist 0771 system system
 
     # Symbols required for motorola blobs
-    export LD_PRELOAD /system/lib/libmoto.so:/system/lib/libboringssl-compat.so
+    export LD_PRELOAD /system/lib/libmoto.so
+    export LD_SHIM_LIBS /system/vendor/lib/libmmqjpeg_codec.so|libboringssl-compat.so:/system/vendor/lib/mediadrm/libwvdrmengine.so|libboringssl-compat.so:/system/vendor/lib/libWVStreamControlAPI_L1.so|libboringssl-compat.so
 
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
