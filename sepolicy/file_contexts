@@ -2,6 +2,7 @@
 /data/cam_socket([0-9])*                u:object_r:camera_socket:s0
 /data/camera_dump(/.*)?                 u:object_r:camera_dump_data_file:s0
 /data/hardware_revisions(/.*)?          u:object_r:hwrev_data_file:s0
+/data/misc/cutback(/.*)?                u:object_r:cutback_data_file:s0
 /data/power_supply_logger(/.*)?         u:object_r:battery_data_file:s0
 /data/system/dropbox-add(/.*)?          u:object_r:adspd_data_file:s0
 /data/wapi_certificate(/.*)?            u:object_r:wapi_supplicant_data_file:s0

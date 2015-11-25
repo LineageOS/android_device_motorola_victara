@@ -1,6 +1,7 @@
 type adspd_data_file, file_type, data_file_type;
 type battery_data_file, file_type, data_file_type;
 type camera_dump_data_file, file_type, data_file_type;
+type cutback_data_file, file_type, data_file_type;
 type fsg_file, file_type, data_file_type;
 type hwrev_data_file, file_type, data_file_type;
 type pds_file, file_type;
