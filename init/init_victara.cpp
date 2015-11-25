@@ -38,11 +38,15 @@ void vendor_load_properties()
 {
     char platform[PROP_VALUE_MAX];
     char cid[PROP_VALUE_MAX];
+    char radio[PROP_VALUE_MAX];
     int rc;
 
     rc = property_get("ro.board.platform", platform);
     if (!rc || strncmp(platform, ANDROID_TARGET, PROP_VALUE_MAX))
         return;
+
+    if (property_get("ro.boot.radio", radio) > 0)
+        property_set("ro.hw.radio", radio);
 
     property_get("ro.boot.cid", cid);
 
@@ -65,7 +69,6 @@ void vendor_load_properties()
         property_set("telephony.lteOnGsmDevice", "1");
     } else if (strstr(cid, "0x2")) {
         /* xt1096 */
-        property_set("ro.hw.radio", "0x4");
         property_set("ro.product.model", "XT1096");
         property_set("ro.build.description", "victara_verizon-user 5.1 LPE23.32-25-3 10 release-keys");
         property_set("ro.build.fingerprint", "motorola/victara_verizon/victara:5.1/LPE23.32-25-3/10:user/release-keys");
