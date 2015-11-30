@@ -228,7 +228,6 @@ vendor/lib/librs_adreno_sha1.so
 vendor/lib/librs_adreno.so
 vendor/lib/libRSDriver_adreno.so
 vendor/lib/libsc-a3xx.so
-vendor/lib/libscale.so
 
 # Graphics firmware
 etc/firmware/a330_pfp.fw
@@ -256,11 +255,6 @@ vendor/lib/lib-rtpsl.so
 # Media
 vendor/lib/libI420colorconvert.so
 vendor/lib/libmm-color-convertor.so
-vendor/lib/libOmxAacDec.so
-vendor/lib/libOmxAmrwbplusDec.so
-vendor/lib/libOmxEvrcDec.so
-vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libOmxWmaDec.so
 
 # Media firmware
 etc/firmware/venus.b00
@@ -278,13 +272,6 @@ bin/hardware_revisions.sh
 
 # NFC
 etc/firmware/BCM20795A1_001.002.012.0003.0078_Generic_I2C_NCD_Signed_configdata.ncd
-
-# Postprocessing
-bin/mm-pp-daemon
-vendor/lib/libmm-abl.so
-vendor/lib/libmm-abl-oem.so
-vendor/lib/libdisp-aba.so
-vendor/lib/libsensor1.so
 
 # Qualcomm framework
 bin/irsc_util
@@ -340,6 +327,7 @@ etc/firmware/sensorhubver_p0.txt
 etc/firmware/sensorhubver.txt
 lib/hw/sensorhub.msm8974.so
 lib/hw/sensors.msm8974.so
+vendor/lib/libsensor1.so
 
 # Time
 bin/time_daemon
