@@ -18,8 +18,11 @@ include $(CLEAR_VARS)
 
 # Camera
 
-LOCAL_SRC_FILES := moto_sensors.c
-LOCAL_SHARED_LIBRARIES := libutils libgui liblog
+LOCAL_SRC_FILES := \
+    gui/SensorManager.cpp \
+    moto_camera_misc.c
+
+LOCAL_SHARED_LIBRARIES := libutils libgui liblog libbinder
 LOCAL_MODULE := libshim_camera
 LOCAL_MODULE_TAGS := optional
 
@@ -60,8 +63,8 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := moto_sensors.c
-LOCAL_SHARED_LIBRARIES := libutils libgui liblog
+LOCAL_SRC_FILES := gui/SensorManager.cpp
+LOCAL_SHARED_LIBRARIES := libutils libgui liblog libbinder
 LOCAL_MODULE := libshim_speakerbundle
 LOCAL_MODULE_TAGS := optional
 
