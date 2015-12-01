@@ -174,8 +174,7 @@ PRODUCT_COPY_FILES += \
 
 # Motorola
 PRODUCT_PACKAGES += \
-    charge_only_mode \
-    libmoto
+    charge_only_mode
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -226,6 +225,14 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     init.target.rc \
     ueventd.qcom.rc
+
+# Shim libraries
+PRODUCT_PACKAGES += \
+    libshim_camera \
+    libshim_log \
+    libshim_mdmcutback \
+    libshim_ril \
+    libshim_speakerbundle
 
 # SSL Compat
 PRODUCT_PACKAGES += \
