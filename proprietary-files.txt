@@ -171,7 +171,6 @@ lib/libdrmdiag.so
 lib/libdrmfs.so
 lib/libdrmtime.so
 lib/libQSEEComAPI.so
-lib/liboemcrypto.so
 lib/librpmb.so
 lib/libssd.so
 vendor/firmware/widevine.b00
