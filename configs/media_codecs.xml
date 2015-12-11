@@ -16,109 +16,106 @@
      limitations under the License.
 -->
 <MediaCodecs>
+    <Settings>
+        <Setting name="max-video-encoder-input-buffers" value="9" />
+    </Settings>
     <Encoders>
         <!-- Audio Hardware  -->
-        <!-- txwv64, IKXLUPGRD-1627, Disable QCELP, EVRC
-        <MediaCodec name="OMX.qcom.audio.encoder.evrc" type="audio/evrc" >
-            <Quirk name="requires-allocate-on-input-ports" />
-            <Quirk name="requires-allocate-on-output-ports" />
-        </MediaCodec>
-        <MediaCodec name="OMX.qcom.audio.encoder.qcelp13" type="audio/qcelp" >
-            <Quirk name="requires-allocate-on-input-ports" />
-            <Quirk name="requires-allocate-on-output-ports" />
-        </MediaCodec>
-        -->
+        <!-- None -->
         <!-- Video Hardware  -->
         <MediaCodec name="OMX.qcom.video.encoder.avc" type="video/avc" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
             <Quirk name="requires-loaded-to-idle-after-allocation" />
+            <Limit name="size" min="96x64" max="4096x2160" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="1" max="972000" />
+            <Limit name="bitrate" range="1-100000000" />
+            <Limit name="concurrent-instances" max="8" />
         </MediaCodec>
         <MediaCodec name="OMX.qcom.video.encoder.mpeg4" type="video/mp4v-es" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
             <Quirk name="requires-loaded-to-idle-after-allocation"/>
+            <Limit name="size" min="96x64" max="1920x1088" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="1" max="244800" />
+            <Limit name="bitrate" range="1-40000000" />
+            <Limit name="concurrent-instances" max="8" />
         </MediaCodec>
         <MediaCodec name="OMX.qcom.video.encoder.h263" type="video/3gpp" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
             <Quirk name="requires-loaded-to-idle-after-allocation" />
+            <Limit name="size" min="96x64" max="864x480" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="1" max="48600" />
+            <Limit name="bitrate" range="1-2000000" />
+            <Limit name="concurrent-instances" max="8" />
         </MediaCodec>
     </Encoders>
 
     <Decoders>
-        <!-- Audio Hardware  -->
-        <!-- a18385, IKVPREL2KK-2424, Disable WMA
-        <MediaCodec name="OMX.qcom.audio.decoder.wma" type="audio/x-ms-wma" >
-            <Quirk name="requires-global-flush" />
-            <Quirk name="requires-wma-pro-component" />
-        </MediaCodec>
-        <MediaCodec name="OMX.qcom.audio.decoder.wmaLossLess" type="audio/x-ms-wma" >
-            <Quirk name="requires-global-flush" />
-        </MediaCodec>
-        <MediaCodec name="OMX.qcom.audio.decoder.wma10Pro" type="audio/x-ms-wma" >
-            <Quirk name="requires-global-flush" />
-        </MediaCodec>
-        -->
-        <MediaCodec name="OMX.qcom.audio.decoder.amrwbplus" type="audio/amr-wb-plus" >
-        </MediaCodec>
-        <!-- txwv64, IKXLUPGRD-1627, Disable QCELP, EVRC
-        <MediaCodec name="OMX.qcom.audio.decoder.Qcelp13" type="audio/qcelp" >
-            <Quirk name="requires-global-flush" />
-        </MediaCodec>
-        <MediaCodec name="OMX.qcom.audio.decoder.evrc" type="audio/evrc" >
-            <Quirk name="requires-global-flush" />
-        </MediaCodec>
-        -->
         <!-- Video Hardware  -->
         <MediaCodec name="OMX.qcom.video.decoder.avc" type="video/avc" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
+            <Limit name="size" min="64x64" max="4096x2160" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="1" max="972000" />
+            <Limit name="bitrate" range="1-100000000" />
+            <Limit name="concurrent-instances" max="8" />
             <Feature name="adaptive-playback" />
+        </MediaCodec>
+        <MediaCodec name="OMX.qcom.video.decoder.avc.secure" type="video/avc" >
+            <Quirk name="requires-allocate-on-input-ports" />
+            <Quirk name="requires-allocate-on-output-ports" />
+            <Limit name="size" min="64x64" max="1920x1088" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="1" max="489600" />
+            <Limit name="bitrate" range="1-60000000" />
+            <Limit name="concurrent-instances" max="5" />
+            <Feature name="adaptive-playback" />
+            <Feature name="secure-playback" required="true" />
         </MediaCodec>
         <MediaCodec name="OMX.qcom.video.decoder.mpeg2" type="video/mpeg2" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
+            <Limit name="size" min="96x64" max="1920x1088" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="1" max="244800" />
+            <Limit name="bitrate" range="1-40000000" />
+            <Limit name="concurrent-instances" max="8" />
             <Feature name="adaptive-playback" />
         </MediaCodec>
         <MediaCodec name="OMX.qcom.video.decoder.mpeg4" type="video/mp4v-es" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
+            <Limit name="size" min="64x64" max="1920x1088" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="1" max="489600" />
+            <Limit name="bitrate" range="1-60000000" />
+            <Limit name="concurrent-instances" max="8" />
             <Feature name="adaptive-playback" />
         </MediaCodec>
         <MediaCodec name="OMX.qcom.video.decoder.h263" type="video/3gpp" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
+            <Limit name="size" min="64x64" max="864x480" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="1" max="48600" />
+            <Limit name="bitrate" range="1-2000000" />
+            <Limit name="concurrent-instances" max="8" />
             <Feature name="adaptive-playback" />
         </MediaCodec>
-        <!-- a18385, IKVPREL2KK-2424, Disable WMV
-        <MediaCodec name="OMX.qcom.video.decoder.vc1" type="video/x-ms-wmv" >
-            <Quirk name="requires-allocate-on-input-ports" />
-            <Quirk name="requires-allocate-on-output-ports" />
-        </MediaCodec>
-        -->
-        <!-- e12738 IKXLUPGRD-1541 Disable divx & hevc
-        <MediaCodec name="OMX.qcom.video.decoder.divx" type="video/divx" >
-            <Quirk name="requires-allocate-on-input-ports" />
-            <Quirk name="requires-allocate-on-output-ports" />
-        </MediaCodec>
-        <MediaCodec name="OMX.qcom.video.decoder.divx311" type="video/divx311" >
-            <Quirk name="requires-allocate-on-input-ports" />
-            <Quirk name="requires-allocate-on-output-ports" />
-        </MediaCodec>
-        <MediaCodec name="OMX.qcom.video.decoder.divx4" type="video/divx4" >
-            <Quirk name="requires-allocate-on-input-ports" />
-            <Quirk name="requires-allocate-on-output-ports" />
-        </MediaCodec>
-        <MediaCodec name="OMX.qcom.video.decoder.hevc" type="video/hevc" >
-            <Quirk name="requires-allocate-on-input-ports" />
-            <Quirk name="requires-allocate-on-output-ports" />
-        </MediaCodec>
-        <MediaCodec name="OMX.qcom.video.decoder.hevchybrid" type="video/hevc" >
-            <Quirk name="requires-allocate-on-input-ports" />
-            <Quirk name="requires-allocate-on-output-ports" />
-        </MediaCodec>
-        -->
     </Decoders>
     <Include href="media_codecs_google_audio.xml" />
     <Include href="media_codecs_google_telephony.xml" />
