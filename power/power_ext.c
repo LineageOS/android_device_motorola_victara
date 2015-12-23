@@ -23,7 +23,7 @@
 
 #define GO_HISPEED_LOAD "/sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load"
 #define GO_HISPEED_LOAD_ON "50"
-#define GO_HISPEED_LOAD_OFF "99"
+#define GO_HISPEED_LOAD_OFF "90"
 
 static void sysfs_write(char *path, char *s) {
     char buf[80];
