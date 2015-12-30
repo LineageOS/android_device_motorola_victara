@@ -37,9 +37,6 @@ on init
     # Set permissions for persist partition
     mkdir /persist 0771 system system
 
-    # Symbols required for motorola blobs
-    export LD_SHIM_LIBS /system/lib/hw/camera.vendor.msm8974.so|libshim_camera.so:/system/lib/libjustshoot.so|libshim_camera.so:/system/lib/liblog.so|libshim_log.so:/system/lib/libmdmcutback.so|libshim_mdmcutback.so:/system/bin/rild|libshim_ril.so:/system/lib/libril.so|libshim_ril.so:/system/lib/libsoundfx/libspeakerbundle.so|libshim_speakerbundle.so:/system/lib/libmot_sensorlistener.so|libshim_camera.so
-
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0

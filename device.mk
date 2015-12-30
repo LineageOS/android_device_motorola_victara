@@ -226,14 +226,6 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
-# Shim libraries
-PRODUCT_PACKAGES += \
-    libshim_camera \
-    libshim_log \
-    libshim_mdmcutback \
-    libshim_ril \
-    libshim_speakerbundle
-
 # Support
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
