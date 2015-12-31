@@ -34,7 +34,7 @@ $(INSTALLED_DTIMAGE_TARGET): $(RAW_DTIMAGE_TARGET)
 LZMA_BOOT_RAMDISK := $(PRODUCT_OUT)/ramdisk-lzma.img
 
 $(LZMA_BOOT_RAMDISK): $(BUILT_RAMDISK_TARGET)
-	gunzip -f < $(BUILT_RAMDISK_TARGET) | lzma -e > $@
+	gunzip -f < $(BUILT_RAMDISK_TARGET) | lzma > $@
 
 $(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_FILES) $(INSTALLED_DTIMAGE_TARGET) $(LZMA_BOOT_RAMDISK)
 	$(call pretty,"Target boot image: $@")
@@ -45,7 +45,7 @@ $(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_FILES) $(INSTAL
 LZMA_RECOVERY_RAMDISK := $(PRODUCT_OUT)/ramdisk-recovery-lzma.img
 
 $(LZMA_RECOVERY_RAMDISK): $(recovery_ramdisk)
-	gunzip -f < $(recovery_ramdisk) | lzma -e > $@
+	gunzip -f < $(recovery_ramdisk) | lzma > $@
 
 ## Overload recoveryimg generation: Same as the original, + --dt arg
 $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(INSTALLED_DTIMAGE_TARGET) \
