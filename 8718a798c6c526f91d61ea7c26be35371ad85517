@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fcbff3d_2c667def",
+        "filename": "overlay/frameworks/base/core/res/res/values/config.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2016-01-18T04:23:11Z",
+      "side": 1,
+      "message": "WCDMA already includes UMTS, see here: https://github.com/CyanogenMod/android_frameworks_base/blob/cm-13.0/telephony/java/android/telephony/RadioAccessFamily.java",
+      "range": {
+        "startLine": 372,
+        "startChar": 76,
+        "endLine": 372,
+        "endChar": 80
+      },
+      "revId": "8718a798c6c526f91d61ea7c26be35371ad85517",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
