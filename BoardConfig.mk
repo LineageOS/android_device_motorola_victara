@@ -95,7 +95,7 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 EXTENDED_FONT_FOOTPRINT := true
 
 # GPS
-TARGET_GPS_HAL_PATH := device/motorola/victara/gps
+USE_DEVICE_SPECIFIC_GPS := true
 
 # Hardware
 BOARD_HARDWARE_CLASS := device/motorola/victara/cmhw
