@@ -27,6 +27,7 @@
   <string name="action_none">Dezactivare</string>
   <string name="action_launch_camera">Lansare Cameră foto</string>
   <string name="action_torch">Comutare lanternă</string>
+  <string name="feedback_intensity_title">Intensitate răspuns haptic</string>
   <string name="feedback_intensity_none">Dezactivat</string>
   <string name="feedback_intensity_low">Redusă</string>
   <string name="feedback_intensity_medium">Medie</string>
