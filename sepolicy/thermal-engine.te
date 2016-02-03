@@ -1,4 +1,4 @@
 allow thermal-engine sysfs_battery_supply:dir search;
 allow thermal-engine sysfs_battery_supply:file r_file_perms;
 allow thermal-engine sysfs_battery_supply:lnk_file read;
-allow thermal-engine self:capability chown;
+allow thermal-engine self:capability { chown sys_nice };

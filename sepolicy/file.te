@@ -1,10 +1,13 @@
 type adspd_data_file, file_type, data_file_type;
 type battery_data_file, file_type, data_file_type;
 type camera_dump_data_file, file_type, data_file_type;
+type chargeonly_data_file, file_type, data_file_type;
 type cutback_data_file, file_type, data_file_type;
 type fsg_file, file_type, data_file_type;
 type hwrev_data_file, file_type, data_file_type;
 type pds_file, file_type;
 type sysfs_adspd, sysfs_type, fs_type;
+type sysfs_light, sysfs_type;
+type sysfs_power, sysfs_type;
 type vibeamp_sysfs, sysfs_type, file_type;
 type wapi_supplicant_data_file, file_type, data_file_type;

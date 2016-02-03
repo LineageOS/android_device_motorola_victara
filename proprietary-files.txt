@@ -125,6 +125,9 @@ vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libthermalclient.so
 
+# Charge only mode
+bin/charge_only_mode
+
 # Chromatix
 lib/libchromatix_ar0543_common.so
 lib/libchromatix_ar0543_default_video.so

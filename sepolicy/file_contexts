@@ -1,6 +1,7 @@
 /data/adspd(/.*)?                       u:object_r:adspd_data_file:s0
 /data/cam_socket([0-9])*                u:object_r:camera_socket:s0
 /data/camera_dump(/.*)?                 u:object_r:camera_dump_data_file:s0
+/data/chargeonlymode(/.*)?              u:object_r:chargeonly_data_file:s0
 /data/hardware_revisions(/.*)?          u:object_r:hwrev_data_file:s0
 /data/misc/cutback(/.*)?                u:object_r:cutback_data_file:s0
 /data/power_supply_logger(/.*)?         u:object_r:battery_data_file:s0
@@ -21,6 +22,7 @@
 /cache/pds                              u:object_r:pds_file:s0
 /pds(/.*)?                              u:object_r:pds_file:s0
 
+/sys/class/leds/lcd-backlight/brightness        u:object_r:sysfs_light:s0
 /sys/devices/fd510000.gpio/gpio/gpio79(/.*)?    u:object_r:sysfs_adspd:s0
 /sys/devices/fd510000.gpio/gpio/gpio124(/.*)?   u:object_r:sysfs_adspd:s0
 /sys/devices/fd510000.gpio/gpio/gpio125(/.*)?   u:object_r:sysfs_adspd:s0
@@ -28,9 +30,11 @@
 /sys/devices/fd510000.gpio/gpio/gpio144(/.*)?   u:object_r:sysfs_thermal:s0
 /sys/devices/qpnp-charger-ed24c400(/.*)?        u:object_r:sysfs_thermal:s0
 /sys/devices/virtual/graphics/fb0/hbm           u:object_r:livedisplay_sysfs:s0
+/sys/power/autosleep                            u:object_r:sysfs_power:s0
 /sys/vibrator/pwmvalue                          u:object_r:vibeamp_sysfs:s0
 
 /system/bin/adspd                       u:object_r:adspd_exec:s0
+/system/bin/charge_only_mode            u:object_r:charge_only_mode_exec:s0
 /system/bin/dbvc_atvc_property_set      u:object_r:atvc_exec:s0
 /system/bin/batt_health                 u:object_r:batt_health_exec:s0
 /system/bin/stm401                      u:object_r:stm401_exec:s0
