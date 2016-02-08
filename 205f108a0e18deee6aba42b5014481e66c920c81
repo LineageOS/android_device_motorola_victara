@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffb9cba7_9006bc20",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-02-08T20:53:14Z",
+      "side": 1,
+      "message": "Change-Id should be the last line here",
+      "revId": "205f108a0e18deee6aba42b5014481e66c920c81",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_f0093831",
+        "filename": "init/init_victara.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-02-08T20:53:14Z",
+      "side": 1,
+      "message": "Are you sure usc should be 10? 10 is world phone and afaik only vzw devices use this.\n\nAlso I\u0027d prefer we just leave these in their respective if blocks and just add yours.",
+      "revId": "205f108a0e18deee6aba42b5014481e66c920c81",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
