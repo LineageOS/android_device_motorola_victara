@@ -36,7 +36,7 @@
   <string name="action_launch_camera">Включить камеру</string>
   <string name="action_torch">Фонарик</string>
   <string name="feedback_intensity_title">Мощность виброотклика</string>
-  <string name="feedback_intensity_summary">Настройка силы вибрации для жестов постукивания и вращения</string>
+  <string name="feedback_intensity_summary">Настройка силы вибрации для жестов вращения и встряхивания</string>
   <string name="feedback_intensity_none">Выключен</string>
   <string name="feedback_intensity_low">Низкая</string>
   <string name="feedback_intensity_medium">Средняя</string>
