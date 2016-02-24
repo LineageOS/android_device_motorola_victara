@@ -135,6 +135,9 @@ static char *camera_fixup_setparams(int id, const char *settings)
 
     params.set(android::CameraParameters::KEY_VIDEO_STABILIZATION, "false");
 
+    if (!strncmp(params.get(android::CameraParameters::KEY_SCENE_MODE), "hdr", 3))
+        params.set("zsl", "on");
+
 #if !LOG_NDEBUG
     ALOGV("%s: fixed parameters:", __FUNCTION__);
     params.dump();
