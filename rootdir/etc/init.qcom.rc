@@ -41,6 +41,10 @@ on init
 
     symlink /sdcard /storage/sdcard0
 
+on fs
+    wait /dev/block/platform/${ro.boot.bootdevice}
+    symlink /dev/block/platform/${ro.boot.bootdevice} /dev/block/bootdevice
+
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
