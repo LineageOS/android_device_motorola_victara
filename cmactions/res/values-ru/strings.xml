@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Gesture shortcuts -->
   <string name="user_aware_display_title">Интеллектуальное откл. экрана</string>
   <string name="user_aware_display_summary">Не отключать экран, пока пользователь находится перед ним</string>
   <string name="screen_gestures_panel_title">Настройка жестов</string>
@@ -32,7 +33,7 @@
   <string name="ir_silencer_title">Взмах для отключения звука</string>
   <string name="ir_silencer_summary">Проведите рукой над экраном, чтобы приглушить звук входящего звонка</string>
   <string name="action_none">Отключить</string>
-  <string name="action_launch_camera">Включить камеру</string>
+  <string name="action_launch_camera">Запуск камеры</string>
   <string name="action_torch">Фонарик</string>
   <string name="feedback_intensity_title">Мощность виброотклика</string>
   <string name="feedback_intensity_summary">Настройка силы вибрации для жестов вращения и встряхивания</string>
