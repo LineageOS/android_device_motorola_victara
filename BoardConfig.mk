@@ -115,7 +115,6 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 10970071040
 
 # Power HAL
 TARGET_POWERHAL_VARIANT := qcom
-TARGET_POWERHAL_SET_INTERACTIVE_EXT := device/motorola/victara/power/power_ext.c
 
 # Qualcomm support
 

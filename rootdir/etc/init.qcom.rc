@@ -684,8 +684,7 @@ on enable-low-power
     # Interative governor
 
     write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay "20000 1400000:40000 1700000:20000"
-    # The power hal actually managest go_hisped_load and must also be changed if you change this
-    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 50
+    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 90
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1190400
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
     write /sys/devices/system/cpu/cpufreq/interactive/target_loads "85 1500000:90 1800000:70"
