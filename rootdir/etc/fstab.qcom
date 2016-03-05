@@ -15,4 +15,5 @@
 /dev/block/platform/msm_sdcc.1/by-name/modem          /firmware    ext4    ro,nosuid,nodev,barrier=0,context=u:object_r:firmware_file:s0  wait,notrim
 /dev/block/platform/msm_sdcc.1/by-name/fsg            /fsg         ext4    ro,nosuid,nodev,barrier=0,context=u:object_r:fsg_file:s0  wait,notrim
 
-/devices/platform/xhci-hcd/usb1/1-1/1-1:1.0           auto         auto    defaults                                    voldmanaged=usbdisk:auto,noemulatedsd
+# Note: because we don't have ,encryptable=userdata the usb-otg will not be adoptable
+/devices/platform/xhci-hcd/usb1/*           auto         auto    defaults                                    voldmanaged=usbdisk:auto
