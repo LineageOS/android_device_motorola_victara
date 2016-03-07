@@ -530,6 +530,14 @@ service dhcpcd_bnep4 /system/bin/dhcpcd -BKLG
     disabled
     oneshot
 
+service dhcpcd_bt-pan /system/bin/dhcpcd -BKLG
+    disabled
+    oneshot
+
+service iprenew_bt-pan /system/bin/dhcpcd -n
+    disabled
+    oneshot
+
 service gpsone_daemon /system/bin/gpsone_daemon
     class late_start
     user gps
