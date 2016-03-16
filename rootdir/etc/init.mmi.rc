@@ -320,7 +320,7 @@ service dropboxd /system/bin/dropboxd
     group diag
 
 on property:sys.boot_completed=1
-    setprop sys.io.scheduler bfq
+    setprop sys.io.scheduler row
 
 service mmi-boot-sh /system/bin/sh /init.mmi.boot.sh
     class core
