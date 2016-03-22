@@ -16,4 +16,4 @@
 /dev/block/platform/msm_sdcc.1/by-name/fsg            /fsg         ext4    ro,nosuid,nodev,barrier=0,context=u:object_r:fsg_file:s0  wait,notrim
 
 # Note: because we don't have ,encryptable=userdata the usb-otg will not be adoptable
-/devices/platform/xhci-hcd/usb1/*           auto         auto    defaults                                    voldmanaged=usbdisk:auto
+/devices/*/xhci-hcd/usb*           auto         auto    defaults                                    voldmanaged=usb:auto
