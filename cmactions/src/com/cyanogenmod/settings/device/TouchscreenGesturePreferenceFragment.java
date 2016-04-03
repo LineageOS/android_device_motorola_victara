@@ -17,12 +17,10 @@
 package com.cyanogenmod.settings.device;
 
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
+import android.preference.PreferenceFragment;
 import android.preference.PreferenceCategory;
 
-import org.cyanogenmod.internal.util.ScreenType;
-
-public class TouchscreenGestureSettings extends PreferenceActivity {
+public class TouchscreenGesturePreferenceFragment extends PreferenceFragment {
     private static final String CATEGORY_AMBIENT_DISPLAY = "ambient_display_key";
 
     @Override
@@ -32,17 +30,7 @@ public class TouchscreenGestureSettings extends PreferenceActivity {
         PreferenceCategory ambientDisplayCat = (PreferenceCategory)
                 findPreference(CATEGORY_AMBIENT_DISPLAY);
         if (ambientDisplayCat != null) {
-            ambientDisplayCat.setEnabled(CMActionsSettings.isDozeEnabled(getContentResolver()));
-        }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        // If running on a phone, remove padding around the listview
-        if (!ScreenType.isTablet(this)) {
-            getListView().setPadding(0, 0, 0, 0);
+            ambientDisplayCat.setEnabled(CMActionsSettings.isDozeEnabled(getActivity().getContentResolver()));
         }
     }
 }
