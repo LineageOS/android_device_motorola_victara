@@ -37,7 +37,7 @@
   <string name="action_torch">Ativar/desativar lanterna</string>
   <string name="feedback_intensity_title">Intensidade da reação tátil</string>
   <string name="feedback_intensity_summary">Intensidade da reação tátil para o gesto de torcer duas vezes e duplo corte</string>
-  <string name="feedback_intensity_none">Inativa</string>
+  <string name="feedback_intensity_none">Desativada</string>
   <string name="feedback_intensity_low">Baixa</string>
   <string name="feedback_intensity_medium">Média</string>
   <string name="feedback_intensity_high">Alta</string>
