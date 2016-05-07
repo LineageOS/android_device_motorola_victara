@@ -39,7 +39,7 @@ persist.hwc.mdpcomp.enable=true
 # System property for cabl
 ro.qualcomm.cabl=0
 
-ro.qc.sdk.audio.fluencetype=none
+ro.qc.sdk.audio.fluencetype=fluence
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
