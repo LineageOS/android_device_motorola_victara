@@ -398,6 +398,8 @@ service qmuxd /system/bin/qmuxd
 
 service netmgrd /system/bin/netmgrd
     class main
+    user root
+    group root wifi wakelock radio inet
 
 # Service not used
 #service sensors /system/bin/sensors.qcom
