@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_63fdf1af",
+        "filename": "wifi/WCNSS_qcom_cfg.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 5531
+      },
+      "writtenOn": "2016-06-06T16:46:32Z",
+      "side": 0,
+      "message": "check",
+      "revId": "03e7755b51bb610aee0bbb78415fcfb97f14cfad",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_0330bd9e",
+        "filename": "wifi/WCNSS_qcom_cfg.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 5531
+      },
+      "writtenOn": "2016-06-06T16:46:32Z",
+      "side": 0,
+      "message": "check",
+      "revId": "03e7755b51bb610aee0bbb78415fcfb97f14cfad",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
