@@ -216,8 +216,6 @@ vendor/lib/libquipc_os_api.so
 vendor/lib/libulp2.so
 
 # Graphics
-vendor/firmware/a330_pfp.fw
-vendor/firmware/a330_pm4.fw
 vendor/lib/egl/eglsubAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -235,6 +233,10 @@ vendor/lib/librs_adreno_sha1.so
 vendor/lib/librs_adreno.so
 vendor/lib/libRSDriver_adreno.so
 vendor/lib/libsc-a3xx.so
+
+# Graphics firmware
+etc/firmware/a330_pfp.fw
+etc/firmware/a330_pm4.fw
 
 # IMS - currently unused but have dependencies to qmi
 bin/imsdatadaemon
