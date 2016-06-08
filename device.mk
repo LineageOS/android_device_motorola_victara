@@ -246,6 +246,7 @@ PRODUCT_PACKAGES += \
     hostapd.accept \
     hostapd.deny \
     libwpa_client \
+    wificond \
     wcnss_service \
     wpa_supplicant
 
