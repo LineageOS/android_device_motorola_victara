@@ -44,7 +44,7 @@ audio_hal.period_size=192
 ro.qc.sdk.audio.fluencetype=fluence
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
-persist.audio.fluence.speaker=true
+persist.audio.fluence.speaker=false
 ro.config.vc_call_vol_steps=7
 # FM maximum volume be between 0 and 8192 (0dB)
 ro.audio.fm_max_volume=5793
