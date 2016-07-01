@@ -12,6 +12,7 @@ ro.config.vc_call_vol_steps=7
 ro.qc.sdk.audio.fluencetype=fluence
 use.voice.path.for.pcm.voip=true
 ro.config.media_vol_steps=25
+ro.config.vc_call_vol_steps=7
 
 # FM maximum volume be between 0 and 8192 (0dB)
 ro.audio.fm_max_volume=5793
