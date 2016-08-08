@@ -24,7 +24,6 @@ on moto-charger
     setprop ro.board.platform msm8974
     start qcom-post-boot
     start thermal-com
-    start charge_only_mode
 
 on init
     copy /module_hashes /sys/kernel/module_whitelist
@@ -105,10 +104,10 @@ service apanic_annotate  /system/bin/sh /system/bin/apanic_annotate.sh build
     group log
     oneshot
 
-service charge_only_mode /system/bin/charge_only_mode
-    user root
-    group graphics system input
-    disabled
+service charger /charger
+    class charger
+    group log
+    seclabel u:r:healthd:s0
 
 service batt_health /system/bin/batt_health
     class main
