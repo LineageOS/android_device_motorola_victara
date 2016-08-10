@@ -302,7 +302,6 @@ bin/qcks
 bin/qmi_motext_hook
 bin/qmuxd
 bin/radish
-bin/rfs_access
 bin/rmt_storage
 lib/libadropbox.so
 lib/libmdmcutback.so
