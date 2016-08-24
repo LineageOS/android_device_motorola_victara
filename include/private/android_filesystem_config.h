@@ -32,6 +32,8 @@
 #include <private/android_filesystem_capability.h>
 #endif
 
+#define CAP_MASK_LONG(cap_name)  (1ULL << (cap_name))
+
 /* This is the master Users and Groups config for the platform.
  * DO NOT EVER RENUMBER
  */
@@ -97,6 +99,10 @@
 #define AID_QCOM_DIAG     3009  /* can read/write /dev/diag */
 
 #define AID_SENSORS       3011 /* access to /dev/socket/sensor_ctl_socket & QCCI/QCSI */
+
+/* The range 5000-5999 is also reserved for OEM, and must never be used here. */
+#define AID_OEM_RESERVED_2_START 5000
+#define AID_OEM_RESERVED_2_END   5999
 
 /* Motorola IDs */
 #define AID_MOT_ACCY      9000  /* access to accessory */
