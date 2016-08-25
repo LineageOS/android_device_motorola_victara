@@ -344,11 +344,8 @@
          config_enableFusedLocationOverlay is false. -->
     <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
 
-    <!-- Component name of the geofence services provider. -->
-    <string name="config_geofenceProvider" translatable="false">@null</string>
-
-    <!-- Component name of the combo network location provider. -->
-    <string name="config_comboNetworkLocationProvider" translatable="false">com.qualcomm.location</string>
+    <!-- Component name of the geofence services provider. >
+    <string name="config_geofenceProvider" translatable="false">@null</string-->
 
     <!-- Flag indicating if the speed up audio on mt call code should be executed -->
     <bool name="config_speed_up_audio_on_mt_calls">false</bool>
@@ -372,8 +369,8 @@
    <string translatable="false" name="config_radio_access_family">GSM|WCDMA|CDMA|LTE|EVDO</string>
 
     <!-- Support in Surfaceflinger for blur layers.
-         NOTE: This requires additional hardware-specific code. -->
-    <bool name="config_ui_blur_enabled">true</bool>
+         NOTE: This requires additional hardware-specific code. >
+    <bool name="config_ui_blur_enabled">true</bool-->
 
 </resources>
 
