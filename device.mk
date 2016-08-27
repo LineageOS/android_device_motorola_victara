@@ -115,6 +115,7 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     Snap \
+    libshim_camera \
     camera.msm8974
 
 # Charger
