@@ -96,7 +96,8 @@
 #define AID_NET_BW_STATS  3006  /* read bandwidth statistics */
 #define AID_NET_BW_ACCT   3007  /* change bandwidth statistics accounting */
 #define AID_NET_BT_STACK  3008  /* bluetooth: access config files */
-#define AID_QCOM_DIAG     3009  /* can read/write /dev/diag */
+#define AID_READPROC      3009  /* Allow /proc read access */
+#define AID_QCOM_DIAG     3010  /* can read/write /dev/diag */
 
 #define AID_SENSORS       3011 /* access to /dev/socket/sensor_ctl_socket & QCCI/QCSI */
 
