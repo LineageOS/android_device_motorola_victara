@@ -19,11 +19,11 @@ INSTALLED_DTIMAGE_TARGET := $(PRODUCT_OUT)/dt.img
 RAW_DTIMAGE_TARGET := $(PRODUCT_OUT)/dt.img.raw
 
 $(RAW_DTIMAGE_TARGET): $(DTBTOOL) $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr $(INSTALLED_KERNEL_TARGET)
-	@echo -e ${CL_CYN}"Start DT image: $@"${CL_RST}
+	@echo "Start DT image: $@"
 	$(call append-cm-dtb)
 	$(call pretty,"Target raw dt image: $(RAW_DTIMAGE_TARGET)")
 	$(hide) $(DTBTOOL) -2 -o $(RAW_DTIMAGE_TARGET) -s $(BOARD_KERNEL_PAGESIZE) -p $(KERNEL_OUT)/scripts/dtc/ $(KERNEL_OUT)/arch/arm/boot/
-	@echo -e ${CL_CYN}"Made DT image: $@"${CL_RST}
+	@echo "Made DT image: $@"
 
 $(INSTALLED_DTIMAGE_TARGET): $(RAW_DTIMAGE_TARGET)
 	$(call pretty,"Target dt image: $(INSTALLED_DTIMAGE_TARGET)")
@@ -40,7 +40,7 @@ $(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_FILES) $(INSTAL
 	$(call pretty,"Target boot image: $@")
 	$(hide) $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_ARGS) $(BOARD_MKBOOTIMG_ARGS) --dt $(INSTALLED_DTIMAGE_TARGET) --output $@ --ramdisk $(LZMA_BOOT_RAMDISK)
 	$(hide) $(call assert-max-image-size,$@,$(BOARD_BOOTIMAGE_PARTITION_SIZE))
-	@echo -e ${CL_CYN}"Made boot image: $@"${CL_RST}
+	@echo "Made boot image: $@"
 
 LZMA_RECOVERY_RAMDISK := $(PRODUCT_OUT)/ramdisk-recovery-lzma.img
 
@@ -54,4 +54,4 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(INSTALLED_DTIMAGE_TARGET) \
 	$(call pretty,"Target recovery image: $@")
 	$(hide) $(MKBOOTIMG) $(INTERNAL_RECOVERYIMAGE_ARGS) $(BOARD_MKBOOTIMG_ARGS) --dt $(INSTALLED_DTIMAGE_TARGET) --output $@ --ramdisk $(LZMA_RECOVERY_RAMDISK) --id > $(RECOVERYIMAGE_ID_FILE)
 	$(hide) $(call assert-max-image-size,$@,$(BOARD_RECOVERYIMAGE_PARTITION_SIZE))
-	@echo -e ${CL_CYN}"Made recovery image: $@"${CL_RST}
+	@echo "Made recovery image: $@"
