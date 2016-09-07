@@ -94,5 +94,8 @@ camera2.portability.force_api=1
 # Play store
 ro.com.google.clientidbase.gmm=android-motorola
 
+# Storage
+ro.sys.sdcardfs=true
+
 # Wifi
 ro.disableWifiApFirmwareReload=true
