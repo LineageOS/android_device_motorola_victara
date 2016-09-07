@@ -17,15 +17,14 @@
 package com.cyanogenmod.settings.device;
 
 import android.os.Bundle;
-import android.preference.PreferenceFragment;
-import android.preference.PreferenceCategory;
+import android.support.v7.preference.PreferenceCategory;
+import android.support.v14.preference.PreferenceFragment;
 
 public class TouchscreenGesturePreferenceFragment extends PreferenceFragment {
     private static final String CATEGORY_AMBIENT_DISPLAY = "ambient_display_key";
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.gesture_panel);
         PreferenceCategory ambientDisplayCat = (PreferenceCategory)
                 findPreference(CATEGORY_AMBIENT_DISPLAY);
