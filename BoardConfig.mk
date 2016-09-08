@@ -50,7 +50,6 @@ BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8974
 TARGET_KERNEL_CONFIG := cyanogenmod_victara_defconfig
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
 # Audio
 AUDIO_FEATURE_ENABLED_ANC_HEADSET := true
