@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fa4df85_51e9da17",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-09-09T12:51:44Z",
+      "side": 1,
+      "message": "we\u0027re on M blobs...we shouldn\u0027t need this anymore...",
+      "revId": "8c7eaa8e58399256567d2fb5c51c147de15acf42",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

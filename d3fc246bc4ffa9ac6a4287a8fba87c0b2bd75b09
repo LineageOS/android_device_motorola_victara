@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fa4df85_b18cce7f",
+        "filename": "overlay/frameworks/base/core/res/res/values/config.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-09-09T12:51:44Z",
+      "side": 0,
+      "message": "i think this can be nuked, its the default anyway",
+      "revId": "d3fc246bc4ffa9ac6a4287a8fba87c0b2bd75b09",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
