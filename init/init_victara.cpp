@@ -72,7 +72,7 @@ void vendor_load_properties()
         property_set("ro.build.description", "victara_verizon-user 5.1 LPE23.32-25-3 10 release-keys");
         property_set("ro.build.fingerprint", "motorola/victara_verizon/victara:5.1/LPE23.32-25-3/10:user/release-keys");
         property_set("ro.telephony.default_network", "10");
-        property_set("telephony.lteOnCdmaDevice", "1");
+//        property_set("telephony.lteOnCdmaDevice", "1");
         property_set("ro.telephony.default_cdma_sub", "0");
         property_set("ro.ril.force_eri_from_xml", "true");
         property_set("ro.telephony.get_imsi_from_sim", "true");
@@ -86,7 +86,7 @@ void vendor_load_properties()
         property_set("ro.build.description", "victara_usc-user 5.1 LPE23.32-21.7 1 release-keys");
         property_set("ro.build.fingerprint", "motorola/victara_usc/victara:5.1/LPE23.32-21.7/1:user/release-keys");
         property_set("ro.telephony.default_network", "10");
-        property_set("telephony.lteOnCdmaDevice", "1");
+//        property_set("telephony.lteOnCdmaDevice", "1");
         property_set("ro.com.google.clientidbase.am", "android-uscellular-us");
         property_set("ro.com.google.clientidbase.ms", "android-uscellular-us");
         property_set("ro.cdma.data_retry_config", "max_retries=infinite,0,0,10000,10000,100000,10000,10000,10000,10000,140000,540000,960000");
