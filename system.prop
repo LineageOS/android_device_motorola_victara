@@ -90,6 +90,8 @@ persist.radio.apn_delay=5000
 
 # Camera
 camera2.portability.force_api=1
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
 
 # Play store
 ro.com.google.clientidbase.gmm=android-motorola
