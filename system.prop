@@ -99,3 +99,6 @@ ro.sys.sdcardfs=true
 
 # Wifi
 ro.disableWifiApFirmwareReload=true
+
+# Bluetooth
+qcom.bluetooth.soc=smd
