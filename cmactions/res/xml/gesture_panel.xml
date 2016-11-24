@@ -19,18 +19,19 @@
 
     <PreferenceCategory
         android:key="user_aware_display_key"
-        android:title="@string/user_aware_display_title" >
+        android:title="@string/user_aware_display_title">
 
         <SwitchPreference
             android:key="gesture_user_aware_display"
             android:defaultValue="false"
             android:title="@string/user_aware_display_title"
             android:summary="@string/user_aware_display_summary" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="ambient_display_key"
-        android:title="@string/ambient_display_title" >
+        android:title="@string/ambient_display_title">
 
         <SwitchPreference
             android:key="gesture_pick_up"
@@ -41,13 +42,14 @@
         <SwitchPreference
             android:key="gesture_ir_wake_up"
             android:defaultValue="true"
-            android:title="@string/ir_wake_up_title"
-            android:summary="@string/ir_wake_up_summary" />
+            android:title="@string/hand_wave_gesture_title"
+            android:summary="@string/hand_wave_gesture_summary" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="actions_key"
-        android:title="@string/actions_title" >
+        android:title="@string/actions_title">
 
         <ListPreference
             android:key="gesture_camera_action"
@@ -79,8 +81,9 @@
         <SwitchPreference
             android:key="gesture_ir_silencer"
             android:defaultValue="true"
-            android:title="@string/ir_silencer_title"
-            android:summary="@string/ir_silencer_summary" />
+            android:title="@string/hand_wave_silencer_title"
+            android:summary="@string/hand_wave_silencer_summary" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
