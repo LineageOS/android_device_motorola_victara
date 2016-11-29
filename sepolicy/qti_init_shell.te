@@ -1,3 +1,8 @@
+# hwrevs
+# type=1400 msg=audit(7205390.473:24): avc:  denied  { create } for  uid=1000 pid=335 comm="sh" name="ram" scontext=u:r:qti_init_shell:s0 tcontext=u:object_r:system_data_file:s0 tclass=file permissive=1
+# type=1400 msg=audit(7205390.476:26): avc:  denied  { append } for  uid=1000 pid=335 comm="sh" name="ram" dev="mmcblk0p38" ino=572322 scontext=u:r:qti_init_shell:s0 tcontext=u:object_r:system_data_file:s0 tclass=file permissive=1
+# type=1400 msg=audit(7205390.540:27): avc:  denied  { setattr } for  uid=1000 pid=442 comm="chown" name="ram" dev="mmcblk0p38" ino=572322 scontext=u:r:qti_init_shell:s0 tcontext=u:object_r:system_data_file:s0 tclass=file permissive=1
+
 allow qti_init_shell hwrev_data_file:dir { rw_dir_perms setattr };
 allow qti_init_shell hwrev_data_file:file { create_file_perms w_file_perms };
 set_prop(qti_init_shell, mmi_prop)
@@ -5,4 +10,6 @@ set_prop(qti_init_shell, mmi_prop)
 # To allow error messages to be logged
 allow qti_init_shell kmsg_device:chr_file w_file_perms;
 
-allow qti_init_shell btnvtool_exec:file getattr;
+allow qti_init_shell btnvtool_exec:file { execute execute_no_trans getattr open read };
+allow qti_init_shell bluetooth_data_file:file getattr;
+allow qti_init_shell bluetooth_loader_exec:file r_file_perms;

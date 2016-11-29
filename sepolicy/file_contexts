@@ -23,6 +23,9 @@
 /pds(/.*)?                              u:object_r:pds_file:s0
 
 /sys/class/leds/lcd-backlight/brightness        u:object_r:sysfs_light:s0
+/sys/class/power_supply(/.*)?                   u:object_r:sysfs_battery_supply:s0
+/sys/devices/c55_ctrl                           u:object_r:sysfs_adspd:s0
+/sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk        u:object_r:sysfs_thermal:s0
 /sys/devices/fd510000.gpio/gpio/gpio79(/.*)?    u:object_r:sysfs_adspd:s0
 /sys/devices/fd510000.gpio/gpio/gpio124(/.*)?   u:object_r:sysfs_adspd:s0
 /sys/devices/fd510000.gpio/gpio/gpio125(/.*)?   u:object_r:sysfs_adspd:s0
@@ -30,6 +33,7 @@
 /sys/devices/fd510000.gpio/gpio/gpio144(/.*)?   u:object_r:sysfs_thermal:s0
 /sys/devices/qpnp-charger-ed24c400(/.*)?        u:object_r:sysfs_thermal:s0
 /sys/devices/virtual/graphics/fb0/hbm           u:object_r:livedisplay_sysfs:s0
+/sys/module/qpnp_charger/parameters(/.*)?       u:object_r:sysfs_battery_supply:s0
 /sys/power/autosleep                            u:object_r:sysfs_power:s0
 /sys/vibrator/pwmvalue                          u:object_r:vibeamp_sysfs:s0
 
