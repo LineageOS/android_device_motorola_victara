@@ -10,6 +10,6 @@ allow adspd adspd_data_file:file create_file_perms;;
 allow adspd adsp_serial_device:chr_file rw_file_perms;
 allow adspd input_device:chr_file r_file_perms;
 allow adspd input_device:dir search;
-allow adspd sysfs_adspd:dir search;
+allow adspd sysfs_adspd:dir r_dir_perms;
 allow adspd sysfs_adspd:file rw_file_perms;
 allow adspd system_prop:property_service set;
