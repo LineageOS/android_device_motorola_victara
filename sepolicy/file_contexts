@@ -23,6 +23,8 @@
 /pds(/.*)?                              u:object_r:pds_file:s0
 
 /sys/class/leds/lcd-backlight/brightness        u:object_r:sysfs_light:s0
+/sys/devices/c55_ctrl                           u:object_r:sysfs_adspd:s0
+/sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk        u:object_r:sysfs_thermal:s0
 /sys/devices/fd510000.gpio/gpio/gpio79(/.*)?    u:object_r:sysfs_adspd:s0
 /sys/devices/fd510000.gpio/gpio/gpio124(/.*)?   u:object_r:sysfs_adspd:s0
 /sys/devices/fd510000.gpio/gpio/gpio125(/.*)?   u:object_r:sysfs_adspd:s0
