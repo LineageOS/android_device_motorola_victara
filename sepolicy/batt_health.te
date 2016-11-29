@@ -2,6 +2,8 @@ type batt_health, domain;
 type batt_health_exec, exec_type, file_type;
 init_daemon_domain(batt_health)
 
+allow batt_health sysfs:dir r_dir_perms;
+allow batt_health sysfs:file r_file_perms;
 allow batt_health sysfs_battery_supply:dir r_dir_perms;
 allow batt_health sysfs_battery_supply:file r_file_perms;
 allow batt_health sysfs_usb_supply:dir r_dir_perms;
@@ -14,6 +16,7 @@ allow batt_health battery_data_file:dir w_dir_perms;
 
 allow batt_health pds_file:dir search;
 allow batt_health pds_file:file { open read };
+allow batt_health pds_file:lnk_file { read };
 
 allow batt_health self:capability net_admin;
 allow batt_health self:netlink_kobject_uevent_socket { read bind create setopt };
