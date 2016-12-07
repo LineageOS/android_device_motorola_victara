@@ -1,0 +1,2 @@
+allow audioserver adspd:unix_stream_socket connectto;
+allow audioserver adspd_data_file:sock_file write;
