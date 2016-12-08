@@ -43,12 +43,13 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := krait
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK := device/motorola/victara/mkbootimg.mk
 BOARD_KERNEL_CMDLINE := console=none androidboot.hardware=qcom msm_rtb.filter=0x37 ehci-hcd.park=3 vmalloc=400M
 BOARD_KERNEL_BASE := 0x80200000
+BOARD_KERNEL_LZ4C_DT := true
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
+LZMA_RAMDISK_TARGETS := boot,recovery
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8974
 TARGET_KERNEL_CONFIG := lineageos_victara_defconfig
 
@@ -121,7 +122,6 @@ TARGET_POWERHAL_VARIANT := qcom
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
-TARGET_NOT_USE_GZIP_RECOVERY_RAMDISK := true
 TARGET_RECOVERY_DENSITY := hdpi
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
