@@ -361,5 +361,9 @@
         format is UMTS|LTE|... -->
    <string translatable="false" name="config_radio_access_family">GSM|WCDMA|CDMA|LTE|EVDO</string>
 
+    <!-- Support in Surfaceflinger for blur layers.
+         NOTE: This requires additional hardware-specific code. -->
+    <bool name="config_uiBlurEnabled">true</bool>
+
 </resources>
 
