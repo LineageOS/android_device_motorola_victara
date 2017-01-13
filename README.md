@@ -16,6 +16,8 @@ Battery | Li-Ion 2300 mAh battery
 Display | 1080 x 1920 pixels, 5.2 inches (~424 ppi pixel density)
 Camera  | 13 MP, 4128 x 3096 pixels, autofocus, dual-LED flash
 
-This branch is for building CyanogenMod 12.0 Firmware.
+This branch is for building LineageOS Firmware.
 
 Copyright 2014 CyanogenMod Project.
+
+Copyright 2017 The LineageOS Project
