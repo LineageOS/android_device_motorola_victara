@@ -26,12 +26,17 @@
   <string name="ir_wake_up_title">Unduire</string>
   <string name="ir_wake_up_summary">Pulsează notificările când unduiți mâna peste ecran</string>
   <string name="actions_title">Acțiuni</string>
+  <string name="camera_gesture_title">Dublă-răsucire</string>
+  <string name="camera_gesture_summary">Acțiune când se utilizează gestul de răsucire dublă a mâinii</string>
   <string name="chop_chop_gesture_title">Chop-Chop</string>
+  <string name="chop_chop_gesture_summary">Acțiune când se utilizează gestul chop-chop</string>
   <string name="ir_silencer_title">Unduire pentru silențios</string>
+  <string name="ir_silencer_summary">Pune pe mut apelurile de intrare unduind mâna desupra ecranului</string>
   <string name="action_none">Dezactivare</string>
   <string name="action_launch_camera">Lansare Cameră foto</string>
   <string name="action_torch">Comutare lanternă</string>
   <string name="feedback_intensity_title">Intensitate răspuns haptic</string>
+  <string name="feedback_intensity_summary">Puterea feedback-ului haptic pentru acțiunile dublă-răsucire şi chop-chop</string>
   <string name="feedback_intensity_none">Dezactivat</string>
   <string name="feedback_intensity_low">Redusă</string>
   <string name="feedback_intensity_medium">Medie</string>
