@@ -139,6 +139,11 @@ TARGET_USE_SDCLANG := true
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/motorola/victara/sepolicy
 
+# TWRP Support - Optional
+ifeq ($(WITH_TWRP),true)
+-include device/motorola/victara/twrp.mk
+endif
+
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_victara
