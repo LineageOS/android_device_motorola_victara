@@ -718,10 +718,9 @@ service ril-daemon2 /system/bin/rild -c 3
 #    disabled
 #    oneshot
 
-#comment this and start  MOTO specific charge_only_mode.
-#(See /device/moto/mot8226/init.target.rc for details).
-#service charger /charger
-#    class charger
+service charger /charger
+    class charger
+    seclabel u:r:healthd:s0
 
 #service ssr_diag /system/bin/ssr_diag
 #    class late_start

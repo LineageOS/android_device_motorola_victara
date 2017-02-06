@@ -12,20 +12,6 @@ on early-init
     chown system system /sys/kernel/debug
     chmod 0770 /sys/kernel/debug
 
-on charger
-    trigger early-fs
-    trigger fs
-    trigger post-fs
-    trigger post-fs-data
-    trigger moto-charger
-    class_stop main
-
-on moto-charger
-    setprop ro.board.platform msm8974
-    start qcom-post-boot
-    start thermal-com
-    start charge_only_mode
-
 on init
     copy /module_hashes /sys/kernel/module_whitelist
 
