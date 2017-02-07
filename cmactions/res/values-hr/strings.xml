@@ -17,28 +17,28 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Gesture shortcuts -->
-  <string name="user_aware_display_title">Korisniku prilagođen prikaz</string>
-  <string name="user_aware_display_summary">Drži zaslon uključen dok je korisnik ispred zaslona</string>
+  <string name="user_aware_display_title">Zaslon svjestan korisnika</string>
+  <string name="user_aware_display_summary">Zadržat će zaslon uključenim dok je korisnik ispred zaslona.</string>
   <string name="screen_gestures_panel_title">Prečaci gesta</string>
-  <string name="ambient_display_title">Ambijentni zaslon</string>
+  <string name="ambient_display_title">Ambijentalni zaslon</string>
   <string name="pick_up_gesture_title">Podizanje</string>
-  <string name="pick_up_gesture_summary">Prikaži obavijesti pri podizanju</string>
-  <string name="ir_wake_up_title">Val</string>
-  <string name="ir_wake_up_summary">Prikaži obavijesti kada mahnete rukom preko zaslona</string>
+  <string name="pick_up_gesture_summary">Pulsiranje obavijesti pri podizanju uređaja</string>
+  <string name="ir_wake_up_title">Mahanje</string>
+  <string name="ir_wake_up_summary">Pulsiranje obavijesti kada mahnete rukom preko zaslona</string>
   <string name="actions_title">Radnje</string>
   <string name="camera_gesture_title">Dvostruki zaokret</string>
-  <string name="camera_gesture_summary">Akcija za gestu duplog zaokreta</string>
-  <string name="chop_chop_gesture_title">Sjeći</string>
-  <string name="chop_chop_gesture_summary">Akcija kada se koristi gesta požuri</string>
-  <string name="ir_silencer_title">Mahni za tišinu</string>
-  <string name="ir_silencer_summary">Utišaj dolazni poziv mahanjem preko ekrana</string>
+  <string name="camera_gesture_summary">Radnja za korištenje gestom dvostrukog zaokreta</string>
+  <string name="chop_chop_gesture_title">Sjeckanje</string>
+  <string name="chop_chop_gesture_summary">Radnja za korištenje geste sjeckanja</string>
+  <string name="ir_silencer_title">Mahanje za utišavanje</string>
+  <string name="ir_silencer_summary">Utišajte dolazne pozive mahanjem rukom preko zaslona</string>
   <string name="action_none">Onemogući</string>
   <string name="action_launch_camera">Pokreni kameru</string>
   <string name="action_torch">Prekidač svjetiljke</string>
-  <string name="feedback_intensity_title">Intenzitet odgovora dodira</string>
-  <string name="feedback_intensity_summary">Jakost povratne informacije za duplu rotaciju i požuri akciju</string>
+  <string name="feedback_intensity_title">Jačina povratne vibracije</string>
+  <string name="feedback_intensity_summary">Jačina povratne vibracije za radnje dvostrukog zaokreta i sjeckanja</string>
   <string name="feedback_intensity_none">Onemogućeno</string>
   <string name="feedback_intensity_low">Niska</string>
-  <string name="feedback_intensity_medium">Srednje</string>
+  <string name="feedback_intensity_medium">Srednja</string>
   <string name="feedback_intensity_high">Visoka</string>
 </resources>
