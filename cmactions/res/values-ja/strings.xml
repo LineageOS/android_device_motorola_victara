@@ -34,7 +34,7 @@
   <string name="ir_silencer_summary">画面上で手を振って着信をサイレントにする</string>
   <string name="action_none">無効</string>
   <string name="action_launch_camera">カメラを起動</string>
-  <string name="action_torch">トーチを切り替える</string>
+  <string name="action_torch">ライトを切り替える</string>
   <string name="feedback_intensity_title">反応バイブの強さ</string>
   <string name="feedback_intensity_summary">2回ひねりと2回チョップの動作の反応バイブの強さ</string>
   <string name="feedback_intensity_none">無効</string>
