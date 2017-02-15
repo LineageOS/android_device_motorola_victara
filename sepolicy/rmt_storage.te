@@ -1,3 +1,5 @@
+allow rmt_storage self:capability dac_override;
+
 allow rmt_storage ssd_device:blk_file rw_file_perms;
 allow rmt_storage hob_block_device:blk_file rw_file_perms;
 allow rmt_storage fsg_file:file r_file_perms;
