@@ -1,6 +1,3 @@
-ifneq ($(BUILD_TINY_ANDROID),true)
-#Compile this library only for builds with the latest modem image
-
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
@@ -52,20 +49,16 @@ LOCAL_C_INCLUDES:= \
     $(TARGET_OUT_HEADERS)/libloc_core \
     device/motorola/victara/gps/libloc_api_50001
 
-LOCAL_COPY_HEADERS_TO:= libloc_eng/
-LOCAL_COPY_HEADERS:= \
-   LocEngAdapter.h \
-   loc.h \
-   loc_eng.h \
-   loc_eng_xtra.h \
-   loc_eng_ni.h \
-   loc_eng_agps.h \
-   loc_eng_msg.h \
-   loc_eng_log.h
+LOCAL_HEADER_LIBRARIES := libgps.utils_headers libloc_core_headers
 
 LOCAL_PRELINK_MODULE := false
 
 include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libloc_eng_headers
+LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)
+include $(BUILD_HEADER_LIBRARY)
 
 include $(CLEAR_VARS)
 
@@ -109,6 +102,6 @@ LOCAL_C_INCLUDES:= \
 LOCAL_PRELINK_MODULE := false
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 
-include $(BUILD_SHARED_LIBRARY)
+LOCAL_HEADER_LIBRARIES := libgps.utils_headers libloc_core_headers
 
-endif # not BUILD_TINY_ANDROID
+include $(BUILD_SHARED_LIBRARY)

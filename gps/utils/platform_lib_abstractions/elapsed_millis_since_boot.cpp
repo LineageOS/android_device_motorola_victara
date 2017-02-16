@@ -1,4 +1,4 @@
-/* Copyright (c) 2011 The Linux Foundation. All rights reserved.
+/* Copyright (c) 2013, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -24,50 +24,23 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
  */
 
-#include <hardware/gps.h>
-
 #include <stdlib.h>
-#include <string.h>
+#include <sys/time.h>
+#include "platform_lib_time.h"
 
-extern const GpsInterface* get_gps_interface();
-
-const GpsInterface* gps__get_gps_interface(struct gps_device_t* dev)
+int64_t systemTime(int clock)
 {
-    return get_gps_interface();
+    struct timeval t;
+    t.tv_sec = t.tv_usec = 0;
+    gettimeofday(&t, NULL);
+    return t.tv_sec*1000000LL + t.tv_usec;
 }
 
-static int open_gps(const struct hw_module_t* module, char const* name,
-        struct hw_device_t** device)
+
+int64_t elapsedMillisSinceBoot()
 {
-    struct gps_device_t *dev = (struct gps_device_t *) malloc(sizeof(struct gps_device_t));
-
-    if(dev == NULL)
-        return -1;
-
-    memset(dev, 0, sizeof(*dev));
-
-    dev->common.tag = HARDWARE_DEVICE_TAG;
-    dev->common.version = 0;
-    dev->common.module = (struct hw_module_t*)module;
-    dev->get_gps_interface = gps__get_gps_interface;
-
-    *device = (struct hw_device_t*)dev;
-    return 0;
+    int64_t t_us = systemTime(0);
+    return (int64_t) t_us / 1000LL;
 }
-
-static struct hw_module_methods_t gps_module_methods = {
-    .open = open_gps
-};
-
-struct hw_module_t HAL_MODULE_INFO_SYM = {
-    .tag = HARDWARE_MODULE_TAG,
-    .module_api_version = 1,
-    .hal_api_version = 0,
-    .id = GPS_HARDWARE_MODULE_ID,
-    .name = "loc_api GPS Module",
-    .author = "Qualcomm USA, Inc.",
-    .methods = &gps_module_methods,
-};
