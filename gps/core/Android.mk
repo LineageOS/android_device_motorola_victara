@@ -3,7 +3,6 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := libloc_core
-LOCAL_MODULE_OWNER := qcom
 
 LOCAL_MODULE_TAGS := optional
 
