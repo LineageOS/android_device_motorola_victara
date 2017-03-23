@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba57610f_b5f3b572",
+        "filename": "setup-makefiles.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6351
+      },
+      "writtenOn": "2017-03-23T13:50:02Z",
+      "side": 1,
+      "message": "2014, not 2016.",
+      "revId": "50f81b0027af8a89806dc5f13e6d71085d4ae258",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
