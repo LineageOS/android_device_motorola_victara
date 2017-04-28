@@ -17,4 +17,28 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Gesture shortcuts -->
+  <string name="user_aware_display_title">Funksionimi i ekranit në bazë të pranisë së përdoruesit</string>
+  <string name="user_aware_display_summary">Mbaj ekranin ndezur gjatë kohës kur përdoruesi është përpara ekranit</string>
+  <string name="screen_gestures_panel_title">Shkurtore për gjestet</string>
+  <string name="ambient_display_title">Drita e ekranit sipas ambientit</string>
+  <string name="pick_up_gesture_title">Ngritja</string>
+  <string name="pick_up_gesture_summary">Shfaq njoftimet kur e ngre ose e zhvendos</string>
+  <string name="ir_wake_up_title">Kalimi sipër i dorës</string>
+  <string name="ir_wake_up_summary">Shfaq njoftimet kur i kalon dorën sipër ekranit</string>
+  <string name="actions_title">Veprimet</string>
+  <string name="camera_gesture_title">Kthim i dyfishtë</string>
+  <string name="camera_gesture_summary">Veprimi kur bën gjestin e kthimit të dyfishtë</string>
+  <string name="chop_chop_gesture_title">Chop-chop</string>
+  <string name="chop_chop_gesture_summary">Veprimi kur bën gjestin chop-chop</string>
+  <string name="ir_silencer_title">Kalo dorën sipër për ta heshtur</string>
+  <string name="ir_silencer_summary">Hesht thirrjet hyrëse duke kaluar dorën mbi ekran</string>
+  <string name="action_none">Çaktivizo</string>
+  <string name="action_launch_camera">Hap kamerën</string>
+  <string name="action_torch">Ndiz/fik elektrikun e dorës</string>
+  <string name="feedback_intensity_title">Itensiteti i reagimit haptik</string>
+  <string name="feedback_intensity_summary">Intensiteti i reagimit haptik për veprimet \"kthim i dyfishtë\" dhe \"chop-chop\"</string>
+  <string name="feedback_intensity_none">I çaktivizuar</string>
+  <string name="feedback_intensity_low">I ulët</string>
+  <string name="feedback_intensity_medium">Mesatar</string>
+  <string name="feedback_intensity_high">I lartë</string>
 </resources>
