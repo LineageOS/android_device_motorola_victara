@@ -15,6 +15,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+<<<<<<< HEAD:media/media_profiles.xml
 <!DOCTYPE MediaSettings [
 <!ELEMENT MediaSettings (CamcorderProfiles,
                          EncoderOutputFileFormat+,
@@ -76,6 +77,14 @@
 <!ATTLIST AudioDecoderCap name (wma) #REQUIRED>
 <!ATTLIST AudioDecoderCap enabled (true|false) #REQUIRED>
 ]>
+=======
+<!--
+     Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+     Not a Contribution, Apache license notifications and license are retained
+     for attribution purposes only.
+-->
+<!DOCTYPE MediaSettings SYSTEM "/system/etc/media_profiles_V1_0.dtd">
+>>>>>>> 59b6121... Create media_profiles_V1_0.xml:configs/media_profiles_V1_0.xml
 <!--
      This file is used to declare the multimedia profiles and capabilities
      on an android-powered device.
