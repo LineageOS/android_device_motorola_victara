@@ -66,16 +66,6 @@ persist.qcril_uim_vcc_feature=1
 # Gps Smart Battery Savings (depends on sensor hub)
 persist.mot.gps.smart_battery=1
 
-# USB product ids
-ro.usb.mtp=0x2e82
-ro.usb.mtp_adb=0x2e76
-ro.usb.ptp=0x2e83
-ro.usb.ptp_adb=0x2e84
-ro.usb.bpt=0x2e28
-ro.usb.bpt_adb=0x2e29
-ro.usb.bpteth=0x2e2a
-ro.usb.bpteth_adb=0x2e2b
-
 # Screen density
 ro.sf.lcd_density=480
 

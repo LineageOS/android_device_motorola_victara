@@ -214,7 +214,6 @@ PRODUCT_PACKAGES += \
     init.mmi.rc \
     init.mmi.touch.sh \
     init.mmi.usb.rc \
-    init.mmi.usb.sh \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
