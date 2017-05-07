@@ -163,6 +163,7 @@ vendor/lib/libchromatix_s5k5e2_snapshot.so
 bin/mpdecision
 bin/thermal-engine
 vendor/lib/libqc-opt.so
+vendor/lib/libqti-perfd-client.so
 vendor/lib/libthermalioctl.so
 
 # DRM
