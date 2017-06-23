@@ -35,8 +35,8 @@
   <string name="action_none">停用</string>
   <string name="action_launch_camera">啟動相機</string>
   <string name="action_torch">切換至手電筒</string>
-  <string name="feedback_intensity_title">觸覺回饋強度</string>
-  <string name="feedback_intensity_summary">對於雙重扭動和左右旋轉搖動的觸覺回饋強度</string>
+  <string name="feedback_intensity_title">觸控震動強度</string>
+  <string name="feedback_intensity_summary">對於雙重扭動和左右旋轉搖動的觸控震動強度</string>
   <string name="feedback_intensity_none">已停用</string>
   <string name="feedback_intensity_low">低</string>
   <string name="feedback_intensity_medium">中</string>
