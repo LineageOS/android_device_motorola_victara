@@ -49,7 +49,6 @@ on init
 on fs
     wait /dev/block/platform/${ro.boot.bootdevice}
     symlink /dev/block/platform/${ro.boot.bootdevice} /dev/block/bootdevice
-    swapon_all /vendor/etc/fstab.qcom
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -260,6 +259,10 @@ on post-fs-data
 
 #service qcomsysd /system/bin/qcom-system-daemon
 #    class main
+
+on property:sys.boot_completed=1
+    # Enable ZRAM on boot_complete
+    swapon_all /vendor/etc/fstab.qcom
 
 on property:persist.radio.atfwd.start=false
     stop atfwd
