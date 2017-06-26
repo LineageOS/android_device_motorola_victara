@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2014 The CyanogenMod Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -26,3 +27,24 @@ PRODUCT_NAME := full_victara
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := victara
 PRODUCT_MANUFACTURER := motorola
+
+# Blacklist the unified device properties
+# TODO: these probably don't all need to be set
+#       ro.product.device and ro.build.fingerprint can't be blacklisted, otherwise build fails
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
+    ro.build.description \
+    ro.build.fingerprint \
+    ro.build.product \
+    ro.cdma.data_retry_config \
+    ro.com.google.clientidbase.am \
+    ro.com.google.clientidbase.ms \
+    ro.com.google.clientidbase.yt \
+    ro.hw.radio \
+    ro.product.device \
+    ro.product.model \
+    ro.ril.force_eri_from_xml \
+    ro.telephony.default_cdma_sub \
+    ro.telephony.default_network \
+    ro.telephony.get_imsi_from_sim \
+    telephony.lteOnCdmaDevice \
+    telephony.lteOnGsmDevice
