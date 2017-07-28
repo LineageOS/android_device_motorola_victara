@@ -31,7 +31,7 @@
   <string name="chop_chop_gesture_title">Tak-tak</string>
   <string name="chop_chop_gesture_summary">Tak-tak etkinliği eylemi</string>
   <string name="ir_silencer_title">Sessize almak için sallayın</string>
-  <string name="ir_silencer_summary">Ekranın önünde elinizi salladığınızda gelen çağrıları susturur</string>
+  <string name="ir_silencer_summary">Ekranın önünde elinizi salladığınızda gelen aramaları susturur</string>
   <string name="action_none">Devre dışı</string>
   <string name="action_launch_camera">Kamerayı başlat</string>
   <string name="action_torch">El fenerini aç/kapat</string>
