@@ -16,6 +16,8 @@ Battery | Li-Ion 2300 mAh battery
 Display | 1080 x 1920 pixels, 5.2 inches (~424 ppi pixel density)
 Camera  | 13 MP, 4128 x 3096 pixels, autofocus, dual-LED flash
 
+[MOTO X 2014](https://i2.zst.com.br/images/smartphone-motorola-moto-x-x-2-geracao-32gb-xt1097-13-0-mp-android-4-4-kit-kat-3g-wi-fi-4g-photo37169577-12-23-14.jpg)
+
 This branch is for building LineageOS Firmware.
 
 Copyright 2014 CyanogenMod Project.
