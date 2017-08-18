@@ -10,6 +10,7 @@ LOCAL_MODULE_OWNER := qcom
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_SHARED_LIBRARIES := \
+    libandroid_runtime \
     libutils \
     libcutils \
     libgps.utils \
