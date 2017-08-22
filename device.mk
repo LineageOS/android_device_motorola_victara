@@ -278,3 +278,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     LineageActions \
     libjni_LineageActions
+
+# Keymaster HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl
