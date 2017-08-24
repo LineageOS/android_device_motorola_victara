@@ -81,6 +81,7 @@ TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+SF_START_GRAPHICS_ALLOCATOR_SERVICE := true
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
@@ -100,6 +101,9 @@ USE_DEVICE_SPECIFIC_GPS := true
 
 # Hardware
 BOARD_HARDWARE_CLASS := device/motorola/victara/cmhw
+
+# HIDL
+DEVICE_MANIFEST_FILE := device/motorola/victara/configs/manifest.xml
 
 # Init
 TARGET_NR_SVC_SUPP_GIDS := 32
