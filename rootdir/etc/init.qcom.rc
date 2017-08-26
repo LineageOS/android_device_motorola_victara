@@ -696,7 +696,7 @@ service ril-daemon1 /vendor/bin/hw/rild -c 2
 
 service charger /charger
     class charger
-    seclabel u:r:healthd:s0
+    seclabel u:r:charger:s0
 
 #service ssr_diag /system/bin/ssr_diag
 #    class late_start
