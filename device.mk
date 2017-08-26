@@ -187,6 +187,10 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
     lights.msm8974
 
+# Perf
+PRODUCT_PACKAGES += \
+    libshims_atomic
+
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
