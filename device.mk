@@ -283,7 +283,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     hostapd \
-    hostapd_default.conf \
     hostapd.accept \
     hostapd.deny \
     libwpa_client \
