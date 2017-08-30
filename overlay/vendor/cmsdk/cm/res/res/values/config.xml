@@ -2,6 +2,7 @@
 <!--
 /*
 ** Copyright 2015, The CyanogenMod Project
+** Copyright 2017, The LineageOS Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -39,4 +40,6 @@
          battery LEDs would set this config to 11. -->
     <integer name="config_deviceLightCapabilities" translatable="false">3</integer>
 
+    <!-- BurnIn protection. This should be enabled on devices that have OLED displays -->
+    <bool name="config_enableBurnInProtection">true</bool>
 </resources>
