@@ -264,6 +264,6 @@
 # Partitions
 /dev/block/platform/msm_sdcc.1/by-name/hob          0660 root radio
 /dev/block/platform/msm_sdcc.1/by-name/dhob         0660 root radio
-/dev/block/platform/msm_sdcc.1/by-name/clogo        0660 root mot_tcmd
-/dev/block/platform/msm_sdcc.1/by-name/cid          0660 root mot_dbvc
+/dev/block/platform/msm_sdcc.1/by-name/clogo        0660 root oem_5004
+/dev/block/platform/msm_sdcc.1/by-name/cid          0660 root oem_5014
 /dev/block/platform/msm_sdcc.1/by-name/logs         0640 root system

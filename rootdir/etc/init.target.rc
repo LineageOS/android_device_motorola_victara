@@ -50,7 +50,7 @@ on fs
     restorecon_recursive /pds/
     restorecon_recursive /cache/pds/
 
-    mkdir /pds/public/atvc 0770 mot_atvc shell
+    mkdir /pds/public/atvc 0770 oem_5012 shell
 
     # arrange access to an available overlay
     mkdir /overlay 0755 root root
