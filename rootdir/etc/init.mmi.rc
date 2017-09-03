@@ -24,27 +24,27 @@ on init
     chown root diag /sys/kernel/dropbox/data
 
     # ESDFS
-    chown mot_esdfs root /proc/fs/esdfs/packages
+    chown oem_5016 root /proc/fs/esdfs/packages
 
 on post-fs-data
     # Trigger the defuse tool
     setprop installd.post_fs_data_ready 1
 
     # Permissions for Factory Test of Charging Paths
-    chown mot_pwric mot_pwric /sys/class/power_supply/battery/device/force_chg_auto_enable
-    chown mot_pwric mot_pwric /sys/class/power_supply/battery/device/force_chg_ibatt
-    chown mot_pwric mot_pwric /sys/class/power_supply/battery/device/force_chg_itrick
-    chown mot_pwric mot_pwric /sys/class/power_supply/battery/device/force_chg_iusb
-    chown mot_pwric mot_pwric /sys/class/power_supply/battery/device/force_chg_usb_suspend
-    chown mot_pwric mot_pwric /sys/class/power_supply/battery/device/force_chg_fail_clear
-    chown mot_pwric mot_pwric /sys/class/power_supply/battery/device/force_chg_usb_otg_ctl
+    chown oem_5001 oem_5001 /sys/class/power_supply/battery/device/force_chg_auto_enable
+    chown oem_5001 oem_5001 /sys/class/power_supply/battery/device/force_chg_ibatt
+    chown oem_5001 oem_5001 /sys/class/power_supply/battery/device/force_chg_itrick
+    chown oem_5001 oem_5001 /sys/class/power_supply/battery/device/force_chg_iusb
+    chown oem_5001 oem_5001 /sys/class/power_supply/battery/device/force_chg_usb_suspend
+    chown oem_5001 oem_5001 /sys/class/power_supply/battery/device/force_chg_fail_clear
+    chown oem_5001 oem_5001 /sys/class/power_supply/battery/device/force_chg_usb_otg_ctl
 
    # Setup correct permissions for dbvc and atvc
-    mkdir /data/local/dbvc 0750 mot_tcmd shell
-    mkdir /data/local/atvc 0775 mot_tcmd shell
+    mkdir /data/local/dbvc 0750 oem_5004 shell
+    mkdir /data/local/atvc 0775 oem_5004 shell
 
    # Create moodle directory that MOODLE APP can write to
-    mkdir /data/local/moodle 0770 graphics mot_tcmd
+    mkdir /data/local/moodle 0770 graphics oem_5004
 
     # Setup folders for diag_mdlog
     mkdir /data/diag_mdlog 0750 system log
@@ -69,13 +69,13 @@ on post-fs-data
     chown system wifi /data/wapi_certificate
 
     # Create directory used by power_supply_logger
-    mkdir /data/power_supply_logger 0750 mot_pwric log
+    mkdir /data/power_supply_logger 0750 oem_5001 log
 
     # Permissions for battery health daemon
-    chown mot_pwric mot_pwric /sys/module/qpnp_bms/parameters/last_ocv_uv
-    chown mot_pwric mot_pwric /sys/module/qpnp_charger/parameters/bms_chrg_capacity
-    chown mot_pwric mot_pwric /sys/module/qpnp_charger/parameters/bms_chrg_capacity_temp
-    chown mot_pwric mot_pwric /sys/module/qpnp_charger/parameters/chrg_timestamp
+    chown oem_5001 oem_5001 /sys/module/qpnp_bms/parameters/last_ocv_uv
+    chown oem_5001 oem_5001 /sys/module/qpnp_charger/parameters/bms_chrg_capacity
+    chown oem_5001 oem_5001 /sys/module/qpnp_charger/parameters/bms_chrg_capacity_temp
+    chown oem_5001 oem_5001 /sys/module/qpnp_charger/parameters/chrg_timestamp
 
     start hvdcp
 
@@ -126,14 +126,14 @@ on boot
     mkdir /data/aplogd 0750 log log
 
     # Change the ownership of display TE files for tcmds
-    chown root mot_tcmd /sys/class/graphics/fb0/te_enable
-    chown root mot_tcmd /sys/class/graphics/fb0/frame_counter
+    chown root oem_5004 /sys/class/graphics/fb0/te_enable
+    chown root oem_5004 /sys/class/graphics/fb0/frame_counter
 
     # Change ownership for HBM control
     chown system system /sys/class/graphics/fb0/hbm
 
     # STM401 driver parameter permissions
-    chown root mot_tcmd /sys/module/stm401/parameters/irq_disable
+    chown root oem_5004 /sys/module/stm401/parameters/irq_disable
     chmod 0660 /sys/module/stm401/parameters/irq_disable
 
     # Change ownership and permission for led
@@ -174,11 +174,11 @@ on boot
     write /proc/sys/net/core/wmem_max  8388608
 
     # create the necessary data dirs for tpapi with proper permission
-    mkdir /dev/tpapi 02770 mot_tpapi mot_tpapi
-    mkdir /data/tpapi 02770 mot_tpapi mot_tpapi
-    mkdir /data/tpapi/etc 02770 mot_tpapi mot_tpapi
-    mkdir /data/tpapi/etc/tpa 02770 mot_tpapi mot_tpapi
-    mkdir /data/tpapi/etc/tpa/persistent 02770 mot_tpapi mot_tpapi
+    mkdir /dev/tpapi 02770 oem_5007 oem_5007
+    mkdir /data/tpapi 02770 oem_5007 oem_5007
+    mkdir /data/tpapi/etc 02770 oem_5007 oem_5007
+    mkdir /data/tpapi/etc/tpa 02770 oem_5007 oem_5007
+    mkdir /data/tpapi/etc/tpa/persistent 02770 oem_5007 oem_5007
 
     # Force all SSR systems to 'related' so they attempt self-recovery without
     # rebooting the device
@@ -238,15 +238,15 @@ on property:tcmd.suspend=2
 
 service tcmd /system/bin/tcmd
     class core
-    group mot_tcmd radio mot_pwric input system log camera graphics mot_accy sdcard_r sdcard_rw audio inet bluetooth wifi compass net_bt_admin mot_tombstone mot_tpapi mount net_raw net_admin media shell mot_usb nfc fm_radio qcom_diag mot_dbvc cache media_rw
-    socket local_tcmd stream 0660 mot_tcmd mot_tcmd
-    socket batch_socket stream 0600 mot_tcmd mot_tcmd
+    group oem_5004 radio oem_5001 input system log camera graphics oem_5000 sdcard_r sdcard_rw audio inet bluetooth wifi compass net_bt_admin oem_9006 oem_5007 mount net_raw net_admin media shell oem_9002 nfc fm_radio qcom_diag oem_5014 cache media_rw
+    socket local_tcmd stream 0660 oem_5004 oem_5004
+    socket batch_socket stream 0600 oem_5004 oem_5004
     oneshot
     disabled
 
 service tcmdhelp /system/bin/tcmdhelp
     class main
-    socket tcmdhelp stream 0600 mot_tcmd mot_tcmd
+    socket tcmdhelp stream 0600 oem_5004 oem_5004
     oneshot
     disabled
 
@@ -335,27 +335,23 @@ service mbm_spy /system/bin/mbm_spy
 
 service atvc_core /vendor/bin/dbvc_atvc_property_set
    class core
-   seclabel u:r:atvc:s0
-   user mot_atvc
-   group mot_tpapi
+   user oem_5012
+   group oem_5007
    oneshot
 
 service atvc /vendor/bin/dbvc_atvc_property_set
    class late_start
-   seclabel u:r:atvc:s0
-   user mot_atvc
-   group mot_tpapi
+   user oem_5012
+   group oem_5007
    oneshot
 
 service qe /xbin/qe /system
    class main
-   seclabel u:r:qe:s0
    oneshot
    disabled
 
 service qe_broadcast /xbin/qe /system -b
    class main
-   seclabel u:r:qe:s0
    oneshot
    disabled
 
@@ -371,8 +367,8 @@ on property:persist.sys.qc.sub.rdump.on=*
    write /sys/module/subsystem_restart/parameters/enable_ramdumps ${persist.sys.qc.sub.rdump.on}
 
 service esdpll /system/bin/esdpll -w
-    user mot_esdfs
-    group mot_esdfs package_info
+    user oem_5016
+    group oem_5016 package_info
     disabled
 
 on property:service.bootanim.exit=1
