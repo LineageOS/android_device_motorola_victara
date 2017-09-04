@@ -33,6 +33,7 @@ ro.qualcomm.cabl=0
 ro.sf.lcd_density=480
 debug.hwui.use_buffer_age=false
 persist.media.treble_omx=false
+camera.disable_treble=true
 
 # QCOM
 ro.vendor.extension_library=/vendor/lib/libqc-opt.so
