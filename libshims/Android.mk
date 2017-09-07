@@ -37,3 +37,26 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_SHARED_LIBRARIES := liblog
 
 include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := \
+    sensorlistener/ISensorServer.cpp \
+    sensorlistener/SensorManager.cpp
+
+LOCAL_MODULE := libshims_sensorlistener
+LOCAL_MODULE_TAGS := optional
+LOCAL_SHARED_LIBRARIES := \
+    libnativeloader \
+    libbinder \
+    libcutils \
+    libEGL \
+    libGLESv2 \
+    libsync \
+    libui \
+    libutils \
+    liblog \
+    libbase \
+    libsensor
+
+include $(BUILD_SHARED_LIBRARY)
