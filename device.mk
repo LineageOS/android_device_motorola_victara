@@ -124,6 +124,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     Snap \
     libshim_camera \
+    libshims_sensorlistener \
     camera.msm8974
 
 # CRDA
