@@ -169,7 +169,6 @@ vendor/lib/libthermalioctl.so
 # DRM
 bin/qseecomd:vendor/bin/qseecomd
 lib/drm/libfwdlockengine.so
-lib/libdrmdecrypt.so
 vendor/firmware/widevine.b00
 vendor/firmware/widevine.b01
 vendor/firmware/widevine.b02
@@ -186,12 +185,9 @@ vendor/lib/libmmosal.so
 vendor/lib/librpmb.so
 vendor/lib/libsecureui.so
 vendor/lib/libssd.so
-vendor/lib/drm/libdrmwvmplugin.so
-vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib/libwvdrm_L1.so
-vendor/lib/libwvm.so
-vendor/lib/libWVphoneAPI.so
-vendor/lib/libWVStreamControlAPI_L1.so
+
+# Widevine - from angler - OPR6.170623.017 factory image
+vendor/lib/mediadrm/libwvdrmengine.so|66ba66d047044f92eb0eada1faf6a5799ded90ab
 
 # GPS
 bin/gpsone_daemon
