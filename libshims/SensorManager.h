@@ -32,7 +32,7 @@
 #include <utils/Vector.h>
 #include <utils/String8.h>
 
-#include <gui/SensorEventQueue.h>
+#include <sensor/SensorEventQueue.h>
 
 // ----------------------------------------------------------------------------
 // Concrete types for the NDK
