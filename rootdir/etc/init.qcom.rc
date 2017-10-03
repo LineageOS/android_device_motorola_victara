@@ -618,11 +618,6 @@ on enable-low-power
     write /sys/module/cpu_boost/parameters/input_boost_freq 1497600
     write /sys/module/cpu_boost/parameters/input_boost_ms 40
 
-    # mpdecision
-    setprop ro.qualcomm.perf.cores_online 2
-    rm /data/system/default_values
-    start mpdecision
-
 service atfwd /system/bin/ATFWD-daemon
     class late_start
     user system
