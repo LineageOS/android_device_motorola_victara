@@ -36,8 +36,6 @@ on boot
     write /sys/class/android_usb/android0/f_mass_storage/vendor ${ro.product.manufacturer}
     write /sys/class/android_usb/android0/f_mass_storage/product ${ro.product.model}
     write /sys/class/android_usb/f_mass_storage/lun/nofua 1
-    mkdir /dev/bus 0755 root root
-    mkdir /dev/bus/usb 0755 root root
     setprop usb.mtp.pid ${ro.usb.mtp}
     setprop usb.mtp.cdrom 0
     setprop usb.mtp.config mtp,usbnet

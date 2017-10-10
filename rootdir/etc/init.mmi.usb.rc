@@ -35,10 +35,12 @@ on boot
     write /sys/class/android_usb/android0/f_mass_storage/vendor ${ro.product.manufacturer}
     write /sys/class/android_usb/android0/f_mass_storage/product ${ro.product.model}
     write /sys/module/dwc3_msm/parameters/prop_chg_detect 1
-    mkdir /dev/bus 0755 root root
-    mkdir /dev/bus/usb 0755 root root
-    chown system system /sys/class/android_usb/android0/secure
-    chmod 0660 /sys/class/android_usb/android0/secure
+
+on fs
+    mkdir /dev/usb-ffs 0770 shell shell
+    mkdir /dev/usb-ffs/adb 0770 shell shell
+    mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000
+    write /sys/class/android_usb/android0/f_ffs/aliases adb
 
 # USB compositions
 on property:sys.usb.config=diag,serial_smd,serial_tty,rmnet_bam,mass_storage,adb
