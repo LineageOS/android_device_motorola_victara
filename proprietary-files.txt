@@ -194,24 +194,16 @@ vendor/lib/libWVphoneAPI.so
 vendor/lib/libWVStreamControlAPI_L1.so
 
 # GPS
--app/com.qualcomm.location/com.qualcomm.location.apk
--app/com.qualcomm.services.location/com.qualcomm.services.location.apk
 bin/gpsone_daemon
-etc/permissions/com.qualcomm.location.xml
 etc/gps.conf
 etc/izat.conf
 etc/quipc.conf
 etc/sap.conf
 lib/libloc_api_v02.so
 lib/libloc_ds_api.so
-vendor/lib/libalarmservice_jni.so
 vendor/lib/libgeofence.so
 vendor/lib/libizat_core.so
 vendor/lib/liblbs_core.so
-vendor/lib/libloc_ext.so
-vendor/lib/liblocationservice.so
-vendor/lib/libquipc_os_api.so
-vendor/lib/libulp2.so
 
 # Graphics - from onyx
 vendor/lib/egl/eglsubAndroid.so|b8a5790c5b4ba4cf0018c94066104610c821ed8e
