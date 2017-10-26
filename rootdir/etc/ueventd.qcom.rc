@@ -220,6 +220,7 @@
 
 # SECURITY
 /dev/qseecom              0660   system     drmrpc
+/dev/qce                  0660   system     drmrpc
 /dev/sec                  0660   system     drmrpc
 
 # AK8963 Magnetometer
