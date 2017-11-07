@@ -65,6 +65,9 @@ USE_CUSTOM_AUDIO_POLICY := 1
 BOARD_USES_GENERIC_AUDIO := true
 TARGET_USES_QCOM_MM_AUDIO := true
 
+# Binder
+TARGET_USES_64_BIT_BINDER := true
+
 # Bionic
 TARGET_LD_SHIM_LIBS := \
     /system/bin/thermal-engine|libshims_thermal.so \
