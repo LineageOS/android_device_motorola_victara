@@ -29,6 +29,9 @@ TARGET_FS_CONFIG_GEN := \
     $(LOCAL_PATH)/fs_config/mot_aids.txt \
     $(LOCAL_PATH)/fs_config/file_caps.txt
 
+# Filesystem
+TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
+
 # Platform
 TARGET_BOARD_PLATFORM := msm8974
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno330
