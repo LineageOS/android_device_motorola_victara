@@ -57,9 +57,20 @@ const char* loc_get_name_from_val(loc_name_val_s_type table[], int table_size, l
 const char* loc_get_msg_q_status(int status);
 const char* loc_get_target_name(unsigned int target);
 
+
 extern const char* log_succ_fail_string(int is_succ);
 
 extern char *loc_get_time(char *time_string, unsigned long buf_size);
+
+extern const char EXIT_TAG[];
+extern const char EXIT_ERROR_TAG[];
+
+#define EXIT_LOG_WITH_ERROR(SPEC, VAL)                       \
+    if (VAL != 0) {                                          \
+        LOG_E(EXIT_ERROR_TAG, __func__, SPEC, VAL);          \
+    } else {                                                 \
+        LOG_V(EXIT_TAG, __func__, SPEC, VAL);                \
+    }
 
 #ifdef __cplusplus
 }
