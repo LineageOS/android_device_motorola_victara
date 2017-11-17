@@ -402,7 +402,7 @@ on property:bluetooth.hciattach=false
 service qmuxd /system/vendor/bin/qmuxd
     class main
     user radio
-    group radio audio bluetooth gps qcom_diag
+    group radio audio bluetooth gps oem_2950
 
 service netmgrd /system/vendor/bin/netmgrd
     class main

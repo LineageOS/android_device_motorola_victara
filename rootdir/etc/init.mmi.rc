@@ -217,7 +217,7 @@ service adspd /system/vendor/bin/adspd /dev/ttyHS3
 
 service ftmipcd /system/bin/ftmipcd
     user radio
-    group radio inet qcom_diag
+    group radio inet oem_2950
     disabled
     oneshot
 
