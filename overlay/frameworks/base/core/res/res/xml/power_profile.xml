@@ -4,10 +4,12 @@
     <item name="screen.on">120</item>
     <item name="screen.full">300</item>
     <item name="bluetooth.active">30</item>
-    <item name="bluetooth.on">3</item>
-    <item name="wifi.on">10</item>
-    <item name="wifi.active">50</item>
-    <item name="wifi.scan">100</item>
+    <item name="bluetooth.on">0.5</item>
+    <item name="camera.avg">131</item>
+    <item name="camera.flashlight">109</item>
+    <item name="wifi.on">1</item>
+    <item name="wifi.active">100</item>
+    <item name="wifi.scan">5</item>
     <item name="gps.on">70</item>
     <item name="radio.active">350</item>
     <item name="radio.scanning">10</item>
@@ -41,21 +43,21 @@
     <item name="cpu.suspend">6</item>
     <item name="cpu.idle">30</item>
     <array name="cpu.core_power.cluster0">
-        <value>71</value>
-        <value>83</value>
+        <value>52</value>
+        <value>77</value>
+        <value>91</value>
         <value>97</value>
-        <value>106</value>
-        <value>115</value>
-        <value>146</value>
-        <value>153</value>
-        <value>167</value>
-        <value>213</value>
-        <value>249</value>
-        <value>263</value>
-        <value>288</value>
-        <value>324</value>
-        <value>377</value>
-        <value>405</value>
+        <value>105</value>
+        <value>127</value>
+        <value>135</value>
+        <value>144</value>
+        <value>191</value>
+        <value>217</value>
+        <value>225</value>
+        <value>270</value>
+        <value>267</value>
+        <value>312</value>
+        <value>342</value>
     </array>
     <item name="battery.capacity">2300</item>
 </device>
