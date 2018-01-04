@@ -252,6 +252,12 @@ on post-fs-data
 
     mkdir /data/audio/ 0770 media audio
 
+    # Create perfd deamon related dirs
+    mkdir /data/misc/perfd 0755 root system
+    chmod 2755 /data/misc/perfd
+    mkdir /data/system/perfd 0770 root system
+    chmod 2770 /data/system/perfd
+
     # Display calibration
     chown system system /sys/devices/virtual/graphics/fb0/rgb
     chmod 0660 /sys/devices/virtual/graphics/fb0/rgb
