@@ -101,9 +101,10 @@ service thermal-engine /system/vendor/bin/thermal-engine
    group root
 
 service time_daemon /system/vendor/bin/time_daemon
+   capabilities SYS_TIME
    class late_start
-   user root
-   group root
+   user system
+   group net_raw
 
 service adsprpcd /system/vendor/bin/adsprpcd
    class main
