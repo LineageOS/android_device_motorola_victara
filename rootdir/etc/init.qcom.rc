@@ -517,6 +517,21 @@ service qcom-sh /init.qcom.sh
     user root
     oneshot
 
+
+on property:sys.boot_completed=1
+    # Bring all CPUs online, and set node permissions
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu2/online 1
+    write /sys/devices/system/cpu/cpu3/online 1
+    chmod 664 /sys/devices/system/cpu/cpu1/online
+    chmod 664 /sys/devices/system/cpu/cpu2/online
+    chmod 664 /sys/devices/system/cpu/cpu3/online
+    chown root system /sys/devices/system/cpu/cpu1/online
+    chown root system /sys/devices/system/cpu/cpu2/online
+    chown root system /sys/devices/system/cpu/cpu3/online
+
+
+
 on enable-low-power
     write /sys/module/lpm_levels/enable_low_power/l2 4
     write /sys/module/msm_pm/modes/cpu0/power_collapse/suspend_enabled 1
