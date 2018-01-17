@@ -312,7 +312,7 @@ PRODUCT_PACKAGES += \
     libshims_thermal
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine-victara.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/thermal-engine-victara.conf
+    $(LOCAL_PATH)/configs/thermal-engine-victara.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-victara.conf
 
 # TimeKeep
 PRODUCT_PACKAGES += \
