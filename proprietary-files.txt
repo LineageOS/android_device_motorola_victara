@@ -159,7 +159,7 @@ vendor/lib/libchromatix_s5k5e2_snapshot.so
 
 # CPU
 bin/mpdecision:vendor/bin/mpdecision
-bin/thermal-engine:vendor/bin/thermal-engine
+vendor/bin/thermal-engine | ef0c934e72abc2fcac544c1e9299ba6ad1ab09f1
 vendor/lib/libqc-opt.so
 vendor/lib/libqti-perfd-client.so
 vendor/lib/libthermalioctl.so
