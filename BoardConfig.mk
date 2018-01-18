@@ -191,3 +191,6 @@ TARGET_DISABLE_WCNSS_CONFIG_COPY := true
 
 # Encryption
 TARGET_KEYMASTER_SKIP_WAITING_FOR_QSEE := true
+
+# Exclude serif fonts for saving system.img size.
+EXCLUDE_SERIF_FONTS := true
