@@ -93,6 +93,7 @@ service stm401 /system/bin/stm401 boot
     user compass
     group compass misc input
     oneshot
+    writepid /dev/cpuset/system-background/tasks
 
 on property:hw.touch.ready=1
     start stm401
@@ -201,6 +202,7 @@ service adspd /system/vendor/bin/adspd /dev/ttyHS3
     socket adspdsock stream 0660 system audio
     user audio
     group audio input diag
+    writepid /dev/cpuset/system-background/tasks
 
 on property:persist.mot.demo_mode_charging=1
     write /sys/class/power_supply/battery/device/force_demo_mode 1
@@ -210,6 +212,7 @@ service mmi-radio-sh /vendor/bin/init.mmi.radio.sh
     user radio
     group radio
     oneshot
+    writepid /dev/cpuset/system-background/tasks
 
 on property:sys.boot_completed=1
     setprop sys.io.scheduler bfq
@@ -232,12 +235,14 @@ service atvc_core /vendor/bin/dbvc_atvc_property_set
    user oem_5012
    group oem_5007
    oneshot
+   writepid /dev/cpuset/system-background/tasks
 
 service atvc /vendor/bin/dbvc_atvc_property_set
    class late_start
    user oem_5012
    group oem_5007
    oneshot
+    writepid /dev/cpuset/system-background/tasks
 
 on property:persist.sys.qc.sub.rdump.on=*
    write /sys/module/subsystem_restart/parameters/enable_ramdumps ${persist.sys.qc.sub.rdump.on}

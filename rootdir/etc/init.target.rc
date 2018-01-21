@@ -125,6 +125,7 @@ service time_daemon /system/vendor/bin/time_daemon
    class late_start
    user system
    group net_raw
+   writepid /dev/cpuset/system-background/tasks
 
 service adsprpcd /system/vendor/bin/adsprpcd
    class main
@@ -136,6 +137,7 @@ service wcnss-service /system/bin/wcnss_service
     user system
     group system wifi oem_2950 diag radio
     oneshot
+    writepid /dev/cpuset/system-background/tasks
 
 on property:init.svc.surfaceflinger=stopped
     stop ppd
