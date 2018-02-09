@@ -15,5 +15,7 @@
 /dev/block/platform/msm_sdcc.1/by-name/modem          /firmware    ext4    ro,nosuid,nodev,barrier=0,context=u:object_r:firmware_file:s0  wait,notrim
 /dev/block/platform/msm_sdcc.1/by-name/fsg            /fsg         ext4    ro,nosuid,nodev,barrier=0,context=u:object_r:fsg_file:s0  wait,notrim
 
+/dev/block/zram0                                      none         swap    defaults                                                                    zramsize=533413200,notrim
+
 # Note: because we don't have ,encryptable=userdata the usb-otg will not be adoptable
 /devices/*/xhci-hcd/usb*           auto         auto    defaults                                    voldmanaged=usb:auto
