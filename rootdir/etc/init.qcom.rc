@@ -45,6 +45,7 @@ on init
 on fs
     wait /dev/block/platform/${ro.boot.bootdevice}
     symlink /dev/block/platform/${ro.boot.bootdevice} /dev/block/bootdevice
+    swapon_all /vendor/etc/fstab.qcom
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
