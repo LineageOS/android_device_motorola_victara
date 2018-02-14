@@ -102,7 +102,7 @@ EXTENDED_FONT_FOOTPRINT := true
 USE_DEVICE_SPECIFIC_GPS := true
 
 # Hardware
-BOARD_HARDWARE_CLASS := device/motorola/victara/cmhw
+BOARD_HARDWARE_CLASS := device/motorola/victara/lineagehw
 
 # HIDL
 DEVICE_MANIFEST_FILE := device/motorola/victara/configs/manifest.xml
