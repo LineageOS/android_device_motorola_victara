@@ -66,6 +66,14 @@ USE_CUSTOM_AUDIO_POLICY := 1
 BOARD_USES_GENERIC_AUDIO := true
 TARGET_USES_QCOM_MM_AUDIO := true
 
+# Bionic
+TARGET_LD_SHIM_LIBS := \
+    /system/bin/thermal-engine|libshims_thermal.so \
+    /system/lib/libjustshoot.so|libshim_camera.so \
+    /system/lib/libjscore.so|libshim_camera.so \
+    /system/bin/mpdecision|libshims_atomic.so \
+    /system/lib/libmot_sensorlistener.so|libshims_sensorlistener.so
+
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
