@@ -63,6 +63,12 @@ BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_FLUENCE := true
 USE_CUSTOM_AUDIO_POLICY := 1
 
+# Bionic
+TARGET_LD_SHIM_LIBS := \
+    /system/bin/thermal-engine|libshims_thermal.so \
+    /system/lib/libjustshoot.so|libshim_camera.so \
+    /system/lib/libjscore.so|libshim_camera.so
+
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
