@@ -271,7 +271,6 @@ etc/firmware/venus.mbn
 etc/firmware/venus.mdt
 
 # Motorola
-bin/batt_health
 bin/dbvc_atvc_property_set
 bin/hardware_revisions.sh
 

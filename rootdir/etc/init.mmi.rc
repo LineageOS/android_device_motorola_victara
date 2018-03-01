@@ -77,7 +77,6 @@ on post-fs-data
     chown mot_pwric mot_pwric /sys/module/qpnp_charger/parameters/bms_chrg_capacity_temp
     chown mot_pwric mot_pwric /sys/module/qpnp_charger/parameters/chrg_timestamp
 
-    start batt_health
     start hvdcp
 
 on post-fs
@@ -95,11 +94,6 @@ service charge_only_mode /system/bin/charge_only_mode
     user root
     group graphics system input
     disabled
-
-service batt_health /system/bin/batt_health
-    class main
-    user mot_pwric
-    group mot_pwric net_admin log
 
 service hvdcp /system/bin/hvdcp
     class main
