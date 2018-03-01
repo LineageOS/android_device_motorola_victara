@@ -51,7 +51,6 @@ on fs
     restorecon_recursive /cache/pds/
 
     mkdir /pds/public/atvc 0770 mot_atvc shell
-    mkdir /pds/batt_health 0755 mot_pwric mot_pwric
 
     # arrange access to an available overlay
     mkdir /overlay 0755 root root
