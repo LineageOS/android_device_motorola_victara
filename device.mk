@@ -288,6 +288,7 @@ PRODUCT_PACKAGES += \
     hostapd \
     hostapd.accept \
     hostapd.deny \
+    libqsap_sdk \
     libwpa_client \
     wificond \
     wcnss_service \
