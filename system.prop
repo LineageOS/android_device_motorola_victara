@@ -54,6 +54,7 @@ persist.radio.nitz_sons_1=
 persist.radio.nitz_sons_2=
 persist.radio.nitz_sons_3=
 persist.radio.no_wait_for_card=1
+persist.radio.add_power_save=1
 persist.radio.oem_ind_to_both=false
 persist.radio.relay_oprt_change=1
 rild.libargs=-d /dev/smd0
