@@ -13,6 +13,10 @@
     "target_path": "external/bson"
   },
   {
+    "repository": "android_external_sony_boringssl-compat",
+    "target_path": "external/sony/boringssl-compat"
+  },
+  {
     "repository": "android_hardware_sony_timekeep",
     "target_path": "hardware/sony/timekeep"
   }
