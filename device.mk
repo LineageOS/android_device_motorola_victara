@@ -71,6 +71,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     camera.device@1.0-impl \
     camera.msm8974 \
+    libboringssl-compat \
     libbson \
     libshim_camera \
     libshims_sensorlistener \
