@@ -129,6 +129,9 @@ PRODUCT_PACKAGES += \
     libshims_sensorlistener \
     camera.msm8974
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/hdrhax:system/vendor/etc/hdrhax
+
 # CRDA
 PRODUCT_PACKAGES += \
     crda \
