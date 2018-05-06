@@ -19,8 +19,6 @@ qcom.bluetooth.soc=smd
 
 # Camera
 camera2.portability.force_api=1
-media.stagefright.legacyencoder=true
-media.stagefright.less-secure=true
 
 # GPS
 persist.mot.gps.smart_battery=1
