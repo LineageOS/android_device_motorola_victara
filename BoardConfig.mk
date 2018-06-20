@@ -50,6 +50,9 @@ TARGET_CPU_VARIANT_RUNTIME := krait
 # Binder API version
 TARGET_USES_64_BIT_BINDER := true
 
+# Build
+BUILD_BROKEN_DUP_RULES := true
+
 # Kernel
 BOARD_KERNEL_CMDLINE := console=none androidboot.hardware=qcom msm_rtb.filter=0x37 ehci-hcd.park=3 vmalloc=400M loop.max_part=7
 BOARD_KERNEL_BASE := 0x80200000
