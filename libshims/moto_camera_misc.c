@@ -23,3 +23,5 @@ void _ZN7android10MediaCodec12CreateByTypeERKNS_2spINS_7ALooperEEEPKcbPii() {}
 void _ZN7android11AudioSourceC1E14audio_source_tRKNS_8String16Ejjj() {}
 void _ZNK7android10MediaCodec15getInputBuffersEPNS_6VectorINS_2spINS_7ABufferEEEEE() {}
 void _ZNK7android10MediaCodec16getOutputBuffersEPNS_6VectorINS_2spINS_7ABufferEEEEE() {}
+void _ZN7android8MetaData9findInt64EjPx() {}
+void _ZN7android9StopWatchC1EPKcij() {}

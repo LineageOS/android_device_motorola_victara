@@ -1,9 +1,15 @@
 #include "qsap_api.h"
 
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+
 #include <sys/socket.h>
+#include <sys/ioctl.h>
 #include <linux/wireless.h>
 
-#include "cutils/log.h"
+#include "log/log.h"
 
 // Keep in sync with system/qcom/softap/sdk/qsap_api.c
 struct Command qsap_str[eSTR_LAST] = {
