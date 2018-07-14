@@ -179,6 +179,11 @@ on boot
 
 # msm specific files that need to be created on /data
 on post-fs-data
+    # Remove dalvik files that cause modem issues
+    rm /data/dalvik-cache/arm/system@framework@boot-telephony-common.art
+    rm /data/dalvik-cache/arm/system@framework@boot-telephony-common.vdex
+    rm /data/dalvik-cache/arm/system@framework@boot-telephony-common.oat
+
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
 
     # NFC local data and nfcee xml storage
