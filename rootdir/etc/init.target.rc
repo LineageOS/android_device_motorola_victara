@@ -82,7 +82,7 @@ on property:persist.usb.chgdisabled=0
 service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class main
     user camera
-    group camera system inet input graphics
+    group camera system inet input graphics gps
 
 on property:init.svc.media=restarting
     restart qcamerasvr
