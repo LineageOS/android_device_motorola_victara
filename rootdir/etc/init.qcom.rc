@@ -185,6 +185,10 @@ on boot
     # When GPU woken by touch events, keep it on until first app render
     write /sys/class/kgsl/kgsl-3d0/wake_timeout 250
 
+on post-fs
+    # Allow writing to the kernel trace log.
+    chmod 0222 /sys/kernel/debug/tracing/trace_marker 
+
 # msm specific files that need to be created on /data
 on post-fs-data
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
