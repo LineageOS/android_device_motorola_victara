@@ -8,3 +8,8 @@ allow mediaserver system_file:file execmod;
 allow mediaserver vendor_file:file execmod;
 allow mediaserver hal_configstore_ISurfaceFlingerConfigs:hwservice_manager find;
 allow mediaserver serialno_prop:file { getattr open read };
+
+allow mediaserver default_android_service:service_manager add;
+allow mediaserver hal_lineage_camera_motor_hwservice:hwservice_manager find;
+
+
