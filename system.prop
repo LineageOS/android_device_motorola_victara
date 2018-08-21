@@ -5,11 +5,11 @@
 # Audio
 af.fast_track_multiplier=1
 audio_hal.period_size=192
-persist.audio.fluence.speaker=false
-persist.audio.fluence.voicecall=true
-persist.audio.fluence.voicerec=false
+persist.vendor.audio.fluence.speaker=false
+persist.vendor.audio.fluence.voicecall=true
+persist.vendor.audio.fluence.voicerec=false
 ro.config.vc_call_vol_steps=7
-ro.qc.sdk.audio.fluencetype=fluence
+ro.vendor.audio.sdk.fluencetype=fluence
 use.voice.path.for.pcm.voip=true
 ro.config.media_vol_steps=25
 ro.config.vc_call_vol_steps=7
