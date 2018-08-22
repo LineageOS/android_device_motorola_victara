@@ -52,10 +52,10 @@ on fs
 
 on late-fs
     # Start services for Boot Animation
+    start configstore-hal-1-0
     start servicemanager
     start surfaceflinger
     start bootanim
-    start configstore-hal-1-0
     start vendor.gralloc-2-0
 
     # Mount RW partitions which need run fsck
