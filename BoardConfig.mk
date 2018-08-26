@@ -106,7 +106,7 @@ TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 SF_START_GRAPHICS_ALLOCATOR_SERVICE := true
-TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x02000000U
+TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x02000000U | 0x02002000U
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
