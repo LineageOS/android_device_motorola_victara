@@ -224,8 +224,8 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras
 
 PRODUCT_COPY_FILES += \
-    device/motorola/victara/nfc/libnfc-brcm.conf:system/vendor/etc/libnfc-brcm.conf \
-    device/motorola/victara/nfc/libnfc-brcm-20795a10.conf:system/vendor/etc/libnfc-brcm-20795a10.conf
+    device/motorola/victara/nfc/libnfc-nci.conf:system/vendor/etc/libnfc-nci.conf \
+    device/motorola/victara/nfc/libnfc-nci-20795a10.conf:system/vendor/etc/libnfc-nci-20795a10.conf
 
 # OMX
 PRODUCT_PACKAGES += \
