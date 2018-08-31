@@ -89,6 +89,8 @@ void vendor_load_properties()
 
     property_override("ro.build.product", "victara");
     property_override("ro.product.device", "victara");
+    // Init a dummy BT MAC address, will be overwritten later
+    property_set("ro.boot.btmacaddr", "00:00:00:00:00:00");
 
     if (cid == "0xE") {
         /* xt1097 */
