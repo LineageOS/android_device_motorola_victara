@@ -16,9 +16,8 @@
 LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_DEVICE),victara)
-include $(call all-makefiles-under,$(LOCAL_PATH))
-
-include $(CLEAR_VARS)
+  subdir_makefiles=$(call first-makefiles-under,$(LOCAL_PATH))
+  $(foreach mk,$(subdir_makefiles),$(info including $(mk) ...)$(eval include $(mk)))
 
 FIRMWARE_KEYMASTER_IMAGES := \
     keymaster.b00 keymaster.b01 keymaster.b02 keymaster.b03 keymaster.mdt
