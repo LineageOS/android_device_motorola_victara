@@ -228,9 +228,6 @@ on post-fs-data
     mkdir /data/fota 0771
     chown system system /data/fota
 
-    #Create directory for hostapd
-    mkdir /data/misc/wifi/hostapd 0770 system wifi
-
     mkdir /data/audio/ 0770 media audio
 
     # Create perfd deamon related dirs
