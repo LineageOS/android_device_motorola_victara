@@ -67,10 +67,10 @@ TARGET_USES_QCOM_MM_AUDIO := true
 
 # Bionic
 TARGET_LD_SHIM_LIBS := \
-    /system/bin/thermal-engine|libshims_thermal.so \
+    /system/vendor/bin/mpdecision|libshims_atomic.so \
+    /system/vendor/bin/thermal-engine|libshims_thermal.so \
     /system/lib/libjustshoot.so|libshim_camera.so \
     /system/lib/libjscore.so|libshim_camera.so \
-    /system/bin/mpdecision|libshims_atomic.so \
     /system/lib/libmot_sensorlistener.so|libshims_sensorlistener.so \
     /system/lib/libmdmcutback.so|libqsap_shim.so
 

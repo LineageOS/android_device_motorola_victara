@@ -95,11 +95,11 @@ service charge_only_mode /system/bin/charge_only_mode
     group graphics system input
     disabled
 
-service hvdcp /system/bin/hvdcp
+service hvdcp /system/vendor/bin/hvdcp
     class main
     user root
 
-service thermal-com /system/bin/thermal-engine --minimode
+service thermal-com /system/vendor/bin/thermal-engine --minimode
     class main
     user root
     disabled
@@ -209,7 +209,7 @@ on boot
     write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
     write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 53059
 
-service adspd /system/bin/adspd /dev/ttyHS3
+service adspd /system/vendor/bin/adspd /dev/ttyHS3
     class main
     socket adspdsock stream 0660 system audio
     user audio
@@ -272,7 +272,7 @@ service aplogd /system/bin/aplogd
     # for kernel logging.
     disabled
 
-service mmi-radio-sh /system/bin/sh /init.mmi.radio.sh
+service mmi-radio-sh /init.mmi.radio.sh
     class core
     user radio
     group radio
@@ -302,12 +302,12 @@ service dropboxd /system/bin/dropboxd
 on property:sys.boot_completed=1
     setprop sys.io.scheduler bfq
 
-service mmi-boot-sh /system/bin/sh /init.mmi.boot.sh
+service mmi-boot-sh /init.mmi.boot.sh
     class core
     user root
     oneshot
 
-service mmi-touch-sh /system/bin/sh /init.mmi.touch.sh atmel
+service mmi-touch-sh /init.mmi.touch.sh atmel
     disabled
     user root
     oneshot
@@ -340,14 +340,14 @@ service mbm_spy /system/bin/mbm_spy
     group system
     oneshot
 
-service atvc_core /system/bin/dbvc_atvc_property_set
+service atvc_core /system/vendor/bin/dbvc_atvc_property_set
    class core
    seclabel u:r:atvc:s0
    user mot_atvc
    group mot_tpapi
    oneshot
 
-service atvc /system/bin/dbvc_atvc_property_set
+service atvc /system/vendor/bin/dbvc_atvc_property_set
    class late_start
    seclabel u:r:atvc:s0
    user mot_atvc
