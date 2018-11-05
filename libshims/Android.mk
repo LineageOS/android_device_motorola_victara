@@ -69,3 +69,10 @@ LOCAL_MODULE := libqsap_shim
 LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := ril_sap_init.c
+LOCAL_SHARED_LIBRARIES := libril
+LOCAL_MODULE := libshims_ril_sap
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_SHARED_LIBRARY)

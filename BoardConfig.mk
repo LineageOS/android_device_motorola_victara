@@ -70,12 +70,13 @@ TARGET_USES_QCOM_MM_AUDIO := true
 
 # Bionic
 TARGET_LD_SHIM_LIBS := \
-    /system/vendor/bin/mpdecision|libshims_atomic.so \
-    /system/vendor/bin/thermal-engine|libshims_thermal.so \
+    /vendor/bin/mpdecision|libshims_atomic.so \
+    /vendor/bin/thermal-engine|libshims_thermal.so \
     /system/lib/libjustshoot.so|libshim_camera.so \
     /system/lib/libjscore.so|libshim_camera.so \
     /system/lib/libmot_sensorlistener.so|libshims_sensorlistener.so \
-    /system/lib/libmdmcutback.so|libqsap_shim.so
+    /vendor/lib/libril-qc-qmi-1.so|libshims_ril_sap.so \
+    /vendor/lib/libmdmcutback.so|libqsap_shim.so
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
