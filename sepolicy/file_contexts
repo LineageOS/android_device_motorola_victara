@@ -36,6 +36,7 @@
 /sys/class/input(/.*)?                          u:object_r:sysfs_input:s0
 
 /system/vendor/bin/adspd                        u:object_r:adspd_exec:s0
+/system/vendor/bin/hardware_revisions.sh        u:object_r:hwrev_exec:s0
 /system/vendor/bin/thermal-engine               u:object_r:thermal-engine_exec:s0
 /system/vendor/bin/dbvc_atvc_property_set      u:object_r:atvc_exec:s0
 /system/bin/stm401                      u:object_r:stm401_exec:s0

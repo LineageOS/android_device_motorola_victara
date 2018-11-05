@@ -1,0 +1,13 @@
+type hwrev, domain;
+type hwrev_exec, exec_type, file_type;
+init_daemon_domain(hwrev)
+
+allow hwrev hwrev_data_file:file { setattr link unlink create rw_file_perms };
+allow hwrev hwrev_data_file:dir { search setattr add_name remove_name rw_file_perms };
+allow hwrev shell_exec:file { getattr execute r_file_perms };
+allow hwrev sysfs:file r_file_perms;
+allow hwrev sysfs:dir { search r_file_perms };
+
+allow hwrev toolbox_exec:file { getattr execute execute_no_trans r_file_perms };
+allow hwrev vendor_toolbox_exec:file { getattr execute execute_no_trans r_file_perms };
+allow hwrev system_file:file { execute_no_trans r_file_perms };
