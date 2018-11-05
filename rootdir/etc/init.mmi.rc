@@ -99,7 +99,7 @@ service hvdcp /system/vendor/bin/hvdcp
     class main
     user root
 
-service thermal-com /system/vendor/bin/thermal-engine --minimode
+service thermal-com /vendor/bin/thermal-engine --minimode
     class main
     user root
     disabled
@@ -272,7 +272,7 @@ service aplogd /system/bin/aplogd
     # for kernel logging.
     disabled
 
-service mmi-radio-sh /init.mmi.radio.sh
+service mmi-radio-sh /vendor/etc/init.mmi.radio.sh
     class core
     user radio
     group radio
@@ -302,12 +302,12 @@ service dropboxd /system/bin/dropboxd
 on property:sys.boot_completed=1
     setprop sys.io.scheduler bfq
 
-service mmi-boot-sh /init.mmi.boot.sh
+service mmi-boot-sh /vendor/etc/init.mmi.boot.sh
     class core
     user root
     oneshot
 
-service mmi-touch-sh /init.mmi.touch.sh atmel
+service mmi-touch-sh /vendor/etc/init.mmi.touch.sh atmel
     disabled
     user root
     oneshot
@@ -328,7 +328,7 @@ on property:ro.debuggable=1
     chmod 0775 /sys/kernel/debug
 
 
-service hw_revs /system/bin/sh /system/bin/hardware_revisions.sh
+service hw_revs /vendor/bin/hardware_revisions.sh
     class main
     user system
     group system
@@ -340,14 +340,14 @@ service mbm_spy /system/bin/mbm_spy
     group system
     oneshot
 
-service atvc_core /system/vendor/bin/dbvc_atvc_property_set
+service atvc_core /vendor/bin/dbvc_atvc_property_set
    class core
    seclabel u:r:atvc:s0
    user mot_atvc
    group mot_tpapi
    oneshot
 
-service atvc /system/vendor/bin/dbvc_atvc_property_set
+service atvc /vendor/bin/dbvc_atvc_property_set
    class late_start
    seclabel u:r:atvc:s0
    user mot_atvc
