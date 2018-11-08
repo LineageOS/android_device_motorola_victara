@@ -327,13 +327,6 @@ on property:ro.debuggable=1
     # debugfs
     chmod 0775 /sys/kernel/debug
 
-
-service hw_revs /vendor/bin/hardware_revisions.sh
-    class main
-    user system
-    group system
-    oneshot
-
 service mbm_spy /system/bin/mbm_spy
     class late_start
     user system
