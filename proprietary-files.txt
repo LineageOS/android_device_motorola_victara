@@ -15,7 +15,6 @@ bin/adspd:vendor/bin/adspd
 
 # Audio
 bin/adsprpcd:vendor/bin/adsprpcd
-lib/libspeakerbundle.so:lib/soundfx/libspeakerbundle.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbmapper.so
 vendor/lib/libacdbrtac.so
@@ -260,7 +259,6 @@ etc/firmware/venus.mdt
 
 # Motorola
 bin/dbvc_atvc_property_set:vendor/bin/dbvc_atvc_property_set
-bin/hardware_revisions.sh:vendor/bin/hardware_revisions.sh
 
 # NFC
 etc/firmware/BCM20795A1_001.002.012.0003.0078_Generic_I2C_NCD_Signed_configdata.ncd
