@@ -32,7 +32,6 @@ ro.opengles.version=196608
 ro.qualcomm.cabl=0
 ro.sf.lcd_density=480
 debug.hwui.use_buffer_age=false
-camera.disable_treble=true
 persist.media.treble_omx=false
 
 # QCOM
