@@ -660,14 +660,8 @@ service ril-daemon /vendor/bin/hw/rild
     socket rild stream 660 root radio
     socket rild-debug stream 660 radio system
     user root
-    group root radio cache inet misc audio log oem_2950 net_raw wifi
-
-service ril-daemon1 /vendor/bin/hw/rild -c 2
-    class main
-    user radio
-    group radio cache inet misc audio log readproc wakelock
+    group root radio cache inet misc audio log readproc wakelock oem_2901 oem_2950 net_raw wifi
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
-    disabled
 
 # Service not used
 #service profiler_daemon /system/bin/profiler_daemon
