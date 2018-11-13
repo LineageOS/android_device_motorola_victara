@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "23323c76_f157b413",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-11-13T18:22:28Z",
+      "side": 1,
+      "message": "You don\u0027t need this at all, since this rild.rc is getting copied on every build:  https://github.com/LineageOS/android_hardware_ril/blob/lineage-15.1/rild/rild.rc. The caf variant has it too.",
+      "range": {
+        "startLine": 658,
+        "startChar": 8,
+        "endLine": 658,
+        "endChar": 18
+      },
+      "revId": "b42330b43dc95229cf0ae777b563803752145100",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
