@@ -22,6 +22,30 @@
       "revId": "b42330b43dc95229cf0ae777b563803752145100",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "517a45bb_b5551525",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 2681
+      },
+      "writtenOn": "2018-11-13T18:36:01Z",
+      "side": 1,
+      "message": "If I use the caf version, I cant get a data connection",
+      "parentUuid": "23323c76_f157b413",
+      "range": {
+        "startLine": 658,
+        "startChar": 8,
+        "endLine": 658,
+        "endChar": 18
+      },
+      "revId": "b42330b43dc95229cf0ae777b563803752145100",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
