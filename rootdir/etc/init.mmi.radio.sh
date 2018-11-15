@@ -1,4 +1,4 @@
-#!/system/bin/sh
+#!/vendor/bin/sh
 #
 
 # Update the multisim config based on Radio version

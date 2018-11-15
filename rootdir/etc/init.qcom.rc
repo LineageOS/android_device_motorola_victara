@@ -294,12 +294,12 @@ on property:bluetooth.dun.status=running
 on property:bluetooth.dun.status=stopped
     stop bt-dun
 
-service qcom-c_core-sh /system/bin/sh /init.qcom.class_core.sh
+service qcom-c_core-sh /vendor/bin/sh /init.qcom.class_core.sh
     class core
     user root
     oneshot
 
-service qcom-c_main-sh /system/bin/sh /init.class_main.sh
+service qcom-c_main-sh /vendor/bin/sh /init.class_main.sh
     class main
     user radio
     group radio
@@ -680,7 +680,7 @@ service charger /charger
 
 # SSR setting
 on property:persist.sys.ssr.restart_level=*
-    exec /system/bin/sh /init.qcom.ssr.sh ${persist.sys.ssr.restart_level}
+    exec /vendor/bin/sh /init.qcom.ssr.sh ${persist.sys.ssr.restart_level}
 
 on property:persist.sys.qc.sub.ssr.max=*
     write /sys/module/subsystem_restart/parameters/max_restarts ${persist.sys.qc.sub.ssr.max}

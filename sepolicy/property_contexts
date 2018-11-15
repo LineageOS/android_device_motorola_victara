@@ -1,4 +1,5 @@
 # Motorola service properties
 persist.atvc                u:object_r:atvc_prop:s0
 qcom.bt.le_dev_pwr_class    u:object_r:bluetooth_prop:s0
-manufacturedate             u:object_r:mmi_prop:s0
+ro.manufacturedate          u:object_r:mmi_prop:s0
+persist.multisim.config     u:object_r:mmi_prop:s0

@@ -39,3 +39,5 @@
 /system/vendor/bin/thermal-engine               u:object_r:thermal-engine_exec:s0
 /system/vendor/bin/dbvc_atvc_property_set      u:object_r:atvc_exec:s0
 /system/bin/stm401                      u:object_r:stm401_exec:s0
+
+/(vendor|system/vendor)/etc/init.mmi(.*)?sh    u:object_r:mmi_exec:s0
