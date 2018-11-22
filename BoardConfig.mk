@@ -24,13 +24,11 @@ BOARD_VENDOR := motorola-qcom
 # Assert
 TARGET_OTA_ASSERT_DEVICE := victara
 
-# AIDs and CAPS
-TARGET_FS_CONFIG_GEN := \
-    $(LOCAL_PATH)/fs_config/mot_aids.txt \
-    $(LOCAL_PATH)/fs_config/file_caps.txt
-
 # Filesystem
-TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
+TARGET_ALLOW_LEGACY_AIDS := true
+TARGET_FS_CONFIG_GEN := \
+    $(LOCAL_PATH)/fs_config/mot_aids.fs \
+    $(LOCAL_PATH)/fs_config/config.fs
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8974
