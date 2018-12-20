@@ -37,6 +37,10 @@ on early-init
     chmod 0444 /proc/cmdline
 
 on init
+    # We are mounting system(/vendor) early
+    # vold needs keymaster that needs qseecomd
+    start qseecomd
+
     # Set permissions for persist partition
     mkdir /persist 0771 system system
 
