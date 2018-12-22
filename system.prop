@@ -63,6 +63,10 @@ ril.subscription.types=NV,RUIM
 ro.data.large_tcp_window_size=true
 ro.use_data_netmgrd=true
 
+# Memory optimizations
+ro.vendor.qti.am.reschedule_service=true
+ro.vendor.qti.sys.fw.bservice_enable=true
+
 # Time services
 persist.timed.enable=true
 
