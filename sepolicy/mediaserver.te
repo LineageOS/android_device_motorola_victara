@@ -6,3 +6,5 @@ allow mediaserver rild_socket:sock_file write;
 allow mediaserver socket_device:sock_file write;
 allow mediaserver system_file:file execmod;
 allow mediaserver vendor_file:file execmod;
+allow mediaserver hal_configstore_ISurfaceFlingerConfigs:hwservice_manager find;
+
