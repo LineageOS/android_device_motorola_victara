@@ -113,7 +113,7 @@ service adsprpcd /system/vendor/bin/adsprpcd
 service wcnss-service /system/bin/wcnss_service
     class main
     user system
-    group system wifi oem_2950 radio
+    group system wifi oem_2950 diag radio
     oneshot
 
 on property:init.svc.surfaceflinger=stopped
