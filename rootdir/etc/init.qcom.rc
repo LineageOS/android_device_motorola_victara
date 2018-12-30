@@ -410,12 +410,12 @@ on property:bluetooth.hciattach=false
 service qmuxd /system/vendor/bin/qmuxd
     class main
     user radio
-    group radio audio bluetooth gps oem_2950
+    group radio audio bluetooth gps diag oem_2950
 
 service netmgrd /system/vendor/bin/netmgrd
     class main
     user root
-    group root wifi wakelock radio inet oem_2950
+    group root system wifi wakelock radio inet oem_2950
 
 # Service not used
 #service sensors /system/bin/sensors.qcom
