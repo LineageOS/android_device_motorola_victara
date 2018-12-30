@@ -342,5 +342,7 @@
         format is UMTS|LTE|... -->
    <string translatable="false" name="config_radio_access_family">GSM|WCDMA|CDMA|LTE|EVDO</string>
 
+    <!-- Whether to allow process with media UID to access CameraServiceProxy -->
+    <bool name="config_allowMediaUidForCameraServiceProxy">true</bool>
 </resources>
 
