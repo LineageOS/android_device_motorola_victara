@@ -10,6 +10,8 @@ allow timekeep time_data_file:file create_file_perms;
 
 set_prop(timekeep, timekeep_prop)
 
+allow timekeep sysfs:file r_file_perms;
+
 allow timekeep sysfs_rtc:dir search;
 allow timekeep sysfs_rtc:{ file lnk_file } r_file_perms;
 
