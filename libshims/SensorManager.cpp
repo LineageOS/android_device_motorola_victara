@@ -25,6 +25,7 @@
 
 #include <binder/IBinder.h>
 #include <binder/IServiceManager.h>
+#include <binder/IPermissionController.h>
 
 #include <sensor/ISensorServer.h>
 #include <sensor/ISensorEventConnection.h>
