@@ -1,0 +1,6 @@
+allow mmi firmware_file:dir { open read search };
+allow mmi mmi_prop:property_service set;
+allow mmi proc:file write;
+allow mmi sysfs:dir { open read };
+allow mmi sysfs:file { getattr read };
+allow mmi system_prop:property_service set;
