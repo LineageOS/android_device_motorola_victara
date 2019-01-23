@@ -1,0 +1,2 @@
+allow mediadrmserver media_data_file:dir { r_file_perms search };
+allow mediadrmserver media_data_file:file { r_file_perms getattr };
