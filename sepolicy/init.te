@@ -21,5 +21,18 @@ allow init sysfs_thermal:file rw_file_perms;
 allow init sysfs_cpu_boost:file { rw_file_perms setattr };
 allow init sysfs_devfreq:file rw_file_perms;
 allow init sysfs_kgsl:file rw_file_perms;
-allow init sysfs_adspd:file rw_file_perms;
+allow init sysfs_adspd:file { rw_file_perms setattr };
 allow init sysfs_lowmemorykiller:file rw_file_perms;
+allow init sysfs_wlan_fwpath:file { rw_file_perms setattr };
+allow init sysfs_graphics:file { setattr };
+
+# Misc sysfs nodes
+allow init sysfs_virt_diag:file { rw_file_perms setattr };
+allow init sysfs_graphics:file { setattr };
+allow init sysfs_bms:file { setattr };
+allow init sysfs_irq_debug:file { rw_file_perms };
+allow init sysfs_dwc_param:file { rw_file_perms setattr };
+allow init sysfs_hci_param:file { setattr };
+
+# For setting /proc/sys/vm/swappiness
+allow init proc:file { w_file_perms };

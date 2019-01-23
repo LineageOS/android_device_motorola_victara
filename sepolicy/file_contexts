@@ -43,3 +43,11 @@
 /system/bin/stm401                      u:object_r:stm401_exec:s0
 
 /(vendor|system/vendor)/etc/init.mmi(.*)?sh    u:object_r:mmi_exec:s0
+
+# Misc sysfs nodes
+/sys/devices/virtual/diag/diag(/.*)            u:object_r:sysfs_virt_diag:s0
+/sys/module/qpnp_bms/parameters(/.*)           u:object_r:sysfs_bms:s0
+/sys/module/qpnp_charger/parameters(/.*)           u:object_r:sysfs_bms:s0
+/sys/module/msm_show_resume_irq/parameters(/.*) u:object_r:sysfs_irq_debug:s0
+/sys/module/dwc3_msm/parameters(/.*)           u:object_r:sysfs_dwc_param:s0
+/sys/module/hci_uart/parameters(/.*)           u:object_r:sysfs_hci_param:s0

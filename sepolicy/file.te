@@ -10,3 +10,10 @@ type sysfs_input, sysfs_type, fs_type;
 type sysfs_light, dev_type, file_type, sysfs_type;
 type vibeamp_sysfs, sysfs_type, file_type;
 type wapi_supplicant_data_file, file_type, data_file_type;
+
+# Contexts for misc sysfs nodes
+type sysfs_virt_diag, sysfs_type, fs_type;
+type sysfs_bms, sysfs_type, fs_type;
+type sysfs_irq_debug, sysfs_type, fs_type;
+type sysfs_dwc_param, sysfs_type, fs_type;
+type sysfs_hci_param, sysfs_type, fs_type;
