@@ -11,3 +11,15 @@ allow init sysfs_light:file setattr;
 allow init sysfs_power:file setattr;
 
 allow init self:socket read;
+
+allow init sysfs_devfreq:file rw_file_perms;
+allow init sysfs_devices_system_cpu:file rw_file_perms;
+allow init sysfs_msm_perf:file rw_file_perms;
+allow init sysfs_msm_power:file rw_file_perms;
+allow init sysfs_poweron_alarm:file rw_file_perms;
+allow init sysfs_thermal:file rw_file_perms;
+allow init sysfs_cpu_boost:file { rw_file_perms setattr };
+allow init sysfs_devfreq:file rw_file_perms;
+allow init sysfs_kgsl:file rw_file_perms;
+allow init sysfs_adspd:file rw_file_perms;
+allow init sysfs_lowmemorykiller:file rw_file_perms;
