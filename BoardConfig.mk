@@ -156,6 +156,9 @@ BOARD_ROOT_EXTRA_FOLDERS := firmware fsg persist
 # Power
 TARGET_USES_INTERACTION_BOOST := true
 
+# Radio
+TARGET_USES_OLD_MNC_FORMAT := true
+
 # Recovery
 BOARD_NO_SECURE_DISCARD := true
 BOARD_HAS_NO_SELECT_BUTTON := true
