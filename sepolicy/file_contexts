@@ -42,7 +42,8 @@
 /system/vendor/bin/dbvc_atvc_property_set      u:object_r:atvc_exec:s0
 /system/bin/stm401                      u:object_r:stm401_exec:s0
 
-/(vendor|system/vendor)/etc/init.mmi(.*)?sh    u:object_r:mmi_exec:s0
+/(vendor|system/vendor)/bin/init.qcom.bt.sh   u:object_r:bluetooth_loader_exec:s0
+/(vendor|system/vendor)/bin/init.mmi(.*)?     u:object_r:mmi_exec:s0
 
 # Misc sysfs nodes
 /sys/devices/virtual/diag/diag(/.*)            u:object_r:sysfs_virt_diag:s0

@@ -37,12 +37,12 @@ hciattach_pid=""
 
 loge ()
 {
-  /system/bin/log -t $LOG_TAG -p e "$LOG_NAME $@"
+  /vendor/bin/log -t $LOG_TAG -p e "$LOG_NAME $@"
 }
 
 logi ()
 {
-  /system/bin/log -t $LOG_TAG -p i "$LOG_NAME $@"
+  /vendor/bin/log -t $LOG_TAG -p i "$LOG_NAME $@"
 }
 
 failed ()
@@ -250,7 +250,7 @@ case $STACK in
     ;;
     *)
        logi "** Bluedroid stack **"
-       setprop bluetooth.status off
+       setprop vendor.bluetooth.status off
     ;;
 esac
 
@@ -290,7 +290,7 @@ case $exit_code_hci_qcomm_init in
          ;;
          *)
             logi "** Bluedroid stack **"
-            setprop bluetooth.status off
+            setprop vendor.bluetooth.status off
         ;;
      esac
 
@@ -309,7 +309,7 @@ case $TRANSPORT in
            ;;
            *)
               logi "** Bluedroid stack **"
-              setprop bluetooth.status on
+              setprop vendor.bluetooth.status on
            ;;
        esac
      ;;
@@ -322,7 +322,7 @@ case $TRANSPORT in
             ;;
             *)
                logi "** Bluedroid stack **"
-               setprop bluetooth.status on
+               setprop vendor.bluetooth.status on
             ;;
         esac
 

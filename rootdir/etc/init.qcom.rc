@@ -58,6 +58,8 @@ on early-boot
     write /sys/kernel/boot_adsp/boot 1
     setprop qcom.audio.init complete
 
+    start config_bluetooth
+
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
@@ -349,23 +351,25 @@ service start_hci_filter /system/bin/wcnss_filter
     group bluetooth
     disabled
 
-service config_bluetooth /system/etc/init.qcom.bt.sh "onboot"
-    class core
+service config_bluetooth /vendor/bin/init.qcom.bt.sh "onboot"
+    seclabel u:r:bluetooth_loader:s0
     user bluetooth
-    group bluetooth system
+    group bluetooth net_bt_admin
     oneshot
+    disabled
 
-service hciattach /system/etc/init.qcom.bt.sh
+service hciattach /vendor/bin/init.qcom.bt.sh
+    seclabel u:r:bluetooth_loader:s0
     class late_start
     user bluetooth
     group bluetooth net_bt_admin
     disabled
     oneshot
 
-on property:bluetooth.hciattach=true
+on property:vendor.bluetooth.hciattach=true
     start hciattach
 
-on property:bluetooth.hciattach=false
+on property:vendor.bluetooth.hciattach=false
     setprop bluetooth.status off
 
 # Service not used

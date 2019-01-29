@@ -1,0 +1,2 @@
+allow bluetooth_loader btnvtool_exec:file execute_no_trans;
+allow bluetooth_loader toolbox_exec:file { r_file_perms execute execute_no_trans };

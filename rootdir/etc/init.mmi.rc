@@ -266,7 +266,7 @@ service aplogd /system/bin/aplogd
     # for kernel logging.
     disabled
 
-service mmi-radio-sh /vendor/bin/sh /vendor/etc/init.mmi.radio.sh
+service mmi-radio-sh /vendor/bin/init.mmi.radio.sh
     class core
     user radio
     group radio
@@ -296,12 +296,12 @@ service dropboxd /system/bin/dropboxd
 on property:sys.boot_completed=1
     setprop sys.io.scheduler bfq
 
-service mmi-boot-sh /vendor/bin/sh /vendor/etc/init.mmi.boot.sh
+service mmi-boot-sh /vendor/bin/init.mmi.boot.sh
     class core
     user root
     oneshot
 
-service mmi-touch-sh /vendor/bin/sh /vendor/etc/init.mmi.touch.sh atmel
+service mmi-touch-sh /vendor/bin/init.mmi.touch.sh atmel
     disabled
     user root
     oneshot
