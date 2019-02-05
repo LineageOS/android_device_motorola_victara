@@ -39,4 +39,8 @@
          battery LEDs would set this config to 11. -->
     <integer name="config_deviceLightCapabilities" translatable="false">3</integer>
 
+    <!-- Whether device needs to wait for Qualcomm MPCTL service to start
+         before setting power profiles on boot. -->
+    <bool name="config_waitForMpctlOnBoot">true</bool>
+
 </resources>
