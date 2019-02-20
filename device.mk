@@ -163,7 +163,7 @@ PRODUCT_PACKAGES += \
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
-    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.mapper@2.0-impl-2.1 \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.memtrack@1.0-impl \
     copybit.msm8974 \
