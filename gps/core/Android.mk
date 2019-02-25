@@ -27,8 +27,15 @@ LOCAL_SRC_FILES += \
     loc_core_log.cpp
 
 LOCAL_CFLAGS += \
-     -fno-short-enums \
-     -D_ANDROID_
+    -fno-short-enums \
+    -D_ANDROID_ \
+    -Wno-format \
+    -Wno-null-conversion \
+    -Wno-overloaded-virtual \
+    -Wno-reorder \
+    -Wno-unneeded-internal-declaration \
+    -Wno-unused-parameter \
+    -Wno-unused-variable
 
 LOCAL_C_INCLUDES:= \
     $(TARGET_OUT_HEADERS)/gps.utils
