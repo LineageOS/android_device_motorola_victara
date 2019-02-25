@@ -56,7 +56,7 @@ on late-fs
     start surfaceflinger
     start bootanim
     start configstore-hal-1-0
-    start gralloc-2-0
+    start vendor.gralloc-2-0
 
     # Mount RW partitions which need run fsck
     mount_all /vendor/etc/fstab.qcom --late
