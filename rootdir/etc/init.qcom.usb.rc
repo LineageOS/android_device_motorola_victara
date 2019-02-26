@@ -39,6 +39,7 @@ on boot
     setprop usb.mtp.pid ${ro.usb.mtp}
     setprop usb.mtp.cdrom 0
     setprop usb.mtp.config mtp,usbnet
+    setprop sys.mtp.device_type 2
 
 # Following are the parameters required for usb functionality. They provide configurable options like
 # product_id/vendor id and allows specifying required functions:
