@@ -113,6 +113,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.2-service.clearkey
 
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-service.software
+
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl.legacy \
