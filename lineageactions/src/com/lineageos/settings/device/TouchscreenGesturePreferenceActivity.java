@@ -26,6 +26,6 @@ public class TouchscreenGesturePreferenceActivity extends SettingsDrawerActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getFragmentManager().beginTransaction()
-                .replace(R.id.content_frame, new TouchscreenGesturePreferenceFragment()).commit();
+                .replace(android.R.id.content, new TouchscreenGesturePreferenceFragment()).commit();
     }
 }
