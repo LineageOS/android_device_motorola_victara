@@ -26,6 +26,9 @@ ro.boot.btmacaddr=00:00:00:00:00:00
 ## Camera
 camera2.portability.force_api=1
 
+## Charger
+ro.charger.enable_suspend=true
+
 ## Dalvik
 dalvik.vm.dex2oat-swap=false
 dalvik.vm.heapgrowthlimit=192m
