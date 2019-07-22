@@ -27,6 +27,7 @@ camera2.portability.force_api=1
 persist.mot.gps.smart_battery=1
 
 # Graphics
+debug.sf.enable_gl_backpressure=1
 persist.hwc.mdpcomp.enable=true
 ro.hdmi.enable=true
 ro.opengles.version=196608
