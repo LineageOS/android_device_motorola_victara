@@ -291,7 +291,7 @@ bin/efsks:vendor/bin/efsks
 bin/ks:vendor/bin/ks
 bin/netmgrd:vendor/bin/netmgrd
 bin/qcks:vendor/bin/qcks
-bin/qmi_motext_hook:vendor/bin/qmi_motext_hook
+bin/qmi_motext_hook:system/bin/qmi_motext_hook
 bin/qmuxd:vendor/bin/qmuxd
 bin/radish:vendor/bin/radish
 bin/rmt_storage:vendor/bin/rmt_storage
