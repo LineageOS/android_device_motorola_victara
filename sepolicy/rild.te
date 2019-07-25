@@ -14,3 +14,6 @@ allow rild wpa_socket:sock_file write;
 allow rild hal_wifi_supplicant_default:unix_dgram_socket sendto;
 
 allow rild self:capability dac_override;
+
+allow rild vendor_file:file execute_no_trans;
+allow rild system_file:file execute_no_trans;
