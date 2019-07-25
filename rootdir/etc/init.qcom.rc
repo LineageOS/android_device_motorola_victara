@@ -333,6 +333,7 @@ service irsc_util /system/vendor/bin/irsc_util "/etc/sec_config"
 service rmt_storage /system/vendor/bin/rmt_storage
     class core
     user root
+    group system wakelock
     disabled
 
 on property:ro.boot.emmc=true
