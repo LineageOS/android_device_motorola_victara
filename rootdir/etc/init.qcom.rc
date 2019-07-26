@@ -645,7 +645,7 @@ service atfwd /system/bin/ATFWD-daemon
     user system
     group system radio
 
-service hostapd /system/bin/hostapd -dddd /data/misc/wifi/hostapd.conf
+service hostapd /system/vendor/bin/hostapd -dddd /data/misc/wifi/hostapd.conf
     class late_start
     user root
     group root
