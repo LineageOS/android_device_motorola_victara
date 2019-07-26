@@ -1,1 +1,3 @@
 allow hostapd wlan_device:chr_file r_file_perms;
+allow hostapd self:capability { setuid setgid };
+allow hostapd wifi_data_file:file rw_file_perms;

@@ -1,0 +1,6 @@
+allow hal_wifi_hostapd_default wlan_device:chr_file read;
+allow hal_wifi_hostapd_default wifi_data_file:file { getattr rw_file_perms };
+allow hal_wifi_hostapd_default wifi_data_file:dir { rmdir search create setattr getattr add_name remove_name rw_file_perms };
+allow hal_wifi_hostapd_default wifi_data_file:socket { create read };
+allow hal_wifi_hostapd_default wifi_data_file:sock_file { link unlink getattr setattr create rw_file_perms };
+allow hal_wifi_hostapd_default self:capability { setuid setgid };
