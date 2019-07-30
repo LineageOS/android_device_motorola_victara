@@ -730,8 +730,8 @@ on property:ro.data.large_tcp_window_size=true
 
 service charger /system/bin/charger
     class charger
-    user root
-    group log root radio system
+    user system
+    group system graphics input
     capabilities SYS_BOOT
     seclabel u:r:healthd:s0
 
