@@ -1,0 +1,4 @@
+allow hal_health_default sysfs_power:file read;
+allow hal_health_default sysfs_power:file open;
+allow hal_health_default sysfs_power:dir search;
+allow hal_health_default sysfs_power:file getattr;
