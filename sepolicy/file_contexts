@@ -31,7 +31,7 @@
 /sys/devices/f9924000.i2c/i2c-2/2-0048(/.*)?    u:object_r:sysfs_thermal:s0
 /sys/devices/fd510000.gpio/gpio/gpio144(/.*)?   u:object_r:sysfs_thermal:s0
 /sys/devices/qpnp-charger-ed24c400(/.*)?        u:object_r:sysfs_thermal:s0
-/sys/devices/qpnp-bms-10/power_supply/bms(/.*)? u:object_r:sysfs_power:s0
+/sys/devices/qpnp-bms-(.*)?/power_supply/bms(/.*)?  u:object_r:sysfs_power:s0
 /sys/devices/virtual/net/rmnet0(/.*)?           u:object_r:sysfs_net:s0
 /sys/power/autosleep                            u:object_r:sysfs_power:s0
 /sys/vibrator/pwmvalue                          u:object_r:vibeamp_sysfs:s0
