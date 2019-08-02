@@ -177,6 +177,11 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
     gps.msm8974
 
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.0-impl \
+    android.hardware.health@2.0-service
+
 # IPv6 tethering
 PRODUCT_PACKAGES += \
     ebtables \
