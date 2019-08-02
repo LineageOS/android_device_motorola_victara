@@ -733,7 +733,9 @@ on property:ro.data.large_tcp_window_size=true
 
 service charger /charger
     class charger
-    seclabel u:r:charger:s0
+    user root
+    group log root radio system
+    seclabel u:r:healthd:s0
 
 #service ssr_diag /system/bin/ssr_diag
 #    class late_start

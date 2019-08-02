@@ -249,6 +249,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti
 
+# Offmode Charging
+PRODUCT_PACKAGES += \
+    charger_res_image
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.qcom.bt.sh
