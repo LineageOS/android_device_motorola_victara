@@ -177,6 +177,8 @@ include device/qcom/sepolicy-legacy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += device/motorola/victara/sepolicy
 
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += device/motorola/victara/sepolicy/private
+
 # Vendor Init
 TARGET_INIT_VENDOR_LIB := libinit_victara
 TARGET_RECOVERY_DEVICE_MODULES := libinit_victara
