@@ -36,3 +36,8 @@ allow init sysfs_hci_param:file { setattr };
 
 # For setting /proc/sys/vm/swappiness
 allow init proc:file { w_file_perms };
+
+
+#Give all untill we add all paths to "genfs_contexts"
+allow init sysfs:file create_file_perms;
+allow init sysfs:dir create_dir_perms;

@@ -1,4 +1,8 @@
 allow hal_health_default sysfs_power:file read;
 allow hal_health_default sysfs_power:file open;
-allow hal_health_default sysfs_power:dir search;
 allow hal_health_default sysfs_power:file getattr;
+
+allow hal_health_default sysfs_power:dir search;
+
+r_dir_file(hal_health_default, sysfs_batteryinfo)
+allow hal_health_default sysfs_batteryinfo:file w_file_perms;
