@@ -18,5 +18,4 @@ allow rild self:capability dac_override;
 allow rild vendor_file:file execute_no_trans;
 allow rild system_file:file execute_no_trans;
 
-allow rild proc:file read;
-allow rild proc:file open;
+allow rild proc:file r_file_perms;
