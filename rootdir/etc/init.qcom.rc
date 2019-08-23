@@ -208,6 +208,7 @@ on post-fs-data
     mkdir /data/vendor/wifi 0771 wifi wifi
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
+    mkdir /data/vendor/wifi/hostapd 0770 wifi wifi
 
     # Create the directories used by CnE subsystem
     mkdir /data/connectivity 0771 system system
@@ -658,13 +659,6 @@ service atfwd /system/bin/ATFWD-daemon
     class late_start
     user system
     group system radio
-
-service hostapd /system/vendor/bin/hw/hostapd -dddd /data/misc/wifi/hostapd.conf
-    class late_start
-    user root
-    group root
-    oneshot
-    disabled
 
 on charger
     write /sys/module/lpm_levels/enable_low_power/l2 2
