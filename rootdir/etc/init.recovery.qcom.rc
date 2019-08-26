@@ -1,3 +1,6 @@
+on fs
+    setprop sys.usb.ffs.aio_compat 1
+
 on enable-low-power
     write /sys/module/lpm_levels/enable_low_power/l2 4
     write /sys/module/msm_pm/modes/cpu0/power_collapse/suspend_enabled 1
