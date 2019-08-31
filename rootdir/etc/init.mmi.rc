@@ -80,8 +80,6 @@ on post-fs-data
     start hvdcp
 
 on post-fs
-    swapon_all fstab.qcom
-    write /proc/sys/vm/swappiness 100
 
 service hvdcp /system/vendor/bin/hvdcp
     class main
