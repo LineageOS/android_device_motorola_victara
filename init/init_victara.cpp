@@ -106,7 +106,7 @@ void vendor_load_properties()
         set_ro_product_prop("fingerprint", "motorola/victara_reteu/victara:5.1/LPE23.32-25.1/1:user/release-keys");
         property_set("ro.telephony.default_network", "9");
         property_set("telephony.lteOnGsmDevice", "1");
-    } else if (cid == "0x2") {
+    } else if (cid == "0x2") || (cid == "0xDEAD") {
         /* xt1096 */
         set_ro_product_prop("model", "XT1096");
         property_override("ro.build.description", "victara_verizon-user 5.1 LPE23.32-25-3 10 release-keys");
@@ -120,6 +120,20 @@ void vendor_load_properties()
         property_set("ro.com.google.clientidbase.ms", "android-verizon");
         property_set("ro.com.google.clientidbase.yt", "android-verizon");
         property_set("ro.cdma.data_retry_config", "max_retries=infinite,0,0,10000,10000,100000,10000,10000,10000,10000,140000,540000,960000");
+    } else if (cid == "0x0") {
+        /* xt1094 */
+        set_ro_product_prop("model", "XT1094");
+        property_override("ro.build.description", "victara_repw-user 5.1 LPE23.32-39-R-42 14 release-keys");
+        set_ro_product_prop("fingerprint", "motorola/victara_repw/victara:5.1/LPE23.32-39-R-42/14:user/release-keys");
+        property_set("ro.telephony.default_network", "8");
+        property_set("telephony.lteOnCdmaDevice", "1");
+        property_set("ro.cdma.home.operator.alpha", "Republic");
+        property_set("ro.cdma.home.operator.numeric", "310000");
+        property_set("ro.telephony.default_cdma_sub", "1");
+        property_set("ril.subscription.types", "NV,RUIM");
+        property_set("ro.com.google.clientidbase.am", "android-sprint-mvno-us");
+        property_set("ro.com.google.clientidbase.ms", "android-sprint-mvno-us");
+        property_set("ro.com.google.clientidbase.yt", "android-sprint-mvno-us");
     } else if (cid == "0x9") {
         /* xt1093 */
         set_ro_product_prop("model", "XT1093");
