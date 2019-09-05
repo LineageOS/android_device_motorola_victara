@@ -1,0 +1,4 @@
+allow hal_drm_default firmware_file:lnk_file r_file_perms;
+allow hal_drm_default media_data_file:dir create_dir_perms;
+allow hal_drm_default media_data_file:file create_file_perms;
+allow hal_drm_default unlabeled:lnk_file r_file_perms;
