@@ -18,9 +18,9 @@ package com.lineageos.settings.device;
 
 import android.os.Bundle;
 
-import com.android.settingslib.drawer.SettingsDrawerActivity;
+import androidx.fragment.app.FragmentActivity;
 
-public class TouchscreenGesturePreferenceActivity extends SettingsDrawerActivity {
+public class TouchscreenGesturePreferenceActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
