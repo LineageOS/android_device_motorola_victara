@@ -750,6 +750,9 @@ on property:persist.sys.qc.sub.ssr.max=*
     write /sys/module/subsystem_restart/parameters/max_restarts ${persist.sys.qc.sub.ssr.max}
     write /sys/module/subsystem_restart/parameters/max_history_time 900
 
+on property:apexd.status=ready
+    mount none /system/etc/swcodec/ld.config.txt /apex/com.android.media.swcodec/etc/ld.config.txt bind
+
 # Service not used
 # Define fastmmi
 #service fastmmi /system/bin/mmi
