@@ -29,9 +29,6 @@
 
 import /vendor/etc/init/hw/init.mmi.rc
 
-on early-init
-    symlink /data/tombstones /tombstones
-
 on init
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
@@ -61,10 +58,10 @@ on fs
 
 on post-fs-data
     mkdir /data/tombstones 0771 system system
-    mkdir /tombstones/modem 0771 system system
-    mkdir /tombstones/lpass 0771 system system
-    mkdir /tombstones/wcnss 0771 system system
-    mkdir /tombstones/dsps 0771 system system
+    mkdir /data/tombstones/modem 0771 system system
+    mkdir /data/tombstones/lpass 0771 system system
+    mkdir /data/tombstones/wcnss 0771 system system
+    mkdir /data/tombstones/dsps 0771 system system
 
 on boot
     insmod /system/lib/modules/adsprpc.ko
