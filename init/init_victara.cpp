@@ -74,13 +74,8 @@ void vendor_load_properties()
 {
     LOG(INFO) << "Loading vendor specific properties";
 
-    std::string platform;
     std::string cid;
     std::string radio;
-
-    platform = GetProperty("ro.board.platform", "");
-    if (platform != ANDROID_TARGET)
-        return;
 
     radio = GetProperty("ro.boot.radio", "");
     property_set("ro.hw.radio", radio.c_str());
