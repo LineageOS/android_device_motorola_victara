@@ -176,7 +176,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 # SELinux
 include device/qcom/sepolicy-legacy/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += device/motorola/victara/sepolicy
+BOARD_VENDOR_SEPOLICY_DIRS += device/motorola/victara/sepolicy
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += device/motorola/victara/sepolicy/private
 
