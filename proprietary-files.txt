@@ -73,7 +73,6 @@ lib/libAisAdapter.so
 lib/libAlAisLib.so
 lib/libAlAisTune.so
 lib/libAlAisWrap.so
-lib/libbson.so
 lib/libcamerabgproc-jni.so
 lib/libcamerabgprocservice.so
 lib/libjscore.so
@@ -167,7 +166,6 @@ vendor/lib/libthermalioctl.so
 
 # DRM
 bin/qseecomd:vendor/bin/qseecomd
-lib/drm/libfwdlockengine.so
 vendor/firmware/widevine.b00
 vendor/firmware/widevine.b01
 vendor/firmware/widevine.b02

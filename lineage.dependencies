@@ -1,14 +1,15 @@
+  
 [
   {
     "repository": "android_kernel_motorola_msm8974",
     "target_path": "kernel/motorola/msm8974"
   },
   {
-    "repository": "android_packages_resources_devicesettings",
-    "target_path": "packages/resources/devicesettings"
-  },
-  {
     "repository": "android_system_qcom",
     "target_path": "system/qcom"
+  },
+  {
+    "repository": "android_external_bson",
+    "target_path": "external/bson"
   }
 ]
