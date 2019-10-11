@@ -137,6 +137,9 @@ SMALLER_FONT_FOOTPRINT := true
 # GPS
 USE_DEVICE_SPECIFIC_GPS := true
 
+# Gralloc
+TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2000U | 0x02000000U
+
 # Hardware
 BOARD_HARDWARE_CLASS := device/motorola/victara/lineagehw
 
