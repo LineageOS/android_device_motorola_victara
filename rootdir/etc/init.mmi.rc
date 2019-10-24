@@ -9,9 +9,6 @@ on early-init
     # Create modem FSG mount point
     mkdir /fsg 755 root root
 
-    chown system system /sys/kernel/debug
-    chmod 0770 /sys/kernel/debug
-
 on init
     copy /module_hashes /sys/kernel/module_whitelist
 
