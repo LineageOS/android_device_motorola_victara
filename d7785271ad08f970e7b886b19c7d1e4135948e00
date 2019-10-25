@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9b9d01b0_ebce6afe",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 18847
+      },
+      "writtenOn": "2019-10-25T16:50:29Z",
+      "side": 1,
+      "message": "remove this",
+      "revId": "d7785271ad08f970e7b886b19c7d1e4135948e00",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4fd170d_2c84f3a3",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 18847
+      },
+      "writtenOn": "2019-10-25T16:50:29Z",
+      "side": 1,
+      "message": "this",
+      "revId": "d7785271ad08f970e7b886b19c7d1e4135948e00",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bdb50cb6_b067c5b9",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 18847
+      },
+      "writtenOn": "2019-10-25T16:50:29Z",
+      "side": 1,
+      "message": "and this",
+      "revId": "d7785271ad08f970e7b886b19c7d1e4135948e00",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
