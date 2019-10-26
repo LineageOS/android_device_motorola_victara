@@ -37,6 +37,7 @@ ro.sf.lcd_density=480
 debug.hwui.use_buffer_age=false
 persist.media.treble_omx=false
 ro.surface_flinger.start_graphics_allocator_service=true
+debug.stagefright.ccodec=0
 
 # QCOM
 ro.vendor.extension_library=/vendor/lib/libqc-opt.so
