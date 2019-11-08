@@ -296,7 +296,7 @@ on post-fs-data
 
 on property:sys.boot_completed=1
     # Enable ZRAM on boot_complete
-    swapon_all fstab.qcom
+    swapon_all /vendor/etc/fstab.qcom
 
 on property:persist.radio.atfwd.start=false
     stop atfwd
