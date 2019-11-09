@@ -24,7 +24,7 @@
 //#define LOG_NDEBUG 0
 
 #define LOG_TAG "CameraWrapper"
-#include <cutils/log.h>
+#include <log/log.h>
 
 #include <utils/threads.h>
 #include <utils/String8.h>
