@@ -45,31 +45,31 @@ PRODUCT_COPY_FILES += \
 
 # Motorola-specific permissions
 PRODUCT_COPY_FILES += \
-    device/motorola/victara/permissions/com.motorola.actions.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.actions.xml \
-    device/motorola/victara/permissions/com.motorola.android.dm.service.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.android.dm.service.xml \
-    device/motorola/victara/permissions/com.motorola.android.encryption_library.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.android.encryption_library.xml \
-    device/motorola/victara/permissions/com.motorola.android.tcmd.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.android.tcmd.xml \
-    device/motorola/victara/permissions/com.motorola.aon.quickpeek.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.aon.quickpeek.xml \
-    device/motorola/victara/permissions/com.motorola.aov.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.aov.xml \
-    device/motorola/victara/permissions/com.motorola.avatar.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.avatar.xml \
-    device/motorola/victara/permissions/com.motorola.camerabgproc_library.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.camerabgproc_library.xml \
-    device/motorola/victara/permissions/com.motorola.camera.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.camera.xml \
-    device/motorola/victara/permissions/com.motorola.fpsmotosignature.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.fpsmotosignature.xml \
-    device/motorola/victara/permissions/com.motorola.frameworks.core.addon.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.frameworks.core.addon.xml \
-    device/motorola/victara/permissions/com.motorola.gallery.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.gallery.xml \
-    device/motorola/victara/permissions/com.motorola.haptic.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.haptic.xml \
-    device/motorola/victara/permissions/com.motorola.moodle.library.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.moodle.library.xml \
-    device/motorola/victara/permissions/com.motorola.motodisplay.pd.screenoff.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.motodisplay.pd.screenoff.xml \
-    device/motorola/victara/permissions/com.motorola.motosignature.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.motosignature.xml \
-    device/motorola/victara/permissions/com.motorola.moto.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.moto.xml \
-    device/motorola/victara/permissions/com.motorola.pixelpipe.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.pixelpipe.xml \
-    device/motorola/victara/permissions/com.motorola.sensorhub.stm401.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.sensorhub.stm401.xml \
-    device/motorola/victara/permissions/com.motorola.slpc.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.slpc.xml \
-    device/motorola/victara/permissions/com.motorola.software.bodyguard.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.software.bodyguard.xml \
-    device/motorola/victara/permissions/com.motorola.software.guideme.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.software.guideme.xml \
-    device/motorola/victara/permissions/com.motorola.software.smartnotifications.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.software.smartnotifications.xml \
-    device/motorola/victara/permissions/com.motorola.software.x_line.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.software.x_line.xml \
-    device/motorola/victara/permissions/com.motorola.targetnotif.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.targetnotif.xml
+    $(LOCAL_PATH)/permissions/com.motorola.actions.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.actions.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.android.dm.service.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.android.dm.service.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.android.encryption_library.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.android.encryption_library.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.android.tcmd.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.android.tcmd.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.aon.quickpeek.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.aon.quickpeek.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.aov.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.aov.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.avatar.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.avatar.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.camerabgproc_library.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.camerabgproc_library.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.camera.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.camera.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.fpsmotosignature.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.fpsmotosignature.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.frameworks.core.addon.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.frameworks.core.addon.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.gallery.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.gallery.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.haptic.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.haptic.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.moodle.library.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.moodle.library.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.motodisplay.pd.screenoff.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.motodisplay.pd.screenoff.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.motosignature.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.motosignature.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.moto.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.moto.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.pixelpipe.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.pixelpipe.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.sensorhub.stm401.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.sensorhub.stm401.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.slpc.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.slpc.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.software.bodyguard.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.software.bodyguard.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.software.guideme.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.software.guideme.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.software.smartnotifications.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.software.smartnotifications.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.software.x_line.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.software.x_line.xml \
+    $(LOCAL_PATH)/permissions/com.motorola.targetnotif.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.targetnotif.xml
 
 PRODUCT_CHARACTERISTICS := nosdcard
 
@@ -226,8 +226,8 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras
 
 PRODUCT_COPY_FILES += \
-    device/motorola/victara/nfc/libnfc-nci.conf:$(TARGET_OUT_VENDOR)/etc/libnfc-nci.conf \
-    device/motorola/victara/nfc/libnfc-nci-20795a10.conf:$(TARGET_OUT_VENDOR)/etc/libnfc-nci-20795a10.conf
+    $(LOCAL_PATH)/nfc/libnfc-nci.conf:$(TARGET_OUT_VENDOR)/etc/libnfc-nci.conf \
+    $(LOCAL_PATH)/nfc/libnfc-nci-20795a10.conf:$(TARGET_OUT_VENDOR)/etc/libnfc-nci-20795a10.conf
 
 # OMX
 PRODUCT_PACKAGES += \
