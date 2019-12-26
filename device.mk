@@ -20,6 +20,7 @@ $(call inherit-product, vendor/motorola/victara/victara-vendor.mk)
 
 # Permissions
 PRODUCT_COPY_FILES += \
+<<<<<<< HEAD   (7ed4bf victara: Disable NearbyMessagingService)
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
@@ -42,9 +43,34 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:system/vendor/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
+=======
+    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
+    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml \
+    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
+    frameworks/native/data/etc/android.hardware.sensor.compass.xml:$(TARGET_OUT_VENDOR)/etc/permissions/android.hardware.sensor.compass.xml \
+    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:$(TARGET_OUT_VENDOR)/etc/permissions/android.hardware.sensor.gyroscope.xml \
+    frameworks/native/data/etc/android.hardware.sensor.light.xml:$(TARGET_OUT_VENDOR)/etc/permissions/android.hardware.sensor.light.xml \
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+    frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
+    frameworks/native/data/etc/android.hardware.usb.host.xml:$(TARGET_OUT_VENDOR)/etc/permissions/android.hardware.usb.host.xml \
+    frameworks/native/data/etc/android.hardware.wifi.direct.xml:$(TARGET_OUT_VENDOR)/etc/permissions/android.hardware.wifi.direct.xml \
+    frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
+    frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
+    frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml \
+    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
+>>>>>>> CHANGE (3ccf55 victara: Move everything possible to /vendor)
 
 # Motorola-specific permissions
 PRODUCT_COPY_FILES += \
+<<<<<<< HEAD   (7ed4bf victara: Disable NearbyMessagingService)
     device/motorola/victara/permissions/com.motorola.actions.xml:system/etc/permissions/com.motorola.actions.xml \
     device/motorola/victara/permissions/com.motorola.android.dm.service.xml:system/etc/permissions/com.motorola.android.dm.service.xml \
     device/motorola/victara/permissions/com.motorola.android.encryption_library.xml:system/etc/permissions/com.motorola.android.encryption_library.xml \
@@ -70,6 +96,33 @@ PRODUCT_COPY_FILES += \
     device/motorola/victara/permissions/com.motorola.software.smartnotifications.xml:system/etc/permissions/com.motorola.software.smartnotifications.xml \
     device/motorola/victara/permissions/com.motorola.software.x_line.xml:system/etc/permissions/com.motorola.software.x_line.xml \
     device/motorola/victara/permissions/com.motorola.targetnotif.xml:system/etc/permissions/com.motorola.targetnotif.xml
+=======
+    device/motorola/victara/permissions/com.motorola.actions.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.actions.xml \
+    device/motorola/victara/permissions/com.motorola.android.dm.service.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.android.dm.service.xml \
+    device/motorola/victara/permissions/com.motorola.android.encryption_library.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.android.encryption_library.xml \
+    device/motorola/victara/permissions/com.motorola.android.tcmd.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.android.tcmd.xml \
+    device/motorola/victara/permissions/com.motorola.aon.quickpeek.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.aon.quickpeek.xml \
+    device/motorola/victara/permissions/com.motorola.aov.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.aov.xml \
+    device/motorola/victara/permissions/com.motorola.avatar.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.avatar.xml \
+    device/motorola/victara/permissions/com.motorola.camerabgproc_library.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.camerabgproc_library.xml \
+    device/motorola/victara/permissions/com.motorola.camera.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.camera.xml \
+    device/motorola/victara/permissions/com.motorola.fpsmotosignature.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.fpsmotosignature.xml \
+    device/motorola/victara/permissions/com.motorola.frameworks.core.addon.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.frameworks.core.addon.xml \
+    device/motorola/victara/permissions/com.motorola.gallery.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.gallery.xml \
+    device/motorola/victara/permissions/com.motorola.haptic.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.haptic.xml \
+    device/motorola/victara/permissions/com.motorola.moodle.library.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.moodle.library.xml \
+    device/motorola/victara/permissions/com.motorola.motodisplay.pd.screenoff.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.motodisplay.pd.screenoff.xml \
+    device/motorola/victara/permissions/com.motorola.motosignature.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.motosignature.xml \
+    device/motorola/victara/permissions/com.motorola.moto.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.moto.xml \
+    device/motorola/victara/permissions/com.motorola.pixelpipe.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.pixelpipe.xml \
+    device/motorola/victara/permissions/com.motorola.sensorhub.stm401.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.sensorhub.stm401.xml \
+    device/motorola/victara/permissions/com.motorola.slpc.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.slpc.xml \
+    device/motorola/victara/permissions/com.motorola.software.bodyguard.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.software.bodyguard.xml \
+    device/motorola/victara/permissions/com.motorola.software.guideme.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.software.guideme.xml \
+    device/motorola/victara/permissions/com.motorola.software.smartnotifications.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.software.smartnotifications.xml \
+    device/motorola/victara/permissions/com.motorola.software.x_line.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.software.x_line.xml \
+    device/motorola/victara/permissions/com.motorola.targetnotif.xml:$(TARGET_OUT_VENDOR)/etc/permissions/com.motorola.targetnotif.xml
+>>>>>>> CHANGE (3ccf55 victara: Move everything possible to /vendor)
 
 PRODUCT_CHARACTERISTICS := nosdcard
 
@@ -189,7 +242,11 @@ PRODUCT_COPY_FILES += \
 
 # Keylayout
 PRODUCT_COPY_FILES += \
+<<<<<<< HEAD   (7ed4bf victara: Disable NearbyMessagingService)
     $(LOCAL_PATH)/keylayout/sensorprocessor.kl:system/usr/keylayout/sensorprocessor.kl
+=======
+    $(LOCAL_PATH)/keylayout/sensorprocessor.kl:$(TARGET_OUT_VENDOR)/usr/keylayout/sensorprocessor.kl
+>>>>>>> CHANGE (3ccf55 victara: Move everything possible to /vendor)
 
 # Keystore
 PRODUCT_PACKAGES += \
@@ -207,12 +264,21 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_COPY_FILES += \
+<<<<<<< HEAD   (7ed4bf victara: Disable NearbyMessagingService)
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
+=======
+    $(LOCAL_PATH)/configs/media_profiles.xml:$(TARGET_OUT_VENDOR)/etc/media_profiles.xml \
+    $(LOCAL_PATH)/configs/media_codecs.xml:$(TARGET_OUT_VENDOR)/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media_codecs_performance.xml:$(TARGET_OUT_VENDOR)/etc/media_codecs_performance.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_OUT_VENDOR)/etc/media_codecs_google_video.xml
+>>>>>>> CHANGE (3ccf55 victara: Move everything possible to /vendor)
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -327,9 +393,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/vendor/etc/wifi/p2p_supplicant_overlay.conf
 
 PRODUCT_COPY_FILES += \
+<<<<<<< HEAD   (7ed4bf victara: Disable NearbyMessagingService)
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/vendor/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+=======
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+    $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:$(TARGET_OUT_VENDOR)/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:$(TARGET_OUT_VENDOR)/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+>>>>>>> CHANGE (3ccf55 victara: Move everything possible to /vendor)
 
 # LineageActions
 PRODUCT_PACKAGES += \
