@@ -23,7 +23,7 @@
     <!-- Preferences -->
     <style name="SettingsPreference">
         <item name="allowDividerAbove">false</item>
-        <item name="allowDividerBelow">true</item>
+        <item name="allowDividerBelow">false</item>
         <item name="singleLineTitle">false</item>
     </style>
 </resources>
