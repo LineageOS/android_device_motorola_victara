@@ -144,9 +144,7 @@ PRODUCT_PACKAGES += \
     camera.msm8974
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/hdrhax:$(TARGET_OUT_VENDOR)/etc/hdrhax \
-    $(LOCAL_PATH)/configs/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
-
+    $(LOCAL_PATH)/configs/hdrhax:system/etc/hdrhax
 
 # CRDA
 PRODUCT_PACKAGES += \
