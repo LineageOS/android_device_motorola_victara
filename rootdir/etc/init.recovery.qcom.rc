@@ -1,5 +1,7 @@
 on fs
     setprop sys.usb.ffs.aio_compat 1
+    setprop persist.adb.nonblocking_ffs 0
+    setprop ro.adb.nonblocking_ffs 0
 
 on enable-low-power
     write /sys/module/lpm_levels/enable_low_power/l2 4
