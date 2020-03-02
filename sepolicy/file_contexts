@@ -69,3 +69,6 @@
 
 # Binaries
 /(vendor|system/vendor)/bin/timekeep                        u:object_r:timekeep_exec:s0
+
+# Device nodes
+/dev/stune(/.*)?                                            u:object_r:cgroup:s0
