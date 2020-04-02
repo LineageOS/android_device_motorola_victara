@@ -67,6 +67,10 @@ on boot
     insmod /system/lib/modules/adsprpc.ko
     insmod /system/lib/modules/touchx.ko
 
+    # Vibrator
+    chown root system /sys/devices/virtual/timed_output/vibrator/vtg_level
+    chmod 0660 /sys/devices/virtual/timed_output/vibrator/vtg_level
+
 # Allow usb charging to be disabled persistently
 on property:persist.usb.chgdisabled=1
     write /sys/class/power_supply/battery/charging_enabled 0
