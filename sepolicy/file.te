@@ -17,3 +17,4 @@ type sysfs_bms, sysfs_type, fs_type;
 type sysfs_irq_debug, sysfs_type, fs_type;
 type sysfs_dwc_param, sysfs_type, fs_type;
 type sysfs_hci_param, sysfs_type, fs_type;
+type proc_swap, fs_type;
