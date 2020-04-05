@@ -13,7 +13,6 @@ PRODUCT_DEVICE := victara
 PRODUCT_NAME := lineage_victara
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := victara
-PRODUCT_RELEASE_NAME := MOTO X (2014)
 PRODUCT_MANUFACTURER := motorola
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
