@@ -450,6 +450,7 @@ typedef struct {
     uint32_t ephemeris_mask;
     uint32_t almanac_mask;
     uint32_t used_in_fix_mask;
+    uint32_t glo_used_in_fix_mask;
 } GpsSvStatus;
 
 /**
