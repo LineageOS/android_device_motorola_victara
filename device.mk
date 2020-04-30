@@ -88,6 +88,10 @@ PRODUCT_PACKAGES += \
     regdbdump \
     regulatory.bin
 
+# CryptfsHW
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
