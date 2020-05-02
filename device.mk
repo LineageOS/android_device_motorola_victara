@@ -204,6 +204,10 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
     lights.msm8974
 
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service-sysfs
+
 # Perf
 PRODUCT_PACKAGES += \
     libshims_atomic
