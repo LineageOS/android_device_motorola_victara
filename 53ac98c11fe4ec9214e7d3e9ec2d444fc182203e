@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e5b2644_8d4ad932",
+        "filename": "init/init_victara.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-05-02T18:12:35Z",
+      "side": 1,
+      "message": "This condition is already above, line 95.",
+      "revId": "53ac98c11fe4ec9214e7d3e9ec2d444fc182203e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
