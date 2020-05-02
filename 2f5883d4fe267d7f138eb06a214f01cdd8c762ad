@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c0fabdf2_93d604eb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1053
+      },
+      "writtenOn": "2020-05-02T20:53:59Z",
+      "side": 1,
+      "message": "init.qcom.rc",
+      "revId": "2f5883d4fe267d7f138eb06a214f01cdd8c762ad",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
