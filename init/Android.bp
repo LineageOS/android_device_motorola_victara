@@ -19,7 +19,7 @@ cc_library_static {
     name: "libinit_victara",
     recovery_available: true,
     srcs: ["init_victara.cpp"],
-    cflags: ["-Wall", "-DANDROID_TARGET=msm8974"],
+    cflags: ["-Wall"],
     include_dirs: [
         "device/motorola/victara/init",
         "external/selinux/libselinux/include",
