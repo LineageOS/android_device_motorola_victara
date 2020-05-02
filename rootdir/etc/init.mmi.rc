@@ -1,5 +1,5 @@
 # Moto USB configuration
-import init.mmi.usb.rc
+import /vendor/etc/init/hw/init.mmi.usb.rc
 
 on early-init
     # Set boot up stage I/O scheduler

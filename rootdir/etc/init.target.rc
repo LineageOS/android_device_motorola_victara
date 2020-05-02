@@ -27,7 +27,7 @@
 #
 #
 
-import init.mmi.rc
+import /vendor/etc/init/hw/init.mmi.rc
 
 on early-init
     mkdir /firmware 0771 system system
