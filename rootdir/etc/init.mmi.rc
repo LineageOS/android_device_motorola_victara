@@ -221,7 +221,7 @@ on property:tcmd.suspend=2
 
 service tcmd /system/bin/tcmd
     class core
-    group oem_5004 radio oem_5001 input system log camera graphics oem_5000 sdcard_r sdcard_rw audio inet bluetooth wifi compass net_bt_admin oem_9006 oem_5007 mount net_raw net_admin media shell oem_9002 nfc fm_radio qcom_diag oem_5014 cache media_rw
+    group root
     socket local_tcmd stream 0660 oem_5004 oem_5004
     socket batch_socket stream 0600 oem_5004 oem_5004
     oneshot
@@ -274,7 +274,7 @@ service diag_mdlog /system/bin/diag_mdlog-wrap
     class main
     socket mdlog_cmd stream 0660 system diag
     user log
-    group log sdcard_rw sdcard_r media_rw qcom_diag
+    group log sdcard_rw sdcard_r media_rw
     disabled
 
 service dropboxd /system/bin/dropboxd
