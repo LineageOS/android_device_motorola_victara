@@ -16,6 +16,24 @@
       "revId": "e17891b1a63fd406768e29f685142d7b73893d87",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "83b7d75a_e4dc4abb",
+        "filename": "src/org/lineageos/lineageparts/PartsActivity.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2020-05-03T21:56:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "95442b27_0e588ea1",
+      "revId": "e17891b1a63fd406768e29f685142d7b73893d87",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
