@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "95442b27_0e588ea1",
+        "filename": "src/org/lineageos/lineageparts/PartsActivity.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-05-03T21:49:52Z",
+      "side": 1,
+      "message": "derp?",
+      "revId": "e17891b1a63fd406768e29f685142d7b73893d87",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
