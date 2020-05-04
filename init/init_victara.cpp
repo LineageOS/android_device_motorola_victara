@@ -27,85 +27,85 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/stat.h>
-#include <sys/types.h>
+#include <vector>
 
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
-#include <android-base/logging.h>
 #include <android-base/properties.h>
-#include <android-base/strings.h>
+#include <android-base/logging.h>
 
-#include "vendor_init.h"
 #include "property_service.h"
+#include "vendor_init.h"
 
-using android::init::property_set;
 using android::base::GetProperty;
+using android::init::property_set;
 
-void property_override(const std::string& name, const std::string& value)
+std::vector<std::string> ro_props_default_source_order = {
+    "",
+    "odm.",
+    "product.",
+    "system.",
+    "vendor.",
+};
+
+void property_override(char const prop[], char const value[], bool add = true)
 {
-    size_t valuelen = value.size();
+    prop_info *pi;
 
-    prop_info* pi = (prop_info*) __system_property_find(name.c_str());
-    if (pi != nullptr) {
-        __system_property_update(pi, value.c_str(), valuelen);
-    }
-    else {
-        int rc = __system_property_add(name.c_str(), name.size(), value.c_str(), valuelen);
-        if (rc < 0) {
-            LOG(ERROR) << "property_set(\"" << name << "\", \"" << value << "\") failed: "
-                       << "__system_property_add failed";
-        }
-    }
-}
-
-void property_override_dual(const std::string& system_prop, const std::string& vendor_prop, const std::string& value)
-{
-    property_override(system_prop, value);
-    property_override(vendor_prop, value);
+    pi = (prop_info*) __system_property_find(prop);
+    if (pi)
+        __system_property_update(pi, value, strlen(value));
+    else if (add)
+        __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
 void vendor_load_properties()
 {
-    LOG(INFO) << "Loading vendor specific properties";
+    std::string bootcid;
+    std::string device;
 
-    std::string cid;
-    std::string radio;
+    const auto set_ro_build_prop = [](const std::string &source,
+            const std::string &prop, const std::string &value) {
+        auto prop_name = "ro." + source + "build." + prop;
+        property_override(prop_name.c_str(), value.c_str(), false);
+    };
 
-    radio = GetProperty("ro.boot.radio", "");
-    property_set("ro.hw.radio", radio.c_str());
+    const auto set_ro_product_prop = [](const std::string &source,
+            const std::string &prop, const std::string &value) {
+        auto prop_name = "ro.product." + source + prop;
+        property_override(prop_name.c_str(), value.c_str(), false);
+    };
 
-    cid = GetProperty("ro.boot.cid", "");
-
-    property_override("ro.build.product", "victara");
-    property_override("ro.product.device", "victara");
-    // Init a dummy BT MAC address, will be overwritten later
-    property_set("ro.boot.btmacaddr", "00:00:00:00:00:00");
-
-    if (cid == "0xE") {
-        /* xt1097 */
-        property_override_dual("ro.product.model", "ro.vendor.product.model", "XT1097");
-        property_override("ro.build.description", "victara_retca-user 5.1 LPE23.32-48.1 1 release-keys");
-        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "motorola/victara_retca/victara:5.1/LPE23.32-48.1/1:user/release-keys");
-        property_set("ro.telephony.default_network", "9");
-        property_set("telephony.lteOnGsmDevice", "1");
-    } else if (cid == "0x7") {
-        /* xt1092 */
-        property_override_dual("ro.product.model", "ro.vendor.product.model", "XT1092");
+    bootcid = GetProperty("ro.boot.cid", "");
+    if (bootcid == "0x7") {
+        /* XT1092 */
         property_override("ro.build.description", "victara_reteu-user 5.1 LPE23.32-25.1 1 release-keys");
-        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "motorola/victara_reteu/victara:5.1/LPE23.32-25.1/1:user/release-keys");
         property_set("ro.telephony.default_network", "9");
         property_set("telephony.lteOnGsmDevice", "1");
-    } else if (cid == "0x2") {
-        /* xt1096 */
-        property_override_dual("ro.product.model", "ro.vendor.product.model", "XT1096");
+        for (const auto &source : ro_props_default_source_order) {
+            set_ro_build_prop(source, "fingerprint", "motorola/victara_reteu/victara:5.1/LPE23.32-25.1/1:user/release-keys");
+            set_ro_product_prop(source, "device", "victara");
+            set_ro_product_prop(source, "model", "XT1092");
+            set_ro_product_prop(source, "name", "victara");
+        }
+    } else if (bootcid == "0x9") {
+        /* XT1093 */
+        property_override("ro.build.description", "victara_usc-user 5.1 LPE23.32-21.7 1 release-keys");
+        property_set("ro.telephony.default_network", "10");
+        property_set("telephony.lteOnCdmaDevice", "1");
+        property_set("ro.com.google.clientidbase.am", "android-uscellular-us");
+        property_set("ro.com.google.clientidbase.ms", "android-uscellular-us");
+        property_set("ro.cdma.data_retry_config", "max_retries=infinite,0,0,10000,10000,100000,10000,10000,10000,10000,140000,540000,960000");
+        for (const auto &source : ro_props_default_source_order) {
+            set_ro_build_prop(source, "fingerprint", "motorola/victara_usc/victara:5.1/LPE23.32-21.7/1:user/release-keys");
+            set_ro_product_prop(source, "device", "victara");
+            set_ro_product_prop(source, "model", "XT1093");
+            set_ro_product_prop(source, "name", "victara");
+        }
+    } else if (bootcid == "0x2") {
+        /* XT1096 */
         property_override("ro.build.description", "victara_verizon-user 5.1 LPE23.32-25-3 10 release-keys");
-        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "motorola/victara_verizon/victara:5.1/LPE23.32-25-3/10:user/release-keys");
         property_set("ro.telephony.default_network", "10");
         property_set("telephony.lteOnCdmaDevice", "1");
         property_set("ro.telephony.default_cdma_sub", "0");
@@ -115,22 +115,36 @@ void vendor_load_properties()
         property_set("ro.com.google.clientidbase.ms", "android-verizon");
         property_set("ro.com.google.clientidbase.yt", "android-verizon");
         property_set("ro.cdma.data_retry_config", "max_retries=infinite,0,0,10000,10000,100000,10000,10000,10000,10000,140000,540000,960000");
-    } else if (cid == "0x9") {
-        /* xt1093 */
-        property_override_dual("ro.product.model", "ro.vendor.product.model", "XT1093");
-        property_override("ro.build.description", "victara_usc-user 5.1 LPE23.32-21.7 1 release-keys");
-        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "motorola/victara_usc/victara:5.1/LPE23.32-21.7/1:user/release-keys");
-        property_set("ro.telephony.default_network", "10");
-        property_set("telephony.lteOnCdmaDevice", "1");
-        property_set("ro.com.google.clientidbase.am", "android-uscellular-us");
-        property_set("ro.com.google.clientidbase.ms", "android-uscellular-us");
-        property_set("ro.cdma.data_retry_config", "max_retries=infinite,0,0,10000,10000,100000,10000,10000,10000,10000,140000,540000,960000");
-    } else {
-        /* all others */
-        property_override_dual("ro.product.model", "ro.vendor.product.model", "XT1095");
-        property_override("ro.build.description", "victara_tmo-user 5.1 LPE23.32-21.3 5 release-keys");
-        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "motorola/victara_tmo/victara:5.1/LPE23.32-21.3/5:user/release-keys");
+        for (const auto &source : ro_props_default_source_order) {
+            set_ro_build_prop(source, "fingerprint", "motorola/victara_verizon/victara:5.1/LPE23.32-25-3/10:user/release-keys");
+            set_ro_product_prop(source, "device", "victara");
+            set_ro_product_prop(source, "model", "XT1096");
+            set_ro_product_prop(source, "name", "victara");
+        }
+    } else if (bootcid == "0xE") {
+        /* XT1097 */
+        property_override("ro.build.description", "victara_retca-user 5.1 LPE23.32-48.1 1 release-keys");
         property_set("ro.telephony.default_network", "9");
         property_set("telephony.lteOnGsmDevice", "1");
+        for (const auto &source : ro_props_default_source_order) {
+            set_ro_build_prop(source, "fingerprint", "motorola/victara_retca/victara:5.1/LPE23.32-48.1/1:user/release-keys");
+            set_ro_product_prop(source, "device", "victara");
+            set_ro_product_prop(source, "model", "XT1097");
+            set_ro_product_prop(source, "name", "victara");
+        }
+    } else {
+        /* XT1095 & All other GSM variants */
+        property_override("ro.build.description", "victara_tmo-user 5.1 LPE23.32-21.3 5 release-keys");
+        property_set("ro.telephony.default_network", "9");
+        property_set("telephony.lteOnGsmDevice", "1");
+        for (const auto &source : ro_props_default_source_order) {
+            set_ro_build_prop(source, "fingerprint", "motorola/victara_tmo/victara:5.1/LPE23.32-21.3/5:user/release-keys");
+            set_ro_product_prop(source, "device", "victara");
+            set_ro_product_prop(source, "model", "XT1095");
+            set_ro_product_prop(source, "name", "victara");
+        }
     }
+
+    device = GetProperty("ro.product.device", "");
+    LOG(ERROR) << "Found bootcid '" << bootcid.c_str() << "' setting build properties for '" << device.c_str() << "' device\n";
 }
