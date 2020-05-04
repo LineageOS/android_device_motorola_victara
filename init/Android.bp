@@ -19,13 +19,8 @@ cc_library_static {
     name: "libinit_victara",
     recovery_available: true,
     srcs: ["init_victara.cpp"],
-    cflags: ["-Wall"],
     include_dirs: [
-        "device/motorola/victara/init",
-        "external/selinux/libselinux/include",
-        "external/libcap/libcap/include",
         "system/core/base/include",
         "system/core/init",
-    ],
-    static_libs: ["libbase"]
+    ]
 }
