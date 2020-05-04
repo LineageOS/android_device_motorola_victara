@@ -21,20 +21,20 @@ vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libaudcal.so
 
-etc/acdbdata/victara_cn/victara_cn_Handset_cal.acdb
-etc/acdbdata/victara_cn/victara_cn_Bluetooth_cal.acdb
-etc/acdbdata/victara_cn/victara_cn_Speaker_cal.acdb
-etc/acdbdata/victara_cn/victara_cn_Hdmi_cal.acdb
-etc/acdbdata/victara_cn/victara_cn_General_cal.acdb
-etc/acdbdata/victara_cn/victara_cn_Global_cal.acdb
-etc/acdbdata/victara_cn/victara_cn_Headset_cal.acdb
-etc/acdbdata/victara/victara_Global_cal.acdb
-etc/acdbdata/victara/victara_Handset_cal.acdb
-etc/acdbdata/victara/victara_Bluetooth_cal.acdb
-etc/acdbdata/victara/victara_Hdmi_cal.acdb
-etc/acdbdata/victara/victara_General_cal.acdb
-etc/acdbdata/victara/victara_Speaker_cal.acdb
-etc/acdbdata/victara/victara_Headset_cal.acdb
+vendor/etc/acdbdata/victara_cn/victara_cn_Handset_cal.acdb
+vendor/etc/acdbdata/victara_cn/victara_cn_Bluetooth_cal.acdb
+vendor/etc/acdbdata/victara_cn/victara_cn_Speaker_cal.acdb
+vendor/etc/acdbdata/victara_cn/victara_cn_Hdmi_cal.acdb
+vendor/etc/acdbdata/victara_cn/victara_cn_General_cal.acdb
+vendor/etc/acdbdata/victara_cn/victara_cn_Global_cal.acdb
+vendor/etc/acdbdata/victara_cn/victara_cn_Headset_cal.acdb
+vendor/etc/acdbdata/victara/victara_Global_cal.acdb
+vendor/etc/acdbdata/victara/victara_Handset_cal.acdb
+vendor/etc/acdbdata/victara/victara_Bluetooth_cal.acdb
+vendor/etc/acdbdata/victara/victara_Hdmi_cal.acdb
+vendor/etc/acdbdata/victara/victara_General_cal.acdb
+vendor/etc/acdbdata/victara/victara_Speaker_cal.acdb
+vendor/etc/acdbdata/victara/victara_Headset_cal.acdb
 
 # Audio firmware
 etc/firmware/aonvr1.bin
