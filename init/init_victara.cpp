@@ -64,6 +64,10 @@ void vendor_load_properties()
 {
     std::string bootcid;
     std::string device;
+    std::string radio;
+
+    radio = GetProperty("ro.boot.radio", "");
+    property_set("ro.hw.radio", radio.c_str());
 
     const auto set_ro_build_prop = [](const std::string &source,
             const std::string &prop, const std::string &value) {
@@ -76,6 +80,9 @@ void vendor_load_properties()
         auto prop_name = "ro.product." + source + prop;
         property_override(prop_name.c_str(), value.c_str(), false);
     };
+
+    // Init a dummy BT MAC address, will be overwritten later
+    property_set("ro.boot.btmacaddr", "00:00:00:00:00:00");
 
     bootcid = GetProperty("ro.boot.cid", "");
     if (bootcid == "0x7") {
