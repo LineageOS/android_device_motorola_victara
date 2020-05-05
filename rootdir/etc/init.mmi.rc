@@ -102,14 +102,14 @@ on boot
     chown system system /sys/class/timed_output/vibrator/enable
     chmod 0660 /sys/class/timed_output/vibrator/enable
 
-    # initialize kernel dynamic debugging settings
+    # Initialize kernel dynamic debugging settings
     copy /system/etc/debug_control.conf /sys/kernel/debug/dynamic_debug/control
 
-    # disable dmesg restrict in eng/userdebug build
+    # Disable dmesg restrict in eng/userdebug build
     write /proc/sys/kernel/dmesg_restrict 0
-    # enable group read/write to /dev/log/kernel
+    # Enable group read/write to /dev/log/kernel
     chmod 0660 /dev/log/kernel
-    # debugfs
+    # Debugfs
     chmod 0775 /sys/kernel/debug
 
     # Change the ownership of display TE files for tcmds

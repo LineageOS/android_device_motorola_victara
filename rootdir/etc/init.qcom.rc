@@ -34,6 +34,10 @@ on early-init
     # Set permissions so radio can read
     chmod 0444 /proc/cmdline
 
+    # Make dmesg readable
+    chown root system /dev/kmsg
+    chmod 0620 /dev/kmsg
+
 on init
     # We are mounting system(/vendor) early
     # vold needs keymaster that needs qseecomd
@@ -182,9 +186,6 @@ on boot
     write /sys/class/kgsl/kgsl-3d0/wake_timeout 250
 
 on post-fs
-    # Allow writing to the kernel trace log.
-    chmod 0222 /sys/kernel/debug/tracing/trace_marker 
-
     # avoid USB crash
     setprop persist.adb.nonblocking_ffs 0
     setprop ro.adb.nonblocking_ffs 0
