@@ -135,9 +135,6 @@ PRODUCT_PACKAGES += \
 
 # Init scripts
 PRODUCT_PACKAGES += \
-    init.qcom.bt.sh
-
-PRODUCT_PACKAGES += \
     fstab.qcom \
     init.mmi.boot.sh \
     init.mmi.radio.sh \
@@ -145,6 +142,7 @@ PRODUCT_PACKAGES += \
     init.mmi.touch.sh \
     init.mmi.usb.rc \
     init.qcom.rc \
+    init.qcom.bt.sh \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
     init.target.rc \
