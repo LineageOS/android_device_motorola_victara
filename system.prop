@@ -1,52 +1,55 @@
 #
-# system.prop for msm8974
+# system.prop for victara
 #
 
-# Audio
+## Audio
 af.fast_track_multiplier=1
-vendor.audio_hal.period_size=192
 persist.vendor.audio.fluence.speaker=false
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicerec=false
-ro.config.vc_call_vol_steps=7
-ro.vendor.audio.sdk.fluencetype=fluence
-vendor.voice.path.for.pcm.voip=true
-ro.config.media_vol_steps=25
-ro.config.vc_call_vol_steps=7
-
 # FM maximum volume be between 0 and 8192 (0dB)
 ro.audio.fm_max_volume=5793
+ro.config.media_vol_steps=25
+ro.config.vc_call_vol_steps=7
+ro.vendor.audio.sdk.fluencetype=fluence
+vendor.audio_hal.period_size=192
+vendor.voice.path.for.pcm.voip=true
 
-# Bluetooth
+## Bluetooth
 qcom.bluetooth.soc=smd
 
-# Camera
+## Camera
 camera2.portability.force_api=1
 
-# GPS
+## GPS
 persist.mot.gps.smart_battery=1
 
-# Graphics
+## Graphics
+debug.hwui.use_buffer_age=false
 debug.sf.enable_gl_backpressure=1
 debug.sf.latch_unsignaled=1
+debug.stagefright.ccodec=0
 persist.hwc.mdpcomp.enable=true
+persist.media.treble_omx=false
 ro.hdmi.enable=true
 ro.opengles.version=196608
 ro.qualcomm.cabl=0
 ro.sf.lcd_density=480
-debug.hwui.use_buffer_age=false
-persist.media.treble_omx=false
 ro.surface_flinger.start_graphics_allocator_service=true
-debug.stagefright.ccodec=0
 
-# QCOM
+## Hardware
+# Motorola's init sets this, let's just do it ourselves
+ro.hw.device=victara
+
+## QCOM
 ro.vendor.extension_library=/vendor/lib/libqc-opt.so
 
-# RIL
+## RIL
 DEVICE_PROVISIONED=1
 persist.data.netmgrd.qos.enable=true
 persist.data.qmi.adb_logmask=0
 persist.qcril_uim_vcc_feature=1
+persist.radio.add_power_save=1
 persist.radio.apm_sim_not_pwdn=1
 persist.radio.apn_delay=5000
 persist.radio.dfr_mode_set=1
@@ -61,7 +64,6 @@ persist.radio.nitz_sons_1=
 persist.radio.nitz_sons_2=
 persist.radio.nitz_sons_3=
 persist.radio.no_wait_for_card=1
-persist.radio.add_power_save=1
 persist.radio.oem_ind_to_both=false
 persist.radio.relay_oprt_change=1
 rild.libargs=-d /dev/smd0
@@ -70,14 +72,8 @@ ril.subscription.types=NV,RUIM
 ro.data.large_tcp_window_size=true
 ro.use_data_netmgrd=true
 
-# Time services
+## Time services
 persist.timed.enable=true
 
-# Wifi
+## Wifi
 ro.disableWifiApFirmwareReload=true
-
-# Other
-# Motorola's init sets this, let's just do it ourselves
-ro.hw.device=victara
-# Play store
-ro.com.google.clientidbase.gmm=android-motorola
