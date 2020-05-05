@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2014 The CyanogenMod Project <http://www.cyanogenmod.org>
+ * Copyright (C) 2020 The LineageOS Project <https://www.lineageos.org>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,11 +18,11 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME              "Moto X 2014"
 #define BLUETOOTH_QTI_SW                TRUE
 // skips conn update at conn completion
 #define BTA_BLE_SKIP_CONN_UPD  TRUE
 // Enables interleaved scan
 #define BTA_HOST_INTERLEAVE_SEARCH TRUE
+#define BTM_DEF_LOCAL_NAME              "Moto X 2014"
 
 #endif
