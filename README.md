@@ -20,4 +20,4 @@ This branch is for building LineageOS Firmware.
 
 Copyright 2014 CyanogenMod Project.
 
-Copyright 2017 The LineageOS Project
+Copyright 2020 The LineageOS Project
