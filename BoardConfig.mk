@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2014 The CyanogenMod Project
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,81 +14,38 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from the proprietary version
--include vendor/motorola/victara/BoardConfigVendor.mk
-
-LOCAL_PATH := device/motorola/victara
-
-BOARD_VENDOR := motorola-qcom
-
-# Assert
-TARGET_OTA_ASSERT_DEVICE := victara
-
-# Filesystem
-TARGET_ALLOW_LEGACY_AIDS := true
-TARGET_FS_CONFIG_GEN := \
-    $(LOCAL_PATH)/fs_config/mot_aids.fs \
-    $(LOCAL_PATH)/fs_config/config.fs
-
-# Platform
-TARGET_BOARD_PLATFORM := msm8974
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno330
-BOARD_USES_QCOM_HARDWARE := true
-
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := MSM8974
-TARGET_NO_BOOTLOADER := true
-
-# Architecture
-TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := generic
-TARGET_CPU_VARIANT_RUNTIME := krait
-
-# Binder API version
-TARGET_USES_64_BIT_BINDER := true
-
-# Kernel
-BOARD_KERNEL_CMDLINE := console=none androidboot.hardware=qcom msm_rtb.filter=0x37 ehci-hcd.park=3 vmalloc=400M
-BOARD_KERNEL_BASE := 0x80200000
-BOARD_KERNEL_LZ4C_DT := true
-BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_SEPARATED_DT := true
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
-LZMA_RAMDISK_TARGETS := boot,recovery
-TARGET_KERNEL_SOURCE := kernel/motorola/msm8974
-TARGET_KERNEL_CONFIG := lineageos_victara_defconfig
-BOARD_KERNEL_IMAGE_NAME := zImage
+DEVICE_PATH := device/motorola/victara
 
 # APEX
 TARGET_FLATTEN_APEX := true
 
+# Assert
+TARGET_OTA_ASSERT_DEVICE := victara
+
 # Audio
+AUDIO_FEATURE_ENABLED_ANC_HEADSET := true
 AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
+AUDIO_FEATURE_ENABLED_EXTERNAL_SPEAKER := true
 AUDIO_FEATURE_ENABLED_EXTN_FORMATS := true
 AUDIO_FEATURE_ENABLED_EXTN_POST_PROC := true
+AUDIO_FEATURE_ENABLED_FLUENCE := true
 AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 AUDIO_FEATURE_ENABLED_HFP := true
-AUDIO_FEATURE_ENABLED_ANC_HEADSET := true
-AUDIO_FEATURE_ENABLED_EXTERNAL_SPEAKER := true
 AUDIO_FEATURE_ENABLED_NEW_SAMPLE_RATE := true
+AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
 AUDIO_FEATURE_ENABLED_USBAUDIO := true
 BOARD_USES_ALSA_AUDIO := true
-AUDIO_FEATURE_ENABLED_FLUENCE := true
-AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
-USE_CUSTOM_AUDIO_POLICY := 1
 BOARD_USES_GENERIC_AUDIO := true
 TARGET_USES_QCOM_MM_AUDIO := true
+USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bionic
 TARGET_LD_SHIM_LIBS := \
     /system/vendor/bin/mpdecision|libshims_atomic.so \
     /system/vendor/bin/thermal-engine|libshims_thermal.so \
-    /system/lib/libjustshoot.so|libshim_camera.so \
     /system/lib/libjscore.so|libshim_camera.so \
+    /system/lib/libjustshoot.so|libshim_camera.so \
     /system/lib/libmot_sensorlistener.so|libshims_sensorlistener.so \
     /system/vendor/lib/libmdmcutback.so|libqsap_shim.so
 
@@ -97,17 +54,35 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/vendor/bin/mm-qcamera-daemon=22
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+BLUETOOTH_HCI_USE_MCT := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
-BLUETOOTH_HCI_USE_MCT := true
 QCOM_BT_USE_SMD_TTY := true
+
+# Architecture
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_BOARD_PLATFORM := msm8974
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno330
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT_RUNTIME := krait
+
+# Binder API version
+TARGET_USES_64_BIT_BINDER := true
+
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := MSM8974
+TARGET_NO_BOOTLOADER := true
 
 # Camera
 BOARD_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
-TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 TARGET_NEEDS_LEGACY_CAMERA_HAL1_DYN_NATIVE_HANDLE := true
+TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
 # Charger
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
@@ -118,11 +93,17 @@ BOARD_NO_CHARGER_LED := true
 WITH_DEXPREOPT_DEBUG_INFO := false
 
 # Display
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x02000000U | 0x02002000U
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
-OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
-TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x02000000U | 0x02002000U
+
+# Filesystem
+TARGET_ALLOW_LEGACY_AIDS := true
+TARGET_FS_CONFIG_GEN := \
+    $(DEVICE_PATH)/fs_config/mot_aids.fs \
+    $(DEVICE_PATH)/fs_config/config.fs
 
 # Fonts
 EXCLUDE_SERIF_FONTS := true
@@ -135,42 +116,56 @@ USE_DEVICE_SPECIFIC_GPS := true
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2000U | 0x02000000U
 
 # HIDL
-DEVICE_MANIFEST_FILE := device/motorola/victara/configs/manifest.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
 
 # Init
 TARGET_NR_SVC_SUPP_GIDS := 32
+
+# Kernel
+BOARD_KERNEL_BASE := 0x80200000
+BOARD_KERNEL_CMDLINE := console=none androidboot.hardware=qcom msm_rtb.filter=0x37 ehci-hcd.park=3 vmalloc=400M
+BOARD_KERNEL_IMAGE_NAME := zImage
+BOARD_KERNEL_LZ4C_DT := true
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_SEPARATED_DT := true
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
+LZMA_RAMDISK_TARGETS := boot,recovery
+TARGET_KERNEL_CONFIG := lineageos_victara_defconfig
+TARGET_KERNEL_SOURCE := kernel/motorola/msm8974
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Partitions
+BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00A00000
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_CACHEIMAGE_PARTITION_SIZE := 1428234240
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_HAS_LARGE_FILESYSTEM := true
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00A00000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2902458368
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 10970071040
-BOARD_CACHEIMAGE_PARTITION_SIZE := 1428234240
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_ROOT_EXTRA_FOLDERS := firmware fsg persist
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 10970071040
 
 # Radio
 TARGET_USES_OLD_MNC_FORMAT := true
 
 # Recovery
-BOARD_NO_SECURE_DISCARD := true
 BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_NO_SECURE_DISCARD := true
 BOARD_RECOVERY_SWIPE := true
 TARGET_RECOVERY_DENSITY := hdpi
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # SELinux
 include device/qcom/sepolicy-legacy/sepolicy.mk
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
-BOARD_SEPOLICY_DIRS += device/motorola/victara/sepolicy
-
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += device/motorola/victara/sepolicy/private
+# Vendor
+-include vendor/motorola/victara/BoardConfigVendor.mk
+BOARD_VENDOR := motorola-qcom
 
 # Vendor Init
 TARGET_INIT_VENDOR_LIB := libinit_victara
@@ -181,16 +176,17 @@ BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 BOARD_VOLD_MAX_PARTITIONS := 40
 
-# Wifi
+# WLAN
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HAS_QCOM_WLAN_SDK := true
-BOARD_WLAN_DEVICE := qcwcn
 BOARD_HOSTAPD_DRIVER := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_qcwcn
+BOARD_WLAN_DEVICE := qcwcn
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
+TARGET_DISABLE_WCNSS_CONFIG_COPY := true
 TARGET_USES_WCNSS_CTRL := true
-WPA_SUPPLICANT_VERSION := VER_0_8_X
 WIFI_DRIVER_FW_PATH_STA   := "sta"
 WIFI_DRIVER_FW_PATH_AP    := "ap"
-TARGET_DISABLE_WCNSS_CONFIG_COPY := true
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+
