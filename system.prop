@@ -21,6 +21,15 @@ qcom.bluetooth.soc=smd
 ## Camera
 camera2.portability.force_api=1
 
+## Dalvik
+dalvik.vm.dex2oat-swap=false
+dalvik.vm.heapgrowthlimit=192m
+dalvik.vm.heapmaxfree=8m
+dalvik.vm.heapminfree=2m
+dalvik.vm.heapsize=512m
+dalvik.vm.heapstartsize=16m
+dalvik.vm.heaptargetutilization=0.75
+
 ## GPS
 persist.mot.gps.smart_battery=1
 
@@ -40,6 +49,10 @@ ro.surface_flinger.start_graphics_allocator_service=true
 ## Hardware
 # Motorola's init sets this, let's just do it ourselves
 ro.hw.device=victara
+
+## Memory Optimizations
+ro.vendor.qti.am.reschedule_service=true
+ro.vendor.qti.sys.fw.bservice_enable=true
 
 ## QCOM
 ro.vendor.extension_library=/vendor/lib/libqc-opt.so
