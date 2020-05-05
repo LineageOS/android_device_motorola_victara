@@ -87,7 +87,7 @@ service thermal-com /vendor/bin/thermal-engine --minimode
     user root
     disabled
 
-#start Sensor daemon
+# Start Sensor daemon
 service stm401 /system/bin/stm401 boot
     disabled
     user compass
@@ -105,8 +105,12 @@ on boot
     # initialize kernel dynamic debugging settings
     copy /system/etc/debug_control.conf /sys/kernel/debug/dynamic_debug/control
 
-    # Setup folder for aplogd
-    mkdir /data/aplogd 0750 log log
+    # disable dmesg restrict in eng/userdebug build
+    write /proc/sys/kernel/dmesg_restrict 0
+    # enable group read/write to /dev/log/kernel
+    chmod 0660 /dev/log/kernel
+    # debugfs
+    chmod 0775 /sys/kernel/debug
 
     # Change the ownership of display TE files for tcmds
     chown root oem_5004 /sys/class/graphics/fb0/te_enable
@@ -198,89 +202,14 @@ service adspd /system/vendor/bin/adspd /dev/ttyHS3
     user audio
     group audio input diag
 
-service ftmipcd /system/bin/ftmipcd
-    user radio
-    group radio inet oem_2950
-    disabled
-    oneshot
-
-on property:ro.bootmode=mot-factory
-    start ftmipcd
-
-# Power up to suspend
-on property:tcmd.suspend=1
-    stop surfaceflinger
-    stop zygote
-    setprop debug.sf.nobootanimation 1
-
-# Normal to suspend
-on property:tcmd.suspend=2
-    stop surfaceflinger
-    stop zygote
-    setprop debug.sf.nobootanimation 1
-
-service tcmd /system/bin/tcmd
-    class core
-    group root
-    socket local_tcmd stream 0660 oem_5004 oem_5004
-    socket batch_socket stream 0600 oem_5004 oem_5004
-    oneshot
-    disabled
-
-service tcmdhelp /system/bin/tcmdhelp
-    class main
-    socket tcmdhelp stream 0600 oem_5004 oem_5004
-    oneshot
-    disabled
-
-on property:tcmd.start_tcmdhelp=1
-    start tcmdhelp
-
 on property:persist.mot.demo_mode_charging=1
     write /sys/class/power_supply/battery/device/force_demo_mode 1
-
-on property:persist.log.aplogd.enable=1
-    start aplogd
-
-on property:persist.log.aplogd.enable=0
-    stop aplogd
-
-service aplogd /system/bin/aplogd
-    class main
-    #user log
-    #group log system sdcard_rw sdcard_r media_rw mount
-    # The user and group definitions above are intentionally disabled and left
-    # only as documentation. It actually starts as root and immediately drops
-    # to log plus those groups after preserving CAP_SYS_ADMIN, which is required
-    # for kernel logging.
-    disabled
 
 service mmi-radio-sh /vendor/bin/init.mmi.radio.sh
     class core
     user radio
     group radio
     oneshot
-
-on property:persist.sys.diag_mdlog.on=1
-    start diag_mdlog
-
-on property:persist.sys.diag_mdlog.on=0
-    stop diag_mdlog
-
-on property:log.diag_mdlog.invld_mode_stop=1
-    stop diag_mdlog
-
-service diag_mdlog /system/bin/diag_mdlog-wrap
-    class main
-    socket mdlog_cmd stream 0660 system diag
-    user log
-    group log sdcard_rw sdcard_r media_rw
-    disabled
-
-service dropboxd /system/bin/dropboxd
-    class late_start
-    user diag
-    group diag
 
 on property:sys.boot_completed=1
     setprop sys.io.scheduler bfq
@@ -298,24 +227,6 @@ service mmi-touch-sh /vendor/bin/init.mmi.touch.sh atmel
 on property:hw.aov.c55_ready=1
     start mmi-touch-sh
 
-on property:ro.secure=0
-    # disable dmesg restrict for insecure builds
-    write /proc/sys/kernel/dmesg_restrict 0
-
-on property:ro.debuggable=1
-    # disable dmesg restrict in eng/userdebug build
-    write /proc/sys/kernel/dmesg_restrict 0
-    # enable group read/write to /dev/log/kernel
-    chmod 0660 /dev/log/kernel
-    # debugfs
-    chmod 0775 /sys/kernel/debug
-
-service mbm_spy /system/bin/mbm_spy
-    class late_start
-    user system
-    group system
-    oneshot
-
 service atvc_core /vendor/bin/dbvc_atvc_property_set
    class core
    user oem_5012
@@ -328,31 +239,8 @@ service atvc /vendor/bin/dbvc_atvc_property_set
    group oem_5007
    oneshot
 
-service qe /xbin/qe /system
-   class main
-   oneshot
-   disabled
-
-service qe_broadcast /xbin/qe /system -b
-   class main
-   oneshot
-   disabled
-
-on property:persist.qe.trigger=1
-   start qe_broadcast
-
-service ss_rdump /system/bin/subsystem_ramdump 1 0
-   class late_start
-   user radio
-   group log sdcard_rw sdcard_r diag
-
 on property:persist.sys.qc.sub.rdump.on=*
    write /sys/module/subsystem_restart/parameters/enable_ramdumps ${persist.sys.qc.sub.rdump.on}
-
-service esdpll /system/bin/esdpll -w
-    user oem_5016
-    group oem_5016 package_info
-    disabled
 
 on property:service.bootanim.exit=1
     trigger enable-low-power

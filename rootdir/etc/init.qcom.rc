@@ -25,8 +25,6 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-# use init.mmi.usb.rc
-#import init.qcom.usb.rc
 import /vendor/etc/init/hw/init.target.rc
 
 on early-init
@@ -333,19 +331,8 @@ on property:bluetooth.dun.status=running
 on property:bluetooth.dun.status=stopped
     stop bt-dun
 
-service qcom-c_core-sh /vendor/bin/sh /init.qcom.class_core.sh
-    class core
-    user root
-    oneshot
-
-service qcom-c_main-sh /vendor/bin/sh /init.class_main.sh
-    class main
-    user radio
-    group radio
-    oneshot
 
 on property:vold.decrypt=trigger_restart_framework
-    start qcom-c_main-sh
     start config_bluetooth
     start wcnss-service
 
@@ -400,47 +387,6 @@ on property:vendor.bluetooth.hciattach=true
 on property:vendor.bluetooth.hciattach=false
     setprop bluetooth.status off
 
-# Service not used
-#service hciattach_ath3k /system/bin/sh /system/etc/init.ath3k.bt.sh
-#     class late_start
-#     user bluetooth
-#     group system bluetooth net_bt_admin misc
-#     disabled
-#     oneshot
-
-# Service not used
-#service bt-dun /system/bin/dun-server /dev/smd7 /dev/rfcomm0
-#    class late_start
-#    user bluetooth
-#    group bluetooth net_bt_admin inet
-#    disabled
-#    oneshot
-
-#service bt-sap /system/bin/sapd 15
-#    user bluetooth
-#    group bluetooth net_bt_admin
-#    class late_start
-#    disabled
-#    oneshot
-
-#service bridgemgrd /system/bin/bridgemgrd
-#    class late_start
-#    user radio
-#    group radio qcom_diag
-#    disabled
-
-#service port-bridge /system/bin/port-bridge /dev/smd0 /dev/ttyGS0
-#    class late_start
-#    user system
-#    group system inet
-#    disabled
-
-#service qmiproxy /system/bin/qmiproxy
-#    class main
-#    user radio
-#    group radio qcom_diag
-#    disabled
-
 # QMUX must be in multiple groups to support external process connections
 service qmuxd /system/vendor/bin/qmuxd
     class main
@@ -452,13 +398,6 @@ service netmgrd /system/vendor/bin/netmgrd
     user root
     group root system wifi wakelock radio inet oem_2950
 
-# Service not used
-#service sensors /system/bin/sensors.qcom
-#    class late_start
-#    user root
-#    group root
-#    disabled
-
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
     stop netmgrd
@@ -467,25 +406,6 @@ on property:ro.use_data_netmgrd=false
 # but only if ro.data.large_tcp_window_size property is set.
 on property:ro.data.large_tcp_window_size=true
     write /proc/sys/net/ipv4/tcp_adv_win_scale  1
-
-# Service not used
-#service amp_init /system/bin/amploader -i
-#    class late_start
-#    user root
-#    disabled
-#    oneshot
-#
-#service amp_load /system/bin/amploader -l 7000
-#    class late_start
-#    user root
-#    disabled
-#    oneshot
-#
-#service amp_unload /system/bin/amploader -u
-#    class late_start
-#    user root
-#    disabled
-#    oneshot
 
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     -O/data/vendor/wifi/wpa/sockets -puse_p2p_group_interface=1 \
@@ -508,31 +428,6 @@ service gpsone_daemon /system/bin/gpsone_daemon
     group gps inet net_raw
     disabled
 
-#service quipc_main /system/bin/quipc_main
-#    class late_start
-#    user gps
-#    group gps net_admin wifi inet qcom_diag
-#    disabled
-
-service location_mq /system/bin/location-mq
-    class late_start
-    user gps
-    group gps
-    disabled
-
-#service lowi-server /system/bin/lowi-server
-#   class late_start
-#   user gps
-#   group gps net_admin wifi inet qcom_diag
-#   disabled
-
-service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
-    class late_start
-    user root
-    group system
-    disabled
-    oneshot
-
 on property:crypto.driver.load=1
      insmod /system/lib/modules/qce.ko
      insmod /system/lib/modules/qcedev.ko
@@ -540,24 +435,6 @@ on property:crypto.driver.load=1
 on property:crypto.driver.load=0
      exec /system/bin/rmmod qcedev.ko
      exec /system/bin/rmmod qce.ko
-
-# Service not used
-#service drmdiag /system/bin/drmdiagapp
-#    class late_start
-#     user root
-#     disabled
-#     oneshot
-#
-#on property:drmdiag.load=1
-#    start drmdiag
-#
-#on property:drmdiag.load=0
-#    stop drmdiag
-
-service qcom-sh /init.qcom.sh
-    class late_start
-    user root
-    oneshot
 
 on enable-low-power
     write /sys/module/lpm_levels/enable_low_power/l2 4
@@ -658,11 +535,6 @@ on enable-low-power
     rm /data/system/default_values
     start mpdecision
 
-service atfwd /system/bin/ATFWD-daemon
-    class late_start
-    user system
-    group system radio
-
 on charger
     write /sys/module/lpm_levels/enable_low_power/l2 2
     write /sys/module/msm_pm/modes/cpu0/power_collapse/suspend_enabled 1
@@ -687,46 +559,9 @@ on charger
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
 
-#service ds_fmc_appd /system/bin/ds_fmc_appd -p "rmnet0" -D
-#    class late_start
-#    group radio wifi inet
-#    disabled
-#    oneshot
-
-#on property:persist.data.ds_fmc_app.mode=1
-#    start ds_fmc_appd
-
-#service ims_regmanager /system/bin/exe-ims-regmanagerprocessnative
-#    class late_start
-#    group net_bt_admin inet radio wifi
-#    disabled
-
-#on property:persist.ims.regmanager.mode=1
-#    start ims_regmanager
-
 on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
     write /proc/sys/net/ipv4/tcp_adv_win_scale  1
-
-# Service not used
-#service battery_monitor /system/bin/battery_monitor
-#    user system
-#    group system
-#    disabled
-
-# Service not used
-#service profiler_daemon /system/bin/profiler_daemon
-#    class late_start
-#    user root
-#    group root
-#    disabled
-
-# Service not used
-#service hcidump /system/bin/sh /system/etc/hcidump.sh
-#    user bluetooth
-#    group bluetooth system net_bt_admin net_admin
-#    disabled
-#    oneshot
 
 service charger /system/bin/charger
     class charger
@@ -734,11 +569,6 @@ service charger /system/bin/charger
     group system graphics input
     capabilities SYS_BOOT
     seclabel u:r:charger:s0
-
-#service ssr_diag /system/bin/ssr_diag
-#    class late_start
-#    user system
-#    group system
 
 # SSR setting
 on property:persist.sys.ssr.restart_level=*
@@ -750,56 +580,3 @@ on property:persist.sys.qc.sub.ssr.max=*
 
 on property:apexd.status=ready
     mount none /system/etc/swcodec/ld.config.txt /apex/com.android.media.swcodec/etc/ld.config.txt bind
-
-# Service not used
-# Define fastmmi
-#service fastmmi /system/bin/mmi
-#    user root
-#    group root
-#    disabled
-
-# Service not used
-#service fastmmisrv /system/bin/sh /init.qcom.factory.sh
-#    user root
-#    disabled
-#    oneshot
-#
-#on ffbm
-#    start fastmmisrv
-
-# moto: charger_monitor does not exist
-#service charger_monitor /system/bin/charger_monitor
-#    user system
-#    group system
-#    disabled
-
-# MOT Security Asset CR IKJBMR2-6392
-#service diag_mdlog_start /system/bin/diag_mdlog
-#    class late_start
-#    user sdcard_rw
-#    group system qcom_diag sdcard_rw sdcard_r media_rw
-#    disabled
-#    oneshot
-
-#service diag_mdlog_stop /system/bin/diag_mdlog -k
-#    class late_start
-#    user sdcard_rw
-#    group system qcom_diag sdcard_rw sdcard_r media_rw
-#    disabled
-#    oneshot
-
-#service qlogd /system/xbin/qlogd
-#    class main
-#    disabled
-#on property:persist.sys.qlogd=1
-#    start qlogd
-#on property:persist.sys.qlogd=0
-#    stop qlogd
-
-#service rootagent /system/bin/sh /system/etc/init.qcom.rootagent.sh
-#    disabled
-#    oneshot
-#on property:persist.sys.rootagent=1
-#    start rootagent
-#on property:persist.sys.rootagent=0
-#    stop rootagent
