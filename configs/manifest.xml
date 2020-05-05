@@ -145,7 +145,7 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.nfc</name>
-        <transport arch="32">passthrough</transport>
+        <transpor>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>INfc</name>
