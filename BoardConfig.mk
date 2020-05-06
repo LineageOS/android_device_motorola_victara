@@ -133,9 +133,6 @@ LZMA_RAMDISK_TARGETS := boot,recovery
 TARGET_KERNEL_CONFIG := lineageos_victara_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8974
 
-# Lights
-TARGET_PROVIDES_LIBLIGHT := true
-
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00A00000
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -169,8 +166,8 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 BOARD_VENDOR := motorola-qcom
 
 # Vendor Init
-TARGET_INIT_VENDOR_LIB := libinit_victara
-TARGET_RECOVERY_DEVICE_MODULES := libinit_victara
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_victara
+TARGET_RECOVERY_DEVICE_MODULES := //$(DEVICE_PATH):libinit_victara
 
 # Vold
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
