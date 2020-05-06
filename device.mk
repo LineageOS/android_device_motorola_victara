@@ -153,8 +153,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl \
-    lights.msm8974
+    android.hardware.light@2.0-service.victara
 
 # LineageActions
 PRODUCT_PACKAGES += \
