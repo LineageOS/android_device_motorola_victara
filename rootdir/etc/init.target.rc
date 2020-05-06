@@ -38,7 +38,7 @@ on init
     setprop persist.sys.wfd.virtual 0
 
 on fs
-    mount_all /vendor/etc/fstab.qcom
+    mount_all /vendor/etc/fstab.qcom --early
 
     # Create PDS mount point
     mkdir /cache/pds 0755 root root
@@ -55,6 +55,14 @@ on fs
     exec /system/bin/stacker -d /system /overlay/sysupdate
 
     restorecon_recursive /persist
+
+on late-fs
+    # Start services for Boot Animation
+    start servicemanager
+    start surfaceflinger
+    start bootanim
+    # Mount RW partitions which need run fsck
+    mount_all /vendor/etc/fstab.qcom --late
 
 on post-fs-data
     mkdir /data/tombstones 0771 system system
