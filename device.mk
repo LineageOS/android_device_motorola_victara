@@ -153,8 +153,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl \
-    lights.msm8974
+    android.hardware.light@2.0-service.victara
 
 # LineageActions
 PRODUCT_PACKAGES += \
@@ -291,6 +290,10 @@ PRODUCT_PACKAGES += \
 
 # Shipping API level
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
 
 # Support
 PRODUCT_PACKAGES += \
