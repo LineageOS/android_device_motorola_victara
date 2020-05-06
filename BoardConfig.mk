@@ -169,8 +169,8 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 BOARD_VENDOR := motorola-qcom
 
 # Vendor Init
-TARGET_INIT_VENDOR_LIB := libinit_victara
-TARGET_RECOVERY_DEVICE_MODULES := libinit_victara
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_victara
+TARGET_RECOVERY_DEVICE_MODULES := //$(DEVICE_PATH):libinit_victara
 
 # Vold
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
