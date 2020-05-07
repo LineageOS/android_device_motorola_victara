@@ -16,3 +16,5 @@ type sysfs_bms, sysfs_type, fs_type;
 type sysfs_irq_debug, sysfs_type, fs_type;
 type sysfs_dwc_param, sysfs_type, fs_type;
 type sysfs_hci_param, sysfs_type, fs_type;
+
+type fsg_firmware_file, file_type, vendor_file_type, contextmount_type;
