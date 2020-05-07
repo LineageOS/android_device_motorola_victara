@@ -41,3 +41,10 @@ allow init proc:file { w_file_perms };
 #Give all untill we add all paths to "genfs_contexts"
 allow init sysfs:file create_file_perms;
 allow init sysfs:dir create_dir_perms;
+
+# Init must be allowed to mount
+allow init {
+    firmware_file
+    fsg_file
+    persist_file
+}:dir mounton;
