@@ -8,5 +8,5 @@ allow mm-qcamerad system_data_file:dir { add_name remove_name write };
 allow mm-qcamerad system_file:file execmod;
 allow mm-qcamerad system_server:unix_stream_socket rw_socket_perms;
 allow mm-qcamerad vendor_file:file execmod;
-
+allow mm-qcamerad system_lib_file:file execmod;
 allow mm-qcamerad mpctl_socket:dir search;
