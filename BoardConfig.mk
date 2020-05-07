@@ -87,7 +87,6 @@ TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 # Charger
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 BOARD_CHARGER_ENABLE_SUSPEND := true
-BOARD_NO_CHARGER_LED := true
 
 # Dexpreopt
 WITH_DEXPREOPT_DEBUG_INFO := false
