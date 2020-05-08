@@ -1,0 +1,2 @@
+# DRM apps
+dontaudit untrusted_app_27 proc_asound:dir { search };
