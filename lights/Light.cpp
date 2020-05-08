@@ -22,8 +22,8 @@
 
 #include <fstream>
 
-#define BACKLIGHT_PATH  "/sys/devices/mdp.0/qcom,mdss_fb_primary.177/leds/lcd-backlight/brightness"
-#define LED_PATH        "/sys/devices/leds-qpnp-rgb-24/leds/charging/brightness"
+#define BACKLIGHT_PATH  "/sys/class/leds/lcd-backlight/brightness"
+#define LED_PATH        "/sys/class/leds/charging/brightness"
 
 namespace {
 /*
