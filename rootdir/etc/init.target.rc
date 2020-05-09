@@ -104,7 +104,7 @@ on property:init.svc.media=restarting
 on property:init.svc.servicemanager=restarting
     restart qcamerasvr
 
-service qseecomd /system/vendor/bin/qseecomd
+service vendor.qseecomd /system/vendor/bin/qseecomd
    class core
    user root
    group root
