@@ -149,7 +149,7 @@ BOARD_VENDOR := motorola-qcom
 
 # Vendor Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_victara
-TARGET_RECOVERY_DEVICE_MODULES := //$(DEVICE_PATH):libinit_victara
+TARGET_RECOVERY_DEVICE_MODULES := libinit_victara
 
 # WLAN
 BOARD_HAS_QCOM_WLAN := true
