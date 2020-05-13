@@ -110,7 +110,7 @@ void vendor_load_properties()
             set_ro_product_prop(source, "model", "XT1093");
             set_ro_product_prop(source, "name", "victara");
         }
-    } else if (bootcid == "0x2") {
+    } else if ((bootcid == "0x2") || (bootcid == "0xDEAD")) {
         /* XT1096 */
         property_override("ro.build.description", "victara_verizon-user 5.1 LPE23.32-25-3 10 release-keys");
         property_set("ro.telephony.default_network", "10");
@@ -128,7 +128,7 @@ void vendor_load_properties()
             set_ro_product_prop(source, "model", "XT1096");
             set_ro_product_prop(source, "name", "victara");
         }
-    } else if (bootcid == "0xE") {
+    } else if ((bootcid == "0xE") || (bootcid == "0xC") || (bootcid == "0x0")) {
         /* XT1097 */
         property_override("ro.build.description", "victara_retca-user 5.1 LPE23.32-48.1 1 release-keys");
         property_set("ro.telephony.default_network", "9");
