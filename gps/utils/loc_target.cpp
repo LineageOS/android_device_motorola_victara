@@ -53,6 +53,7 @@
 #define STR_SURF      "Surf"
 #define STR_MTP       "MTP"
 #define STR_APQ       "apq"
+#define STR_MSM       "msm"
 #define IS_STR_END(c) ((c) == '\0' || (c) == '\n' || (c) == '\r')
 #define LENGTH(s) (sizeof(s) - 1)
 #define GPS_CHECK_NO_ERROR 0
@@ -199,6 +200,8 @@ unsigned int loc_get_target(void)
                   (!memcmp(rd_id, MSM8930_ID_2, LENGTH(MSM8930_ID_2))
                    && IS_STR_END(rd_id[LENGTH(MSM8930_ID_2)])) )
              gTarget = TARGET_MSM_NO_SSC;
+        else if ( !memcmp(baseband, STR_MSM, LENGTH(STR_MSM)) )
+             gTarget = TARGET_DEFAULT;
         else
              gTarget = TARGET_UNKNOWN;
     }
