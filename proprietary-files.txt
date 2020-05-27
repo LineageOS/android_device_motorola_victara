@@ -319,8 +319,5 @@ lib/hw/sensorhub.msm8974.so
 lib/hw/sensors.msm8974.so
 vendor/lib/libsensor1.so
 
-# Time
-bin/time_daemon:vendor/bin/time_daemon
-
 # Touch frimware
 etc/firmware/atmel-a432-14102902-0103aa-victara.tdat

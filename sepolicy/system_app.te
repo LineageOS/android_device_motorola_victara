@@ -1,3 +1,8 @@
 allow system_app sensors_device:chr_file rw_file_perms;
 allow system_app wificond:binder call;
 allow system_app { proc_pagetypeinfo sysfs_zram }:file r_file_perms;
+
+# Timekeep
+set_prop(system_app, timekeep_prop)
+r_dir_file(system_app, sysfs_timekeep)
+r_dir_file(system_app, sysfs_rtc)

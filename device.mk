@@ -315,6 +315,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine-victara.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/thermal-engine-victara.conf
 
+# TimeKeep
+PRODUCT_PACKAGES += \
+    timekeep \
+    TimeKeep
+
 # Torch
 PRODUCT_PACKAGES += \
     Torch

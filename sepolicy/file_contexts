@@ -61,3 +61,6 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.victara u:object_r:hal_light_default_exec:s0
 /sys/class/leds/lcd-backlight/brightness       u:object_r:sysfs_light:s0
 /sys/devices/leds-qpnp-rgb-24/leds(/.*)?       u:object_r:sysfs_leds:s0
+
+# Binaries
+/(vendor|system/vendor)/bin/timekeep                        u:object_r:timekeep_exec:s0

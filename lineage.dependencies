@@ -11,5 +11,9 @@
   {
     "repository": "android_external_bson",
     "target_path": "external/bson"
+  },
+  {
+    "repository": "android_hardware_sony_timekeep",
+    "target_path": "hardware/sony/timekeep"
   }
 ]
