@@ -14,3 +14,4 @@ allow timekeep_app sysfs_rtc:{ file lnk_file } r_file_perms;
 allow timekeep_app sysfs_msm_subsys:dir search;
 
 set_prop(timekeep_app, timekeep_prop)
+allow timekeep_app sysfs:file { getattr open read };
