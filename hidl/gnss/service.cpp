@@ -1,4 +1,4 @@
-#define LOG_TAG "android.hardware.gnss@1.0-service.victara"
+#define LOG_TAG "android.hardware.gnss@1.0-service"
 
 #include <android/hardware/gnss/1.0/IGnss.h>
 
