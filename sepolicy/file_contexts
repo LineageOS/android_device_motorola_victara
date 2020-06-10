@@ -57,9 +57,6 @@
 # FSG
 /fsg(/.*)?                                                  u:object_r:fsg_file:s0
 
-# GNSS
-/(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@[0-9]\.[0-9]-service\..*        u:object_r:hal_gnss_default_exec:s0
-
 # Lights
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.victara u:object_r:hal_light_default_exec:s0
 /sys/class/leds/lcd-backlight/brightness       u:object_r:sysfs_light:s0
