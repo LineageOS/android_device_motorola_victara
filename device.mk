@@ -76,7 +76,7 @@ PRODUCT_PACKAGES += \
     Snap
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/camera/hdrhax:system/etc/hdrhax
+    $(LOCAL_PATH)/camera/hdrhax:$(TARGET_COPY_OUT_VENDOR)/etc/hdrhax
 
 # Charateristics
 PRODUCT_CHARACTERISTICS := nosdcard
