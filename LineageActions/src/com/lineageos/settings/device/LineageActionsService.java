@@ -44,7 +44,7 @@ public class LineageActionsService extends IntentService implements ScreenStateN
                         new LinkedList<UpdatedStateNotifier>();
 
     public LineageActionsService(Context context) {
-        super("CMActionService");
+        super("LineageActionService");
         mContext = context;
 
         Log.d(TAG, "Starting");
