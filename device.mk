@@ -340,7 +340,6 @@ PRODUCT_PACKAGES += \
     hostapd.deny \
     libqsap_sdk \
     libwpa_client \
-    wificond \
     wcnss_service \
     wpa_supplicant \
     wpa_supplicant.conf \
