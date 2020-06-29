@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "03024d5b_be0c9a98",
+        "filename": "device.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-06-29T13:45:02Z",
+      "side": 0,
+      "message": "Not only a duplicate of line #347. It\u0027s not needed because it\u0027s built globally.",
+      "range": {
+        "startLine": 343,
+        "startChar": 4,
+        "endLine": 343,
+        "endChar": 14
+      },
+      "revId": "4db6d54feb0dcf27a4f7718969dbf31fe02264d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
