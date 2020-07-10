@@ -199,8 +199,8 @@ vendor/lib/libizat_core.so
 vendor/lib/liblbs_core.so
 
 # Graphics - from onyx
-vendor/lib/egl/eglsubAndroid.so|b8a5790c5b4ba4cf0018c94066104610c821ed8e
-vendor/lib/egl/libEGL_adreno.so|cd29673e990dba8158e961e287a79dfbd852d095
+vendor/lib/egl/eglsubAndroid.so|aa7871df4ddcd6575b801193cd43827f4d1cfa4b
+vendor/lib/egl/libEGL_adreno.so|529deed329fa19c6af8ed8ae6c0aa72bad3254f5
 vendor/lib/egl/libGLESv1_CM_adreno.so|ae86d16ba499ac6cdd3cecb91ae6b16b4c303984
 vendor/lib/egl/libGLESv2_adreno.so|445be60045ff86d1d27545692134eacf0d89a6dc
 vendor/lib/egl/libq3dtools_adreno.so|2c12919492f1146b58f4f1c379dfe10d3320d476
@@ -217,7 +217,7 @@ vendor/lib/librs_adreno.so|483b327e1a7fde0a898019d5958e43097fd87f98
 vendor/lib/librs_adreno_sha1.so|e254ee7df74b1f0ecd73fc6b02e5bd5367a83de6
 vendor/lib/libsc-a3xx.so|231201bcfead5f930537d2fba22d89b00e673386
 vendor/lib/libscale.so|b44f44c633fa404d10e76aaa23593b516e08e2b8
-vendor/lib/libuiblur.so
+vendor/lib/libuiblur.so|12dd942092c05d978a2a2db3ea37e0b410427b52
 
 # Graphics firmware
 etc/firmware/a330_pfp.fw
