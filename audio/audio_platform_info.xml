@@ -46,6 +46,7 @@
         <device name="SND_DEVICE_IN_VOICE_REC_MIC_NS" acdb_id="107"/>
         <device name="SND_DEVICE_IN_VOICE_REC_DMIC_STEREO" acdb_id="34"/>
         <device name="SND_DEVICE_IN_VOICE_REC_DMIC_FLUENCE" acdb_id="41"/>
+        <device name="SND_DEVICE_IN_HEADSET_MIC_AEC" acdb_id="47"/>
     </acdb_ids>
 
     <backend_names>
@@ -56,7 +57,12 @@
     </backend_names>
 
     <pcm_ids>
-        <!-- empty -->
+        <usecase name="USECASE_VOICE_CALL" type="in" id="2"/>
+        <usecase name="USECASE_VOICE_CALL" type="out" id="2"/>
+        <usecase name="USECASE_VOICE2_CALL" type="in" id="22"/>
+        <usecase name="USECASE_VOICE2_CALL" type="out" id="22"/>
+        <usecase name="USECASE_VOLTE_CALL" type="in" id="14"/>
+        <usecase name="USECASE_VOLTE_CALL" type="out" id="14"/>
     </pcm_ids>
 
     <device_names>
