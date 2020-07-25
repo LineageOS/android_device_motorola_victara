@@ -21,6 +21,7 @@ ro.qualcomm.bt.hci_transport=smd
 bluetooth.hfp.client=1
 ro.qualcomm.bluetooth.sap=false
 ro.bluetooth.hfp.ver=1.6
+ro.boot.btmacaddr=00:00:00:00:00:00
 qcom.bt.le_dev_pwr_class=1
 
 ## Camera

@@ -81,9 +81,6 @@ void vendor_load_properties()
         property_override(prop_name.c_str(), value.c_str(), false);
     };
 
-    // Init a dummy BT MAC address, will be overwritten later
-    property_set("ro.boot.btmacaddr", "00:00:00:00:00:00");
-
     bootcid = GetProperty("ro.boot.cid", "");
     if (bootcid == "0x7") {
         /* XT1092 */
