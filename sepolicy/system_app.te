@@ -6,3 +6,8 @@ allow system_app { proc_pagetypeinfo sysfs_zram }:file r_file_perms;
 set_prop(system_app, timekeep_prop)
 r_dir_file(system_app, sysfs_timekeep)
 r_dir_file(system_app, sysfs_rtc)
+
+dontaudit system_app {
+  apex_service
+  system_suspend_control_service
+}:service_manager find;
