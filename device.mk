@@ -198,6 +198,9 @@ PRODUCT_COPY_FILES += \
 # Offmode Charging
 PRODUCT_PACKAGES += \
     charger_res_image
+    
+# Optimizations
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
 # OMX
 PRODUCT_PACKAGES += \
