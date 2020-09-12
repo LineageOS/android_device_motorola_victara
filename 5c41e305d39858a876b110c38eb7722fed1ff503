@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49c253f6_bff37d36",
+        "filename": "manifest.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2020-09-12T18:44:50Z",
+      "side": 1,
+      "message": "does this actually work?",
+      "range": {
+        "startLine": 252,
+        "startChar": 12,
+        "endLine": 252,
+        "endChar": 43
+      },
+      "revId": "5c41e305d39858a876b110c38eb7722fed1ff503",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5bf091cb_d522c761",
+        "filename": "manifest.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2020-09-12T18:44:50Z",
+      "side": 1,
+      "message": "I have no clue this interfaces purpose, nor does anyone use it that I\u0027m seeing?",
+      "range": {
+        "startLine": 256,
+        "startChar": 12,
+        "endLine": 256,
+        "endChar": 38
+      },
+      "revId": "5c41e305d39858a876b110c38eb7722fed1ff503",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
