@@ -58,7 +58,7 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
-    libbt-vendor
+    libbt-vendor    
 
 # Boot animation
 TARGET_BOOTANIMATION_HALF_RES := true
@@ -91,6 +91,9 @@ PRODUCT_PACKAGES += \
 # CryptfsHW
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
+
+# Dex
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
 # Display
 PRODUCT_PACKAGES += \
