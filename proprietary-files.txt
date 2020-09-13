@@ -161,7 +161,7 @@ vendor/lib/librpmb.so |708921f0319f2356a2cd822d87c80366a04d8a7f
 vendor/lib/libssd.so |a1d98b27bffcd8047867738a84a02f53956ca0ff
 
 # Widevine - from angler - OPR6.170623.017 factory image
-vendor/lib/mediadrm/libwvdrmengine.so|66ba66d047044f92eb0eada1faf6a5799ded90ab
+vendor/lib/mediadrm/libwvdrmengine.so|66ba66d047044f92eb0eada1faf6a5799ded90ab|2f70d96729bc35389d98ab3a1e8f48f4f7b659c2
 
 # GPS
 bin/gpsone_daemon
