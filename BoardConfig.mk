@@ -58,7 +58,8 @@ TARGET_LD_SHIM_LIBS := \
     /system/lib/libjscore.so|libshim_camera.so \
     /system/lib/libjustshoot.so|libshim_camera.so \
     /system/lib/libmot_sensorlistener.so|libshims_sensorlistener.so \
-    /system/vendor/lib/libmdmcutback.so|libqsap_shim.so
+    /system/vendor/lib/libmdmcutback.so|libqsap_shim.so \
+    /system/vendor/lib/libril-qc-qmi-1.so|libaudioclient_shim.so
 
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/bin/mediaserver=22 \

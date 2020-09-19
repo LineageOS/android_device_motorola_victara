@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017-2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -68,4 +69,12 @@ LOCAL_C_INCLUDES := $(TOP)/system/qcom/softap/sdk
 LOCAL_MODULE := libqsap_shim
 LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := libaudioclient_shim.cpp
+LOCAL_MODULE := libaudioclient_shim
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_SHARED_LIBRARIES := libaudioclient
+LOCAL_VENDOR_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
