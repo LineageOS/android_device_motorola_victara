@@ -218,9 +218,6 @@ service mmi-radio-sh /vendor/bin/init.mmi.radio.sh
     oneshot
     writepid /dev/cpuset/system-background/tasks
 
-on property:sys.boot_completed=1
-    setprop sys.io.scheduler bfq
-
 service mmi-boot-sh /vendor/bin/init.mmi.boot.sh
     class core
     user root
@@ -255,4 +252,5 @@ on property:service.bootanim.exit=1
     trigger enable-low-power
 
 on property:sys.boot_completed=1
+    setprop sys.io.scheduler bfq
     swapon_all /vendor/etc/fstab.qcom
