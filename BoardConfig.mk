@@ -107,7 +107,7 @@ BOARD_KERNEL_LZ4C_DT := true
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
-LZMA_RAMDISK_TARGETS := boot,recovery
+BOARD_RAMDISK_USE_XZ := true
 TARGET_KERNEL_CONFIG := lineageos_victara_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8974
 
