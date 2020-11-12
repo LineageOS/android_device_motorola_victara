@@ -1,0 +1,4 @@
+allow bootanim mpctl_socket:dir search;
+unix_socket_send(bootanim, mpctl, perfd)
+
+get_prop(bootanim, userspace_reboot_exported_prop);
