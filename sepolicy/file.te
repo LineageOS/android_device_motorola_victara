@@ -21,3 +21,6 @@ type proc_swap, fs_type;
 type sysfs_msm_subsys, sysfs_type, fs_type;
 type sysfs_stm401, fs_type, sysfs_type;
 type sysfs_timekeep, fs_type, sysfs_type;
+
+# procfs
+type proc_last_kmsg, fs_type, proc_type;

@@ -1,3 +1,4 @@
 genfscon proc /sys/vm/swappiness                      u:object_r:proc_swap:s0
 genfscon sysfs /devices/soc.0/qpnp-rtc-8/             u:object_r:sysfs_rtc:s0
 genfscon sysfs /module/stm401/parameters              u:object_r:sysfs_stm401:s0
+genfscon proc /last_kmsg                              u:object_r:proc_last_kmsg:s0
