@@ -250,6 +250,9 @@
         <version>2.0</version>
         <interface>
             <name>IDisplayColorCalibration</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
             <name>ISunlightEnhancement</name>
             <instance>default</instance>
         </interface>
