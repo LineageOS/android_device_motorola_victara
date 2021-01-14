@@ -4,3 +4,5 @@ allow vold hal_bootctl_hwservice:hwservice_manager find;
 
 # For setting read_ahead_kb
 allow vold sysfs_mmc_host:file create_file_perms;
+
+allow vold hal_bootctl_hwservice:hwservice_manager find;
