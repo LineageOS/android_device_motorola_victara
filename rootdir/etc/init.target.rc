@@ -40,8 +40,6 @@ on init
 on fs
     mount_all /vendor/etc/fstab.qcom --early
 
-    # Create PDS mount point
-    mkdir /cache/pds 0755 root root
     symlink /cache/pds /pds
     restorecon_recursive /pds/
     restorecon_recursive /cache/pds/
