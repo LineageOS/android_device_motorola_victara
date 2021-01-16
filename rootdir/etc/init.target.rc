@@ -118,13 +118,6 @@ service thermal-engine /system/vendor/bin/thermal-engine
    user root
    group root
 
-service time_daemon /system/vendor/bin/time_daemon
-   capabilities SYS_TIME
-   class late_start
-   user system
-   group net_raw
-   writepid /dev/cpuset/system-background/tasks
-
 service adsprpcd /system/vendor/bin/adsprpcd
    class main
    user media
