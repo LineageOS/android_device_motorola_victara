@@ -51,8 +51,6 @@ on fs
     # arrange access to an available overlay
     mkdir /overlay 0755 root root
     mkdir /cache/overlay 0775 system cache
-    exec /system/bin/checknmount -d -t ext4 /overlay/sysupdate /cache/overlay/sysupdate.simg /cache/overlay/sysupdate.jar
-    exec /system/bin/stacker -d /system /overlay/sysupdate
 
     restorecon_recursive /persist
 
