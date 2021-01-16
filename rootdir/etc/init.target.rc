@@ -40,7 +40,6 @@ on init
 on fs
     mount_all /vendor/etc/fstab.qcom --early
 
-    symlink /cache/pds /pds
     restorecon_recursive /pds/
     restorecon_recursive /cache/pds/
 
