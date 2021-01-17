@@ -4,3 +4,4 @@ allow mmi proc:file write;
 allow mmi sysfs:dir { open read };
 allow mmi sysfs:file { getattr read };
 allow mmi system_prop:property_service set;
+allow mmi proc_cmdline:file r_file_perms;
