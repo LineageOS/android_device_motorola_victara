@@ -1,1 +1,1 @@
-allow system_app storaged:binder call;
+binder_call(system_app, storaged)
