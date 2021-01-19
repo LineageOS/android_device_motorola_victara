@@ -48,3 +48,8 @@ allow init {
     fsg_file
     persist_file
 }:dir mounton;
+
+# stm401
+allow init {
+    sysfs_stm401
+}:file setattr;
