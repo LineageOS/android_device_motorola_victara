@@ -73,9 +73,6 @@ on post-fs-data
     mkdir /data/tombstones/dsps 0771 system system
 
 on boot
-    insmod /system/lib/modules/adsprpc.ko
-    insmod /system/lib/modules/touchx.ko
-
     # Vibrator
     chown root system /sys/devices/virtual/timed_output/vibrator/vtg_level
     chmod 0660 /sys/devices/virtual/timed_output/vibrator/vtg_level
