@@ -58,7 +58,6 @@ vendor/lib/soundfx/libqcreverb.so
 bin/hvdcp:vendor/bin/hvdcp
 
 # Bluetooth
-bin/btnvtool:vendor/bin/btnvtool
 bin/hci_qcomm_init:vendor/bin/hci_qcomm_init
 vendor/lib/libbtnv.so
 
