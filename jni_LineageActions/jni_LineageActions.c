@@ -27,7 +27,7 @@
 #include <unistd.h>
 
 #include <linux/stm401.h>
-#include <cutils/log.h>
+#include <log/log.h>
 #include <sys/ioctl.h>
 #include <sys/stat.h>
 #include <sys/types.h>
