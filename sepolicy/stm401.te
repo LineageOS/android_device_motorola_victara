@@ -1,11 +1,11 @@
 type stm401, domain;
-type stm401_exec, exec_type, file_type;
+type stm401_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(stm401)
 
 allow stm401 sensors_device:chr_file rw_file_perms;
-allow stm401 system_prop:property_service set;
+set_prop(stm401, system_prop)
 
 unix_socket_connect(stm401, property, init)
 allow stm401 property_socket:sock_file write;
 
-allow stm401 firmware_file:dir search;
+allow stm401 firmware_file:file r_file_perms;
