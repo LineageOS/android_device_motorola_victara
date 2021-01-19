@@ -92,7 +92,7 @@ service thermal-com /vendor/bin/thermal-engine --minimode
     disabled
 
 # Start Sensor daemon
-service stm401 /system/bin/stm401 boot
+service stm401 /vendor/bin/stm401 boot
     disabled
     user compass
     group compass misc input
@@ -125,8 +125,8 @@ on boot
     chown system system /sys/class/graphics/fb0/hbm
 
     # STM401 driver parameter permissions
-    chown root oem_5004 /sys/module/stm401/parameters/irq_disable
     chmod 0660 /sys/module/stm401/parameters/irq_disable
+    chown system system /sys/module/stm401/parameters/irq_disable
 
     # Change ownership and permission for led
     chown system system /sys/class/leds/led:flash_0/brightness
