@@ -309,12 +309,12 @@ vendor/lib/libtime_genoff.so
 vendor/lib/libxml.so
 
 # Sensors
-bin/stm401
-etc/firmware/cy8c20247_24lkxi.hex
-etc/firmware/sensorhubfw.bin
-etc/firmware/sensorhubfw_p0.bin
-etc/firmware/sensorhubver_p0.txt
-etc/firmware/sensorhubver.txt
+vendor/bin/stm401
+vendor/etc/firmware/cy8c20247_24lkxi.hex
+vendor/etc/firmware/sensorhubfw.bin
+vendor/etc/firmware/sensorhubfw_p0.bin
+vendor/etc/firmware/sensorhubver_p0.txt
+vendor/etc/firmware/sensorhubver.txt
 lib/hw/sensorhub.msm8974.so
 lib/hw/sensors.msm8974.so
 vendor/lib/libsensor1.so
