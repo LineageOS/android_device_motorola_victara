@@ -34,6 +34,9 @@ allow init sysfs_irq_debug:file { rw_file_perms };
 allow init sysfs_dwc_param:file { rw_file_perms setattr };
 allow init sysfs_hci_param:file { setattr };
 
+# stm401
+allow init sysfs_stm401:file setattr;
+
 # For setting /proc/sys/vm/swappiness
 allow init proc:file { w_file_perms };
 

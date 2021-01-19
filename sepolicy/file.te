@@ -19,4 +19,5 @@ type sysfs_dwc_param, sysfs_type, fs_type;
 type sysfs_hci_param, sysfs_type, fs_type;
 type proc_swap, fs_type;
 type sysfs_msm_subsys, sysfs_type, fs_type;
+type sysfs_stm401, fs_type, sysfs_type;
 type sysfs_timekeep, fs_type, sysfs_type;
