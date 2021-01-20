@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee6c27e9_999fc2c9",
+        "filename": "sepolicy/genfs_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-01-20T11:19:56Z",
+      "side": 1,
+      "message": "misalignment, look one line above for the correct indentation",
+      "range": {
+        "startLine": 3,
+        "startChar": 53,
+        "endLine": 3,
+        "endChar": 79
+      },
+      "revId": "4c3fd270c96e71fa99a5f7cc6be0f1bb5f97d75a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "24737f9a_1bbdb26f",
+        "filename": "sepolicy/init.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-01-20T11:19:56Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be one line?\nallow init sysfs_stm401:file setattr;",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 15
+      },
+      "revId": "4c3fd270c96e71fa99a5f7cc6be0f1bb5f97d75a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
