@@ -11,7 +11,7 @@
 #bin/subsystem_ramdump
 
 # ADSP
-bin/adspd:vendor/bin/adspd
+bin/adspd:vendor/bin/adspd |49cf644955904fa13b91d1919f5ccf6d25ab617c
 
 # Audio
 bin/adsprpcd:vendor/bin/adsprpcd
@@ -67,7 +67,7 @@ vendor/firmware/cpp_firmware_v1_1_1.fw
 vendor/firmware/cpp_firmware_v1_1_6.fw
 vendor/firmware/cpp_firmware_v1_2_0.fw
 lib/hw/camera.msm8974.so:lib/hw/camera.vendor.msm8974.so
-lib/libadvalgcore.so
+lib/libadvalgcore.so |fe3fdf43a25432caab18b1833139d7af192b6389
 lib/libAisAdapter.so
 lib/libAlAisLib.so
 lib/libAlAisTune.so
@@ -308,7 +308,7 @@ vendor/lib/libtime_genoff.so
 vendor/lib/libxml.so
 
 # Sensors
-bin/stm401:vendor/bin/stm401
+bin/stm401:vendor/bin/stm401 |947fa1a6fba92c43391c3c01e64ab3f5114ec0ac
 etc/firmware/cy8c20247_24lkxi.hex:vendor/etc/firmware/cy8c20247_24lkxi.hex
 etc/firmware/sensorhubfw.bin:vendor/etc/firmware/sensorhubfw.bin
 etc/firmware/sensorhubfw_p0.bin:vendor/etc/firmware/sensorhubfw_p0.bin
