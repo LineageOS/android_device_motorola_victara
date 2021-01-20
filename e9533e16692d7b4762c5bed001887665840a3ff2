@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "980bc1a6_e1dddd22",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2021-01-20T18:51:17Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "50ffd73e_97d65c2e",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 73
+      },
+      "revId": "e9533e16692d7b4762c5bed001887665840a3ff2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b7a1a969_13a23313",
         "filename": "rootdir/etc/init.qcom.rc",
         "patchSetId": 5
@@ -45,6 +69,30 @@
       "revId": "e9533e16692d7b4762c5bed001887665840a3ff2",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "954929d4_852a4586",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2021-01-20T18:51:17Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "b7a1a969_13a23313",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 71
+      },
+      "revId": "e9533e16692d7b4762c5bed001887665840a3ff2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "748b6316_7a9a1fb9",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 5
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2021-01-20T18:51:17Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "6b71652b_88376834",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 56
+      },
+      "revId": "e9533e16692d7b4762c5bed001887665840a3ff2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0bac5189_f7453c67",
         "filename": "rootdir/etc/init.qcom.rc",
         "patchSetId": 5
@@ -85,6 +157,24 @@
       "revId": "e9533e16692d7b4762c5bed001887665840a3ff2",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc324e7f_656c2654",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 5
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2021-01-20T18:51:17Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "0bac5189_f7453c67",
+      "revId": "e9533e16692d7b4762c5bed001887665840a3ff2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
