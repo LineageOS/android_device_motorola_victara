@@ -11,7 +11,7 @@
 #bin/subsystem_ramdump
 
 # ADSP
-bin/adspd:vendor/bin/adspd
+vendor/bin/adspd |349a176c64448ed7aaf14ae2fdd67abe0edf47da
 
 # Audio
 bin/adsprpcd:vendor/bin/adsprpcd
@@ -68,7 +68,7 @@ vendor/firmware/cpp_firmware_v1_1_1.fw
 vendor/firmware/cpp_firmware_v1_1_6.fw
 vendor/firmware/cpp_firmware_v1_2_0.fw
 lib/hw/camera.msm8974.so:lib/hw/camera.vendor.msm8974.so
-lib/libadvalgcore.so
+lib/libadvalgcore.so |fe3fdf43a25432caab18b1833139d7af192b6389
 lib/libAisAdapter.so
 lib/libAlAisLib.so
 lib/libAlAisTune.so
@@ -309,12 +309,12 @@ vendor/lib/libtime_genoff.so
 vendor/lib/libxml.so
 
 # Sensors
-bin/stm401:vendor/bin/stm401
-etc/firmware/cy8c20247_24lkxi.hex:vendor/etc/firmware/cy8c20247_24lkxi.hex
-etc/firmware/sensorhubfw.bin:vendor/etc/firmware/sensorhubfw.bin
-etc/firmware/sensorhubfw_p0.bin:vendor/etc/firmware/sensorhubfw_p0.bin
-etc/firmware/sensorhubver_p0.txt:vendor/etc/firmware/sensorhubver_p0.txt
-etc/firmware/sensorhubver.txt:vendor/etc/firmware/sensorhubver.txt
+vendor/bin/stm401|1b207edf2d603232fc33e8d396eb279f28ea7268
+vendor/firmware/cy8c20247_24lkxi.hex
+vendor/firmware/sensorhubfw.bin
+vendor/firmware/sensorhubfw_p0.bin
+vendor/firmware/sensorhubver_p0.txt
+vendor/firmware/sensorhubver.txt
 lib/hw/sensorhub.msm8974.so
 lib/hw/sensors.msm8974.so
 vendor/lib/libsensor1.so
