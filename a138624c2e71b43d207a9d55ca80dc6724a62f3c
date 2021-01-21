@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "981e9b49_3d46870a",
+        "filename": "device.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2021-01-21T04:21:52Z",
+      "side": 1,
+      "message": "fairly certain we can move this to vendor...",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 91
+      },
+      "revId": "a138624c2e71b43d207a9d55ca80dc6724a62f3c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e352cde4_8809bc68",
+        "filename": "device.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2021-01-21T04:21:52Z",
+      "side": 1,
+      "message": "should see if we can move this",
+      "range": {
+        "startLine": 354,
+        "startChar": 0,
+        "endLine": 354,
+        "endChar": 102
+      },
+      "revId": "a138624c2e71b43d207a9d55ca80dc6724a62f3c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "26be8382_0a83fc88",
+        "filename": "device.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2021-01-21T04:21:52Z",
+      "side": 1,
+      "message": "this as well",
+      "range": {
+        "startLine": 356,
+        "startChar": 0,
+        "endLine": 356,
+        "endChar": 118
+      },
+      "revId": "a138624c2e71b43d207a9d55ca80dc6724a62f3c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
