@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a1e30c94_3f7da65f",
+        "filename": "system.prop",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2021-01-21T03:50:28Z",
+      "side": 1,
+      "message": "maybe I fail to understand, but we have smd, no?",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 32
+      },
+      "revId": "e795ef279e3d4b1f1f8879423b0dfad27be92558",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
