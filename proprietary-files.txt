@@ -1,15 +1,3 @@
-# These have services defined but I haven't included them
-#bin/tcmd
-#bin/tcmdhelp
-#bin/aplogd
-#bin/mbm_spy
-#bin/esdpll
-#bin/ATFWD-daemon
-#bin/debuggerd
-#bin/dropboxd
-#bin/ptt_socket_app
-#bin/subsystem_ramdump
-
 # ADSP
 vendor/bin/adspd|b0ec7f2102741a3938de66aea2f4a208df3ddc93
 
