@@ -2,10 +2,6 @@
 import /vendor/etc/init/hw/init.mmi.usb.rc
 
 on early-init
-    # Set boot up stage I/O scheduler
-    write /sys/block/mmcblk0/queue/scheduler noop
-    write /sys/block/mmcblk0/queue/read_ahead_kb 512
-
     chown system system /sys/kernel/debug
     chmod 0770 /sys/kernel/debug
 
@@ -28,6 +24,10 @@ on init
     write /proc/sys/vm/page-cluster 0
 
 on post-fs-data
+    # Set boot up stage I/O scheduler
+    write /sys/block/mmcblk0/queue/scheduler noop
+    write /sys/block/mmcblk0/queue/read_ahead_kb 1024
+
     # Trigger the defuse tool
     setprop installd.post_fs_data_ready 1
 
@@ -253,4 +253,5 @@ on property:service.bootanim.exit=1
 
 on property:sys.boot_completed=1
     setprop sys.io.scheduler bfq
+    write /sys/block/mmcblk0/queue/read_ahead_kb 128
     swapon_all /vendor/etc/fstab.qcom
