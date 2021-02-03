@@ -46,7 +46,6 @@
 /(vendor|system/vendor)/bin/init.qcom.bt.sh   u:object_r:bluetooth_loader_exec:s0
 
 # Init mmi services
-/(vendor|system/vendor)/bin/init.mmi(.*)?     u:object_r:mmi_exec:s0
 /(vendor|system/vendor)/bin/init\.mmi\.touch\.sh              u:object_r:mmi-touch-sh_exec:s0
 /(vendor|system/vendor)/bin/init\.mmi\.boot\.sh               u:object_r:mmi-boot-sh_exec:s0
 /(vendor|system/vendor)/bin/init\.mmi\.radio\.sh              u:object_r:mmi-radio-sh_exec:s0
