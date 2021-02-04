@@ -1,0 +1,2 @@
+dontaudit gmscore_app hal_memtrack_hwservice:hwservice_manager find;
+dontaudit gmscore_app hal_memtrack_hwservice:binder {call};
