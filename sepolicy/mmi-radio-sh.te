@@ -1,5 +1,5 @@
-type mmi-boot-sh, domain;
-type mmi-boot-sh_exec, exec_type, vendor_file_type, file_type;
+type mmi-radio-sh, domain;
+type mmi-radio-sh_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(mmi-boot-sh)
 
@@ -10,4 +10,3 @@ allow mmi-boot-sh vendor_toolbox_exec:file rx_file_perms;
 # Get/Set the props property
 get_prop(mmi-radio-sh, boot_radio_prop)
 set_prop(mmi-radio-sh, mmi_prop)
-  
