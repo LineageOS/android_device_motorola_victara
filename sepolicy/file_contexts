@@ -19,10 +19,8 @@
 /dev/stm401_as                          u:object_r:sensors_device:s0
 /dev/stm401_ms                          u:object_r:sensors_device:s0
 
-# Firmware files
-/fsg(/.*)?                              u:object_r:fsg_file:s0
-/pds(/.*)?                              u:object_r:pds_file:s0
 /cache/pds                              u:object_r:pds_file:s0
+/pds(/.*)?                              u:object_r:pds_file:s0
 
 /sys/devices/c55_ctrl                           u:object_r:sysfs_adspd:s0
 /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk        u:object_r:sysfs_thermal:s0
@@ -59,6 +57,9 @@
 
 # DRM
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.2-service\.clearkey                u:object_r:hal_drm_clearkey_exec:s0
+
+# FSG
+/fsg(/.*)?                                                  u:object_r:fsg_file:s0
 
 # Lights
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.victara u:object_r:hal_light_default_exec:s0
