@@ -20,7 +20,6 @@
 /dev/stm401_ms                          u:object_r:sensors_device:s0
 
 # Firmware files
-/firmware(/.*)?                         u:object_r:firmware_file:s0
 /fsg(/.*)?                              u:object_r:fsg_file:s0
 /pds(/.*)?                              u:object_r:pds_file:s0
 /cache/pds                              u:object_r:pds_file:s0
