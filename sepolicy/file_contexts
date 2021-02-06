@@ -47,7 +47,6 @@
 # Init mmi services
 /(vendor|system/vendor)/bin/init\.mmi\.touch\.sh              u:object_r:mmi-touch-sh_exec:s0
 /(vendor|system/vendor)/bin/init\.mmi\.boot\.sh               u:object_r:mmi-boot-sh_exec:s0
-/(vendor|system/vendor)/bin/init\.mmi\.radio\.sh              u:object_r:mmi-radio-sh_exec:s0
 
 # Misc sysfs nodes
 /sys/devices/virtual/diag/diag(/.*)            u:object_r:sysfs_virt_diag:s0

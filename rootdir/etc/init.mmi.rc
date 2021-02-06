@@ -207,13 +207,6 @@ service adspd /system/vendor/bin/adspd /dev/ttyHS3
 on property:persist.mot.demo_mode_charging=1
     write /sys/class/power_supply/battery/device/force_demo_mode 1
 
-service mmi-radio-sh /vendor/bin/init.mmi.radio.sh
-    class core
-    user radio
-    group radio
-    oneshot
-    writepid /dev/cpuset/system-background/tasks
-
 service mmi-boot-sh /vendor/bin/init.mmi.boot.sh
     class core
     user root
