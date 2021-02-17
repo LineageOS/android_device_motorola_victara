@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3b06e1_7e14e100",
+        "filename": "system.prop",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2021-02-17T17:13:06Z",
+      "side": 1,
+      "message": "but stock only has 1.6? https://git.rip/dumps/motorola/victara/-/blob/victara_tmo-user-6.0-MPES24.49-18-7-7-release-keys/system/build.prop#L223",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 24
+      },
+      "revId": "dcb1fddceda7f374483af41e37239525e87afaf6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
