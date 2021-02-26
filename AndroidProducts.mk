@@ -18,5 +18,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_victara.mk
 
 COMMON_LUNCH_CHOICES := \
+    lineage_victara-user \
     lineage_victara-userdebug \
     lineage_victara-eng
