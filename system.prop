@@ -98,3 +98,4 @@ ro.lineage.build.vendor_security_patch=2016-08-01
 
 ## Wifi
 ro.disableWifiApFirmwareReload=true
+wifi.interface=wlan0
