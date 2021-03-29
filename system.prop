@@ -6,11 +6,10 @@
 af.fast_track_multiplier=1
 persist.vendor.audio.fluence.speaker=false
 persist.vendor.audio.fluence.voicecall=true
-persist.vendor.audio.fluence.voicerec=false
-# FM maximum volume be between 0 and 8192 (0dB)
-ro.audio.fm_max_volume=5793
+persist.vendor.audio.fluence.voicerec=true
 ro.config.media_vol_steps=25
 ro.config.vc_call_vol_steps=7
+ro.qc.sdk.audio.fluencetype=fluence
 ro.vendor.audio.sdk.fluencetype=fluence
 vendor.audio_hal.period_size=192
 vendor.voice.path.for.pcm.voip=true
