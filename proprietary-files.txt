@@ -1,5 +1,5 @@
 # ADSP
-vendor/bin/adspd|b0ec7f2102741a3938de66aea2f4a208df3ddc93
+bin/adspd:vendor/bin/adspd
 
 # Audio
 bin/adsprpcd:vendor/bin/adsprpcd
@@ -25,17 +25,17 @@ vendor/etc/acdbdata/victara/victara_Speaker_cal.acdb
 vendor/etc/acdbdata/victara/victara_Headset_cal.acdb
 
 # Audio firmware
-vendor/firmware/aonvr1.bin
-vendor/firmware/aonvr2.bin
-vendor/firmware/left.tfa9890.config
-vendor/firmware/left.tfa9890.eq
-vendor/firmware/left.tfa9890.speaker
-vendor/firmware/left.tfa9890_music_table.preset
-vendor/firmware/left.tfa9890_n1b12.patch
-vendor/firmware/left.tfa9890_n1c2.patch
-vendor/firmware/left.tfa9890_ringtone_table.preset
-vendor/firmware/left.tfa9890_voice_table.preset
-vendor/firmware/VRGain.bin
+etc/firmware/aonvr1.bin
+etc/firmware/aonvr2.bin
+etc/firmware/left.tfa9890.config
+etc/firmware/left.tfa9890.eq
+etc/firmware/left.tfa9890.speaker
+etc/firmware/left.tfa9890_music_table.preset
+etc/firmware/left.tfa9890_n1b12.patch
+etc/firmware/left.tfa9890_n1c2.patch
+etc/firmware/left.tfa9890_ringtone_table.preset
+etc/firmware/left.tfa9890_voice_table.preset
+etc/firmware/VRGain.bin
 
 # Offloaded audio effects
 vendor/lib/soundfx/libqcbassboost.so
@@ -51,9 +51,9 @@ vendor/lib/libbtnv.so
 
 # Camera
 bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
-vendor/firmware/cpp_firmware_v1_1_1.fw
-vendor/firmware/cpp_firmware_v1_1_6.fw
-vendor/firmware/cpp_firmware_v1_2_0.fw
+etc/firmware/cpp_firmware_v1_1_1.fw
+etc/firmware/cpp_firmware_v1_1_6.fw
+etc/firmware/cpp_firmware_v1_2_0.fw
 lib/hw/camera.msm8974.so:lib/hw/camera.vendor.msm8974.so
 lib/libadvalgcore.so|fe3fdf43a25432caab18b1833139d7af192b6389
 lib/libAisAdapter.so
@@ -207,8 +207,8 @@ vendor/lib/libscale.so|b44f44c633fa404d10e76aaa23593b516e08e2b8
 vendor/lib/libuiblur.so
 
 # Graphics firmware
-vendor/firmware/a330_pfp.fw
-vendor/firmware/a330_pm4.fw
+etc/firmware/a330_pfp.fw
+etc/firmware/a330_pm4.fw
 
 # IMS - currently unused but have dependencies to qmi
 bin/imsdatadaemon:vendor/bin/imsdatadaemon
@@ -239,19 +239,19 @@ vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxWmaDec.so
 
 # Media firmware
-vendor/firmware/venus.b00
-vendor/firmware/venus.b01
-vendor/firmware/venus.b02
-vendor/firmware/venus.b03
-vendor/firmware/venus.b04
-vendor/firmware/venus.mbn
-vendor/firmware/venus.mdt
+etc/firmware/venus.b00
+etc/firmware/venus.b01
+etc/firmware/venus.b02
+etc/firmware/venus.b03
+etc/firmware/venus.b04
+etc/firmware/venus.mbn
+etc/firmware/venus.mdt
 
 # Motorola
 bin/dbvc_atvc_property_set:vendor/bin/dbvc_atvc_property_set
 
 # NFC
-vendor/firmware/BCM20795A1_001.002.012.0003.0078_Generic_I2C_NCD_Signed_configdata.ncd
+etc/firmware/BCM20795A1_001.002.012.0003.0078_Generic_I2C_NCD_Signed_configdata.ncd
 
 # Qualcomm framework
 bin/irsc_util:vendor/bin/irsc_util
