@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eaf58f1a_42d9d485",
+        "filename": "device.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2021-03-30T23:35:23Z",
+      "side": 1,
+      "message": "not sold these are related to camera, but may need to live on system anyway - if that\u0027s the case, seperate commit pls",
+      "range": {
+        "startLine": 249,
+        "startChar": 1,
+        "endLine": 273,
+        "endChar": 129
+      },
+      "revId": "c5102e11664c2d7cf3d20831880c1af487af6c6d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ee845cae_a7032328",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2021-03-30T23:35:23Z",
+      "side": 1,
+      "message": "do we even actually need these?",
+      "range": {
+        "startLine": 54,
+        "startChar": 1,
+        "endLine": 55,
+        "endChar": 35
+      },
+      "revId": "c5102e11664c2d7cf3d20831880c1af487af6c6d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "acc49a8a_157f69d5",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 4
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2021-03-30T23:35:23Z",
+      "side": 1,
+      "message": "3 other devices have it on vendor - we sure that one doesn\u0027t work?",
+      "range": {
+        "startLine": 504,
+        "startChar": 4,
+        "endLine": 504,
+        "endChar": 49
+      },
+      "revId": "c5102e11664c2d7cf3d20831880c1af487af6c6d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
