@@ -1,0 +1,2 @@
+allow gpuservice, graphics_config_prop:file r_dir_perms;
+
