@@ -5,6 +5,7 @@
 /data/misc/cutback(/.*)?                u:object_r:cutback_data_file:s0
 /data/power_supply_logger(/.*)?         u:object_r:battery_data_file:s0
 /data/system/dropbox-add(/.*)?          u:object_r:adspd_data_file:s0
+/data/vendor/mediadrm(/.*)?             u:object_r:mediadrm_vendor_data_file:s0
 /data/wapi_certificate(/.*)?            u:object_r:wapi_supplicant_data_file:s0
 
 /dev/bcm2079x-i2c                       u:object_r:nfc_device:s0
@@ -60,7 +61,7 @@
 /sys/module/hci_uart/parameters(/.*)           u:object_r:sysfs_hci_param:s0
 
 # DRM
-/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.2-service\.clearkey                u:object_r:hal_drm_clearkey_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.3-service\.clearkey                u:object_r:hal_drm_clearkey_exec:s0
 
 # Lights
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.victara u:object_r:hal_light_default_exec:s0
