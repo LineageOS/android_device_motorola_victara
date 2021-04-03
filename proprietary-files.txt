@@ -152,23 +152,13 @@ vendor/lib/libqti-perfd-client.so
 vendor/lib/libthermalioctl.so
 
 # DRM
-bin/qseecomd:vendor/bin/qseecomd
-vendor/firmware/widevine.b00
-vendor/firmware/widevine.b01
-vendor/firmware/widevine.b02
-vendor/firmware/widevine.b03
-vendor/firmware/widevine.mdt
-vendor/lib/lib-sec-disp.so
-vendor/lib/libDivxDrm.so
-vendor/lib/libQSEEComAPI.so
-vendor/lib/libSHIMDivxDrm.so
-vendor/lib/libdrmdiag.so
-vendor/lib/libdrmfs.so
-vendor/lib/libdrmtime.so
-vendor/lib/libmmosal.so
-vendor/lib/librpmb.so
-vendor/lib/libsecureui.so
-vendor/lib/libssd.so
+vendor/bin/qseecomd |182eef5507dfa2d75a34f28dc9cd750ca5eacb09
+vendor/lib/libdrmdecrypt.so |5013edf1475337001f85389fa0dad8bb7755fd59
+vendor/lib/libQSEEComAPI.so |5c948ad98ce3b5050a4c3f640541c39fb396d78f
+vendor/lib/libdrmfs.so |b5f8195820f73b32008a8e7c2bd67ab15d5563a9
+vendor/lib/libdrmtime.so |95b2a56d4be078ca53dc5acb9b1ae97003ed3940
+vendor/lib/librpmb.so |708921f0319f2356a2cd822d87c80366a04d8a7f
+vendor/lib/libssd.so |a1d98b27bffcd8047867738a84a02f53956ca0ff
 
 # Widevine - from angler - OPR6.170623.017 factory image
 vendor/lib/mediadrm/libwvdrmengine.so|66ba66d047044f92eb0eada1faf6a5799ded90ab|2f70d96729bc35389d98ab3a1e8f48f4f7b659c2
