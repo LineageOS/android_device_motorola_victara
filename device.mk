@@ -122,6 +122,12 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-service.legacy \
     gps.msm8974
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/gps/flp.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/flp.conf \
+    $(LOCAL_PATH)/gps/gps.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/gps.conf \
+    $(LOCAL_PATH)/gps/izat.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/izat.conf \
+    $(LOCAL_PATH)/gps/sap.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/sap.conf
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
