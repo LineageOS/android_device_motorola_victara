@@ -109,3 +109,9 @@ on property:dev.bootcomplete=1
 on property:sys.boot_completed=1
     swapon_all /vendor/etc/fstab.qcom
     setprop vendor.post_boot.parsed 1
+
+service mpdecision /system/vendor/bin/mpdecision --avg_comp --min_cores=4
+   class late_start
+   user root
+   group system readproc
+   disabled
