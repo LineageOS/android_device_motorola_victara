@@ -1,4 +1,4 @@
-/* Copyright (c) 2013-2015, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2014 The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -26,82 +26,50 @@
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
-#ifndef ULP_PROXY_BASE_H
-#define ULP_PROXY_BASE_H
 
+#ifndef LOC_ADAPTER_PROXY_BASE_H
+#define LOC_ADAPTER_PROXY_BASE_H
+
+#include <ContextBase.h>
 #include <gps_extended.h>
-
-struct FlpExtLocation_s;
-struct FlpExtBatchOptions;
 
 namespace loc_core {
 
-class LocAdapterBase;
+class LocAdapterProxyBase {
+private:
+    LocAdapterBase *mLocAdapterBase;
+protected:
+    inline LocAdapterProxyBase(const LOC_API_ADAPTER_EVENT_MASK_T mask,
+                   ContextBase* context):
+                   mLocAdapterBase(new LocAdapterBase(mask, context, this)) {
+    }
+    inline virtual ~LocAdapterProxyBase() {
+        delete mLocAdapterBase;
+    }
+    ContextBase* getContext() const {
+        return mLocAdapterBase->getContext();
+    }
+    inline void updateEvtMask(LOC_API_ADAPTER_EVENT_MASK_T event,
+                              loc_registration_mask_status isEnabled) {
+        mLocAdapterBase->updateEvtMask(event,isEnabled);
+    }
 
-class UlpProxyBase {
 public:
-    LocPosMode mPosMode;
-    bool mFixSet;
-    inline UlpProxyBase() {
-        mPosMode.mode = LOC_POSITION_MODE_INVALID;
-        mFixSet = false;
-    }
-    inline virtual ~UlpProxyBase() {}
-    inline virtual bool sendStartFix() { mFixSet = true; return false; }
-    inline virtual bool sendStopFix() { mFixSet = false; return false; }
-    inline virtual bool sendFixMode(LocPosMode &params) {
-        mPosMode = params;
-        return false;
-    }
-
+    inline virtual void handleEngineUpEvent() {};
+    inline virtual void handleEngineDownEvent() {};
     inline virtual bool reportPosition(UlpLocation &location,
                                        GpsLocationExtended &locationExtended,
-                                       void* locationExt,
                                        enum loc_sess_status status,
                                        LocPosTechMask loc_technology_mask) {
+
         (void)location;
         (void)locationExtended;
-        (void)locationExt;
         (void)status;
         (void)loc_technology_mask;
-        return false;
-    }
-    inline virtual bool reportSv(HaxxSvStatus &svStatus,
-                                 GpsLocationExtended &locationExtended,
-                                 void* svExt) {
-        (void)svStatus;
-        (void)locationExtended;
-        (void)svExt;
-        return false;
-    }
-    inline virtual bool reportStatus(GpsStatusValue status) {
-
-        (void)status;
-        return false;
-    }
-    inline virtual void setAdapter(LocAdapterBase* adapter) {
-
-        (void)adapter;
-    }
-    inline virtual void setCapabilities(unsigned long capabilities) {
-
-        (void)capabilities;
-    }
-    inline virtual bool reportBatchingSession(FlpExtBatchOptions &options,
-                                              bool active) {
-
-        (void)options;
-        (void)active;
-        return false;
-    }
-    inline virtual bool reportPositions(const struct FlpExtLocation_s* locations,
-                                        int32_t number_of_locations) {
-        (void)locations;
-        (void)number_of_locations;
         return false;
     }
 };
 
 } // namespace loc_core
 
-#endif // ULP_PROXY_BASE_H
+#endif //LOC_ADAPTER_PROXY_BASE_H
