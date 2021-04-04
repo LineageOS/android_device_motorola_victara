@@ -165,10 +165,6 @@ vendor/lib/mediadrm/libwvdrmengine.so|66ba66d047044f92eb0eada1faf6a5799ded90ab|2
 
 # GPS
 bin/gpsone_daemon
-etc/gps.conf
-etc/izat.conf
-etc/quipc.conf
-etc/sap.conf
 lib/libloc_api_v02.so
 lib/libloc_ds_api.so
 vendor/lib/libgeofence.so
