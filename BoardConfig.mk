@@ -16,8 +16,6 @@
 
 DEVICE_PATH := device/motorola/victara
 
-BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
-
 # APEX
 TARGET_FLATTEN_APEX := true
 
