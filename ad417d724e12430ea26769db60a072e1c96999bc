@@ -22,6 +22,30 @@
       "revId": "ad417d724e12430ea26769db60a072e1c96999bc",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d5d5b7d_9d456dc5",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 18847
+      },
+      "writtenOn": "2021-04-05T10:46:42Z",
+      "side": 0,
+      "message": "https://github.com/LineageOS/android_device_htc_msm8974-common/commit/497571145a7c72762f9a254602786e53bb11c82f#diff-e13df962209619006265999415c36ff216d10631983ebfe8ca6d822f8314ffb6",
+      "parentUuid": "7f6ad0c3_0aa07d8c",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 173,
+        "endChar": 56
+      },
+      "revId": "ad417d724e12430ea26769db60a072e1c96999bc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
