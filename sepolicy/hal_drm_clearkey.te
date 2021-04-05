@@ -5,3 +5,7 @@ init_daemon_domain(hal_drm_clearkey)
 hal_server_domain(hal_drm_clearkey, hal_drm)
 vndbinder_use(hal_drm_clearkey);
 allow hal_drm_clearkey { appdomain -isolated_app }:fd use;
+
+# policy for /vendor/bin/hw/android.hardware.drm@1.3-service.clearkey
+allow hal_drm_clearkey mediadrm_vendor_data_file:dir create_dir_perms;
+allow hal_drm_clearkey mediadrm_vendor_data_file:file create_file_perms;

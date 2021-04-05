@@ -5,6 +5,7 @@
 /data/misc/cutback(/.*)?                u:object_r:cutback_data_file:s0
 /data/power_supply_logger(/.*)?         u:object_r:battery_data_file:s0
 /data/system/dropbox-add(/.*)?          u:object_r:adspd_data_file:s0
+/data/vendor/mediadrm(/.*)?             u:object_r:mediadrm_vendor_data_file:s0
 /data/wapi_certificate(/.*)?            u:object_r:wapi_supplicant_data_file:s0
 
 /dev/bcm2079x-i2c                       u:object_r:nfc_device:s0
