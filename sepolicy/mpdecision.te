@@ -1,4 +1,5 @@
 allow mpdecision system_data_file:dir w_dir_perms;
+allow mpdecision system_data_file:file r_file_perms;
 type_transition mpdecision system_data_file:file mpctl_data_file;
 
 allow mpdecision self:capability sys_nice;
