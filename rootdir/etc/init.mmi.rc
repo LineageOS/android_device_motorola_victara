@@ -228,7 +228,4 @@ service atvc /vendor/bin/dbvc_atvc_property_set
    user oem_5012
    group oem_5007
    oneshot
-    writepid /dev/cpuset/system-background/tasks
-
-on property:persist.sys.qc.sub.rdump.on=*
-   write /sys/module/subsystem_restart/parameters/enable_ramdumps ${persist.sys.qc.sub.rdump.on}
+   writepid /dev/cpuset/system-background/tasks
