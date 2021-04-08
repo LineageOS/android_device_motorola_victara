@@ -249,9 +249,6 @@ on post-fs-data
 
     setprop vold.post_fs_data_done 1
 
-#service qcomsysd /system/bin/qcom-system-daemon
-#    class main
-
 on property:persist.radio.atfwd.start=false
     stop atfwd
 
@@ -366,9 +363,8 @@ service charger /system/bin/charger
     capabilities SYS_BOOT
     seclabel u:r:charger:s0
 
-# SSR setting
-on property:persist.sys.ssr.restart_level=*
-    exec /vendor/bin/sh /init.qcom.ssr.sh ${persist.sys.ssr.restart_level}
+on property:persist.sys.qc.sub.rdump.on=*
+   write /sys/module/subsystem_restart/parameters/enable_ramdumps ${persist.sys.qc.sub.rdump.on}
 
 on property:persist.sys.qc.sub.ssr.max=*
     write /sys/module/subsystem_restart/parameters/max_restarts ${persist.sys.qc.sub.ssr.max}
