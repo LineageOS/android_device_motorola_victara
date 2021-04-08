@@ -6,7 +6,7 @@ on early-init
     chmod 0770 /sys/kernel/debug
 
 on init
-    copy /module_hashes /sys/kernel/module_whitelist
+    copy system/vendor/etc/module_hashes /sys/kernel/module_whitelist
 
     # Configure coredump
     write /proc/sys/kernel/core_pattern "|/system/bin/coredump %e %p %t"
