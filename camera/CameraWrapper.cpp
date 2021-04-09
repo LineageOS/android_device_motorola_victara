@@ -116,6 +116,9 @@ static char *camera_fixup_getparams(UNUSED int id, const char *settings)
     params.dump();
 #endif
 
+    params.set("face-detection-values", "off,on");
+    params.set("denoise-values", "denoise-off,denoise-on");
+
     const char *pf = params.get(android::CameraParameters::KEY_PREVIEW_FORMAT);
     if (pf && strcmp(pf, "nv12-venus") == 0) {
         params.set(android::CameraParameters::KEY_PREVIEW_FORMAT, "yuv420sp");
