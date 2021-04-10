@@ -22,6 +22,30 @@
       "revId": "27bbe27ad61896ac11d3db2c849333689ed1fb92",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7be719e8_ae4668b4",
+        "filename": "rootdir/etc/init.mmi.rc",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 18847
+      },
+      "writtenOn": "2021-04-10T11:45:01Z",
+      "side": 0,
+      "message": "it\u0027s here from the beginning i think\nshould we just get rid of that",
+      "parentUuid": "002a6b33_24bab29e",
+      "range": {
+        "startLine": 233,
+        "startChar": 0,
+        "endLine": 234,
+        "endChar": 96
+      },
+      "revId": "27bbe27ad61896ac11d3db2c849333689ed1fb92",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
