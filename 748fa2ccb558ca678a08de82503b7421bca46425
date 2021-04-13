@@ -22,6 +22,30 @@
       "revId": "748fa2ccb558ca678a08de82503b7421bca46425",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e624622f_337ce979",
+        "filename": "overlay/frameworks/base/packages/SystemUI/res/values/config.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 18847
+      },
+      "writtenOn": "2021-04-13T21:33:09Z",
+      "side": 0,
+      "message": "stock has them but they are deprecated, except doze_pulse_schedule(and default values is fine)\n\nhttps://github.com/LineageOS/android_device_motorola_msm8916-common/blob/lineage-18.1/overlay/frameworks/base/packages/SystemUI/res/values/config.xml",
+      "parentUuid": "6f43edf7_8d592223",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 58
+      },
+      "revId": "748fa2ccb558ca678a08de82503b7421bca46425",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }

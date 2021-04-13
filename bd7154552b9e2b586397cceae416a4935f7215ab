@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dbef4bb8_2f02ea96",
+        "filename": "overlay/frameworks/base/core/res/res/values/config.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 18847
+      },
+      "writtenOn": "2021-04-13T21:33:09Z",
+      "side": 1,
+      "message": "yes, i mean they were present on stock so i guess they were intentional",
+      "parentUuid": "720fd5b7_59bfb52b",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 22
+      },
+      "revId": "bd7154552b9e2b586397cceae416a4935f7215ab",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "feb9d244_9e1a0b68",
         "filename": "overlay/frameworks/base/core/res/res/values/config.xml",
         "patchSetId": 3
