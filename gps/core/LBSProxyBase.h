@@ -1,4 +1,4 @@
-/* Copyright (c) 2013-2015, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2013, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -35,18 +35,12 @@ namespace loc_core {
 
 class LocApiBase;
 class LocAdapterBase;
-class ContextBase;
 
 class LBSProxyBase {
     friend class ContextBase;
     inline virtual LocApiBase*
         getLocApi(const MsgTask* msgTask,
-                  LOC_API_ADAPTER_EVENT_MASK_T exMask,
-                  ContextBase* context) const {
-
-        (void)msgTask;
-        (void)exMask;
-        (void)context;
+                  LOC_API_ADAPTER_EVENT_MASK_T exMask) const {
         return NULL;
     }
 protected:
@@ -54,22 +48,9 @@ protected:
 public:
     inline virtual ~LBSProxyBase() {}
     inline virtual void requestUlp(LocAdapterBase* adapter,
-                                   unsigned long capabilities) const {
-
-        (void)adapter;
-        (void)capabilities;
-    }
-    inline virtual bool hasAgpsExtendedCapabilities() const { return false; }
-    inline virtual bool hasCPIExtendedCapabilities() const { return false; }
-    inline virtual void modemPowerVote(bool power) const {
-
-        (void)power;
-    }
-    virtual void injectFeatureConfig(ContextBase* context) const {
-
-        (void)context;
-    }
-    inline virtual IzatDevId_t getIzatDevId() const { return 0; }
+                                   unsigned long capabilities) const {}
+    inline virtual bool hasAgpsExt() const { return false; }
+    inline virtual bool hasCPIExt() const { return false; }
 };
 
 typedef LBSProxyBase* (getLBSProxy_t)();
