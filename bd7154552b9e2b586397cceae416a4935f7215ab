@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "720fd5b7_59bfb52b",
+        "filename": "overlay/frameworks/base/core/res/res/values/config.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2021-04-13T16:43:27Z",
+      "side": 1,
+      "message": "were these duplicated 0\u0027s intentional",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 22
+      },
+      "revId": "bd7154552b9e2b586397cceae416a4935f7215ab",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "feb9d244_9e1a0b68",
+        "filename": "overlay/frameworks/base/core/res/res/values/config.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2021-04-13T16:43:27Z",
+      "side": 1,
+      "message": "think this was for motodisplay, we want this to be false afaik becuase we lack interactive aod",
+      "range": {
+        "startLine": 241,
+        "startChar": 0,
+        "endLine": 241,
+        "endChar": 76
+      },
+      "revId": "bd7154552b9e2b586397cceae416a4935f7215ab",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
