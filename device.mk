@@ -208,10 +208,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
     $(LOCAL_PATH)/nfc/libnfc-nci-20795a10.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci-20795a10.conf
 
-# Offmode Charging
-PRODUCT_PACKAGES += \
-    charger_res_image
-
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
