@@ -69,7 +69,7 @@ s32 wifi_qsap_set_tx_power(s32 tx_power)
     close(sock);
 
     if (ret) {
-        ALOGE("%s :IOCTL set tx power failed: %ld\n", __func__, ret);
+        ALOGE("%s :IOCTL set tx power failed: %d\n", __func__, ret);
         ret = eERR_SET_TX_POWER;
     } else {
         ALOGD("%s :IOCTL set tx power issued\n", __func__);
