@@ -180,10 +180,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sysfs
 
-# Modules
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/module_hashes:$(TARGET_COPY_OUT_VENDOR)/etc/module_hashes
-
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
