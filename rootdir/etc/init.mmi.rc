@@ -5,9 +5,6 @@ on early-init
     chown system system /sys/kernel/debug
     chmod 0770 /sys/kernel/debug
 
-on init
-    copy /module_hashes /sys/kernel/module_whitelist
-
     # Configure coredump
     write /proc/sys/kernel/core_pattern "|/system/bin/coredump %e %p %t"
     write /proc/self/coredump_filter "0x7f"
