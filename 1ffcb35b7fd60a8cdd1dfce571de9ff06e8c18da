@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ce9846e_a1a76bc3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 22728
+      },
+      "writtenOn": "2022-05-03T22:51:08Z",
+      "side": 1,
+      "message": "init: Command \u0027mkdir /data/misc/wifi/hostapd 0770 system wifi\u0027 action\u003dpost-fs-data (/vendor/etc/init/hw/init.qcom.rc:232) took 1ms and failed: mkdir() failed on /data/misc/wifi/hostapd: Permission denied",
+      "revId": "1ffcb35b7fd60a8cdd1dfce571de9ff06e8c18da",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
